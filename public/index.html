@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>FootyLive</title>
+</head>
+
+<body>
+    <h1 id="loadingHeader">Fetching Data... you shouldn't be seeing this</h1>
+
+    <div class="scoreboard">
+        <div class="team homeTeamContainer">
+            <img id="homeTeamIcon" src="" alt="Home Team Logo">
+            <div class="teamInfo">
+                <h2 id="homeTeamScore"></h2>
+                <p id="homeTeamSecondaryScore"></p>
+            </div>
+        </div>
+        <div class="gameInfo">
+            <h2 id="currentPeriod"></h2>
+            <p id="margin"></p>
+            <p id="gamePercentage"></p>
+        </div>
+        <div class="team awayTeamContainer">
+            <div class="teamInfo">
+
+                <h2 id="awayTeamScore"></h2>
+                <p id=awayTeamSecondaryScore></p>
+            </div>
+            <img id="awayTeamIcon" src="" alt="Away Team Logo">
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="table-container">
+            <div class="teamAndTime">
+                <h3 id="homeTeam">Home</h3>
+            </div>
+            <table id="team0">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th class="playerNameHeader">Name</th>
+                    <th class="hide-on-mobile">G.B</th>
+                    <th class="">K</th>
+                    <th class="">H</th>
+                    <th class="">M</th>
+                    <th class="">T</th>
+                    <th>TOG</th>
+                    <th>AVG</th>
+                    <th>BE</th>
+                    <th>AF</th>
+                </tr>
+                <!-- Player data for Team 0 will be inserted here -->
+            </table>
+        </div>
+        <div class="table-container">
+            <div class="teamAndTime">
+                <h3 id="awayTeam">Away</h3>
+            </div>
+            <table id="team1">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th class="playerNameHeader">Name</th>
+                    <th class="hide-on-mobile">G.B</th>
+                    <th class="">K</th>
+                    <th class="">H</th>
+                    <th class="">M</th>
+                    <th class="">T</th>
+                    <th>TOG</th>
+                    <th>AVG</th>
+                    <th>BE</th>
+                    <th>AF</th>
+                </tr>
+                <!-- Player data for Team 1 will be inserted here -->
+            </table>
+        </div>
+    </div>
+
+    <div id="tooltip">
+        <div class="triangle"></div>
+        <i class="fa-solid fa-xmark" id="close-btn" onclick="closeTooltip()"></i>
+        <img src="" alt="">
+        <ul>
+            <li>
+                <div class="circle" id="orange"></div>
+            </li>
+            <li>
+                <div class="circle" id="blue"></div>
+            </li>
+            <li>
+                <div class="circle" id="purple"></div>
+            </li>
+            <li>
+                <div class="circle" id="default"></div>
+            </li>
+        </ul>
+        <ul>
+            <li><i class="customIcon" id="injuredPlaying" style="content: url('/icons/bandaid.png')"></i></li>
+            <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li>
+            <li><i class="customIcon" id="subsitute" style="content: url('/icons/greenvest.png')"></i></li>
+            <li><i class="customIcon" id="subbedOut" style="content: url('/icons/redvest.png')"></i></li>
+            <li><i class="customIcon" id="tagged" style="content: url('/icons/padlock.png')"></i></li>
+            <li><i class="customIcon" id="tagger" style="content: url('/icons/tag.png')"></i></li>
+        </ul>
+    </div>
+    <div class="message-container">
+        <span class="chat-span">
+            <input id="messageInput" type="text" placeholder="Send message">
+            <button id="messageButton" onclick="sendMessage()">Go</button>
+            <input id="usernameInput" type="text" placeholder="Change username">
+
+            <button id="usernameButton">Go</button>
+        </span>
+        <span class="chat-span">
+
+        </span>
+        <div id="chatFeed"></div>
+    </div>
+
+    <script type="text/javascript" src="/ProfanityList.js"></script>
+    <script type="module">
+        //import profanityList from './ProfanityList.js';
+    </script>
+    <script>
+        // Variable to prevent colour changes when there is a stat update
+        var allowColourChange = true;
+
+        // Store the colours of each row
+        const rowColours = {};
+
+        // store the icons selected on each row
+        const rowIcons = {};
+
+        // Store the previous data of each player
+        const previousDataTeam0 = {};
+        const previousDataTeam1 = {};
+
+        // Store team names and scores
+        const homeTeam = document.getElementById('homeTeam');
+        const awayTeam = document.getElementById('awayTeam');
+        const homeTeamScore = document.getElementById('homeTeamScore');
+        const homeTeamSecondaryScore = document.getElementById('homeTeamSecondaryScore');
+        const awayTeamSecondaryScore = document.getElementById('awayTeamSecondaryScore');
+        const awayTeamScore = document.getElementById('awayTeamScore');
+        const homeTeamIcon = document.getElementById('homeTeamIcon');
+        const awayTeamIcon = document.getElementById('awayTeamIcon');
+        let currentTime = 0;
+
+        // Define global variables to store player data for each team
+        window.playerData = { team0: [], team1: [] };
+
+        // Function to format player data into table rows and order by fantasy
+        function formatPlayerData(team, previousData) {
+            const tableContainer = document.querySelector('.container');
+            tableContainer.style.visibility = 'visible';
+            const loadingHeader = document.getElementById('loadingHeader');
+            loadingHeader.style.display = 'none';
+
+            const tableId = `team${team}`;
+            const table = document.getElementById(tableId);
+            const tbody = table.querySelector('tbody');
+            const teamData = window.playerData[`team${team}`];
+
+            if (teamData && teamData.length > 0) {
+                while (tbody.children.length > 1) {
+                    tbody.removeChild(tbody.children[1]);
+                }
+            }
+
+
+            if (teamData && Array.isArray(teamData)) {
+                closeTooltip();
+
+
+                // Get the first player of each team
+                const firstPlayerTeam0 = teamData.find(player => player.team === 0);
+                const firstPlayerTeam1 = teamData.find(player => player.team === 1);
+
+                // Set team name and scores for home team
+                if (firstPlayerTeam0) {
+                    homeTeam.textContent = `${firstPlayerTeam0.teamName}`;
+                    homeTeamScore.textContent = `${firstPlayerTeam0.teamScoreTotal}`;
+                    homeTeamSecondaryScore.textContent = `${firstPlayerTeam0.teamScore}`;
+
+                    homeTeamIcon.src = `/svg/${firstPlayerTeam0.teamName.replace(/\s/g, '')}.svg`;
+
+
+                    currentTime = `${firstPlayerTeam0.time}`;
+                }
+
+                // Set team name and scores for away team
+                if (firstPlayerTeam1) {
+                    awayTeam.textContent = `${firstPlayerTeam1.teamName}`;
+                    awayTeamScore.textContent = `${firstPlayerTeam1.teamScoreTotal}`;
+                    awayTeamSecondaryScore.textContent = `${firstPlayerTeam1.teamScore} `;
+
+                    awayTeamIcon.src = `/svg/${firstPlayerTeam1.teamName.replace(/\s/g, '')}.svg`;
+                }
+
+                calculateGamePercentage(currentTime);
+
+                // Sort the players by their fantasy score
+                const sortedPlayers = teamData.sort((a, b) => b.fantasy - a.fantasy);
+
+                sortedPlayers.forEach(player => {
+                    if (player.team === team) {
+                        const row = document.createElement('tr');
+                        const playerId = `${player.name}-${player.number}`;
+                        const previousColour = rowColours[playerId];
+
+                        if (previousColour) {
+                            row.style.backgroundColor = previousColour;
+                        }
+
+                        const differences = calculateDifferences(player, previousData[playerId]);
+                        const cells = [
+                            `<td id="iconHolder"></td>`,
+                            `<td>${player.number}</td>`,
+                            `<td class="playerName">${player.name}</td>`,
+                            `<td class="hide-on-mobile">${parseInt(player.goals)}${renderSuperscript(differences.goals)}.${parseInt(player.behinds)}${renderSuperscript(differences.behinds)}</td>`,
+                            `<td class="">${parseInt(player.kicks)}${renderSuperscript(differences.kicks)}</td>`,
+                            `<td class="">${parseInt(player.handballs)}${renderSuperscript(differences.handballs)}</td>`,
+                            `<td class="">${parseInt(player.marks)}${renderSuperscript(differences.marks)}</td>`,
+                            `<td class="">${parseInt(player.tackles)}${renderSuperscript(differences.tackles)}</td>`,
+                            `<td>${parseInt(player.tog)}%</td>`,
+                            `<td>${parseInt(player.fantasyAvg)}</td>`,
+                            `<td class="breakeven">${player.breakeven}</td>`,
+                            `<td>${parseInt(player.fantasy)}${renderSuperscript(differences.fantasy)}</td>`
+                        ];
+
+
+                        row.innerHTML = cells.join('');
+                        tbody.appendChild(row);
+                        row.id = playerId;
+
+                        let breakeven = row.querySelector('.breakeven');
+                        if (parseInt(player.fantasy) >= parseInt(player.breakeven)) {
+                            breakeven.style.color = '#3f941e';
+                        } else {
+                            breakeven.style.color = '#b13b3b';
+                        }
+
+                        const previousIcon = rowIcons[playerId];
+                        if (previousIcon) {
+                            addIcon(row, previousIcon);
+                        }
+
+                        if (player.sub == 1) {
+                            addIcon(row, '<i class="customIcon" id="subsitute" style="content: url(\'/icons/greenvest.png\')"></i>');
+                        }
+
+                        if (player.benched == 1) {
+                            // Add a p element to the .playerName element containing the word "BEN"
+                            const playerName = row.querySelector('.playerName');
+                            const benched = document.createElement('span');
+                            benched.textContent = "BEN";
+                            benched.classList.add('benched');
+                            playerName.appendChild(benched);
+                        }
+
+                        if (player.injured == 1) {
+                            let existingIcon = row.querySelector("i");
+                            if (!existingIcon) {
+                                addIcon(row, '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>');
+                            } else {
+                                if (existingIcon.style.content != 'url("/icons/redvest.png")') {
+                                    addIcon(row, '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>');
+                                }
+                            }
+                        }
+
+                        handleRowColorAndSuperscripts(row, playerId, differences);
+                        fetchAndUpdateIcons();
+
+
+                        row.querySelector(".playerName").addEventListener('click', function (event) {
+                            showTooltip(playerId, player.team, row, event.clientX, event.clientY);
+                        });
+                    }
+                });
+            } else {
+                console.error(`Player data for Team ${team} is not available or not in the expected format.`);
+            }
+        }
+
+        function handleRowColorAndSuperscripts(row, playerId, differences) {
+            const fantasyDifference = differences.fantasy;
+            const anyStatChanged = Object.values(differences).some(diff => diff !== 0);
+
+            if (row.style.backgroundColor == '') {
+                handleRowColorChange(row, fantasyDifference);
+            }
+
+            if (anyStatChanged) {
+                row.querySelectorAll('sup').forEach(sup => {
+                    sup.style.visibility = 'visible';
+                });
+                allowColourChange = false;
+            }
+
+            if (rowColours[playerId]) {
+                handleRowColor(row, rowColours[playerId]);
+            }
+        }
+
+        function handleRowColorChange(row, fantasyDifference) {
+            if (fantasyDifference > 0) {
+                row.style.backgroundColor = 'lightgreen';
+            } else if (fantasyDifference < 0) {
+                row.style.backgroundColor = 'lightcoral';
+            }
+
+            setTimeout(() => {
+                if (['', 'lightgreen', 'lightcoral'].includes(row.style.backgroundColor)) {
+                    row.style.backgroundColor = '';
+                    allowColourChange = true;
+                }
+            }, 3000);
+        }
+
+        function handleRowColor(row, color) {
+            const colorMap = {
+                'default': '',
+                'orange': 'rgb(247, 190, 129)',
+                'blue': 'rgb(206, 227, 246)',
+                'purple': 'rgb(227, 206, 246)'
+            };
+
+            row.style.backgroundColor = colorMap[color] || '';
+        }
+
+        let colourCircleClickHandlers = [];
+        let iconClickHandlers = [];
+
+
+        function showTooltip(playerId, team, row, x, y) {
+
+            if (!allowColourChange) {
+                return;
+            }
+            if (!row) return; // Exit if player row element is not found
+            const tooltip = document.getElementById("tooltip");
+            const img = tooltip.querySelector("img");
+            img.src = `/images/${playerId}.png`;
+            // Show tooltip
+            tooltip.style.position = "absolute";
+
+
+
+            const playerName = document.getElementById(playerId);
+            const rect = playerName.getBoundingClientRect();
+            let middle = 0;
+
+            const tooltipHeight = tooltip.offsetHeight;
+            let tableHeight = row.parentElement.offsetHeight;
+            let tooltipBottom = y + tooltipHeight + window.scrollY;
+            const tooltipTop = y - tooltipHeight + window.scrollY;
+            let yOffset = 20;
+            const triangle = document.querySelector('.triangle');
+
+            switch (team) {
+                case 0:
+
+                    middle = rect.left;
+                    break;
+                case 1:
+                    if (window.innerWidth <= 768) {
+                        middle = rect.left;
+                        tooltipBottom -= 900;
+                        //yOffset *= 3;
+                        //tableHeight += window.innerHeight;
+                    } else {
+
+                        middle = rect.left;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            if (tooltipBottom > tableHeight) {
+                // If the tooltip would go past the bottom of the viewport, display it above the mouse position
+                //console.log(tableHeight);
+                tooltip.style.top = `${y - tooltipHeight + window.scrollY - (yOffset)}px`;
+                tooltip.classList.add('above');
+                triangle.classList.add('above');
+            } else {
+                // Otherwise, display it below the mouse position
+                tooltip.style.top = `${y + window.scrollY + yOffset}px`;
+                tooltip.classList.remove('above');
+                triangle.classList.remove('above');
+            }
+
+            if (window.innerWidth > 768) {
+                tooltip.style.left = `${middle}px`;
+
+
+            } else {
+                tooltip.style.left = `${middle}px`;
+            }
+
+            tooltip.style.opacity = "100";
+            tooltip.style.pointerEvents = "auto";
+
+
+            var colourCircles = document.getElementsByClassName("circle");
+            for (let i = 0; i < colourCircles.length; i++) {
+                if (colourCircleClickHandlers[i]) {
+                    colourCircles[i].removeEventListener('click', colourCircleClickHandlers[i]);
+                }
+
+                colourCircleClickHandlers[i] = function () {
+                    let colour = colourCircles[i].id;
+                    toggleRowColour(row, colour);
+                };
+
+                colourCircles[i].addEventListener('click', colourCircleClickHandlers[i]);
+            }
+
+            var icons = tooltip.getElementsByTagName("i");
+            for (let i = 0; i < icons.length; i++) {
+                if (icons[i].id != 'close-btn') {
+                    if (iconClickHandlers[i]) {
+                        icons[i].removeEventListener('click', iconClickHandlers[i]);
+                    }
+
+                    iconClickHandlers[i] = function () {
+                        let icon = icons[i].outerHTML;
+                        addIcon(row, icon);
+                    };
+
+                    icons[i].addEventListener('click', iconClickHandlers[i]);
+                }
+            }
+
+        }
+
+        function closeTooltip() {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.opacity = 0;
+            tooltip.style.pointerEvents = "none";
+        }
+
+
+
+
+
+
+        function addIcon(row, icon) {
+            if (row == null) { return; }
+            var playerName = row.getElementsByClassName("playerName")[0];
+            if (playerName == undefined) { return; }
+
+            var existingIcon = row.querySelector("i");
+            if (existingIcon) {
+                // Remove the existing icon (we only allow 1 icon at a time)
+                existingIcon.remove();
+            }
+            var iconCol = row.querySelector("#iconHolder");
+            iconCol.innerHTML = `${icon}`;
+            let playerId = row.id;
+            rowIcons[playerId] = icon;
+            closeTooltip();
+
+            fetch('/update-icon', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    playerId: playerId,
+                    icon: icon,
+                }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Handle success if needed
+                })
+                .catch(error => {
+                    console.error('Error updating icon:', error);
+                });
+        }
+
+
+        function fetchAndUpdateIcons() {
+            // Fetch icons from the server
+            fetch('/get-all-icons')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch icons');
+                    }
+                    return response.json();
+                })
+                .then(iconsData => {
+                    // Update the table with fetched icons
+                    for (const playerId in iconsData) {
+                        const icon = iconsData[playerId];
+                        const row = document.getElementById(playerId);
+                        if (row) {
+                            addIcon(row, icon);
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching icons:', error);
+                });
+        }
+
+
+
+
+        function toggleRowColour(row, colour) {
+            if (!allowColourChange || row == null) {
+                return;
+            }
+
+            var playerId = row.id;
+
+            // Apply the next color to the row
+            switch (colour) {
+                case 'default':
+                    row.style.backgroundColor = '';
+                    break;
+                case 'orange':
+                    row.style.backgroundColor = 'rgb(247, 190, 129)';
+                    break;
+                case 'blue':
+                    row.style.backgroundColor = 'rgb(206, 227, 246)';
+                    break;
+                case 'purple':
+                    row.style.backgroundColor = 'rgb(227, 206, 246)';
+                default:
+                    break;
+            }
+
+            if (colour != 'default') {
+                rowColours[playerId] = colour;
+            } else {
+                delete rowColours[playerId];
+            }
+            closeTooltip();
+        }
+
+        // Function to calculate differences in player stats
+        function calculateDifferences(newPlayer, oldPlayer) {
+            const differences = {};
+            if (oldPlayer) {
+                differences.goals = newPlayer.goals - oldPlayer.goals;
+                differences.behinds = newPlayer.behinds - oldPlayer.behinds;
+                differences.kicks = newPlayer.kicks - oldPlayer.kicks;
+                differences.handballs = newPlayer.handballs - oldPlayer.handballs;
+                differences.marks = newPlayer.marks - oldPlayer.marks;
+                differences.tackles = newPlayer.tackles - oldPlayer.tackles;
+                differences.hitouts = newPlayer.hitouts - oldPlayer.hitouts;
+                differences.fantasy = newPlayer.fantasy - oldPlayer.fantasy;
+            } else {
+                // If no old data is available, set differences to 0
+                Object.keys(newPlayer).forEach(key => {
+                    differences[key] = 0;
+                });
+            }
+            return differences;
+        }
+
+        // Function to render superscript based on difference
+        function renderSuperscript(diff) {
+            if (diff !== 0) {
+                var diffInt = parseInt(diff);
+                const color = diffInt > 0 ? 'green' : 'red';
+                const sign = diffInt > 0 ? '+' : '';
+                hideSuperscript();
+                return `<sup style="color: ${color};">${sign}${diffInt}</sup>`;
+            } else {
+                return '';
+            }
+        }
+
+        function hideSuperscript() {
+            setTimeout(() => {
+                document.querySelectorAll('sup').forEach(sup => {
+                    sup.style.visibility = 'hidden';
+                });
+            }, 3000);
+        }
+
+        let trimmedLink;
+        function fetchTrimmedLink() {
+            return fetch('/trimmedLink')
+                .then(response => response.json())
+                .then(data => {
+                    trimmedLink = data; // Assuming '/trimmedLink' returns a string
+                });
+        }
+        // Function to fetch player data and format it
+        function fetchAndFormatPlayerData() {
+            Promise.all([
+                fetch(`/${trimmedLink}/player-stats/`),
+                //fetch(`/${trimmedLink}/player-stats/?team=1`)
+            ])
+                .then(responses => Promise.all(responses.map(response => response.json())))
+                .then(data => {
+
+                    const team0Players = data[0].players.filter(player => player.team === 0);
+                    const team1Players = data[0].players.filter(player => player.team === 1);
+
+                    team0Players.forEach(player => {
+                        const playerId = `${player.name}-${player.number}`;
+                        if (!previousDataTeam0[playerId]) {
+                            previousDataTeam0[playerId] = { ...player }; // Create a copy of the player data
+                        } else {
+                            // Update previous data with current values before applying changes
+                            Object.assign(previousDataTeam0[playerId], player);
+                        }
+                    });
+                    team1Players.forEach(player => {
+                        const playerId = `${player.name}-${player.number}`;
+                        if (!previousDataTeam1[playerId]) {
+                            previousDataTeam1[playerId] = { ...player }; // Create a copy of the player data
+                        } else {
+                            // Update previous data with current values before applying changes
+                            Object.assign(previousDataTeam1[playerId], player);
+                        }
+                    });
+                    // Re-render player data with simulated updates
+                    window.playerData.team0 = team0Players;
+                    window.playerData.team1 = team1Players;
+                    formatPlayerData(0, previousDataTeam0);
+                    formatPlayerData(1, previousDataTeam1);
+                });
+        }
+
+        fetchTrimmedLink().then(trimmedLink => {
+            fetchAndFormatPlayerData(trimmedLink);
+        });
+
+        // Function to fetch data every 10 seconds
+        setInterval(fetchAndFormatPlayerData, 10000);
+
+        function calculateGamePercentage(currentTime) {
+
+            // const currentTime = document.getElementById('currentTime').textContent;
+
+            const currentPeriod = document.getElementById('currentPeriod');
+            currentPeriod.textContent = currentTime;
+
+            let homeTeamScore = parseInt(document.getElementById('homeTeamScore').textContent);
+            let awayTeamScore = parseInt(document.getElementById('awayTeamScore').textContent);
+            let homeTeam = document.getElementById('homeTeam').textContent;
+            let awayTeam = document.getElementById('awayTeam').textContent;
+            const marginHolder = document.getElementById('margin');
+            const highestScore = Math.max(homeTeamScore, awayTeamScore);
+            const lowestScore = Math.min(homeTeamScore, awayTeamScore);
+            const margin = highestScore - lowestScore;
+
+            const timeArray = currentTime.split(' ');
+            const quarter = timeArray[1][1];
+            let minutes = 0;
+
+
+            if (homeTeamScore == highestScore) {
+                marginHolder.textContent = `${homeTeam} by ${margin}`;
+            }
+            else {
+                marginHolder.textContent = `${awayTeam} by ${margin}`;
+            }
+            if (homeTeamScore == awayTeamScore) {
+                if (quarter == 0) {
+                    marginHolder.textContent = "TBD";
+                } else {
+                    marginHolder.textContent = "Draw";
+                }
+            }
+
+            if (quarter == '0') {
+                const gamePercentage = document.getElementById('gamePercentage');
+                gamePercentage.textContent = '0%';
+                return;
+            }
+            try {
+                minutes = timeArray[2].split(':')[0];
+            } catch {
+                minutes = 120;
+            }
+
+            let percentage = ((parseInt(minutes) / 120) * 100) + ((parseInt(quarter) - 1) * 25);
+
+            switch (quarter) {
+                case 1:
+                    if (percentage > 25) {
+                        percentage = 25;
+                    }
+                    break;
+                case 2:
+                    if (percentage > 50) {
+                        percentage = 50;
+                    }
+                    break;
+                case 3:
+                    if (percentage > 75) {
+                        percentage = 75;
+                    }
+                    break;
+                case 'a':
+                    percentage = 50;
+                    break;
+                case 'i':
+                    percentage = 100;
+                    break;
+                default:
+                    break;
+            }
+            const gamePercentage = document.getElementById('gamePercentage');
+            gamePercentage.textContent = Math.ceil(percentage) + '%';
+
+        }
+
+
+
+        function storePreviousData(data) {
+            //previousData = data;
+            Object.assign(previousData, data);
+        }
+
+
+        document.getElementById('usernameButton').addEventListener('click', function () {
+            // Retrieve the value of the messageInput element
+            const usernameInputValue = document.getElementById('usernameInput').value;
+
+            // Call the changeUserName function and pass the messageInput value
+            changeUserName(usernameInputValue);
+        });
+
+        document.getElementById('usernameInput').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent the default action to stop the form from being submitted
+                const usernameInputValue = document.getElementById('usernameInput').value;
+                changeUserName(usernameInputValue);
+                document.getElementById('usernameInput').value = ''; // Clear the input field
+            }
+        });
+
+
+
+
+        const socket = new WebSocket('ws://10.0.0.67:8080');
+
+
+
+        let userId = localStorage.getItem('userId');
+
+        if (!userId) {
+            fetch('/new-user-id')
+                .then(response => response.json())
+                .then(data => {
+                    userId = data.userId;
+                    localStorage.setItem('userId', userId);
+                });
+        }
+
+
+        function changeUserName(newName) {
+            // Send a request to the server to check if the new name is already taken
+            fetch(`/check-username/${newName}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.isTaken) {
+                        console.log('This username is already taken.');
+                    } else {
+                        // If the new name is not taken, update the user's name
+                        fetch('/update-username', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                userId: userId,
+                                newUsername: newName,
+                            }),
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+
+                                    newName = filterProfanity(newName);
+                                    if (newName.includes('*')) {
+                                        alert('Username contains profanity. Please choose a different username.');
+                                        return;
+                                    }
+
+                                    console.log('Username updated successfully.');
+
+                                    let updateMessage = `${userId} has changed their username to ${newName}`;
+                                    socket.send(updateMessage);
+
+                                    fetch('/update-chat', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify({
+                                            link: trimmedLink,
+                                            message: updateMessage,
+                                        }),
+                                    })
+                                        .then(response => response.json())
+                                        //.then(data => console.log(data))
+                                        .catch((error) => {
+                                            console.error('Error:', error);
+                                        });
+
+                                    userId = newName;
+                                    localStorage.setItem('userId', newName);
+
+                                    // Update the displayed username
+                                    //document.getElementById('displayedUsername').textContent = newName;
+                                } else {
+                                    console.log('Failed to update username.');
+                                }
+                            });
+                    }
+                });
+        }
+
+
+        // Connection opened
+        socket.addEventListener('open', (event) => {
+            if (userId) {
+                socket.send(`${userId} has connected`);
+            } else {
+                socket.send('A new user has connected');
+            }
+        });
+
+        const letterSubstitutions = {
+            '3': ['e'],
+            '4': ['a'],
+            '@': ['a'],
+            '5': ['s'],
+            '1': ['l'],
+            '1': ['i'],
+            '7': ['t'],
+            '8': ['b'],
+            '9': ['g'],
+            '0': ['o'],
+            '2': ['z']
+        };
+
+
+        function applySubstitutions(word) {
+            let substitutedWord = '';
+            for (const letter of word.toLowerCase()) {
+                if (letterSubstitutions.hasOwnProperty(letter)) {
+                    const substitutions = letterSubstitutions[letter];
+                    substitutedWord += substitutions[Math.floor(Math.random() * substitutions.length)]; // Choose a random substitution
+                } else {
+                    substitutedWord += letter;
+                }
+            }
+            return substitutedWord;
+        }
+
+        function isProfanitySubstitute(word) {
+            const substitutedWord = applySubstitutions(word);
+            return profanityList.includes(substitutedWord.toLowerCase());
+        }
+
+
+        function filterProfanity(message) {
+            let words = message.split(' ');
+            for (let i = 0; i < words.length; i++) {
+                if (isProfanitySubstitute(words[i].toLowerCase())) {
+                    words[i] = '*'.repeat(words[i].length); // Censor the entire word
+                }
+            }
+            return words.join(' ');
+        }
+
+
+
+
+
+        // Store the timestamps of the last 5 messages for each user
+        const userMessageTimestamps = {};
+
+        function sendMessage() {
+
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            if (!message) {
+                return;
+            }
+            if (message.length > 100) {
+                alert('Message is too long. Please keep it under 100 characters. Your message is ' + message.length + ' characters long.');
+                return;
+            }
+
+            // Check if the user has sent 5 messages in the last 10 seconds
+            const now = Date.now();
+            const timestamps = userMessageTimestamps[userId] || [];
+            while (timestamps.length > 0 && now - timestamps[0] > 10000) {
+                timestamps.shift();
+            }
+            if (timestamps.length >= 5) {
+                alert('You have sent too many messages. Please wait a moment before sending another.');
+                return;
+            }
+
+            // Record the timestamp of the new message
+            timestamps.push(now);
+            userMessageTimestamps[userId] = timestamps;
+
+            const messageWithId = `${userId}: ${message}`; // Append the unique identifier to the message
+            socket.send(messageWithId);
+
+            fetch('/update-chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    link: trimmedLink,
+                    message: messageWithId,
+                }),
+            })
+                .then(response => response.json())
+                //.then(data => console.log(data))
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+            // Clear the input field after sending the message
+            messageInput.value = '';
+        }
+
+
+        // Add an event listener for the 'Enter' key
+        document.getElementById('messageInput').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent the default action to stop the form from being submitted
+                sendMessage();
+            }
+        });
+
+
+
+
+        socket.addEventListener('message', (event) => {
+            const chatFeed = document.getElementById('chatFeed');
+            const newMessage = document.createElement('p');
+            if (event.data instanceof Blob) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                    newMessage.textContent = filterProfanity(this.result);
+                    chatFeed.appendChild(newMessage);
+                    chatFeed.scrollTop = chatFeed.scrollHeight; // Scroll to bottom
+                }
+                reader.readAsText(event.data);
+            } else {
+                newMessage.textContent = filterProfanity(event.data);
+                chatFeed.appendChild(newMessage);
+                chatFeed.scrollTop = chatFeed.scrollHeight; // Scroll to bottom
+            }
+        });
+
+        // This doesn't work but I'm leaving it here for now
+        socket.addEventListener('close', (event) => {
+            // Send a message to the server indicating that the user has disconnected
+            socket.send(`${userId} has disconnected`);
+        });
+
+
+        function fetchAndUpdateChat() {
+            // Fetch icons from the server
+            fetch('/get-all-chats')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch chats');
+                    }
+                    return response.json();
+                })
+                .then(chatData => {
+                    const chatFeed = document.getElementById('chatFeed');
+                    chatFeed.innerHTML = ''; // Clear the chat feed
+
+                    // Check if trimmedLink is in chatData
+                    if (trimmedLink in chatData) {
+                        const messagesForTrimmedLink = chatData[trimmedLink];
+                        messagesForTrimmedLink.forEach(message => {
+                            const newMessage = document.createElement('p');
+                            newMessage.textContent = message;
+                            chatFeed.appendChild(newMessage);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching chats:', error);
+                });
+        }
+        fetchAndUpdateChat();
+
+
+        // DEBUG ONLY: Simulate updates to player stats
+        function simulateUpdates() {
+            // Simulate updates to player stats
+            window.playerData.team0.forEach(player => {
+                const playerId = `${player.name}-${player.number}`;
+                if (!previousDataTeam0[playerId]) {
+                    previousDataTeam0[playerId] = { ...player }; // Create a copy of the player data
+                } else {
+                    // Update previous data with current values before applying changes
+                    Object.assign(previousDataTeam0[playerId], player);
+                }
+                console.log("Updating Team 0");
+                // Update each stat with a random value between 0 and 5
+                player.goals = getRandomInt(0, 5);
+                player.behinds = getRandomInt(0, 5);
+                player.kicks = getRandomInt(0, 5);
+                player.handballs = getRandomInt(0, 5);
+                player.marks = getRandomInt(0, 5);
+                player.tackles = getRandomInt(0, 5);
+                player.hitouts = getRandomInt(0, 5);
+                player.fantasy = getRandomInt(0, 100);
+            });
+
+            window.playerData.team1.forEach(player => {
+                const playerId = `${player.name}-${player.number}`;
+                if (!previousDataTeam1[playerId]) {
+                    previousDataTeam1[playerId] = { ...player }; // Create a copy of the player data
+                } else {
+                    // Update previous data with current values before applying changes
+                    Object.assign(previousDataTeam1[playerId], player);
+                }
+                console.log("Updating Team 1");
+                // Update each stat with a random value between 0 and 5
+                player.goals = getRandomInt(0, 5);
+                player.behinds = getRandomInt(0, 5);
+                player.kicks = getRandomInt(0, 5);
+                player.handballs = getRandomInt(0, 5);
+                player.marks = getRandomInt(0, 5);
+                player.tackles = getRandomInt(0, 5);
+                player.hitouts = getRandomInt(0, 5);
+                player.fantasy = getRandomInt(0, 100);
+            });
+
+            // Re-render player data with simulated updates
+            formatPlayerData(0, previousDataTeam0);
+            formatPlayerData(1, previousDataTeam1);
+        }
+
+        // Function to get a random integer between min and max (inclusive)
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Simulate updates every 5 seconds
+        //setInterval(simulateUpdates, 1000);
+
+    </script>
+    <script src="https://kit.fontawesome.com/0bb575a0ce.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

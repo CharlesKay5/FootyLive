@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="fixture-data">
+        <!-- Fixture data will be displayed here -->
+    </div>
+
+    <script>
+
+        // Function to fetch fixture data from the server
+        function fetchFixtureData() {
+            return fetch('/fixture-data')
+                .then(response => response.json())
+                .catch(error => {
+                    console.error('Error fetching fixture data:', error);
+                    throw error; // Propagate the error
+                });
+        }
+
+        // Function to format and display fixture data
+        function displayFixtureData() {
+            const fixtureDataContainer = document.getElementById('fixture-data');
+            fixtureDataContainer.innerHTML = ''; // Clear previous data
+
+            fetchFixtureData()
+                .then(data => {
+                    // Iterate over each fixture and create HTML elements to display them
+                    data.games.forEach(fixture => {
+
+                        const localLink = fixture.link.split("/").pop();
+
+                        const fixtureElement = document.createElement('a');
+                        fixtureElement.href = '/';
+                        fixtureElement.classList.add('fixtureScoreboard');
+
+                        fixtureElement.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            console.log("FIXTURE LINK: ", fixture.link);
+                            fetch('/game-link', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    link: fixture.link
+                                })
+                            }).then(response => {
+                                if (response.ok) {
+                                    window.location.href = `/fixture/${localLink}`;
+                                } else {
+                                    console.error('Error setting game link:', response.status);
+                                }
+                            }).catch(error => {
+                                console.error('Error setting game link:', error);
+                            });
+                        });
+
+                        let winning = "";
+                        const highestScore = Math.max(fixture.team0score, fixture.team1score);
+                        const lowestScore = Math.min(fixture.team0score, fixture.team1score);
+                        const margin = highestScore - lowestScore;
+                        const team0NameForIcon = fixture.team0.replace(/\s/g, '');
+                        const team1NameForIcon = fixture.team1.replace(/\s/g, '');
+
+                        if (fixture.team0score == highestScore) {
+                            winning = `${fixture.team0} by ${margin}`;
+                        }
+                        else {
+                            winning = `${fixture.team1} by ${margin}`;
+                        }
+
+                        if (fixture.team0score == fixture.team1score) {
+                            if (highestScore == 0){
+                                winning = "TBD";
+                            }else{
+                                winning = "Draw";
+                            }
+                        }
+
+                        fixtureElement.innerHTML = `
+                            
+                            <div class="team homeTeamContainer">
+                                <h2 class="hide-on-mobile">${fixture.team0}</h2>
+                                <img id="homeTeamIcon" src="/svg/${team0NameForIcon}.svg" alt="Home Team Logo">
+                                <h2 id="homeTeamScore">${fixture.team0score}</h2>
+                            </div>
+                            <div class="gameInfo">
+                                <h2 id="currentPeriod">${fixture.time}</h2>
+                                <p id="margin">${winning}</p>
+                                <br>
+                                <p id="gameLocation">${fixture.location}</p>
+                            </div>
+                            <div class="team awayTeamContainer">
+                                <h2 id="awayTeamScore">${fixture.team1score}</h2>
+                                <img id="awayTeamIcon" src="/svg/${team1NameForIcon}.svg" alt="Away Team Logo">
+                                <h2 class="hide-on-mobile">${fixture.team1}</h2>
+                            </div>
+                     
+                        `;
+
+                        fixtureDataContainer.appendChild(fixtureElement);
+
+                        let fixtureScoreboards = document.getElementsByClassName('fixtureScoreboard');
+                        if (fixture.time == 'FULL TIME'){
+                            for (let i = 0; i < fixtureScoreboards.length; i++) {
+                                fixtureScoreboards[i].style.borderTop = '8px red solid';
+                            }
+                        }else if (fixture.time.includes("Q")){
+                            for (let i = 0; i < fixtureScoreboards.length; i++) {
+                                fixtureScoreboards[i].style.borderTop = '8px green solid';
+                            }
+                        }
+                    });
+                })
+                .catch(error => {
+                    // Handle errors, e.g., display an error message
+                    fixtureDataContainer.innerHTML = '<p>Error fetching fixture data. Please try again later.</p>';
+                    throw error; // Propagate the error
+                });
+        }
+
+        // Function to fetch and display fixture data initially upon page load
+        displayFixtureData();
+
+        // Function to fetch and display fixture data every 10 seconds
+        setInterval(displayFixtureData, 60000);
+
+    </script>
+</body>
+
+</html>
