@@ -114,17 +114,17 @@
         </ul>
     </div>
     <div class="message-container">
-        <span class="chat-span">
-            <input id="messageInput" type="text" placeholder="Send message">
-            <button id="messageButton" onclick="sendMessage()">Go</button>
-            <input id="usernameInput" type="text" placeholder="Change username">
-
-            <button id="usernameButton">Go</button>
-        </span>
-        <span class="chat-span">
-
-        </span>
         <div id="chatFeed"></div>
+        <span class="chat-span">
+            <div class="input-container">
+                <input id="messageInput" type="text" placeholder="Send message">
+                <button id="messageButton" onclick="sendMessage()"><i class="fa-regular fa-comment"></i></button>
+            </div>
+            <div class="input-container">
+                <input id="usernameInput" type="text" placeholder="Change username">
+                <button id="usernameButton"><i class="fa-solid fa-pencil"></i></button>
+            </div>
+        </span>
     </div>
 
     <script type="text/javascript" src="/ProfanityList.js"></script>
@@ -179,7 +179,7 @@
 
 
             if (teamData && Array.isArray(teamData)) {
-                closeTooltip();
+                //closeTooltip();
 
 
                 // Get the first player of each team
@@ -595,14 +595,10 @@
             }, 3000);
         }
 
-        let trimmedLink;
-        function fetchTrimmedLink() {
-            return fetch('/trimmedLink')
-                .then(response => response.json())
-                .then(data => {
-                    trimmedLink = data; // Assuming '/trimmedLink' returns a string
-                });
-        }
+
+
+        let trimmedLink = window.location.href.split('/').pop();
+
         // Function to fetch player data and format it
         function fetchAndFormatPlayerData() {
             Promise.all([
@@ -641,9 +637,8 @@
                 });
         }
 
-        fetchTrimmedLink().then(trimmedLink => {
-            fetchAndFormatPlayerData(trimmedLink);
-        });
+
+        fetchAndFormatPlayerData(trimmedLink);
 
         // Function to fetch data every 10 seconds
         setInterval(fetchAndFormatPlayerData, 10000);
@@ -834,14 +829,7 @@
         }
 
 
-        // Connection opened
-        socket.addEventListener('open', (event) => {
-            if (userId) {
-                socket.send(`${userId} has connected`);
-            } else {
-                socket.send('A new user has connected');
-            }
-        });
+        
 
         const letterSubstitutions = {
             '3': ['e'],
@@ -922,7 +910,7 @@
             userMessageTimestamps[userId] = timestamps;
 
             const messageWithId = `${userId}: ${message}`; // Append the unique identifier to the message
-            socket.send(messageWithId);
+            //socket.send(messageWithId);
 
             fetch('/update-chat', {
                 method: 'POST',
@@ -939,6 +927,8 @@
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+
+            fetchAndUpdateChat();
 
             // Clear the input field after sending the message
             messageInput.value = '';
@@ -974,12 +964,6 @@
             }
         });
 
-        // This doesn't work but I'm leaving it here for now
-        socket.addEventListener('close', (event) => {
-            // Send a message to the server indicating that the user has disconnected
-            socket.send(`${userId} has disconnected`);
-        });
-
 
         function fetchAndUpdateChat() {
             // Fetch icons from the server
@@ -995,6 +979,7 @@
                     chatFeed.innerHTML = ''; // Clear the chat feed
 
                     // Check if trimmedLink is in chatData
+                    console.log(chatData[trimmedLink]);
                     if (trimmedLink in chatData) {
                         const messagesForTrimmedLink = chatData[trimmedLink];
                         messagesForTrimmedLink.forEach(message => {

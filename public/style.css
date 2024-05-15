@@ -33,6 +33,16 @@ td {
     /* font-family: "Inter", Arial, "Helvetica Neue", sans-serif; */
 }
 
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70%;
+    margin-bottom: 5px;;
+}
+
+
 .message-container {
     display: flex;
     flex-direction: column;
@@ -43,58 +53,60 @@ td {
 }
 
 .chat-span {
-    width: 60%;
+    width: 95%;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    vertical-align: middle;
 }
 
-
-#messageInput{
-    width: 60%;
+#messageInput {
+   
+    width: 50%;
     height: 40px;
     border-radius: 10px;
     border: 1px solid #dee2e6;
-    margin-right: 10px;
+    padding-right: 50px;
+    padding-left: 10px
+    /* Make room for the button */
 }
 
 #messageButton {
-    width: 5%;
-    height: 40px;
-    border-radius: 100px;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
     border: 1px solid #dee2e6;
     background-color: #007bff;
     color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 10px;
+    
 }
 
-
-#usernameInput{
+#usernameInput {
+    
     width: 20%;
     height: 40px;
     border-radius: 10px;
     border: 1px solid #dee2e6;
-    margin-right: 10px;
+    padding-right: 50px;
+    /* Make room for the button */
+    padding-left: 10px
 }
 
 #usernameButton {
-    width: 5%;
-    height: 40px;
-    border-radius: 100px;
-    border: 1px solid #dee2e6;
     
+    
+
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
     background-color: #007bff;
     color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
+    margin: 0;
 
-#usernameInput, #messageInput {
-    text-align: left;
-    padding-left: 10px; /* Adjust as needed */
 }
 
 
@@ -308,12 +320,15 @@ td {
 table tr:first-child th:first-child {
     border-top-left-radius: 10px;
 }
+
 table tr:first-child th:last-child {
     border-top-right-radius: 10px;
 }
+
 tbody tr:last-child td:first-child {
     border-bottom-left-radius: 10px;
 }
+
 tbody tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
@@ -553,7 +568,7 @@ i {
         margin-bottom: 0px;
         background-color: #F8F9FA;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-    }   
+    }
 
     th,
     td {
@@ -661,5 +676,93 @@ i {
         font-size: 12px;
         padding: 15px;
         line-height: 1;
+    }
+
+    .input-container {
+        position: relative;
+        width: 90%;
+    }
+
+
+    .message-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        vertical-align: top;
+        height: 80vh;
+    }
+
+    .chat-span {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        margin-bottom: 10px;
+    }
+
+    #messageInput {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        padding-right: 50px;
+        /* Make room for the button */
+    }
+
+    #messageButton {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        /* Move the top edge to the center of the container */
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        background-color: #007bff;
+        color: white;
+        margin: 0;
+    }
+
+    #usernameInput {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        padding-right: 50px;
+        /* Make room for the button */
+    }
+
+    #usernameButton {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        /* Move the top edge to the center of the container */
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        background-color: #007bff;
+        color: white;
+        margin: 0;
+
+    }
+
+
+
+
+    #chatFeed {
+        width: 90%;
+        height: 500px;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        padding: 10px;
+        margin-bottom: 10px;
+        overflow-y: scroll;
     }
 }

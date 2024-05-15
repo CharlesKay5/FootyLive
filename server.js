@@ -1,6 +1,7 @@
 const express = require('express');
 const puppeteerCrawl = require('./crawlerAPI.js'); // Importing your logic file
 const fixtureCrawl = require('./fixtureAPI.js'); // Importing your logic file
+const randomUsername = require('./public/randomUsername.js');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios').default;
@@ -30,7 +31,7 @@ app.use(express.static('public'));
 app.use(compression());
 app.use(bodyParser.json());
 app.use((req, res, next) => {
-    // Assign a unique identifier to each user session
+    // Assign a unique identifier to each user session    
     req.userId = uuid.v4();
     next();
 });
@@ -42,7 +43,7 @@ app.get('/server-start-time', (req, res) => {
 
 
 app.get('/new-user-id', (req, res) => {
-    const userId = uuidv4();
+    const userId = randomUsername.getRandomUsername();
     res.json({ userId });
 });
 
@@ -127,7 +128,6 @@ app.post('/game-link', (req, res) => {
 
 
 
-let trimmedLink = link.split("/").pop();
 
 app.get('/trimmedLink', (req, res) => {
     res.json(link.split("/").pop());
