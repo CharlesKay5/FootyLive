@@ -27,7 +27,6 @@ wss.on('connection', ws => {
 
 // Serve static files including CSS
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
 app.use(compression());
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -37,12 +36,12 @@ app.use((req, res, next) => {
 });
 app.use((req, res, next) => {
     if (req.path.substr(-1) === '/' && req.path.length > 1) {
-      const query = req.url.slice(req.path.length);
-      res.redirect(301, req.path.slice(0, -1) + query);
+        const query = req.url.slice(req.path.length);
+        res.redirect(301, req.path.slice(0, -1) + query);
     } else {
-      next();
+        next();
     }
-  });
+});
 
 const serverStartTime = Date.now();
 app.get('/server-start-time', (req, res) => {
@@ -60,8 +59,16 @@ let usernames = {};
 // Route to check if a username is taken
 app.get('/check-username/:username', (req, res) => {
     const username = req.params.username;
-    const isTaken = usernames.hasOwnProperty(username) && usernames[username].isTaken;
-    res.json({ isTaken });
+    fs.readFile('usernames.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).json({ error: 'An error occurred while reading the file.' });
+            return;
+        }
+        const usernames = JSON.parse(data);
+        const isTaken = usernames.hasOwnProperty(username) && usernames[username].isTaken;
+        res.json({ isTaken });
+    });
 });
 
 // Route to update the username
@@ -79,7 +86,15 @@ app.post('/update-username', (req, res) => {
         });
         // Add the new username
         usernames[newUsername] = { userId, isTaken: true };
-        res.json({ success: true });
+        // Write the updated usernames object to usernames.json
+        fs.writeFile('usernames.json', JSON.stringify(usernames), (err) => {
+            if (err) {
+                console.error(err);
+                res.status(500).json({ error: 'An error occurred while writing to the file.' });
+                return;
+            }
+            res.json({ success: true });
+        });
     }
 });
 
@@ -149,7 +164,7 @@ app.get('/fixture/:link', async (req, res) => {
 
     try {
         // Fetch player data from /player-stats endpoint using axios
-        const response = await axios.get(`http://localhost:5000/${trimmedLink}/player-stats`);
+        const response = await axios.get(`http://localhost:5000/player-stats/${trimmedLink}`);
         if (!response.data) {
             throw new Error('Failed to fetch player data');
         }
@@ -203,7 +218,7 @@ async function updatePlayerStats(url) {
     }
 }
 
-app.get('/:link/player-stats', (req, res) => {
+app.get('/player-stats/:link', (req, res) => {
     const link = req.params.link;
     if (playerStats[link]) {
         res.json(playerStats[link]); // Send the stats for the specific link
@@ -230,7 +245,7 @@ app.post('/remove-icon', (req, res) => {
     const playerId = req.body.playerId;
     // Remove the icon for the player
     delete iconsState[playerId];
-    
+
     res.sendStatus(200);
 });
 

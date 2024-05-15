@@ -13,7 +13,7 @@
 
 <body>
     <h1 id="loadingHeader"></h1>
-
+    <button id="darkModeToggle"><i class="fa-solid fa-star-half-stroke"></i></button>
     <div class="scoreboard">
         <div class="team homeTeamContainer">
             <img id="homeTeamIcon" src="" alt="Home Team Logo">
@@ -127,11 +127,15 @@
         </span>
     </div>
 
-    <script type="text/javascript" src="/ProfanityList.js"></script>
-    <script type="module">
-        //import profanityList from './ProfanityList.js';
-    </script>
+    <script type="text/javascript" src="/BannedList.js"></script>
+    <!-- <script type="module">
+        import profanityList from './ProfanityList.js';
+    </script> -->
     <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
         // Variable to prevent colour changes when there is a stat update
         var allowColourChange = true;
 
@@ -623,13 +627,12 @@
         }
 
 
-
         let trimmedLink = window.location.href.split('/').pop();
 
         // Function to fetch player data and format it
         function fetchAndFormatPlayerData() {
             Promise.all([
-                fetch(`/${trimmedLink}/player-stats/`),
+                fetch(`/player-stats/${trimmedLink}`),
                 //fetch(`/${trimmedLink}/player-stats/?team=1`)
             ])
                 .then(responses => Promise.all(responses.map(response => response.json())))
@@ -888,7 +891,12 @@
 
         function isProfanitySubstitute(word) {
             const substitutedWord = applySubstitutions(word);
-            return profanityList.includes(substitutedWord.toLowerCase());
+            for (const profanity of profanityList) {
+                if (substitutedWord.toLowerCase().includes(profanity)) {
+                    return true;
+                }
+            }
+            return false;
         }
 
 
@@ -896,6 +904,7 @@
             let words = message.split(' ');
             for (let i = 0; i < words.length; i++) {
                 if (isProfanitySubstitute(words[i].toLowerCase())) {
+                    
                     words[i] = '*'.repeat(words[i].length); // Censor the entire word
                 }
             }
@@ -936,7 +945,8 @@
             timestamps.push(now);
             userMessageTimestamps[userId] = timestamps;
 
-            const messageWithId = `${userId}: ${message}`; // Append the unique identifier to the message
+            let messageWithId = `${userId}: ${message}`;
+            messageWithId = filterProfanity(messageWithId); // Append the unique identifier to the message
             //socket.send(messageWithId);
 
             fetch('/update-chat', {
@@ -1021,6 +1031,32 @@
         }
         fetchAndUpdateChat();
 
+        document.getElementById('darkModeToggle').addEventListener('click', function () {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+
+        // document.getElementById('darkModeToggle').addEventListener('click', function () {
+        //     const currentTheme = document.documentElement.getAttribute('data-theme');
+        //     let newTheme = 'light';
+        //     if (currentTheme === 'dark') {
+        //         newTheme = 'light';
+        //     } else {
+        //         newTheme = 'dark';
+        //     }
+        //     document.documentElement.setAttribute('data-theme', newTheme);
+            
+        // });
+
+        
 
         // DEBUG ONLY: Simulate updates to player stats
         function simulateUpdates() {

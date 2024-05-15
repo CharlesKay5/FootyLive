@@ -8,6 +8,28 @@
     scrollbar-width: none;
 }
 
+:root {
+    --text-color: #2a2a2a;
+    --background-color: #f8f9fa;
+    --table-background-color: #F8F9FA;
+    --lightrow-background-color: #e9ecef;
+    --darkrow-background-color: #dee2e6;
+    --tablehead-background-color: #f2f2f2;
+    --input-background-color: #f8f9fa;
+    --fixturescoreboard-background-color: #fff;
+}
+
+[data-theme="dark"] {
+    --text-color: #f8f9fa;
+    --background-color: #2a2a2a;
+    --table-background-color: #202020;
+    --lightrow-background-color: #2a2a2a;
+    --darkrow-background-color: #1a1a1a;
+    --tablehead-background-color: #2a2a2a;
+    --input-background-color: #202020;
+    --fixturescoreboard-background-color: #2a2a2a;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -39,9 +61,14 @@ td {
     align-items: center;
     position: relative;
     width: 70%;
-    margin-bottom: 5px;;
+    margin-bottom: 5px;
+    ;
 }
 
+input {
+    background-color: var(--input-background-color);
+    color: var(--text-color)
+}
 
 .message-container {
     display: flex;
@@ -63,14 +90,14 @@ td {
 }
 
 #messageInput {
-   
+
     width: 50%;
     height: 40px;
     border-radius: 10px;
     border: 1px solid #dee2e6;
     padding-right: 50px;
     padding-left: 10px
-    /* Make room for the button */
+        /* Make room for the button */
 }
 
 #messageButton {
@@ -81,11 +108,11 @@ td {
     border: 1px solid #dee2e6;
     background-color: #007bff;
     color: white;
-    
+
 }
 
 #usernameInput {
-    
+
     width: 20%;
     height: 40px;
     border-radius: 10px;
@@ -96,8 +123,8 @@ td {
 }
 
 #usernameButton {
-    
-    
+
+
 
     width: 44px;
     height: 44px;
@@ -141,9 +168,10 @@ td {
 
 /* Set background color and font family */
 body {
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
+
     /* Light gray background */
-    color: #2a2a2a;
+    color: var(--text-color);
     /* Dark text color */
     margin: 0;
     /* Remove default margin */
@@ -163,7 +191,7 @@ a {
 
 .fixtureScoreboard * {
     cursor: pointer;
-    color: #2a2a2a;
+    color: var(--text-color);
 }
 
 #fixture-data {
@@ -172,9 +200,23 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    background-color: var(--background-color);
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+#darkModeToggle {
+    z-index: 999;
+    color: var(--text-color);
+    background-color: var(--darkrow-background-color);
+    
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 60px;
+    
 }
 
 .fixtureScoreboard {
@@ -190,7 +232,7 @@ a {
     /* Add space around the scoreboard */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     /* Add drop shadow */
-    background-color: #fff;
+    background-color: var(--fixturescoreboard-background-color);
 }
 
 .fixtureScoreboard .homeTeamContainer {
@@ -215,15 +257,26 @@ a {
     padding: 20px;
     text-align: center;
     width: 35%;
-    margin: 0 auto;
-    color: #2a2a2a;
+    margin: 0 auto 20px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 20px;
+}
+
+[data-theme="dark"] img {
+    -webkit-filter: drop-shadow(2px 0px 0 white) drop-shadow(0px 2px 0 white) drop-shadow(-2px -0px 0 white) drop-shadow(-0px -2px 0 white);
+  filter: drop-shadow(2px 0px 0 white) drop-shadow(0px 2px 0 white) drop-shadow(-2px -0px 0 white) drop-shadow(-0px -2px 0 white);
+
 }
 
 #homeTeamIcon,
 #awayTeamIcon {
     width: 80px;
     height: 80px;
-    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
 }
 
 .team {
@@ -238,7 +291,7 @@ a {
 #homeTeamScore,
 #awayTeamScore {
     font-size: 2em;
-    /* 30px */
+    color: var(--text-color);
     margin-bottom: 0;
 }
 
@@ -253,7 +306,7 @@ a {
     font-size: 18px;
     padding-bottom: 5px;
     font-weight: bold;
-    color: #2a2a2a;
+    color: var(--text-color);
     margin-bottom: 0;
 }
 
@@ -276,7 +329,7 @@ a {
 /* Style for each table */
 .table-container {
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--table-background-color);
     /* White background */
     border-radius: 10px;
     /* Rounded corners */
@@ -353,8 +406,7 @@ tr td:first-child {
 }
 
 th {
-    background-color: #f2f2f2;
-    /* Light gray background for table headings */
+    background-color: var(--tablehead-background-color);
 }
 
 .playerName,
@@ -364,12 +416,12 @@ th {
 
 /* Alternating row colors */
 tr:nth-child(even) {
-    background-color: #dee2e6;
+    background-color: var(--darkrow-background-color);
     /* Darker shade for even rows */
 }
 
 tr:nth-child(odd) {
-    background-color: #e9ecef;
+    background-color: var(--lightrow-background-color);
     /* Lighter shade for odd rows */
 }
 
@@ -566,7 +618,7 @@ i {
         padding-right: 0;
         padding-top: 5px;
         margin-bottom: 0px;
-        background-color: #F8F9FA;
+        background-color: var(--table-background-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     }
 

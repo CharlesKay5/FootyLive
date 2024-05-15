@@ -9,11 +9,16 @@
 </head>
 
 <body>
+    <button id="darkModeToggle"><i class="fa-solid fa-star-half-stroke"></i></button>
     <div id="fixture-data">
         <!-- Fixture data will be displayed here -->
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
 
         // Function to fetch fixture data from the server
         function fetchFixtureData() {
@@ -41,7 +46,7 @@
                         fixtureElement.href = '/';
                         fixtureElement.classList.add('fixtureScoreboard');
 
-                        fixtureElement.addEventListener('click', function(event) {
+                        fixtureElement.addEventListener('click', function (event) {
                             event.preventDefault();
                             console.log("FIXTURE LINK: ", fixture.link);
                             fetch('/game-link', {
@@ -78,9 +83,9 @@
                         }
 
                         if (fixture.team0score == fixture.team1score) {
-                            if (highestScore == 0){
+                            if (highestScore == 0) {
                                 winning = "TBD";
-                            }else{
+                            } else {
                                 winning = "Draw";
                             }
                         }
@@ -109,11 +114,11 @@
                         fixtureDataContainer.appendChild(fixtureElement);
 
                         let fixtureScoreboards = document.getElementsByClassName('fixtureScoreboard');
-                        if (fixture.time == 'FULL TIME'){
+                        if (fixture.time == 'FULL TIME') {
                             for (let i = 0; i < fixtureScoreboards.length; i++) {
                                 fixtureScoreboards[i].style.borderTop = '8px red solid';
                             }
-                        }else if (fixture.time.includes("Q")){
+                        } else if (fixture.time.includes("Q")) {
                             for (let i = 0; i < fixtureScoreboards.length; i++) {
                                 fixtureScoreboards[i].style.borderTop = '8px green solid';
                             }
@@ -133,7 +138,20 @@
         // Function to fetch and display fixture data every 10 seconds
         setInterval(displayFixtureData, 60000);
 
+        document.getElementById('darkModeToggle').addEventListener('click', function () {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
     </script>
+    <script src="https://kit.fontawesome.com/0bb575a0ce.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
