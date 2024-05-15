@@ -979,7 +979,6 @@
                     chatFeed.innerHTML = ''; // Clear the chat feed
 
                     // Check if trimmedLink is in chatData
-                    console.log(chatData[trimmedLink]);
                     if (trimmedLink in chatData) {
                         const messagesForTrimmedLink = chatData[trimmedLink];
                         messagesForTrimmedLink.forEach(message => {

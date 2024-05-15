@@ -95,8 +95,8 @@ app.get('/get-all-chats', (req, res) => {
     res.json(chats);
 });
 
-const fixtureURL = "https://www.afl.com.au/fixture";
-// const fixtureURL = "https://www.afl.com.au/fixture?Competition=1&Season=62&Round=963";
+//const fixtureURL = "https://www.afl.com.au/fixture";
+const fixtureURL = "https://www.afl.com.au/fixture?Competition=1&Season=62&Round=963";
 
 
 let fixture = { games: [] }; // Initialize fixture data
@@ -116,7 +116,7 @@ async function updateFixtureData() {
         console.error('Error fetching fixture data:', error);
     }
 }
-
+//setInterval(updateFixtureData, 30000);
 
 
 app.post('/game-link', (req, res) => {

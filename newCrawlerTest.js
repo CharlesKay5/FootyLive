@@ -16,11 +16,12 @@ async function subsCrawl(baseURL, data, browser, callback) {
     console.log(`Crawling subs for ${baseURL.split('/').pop()}`);
     const statsURL = `${baseURL}#player-stats`;
 
+
+    //const browser = await puppeteer.launch({ headless: false, defaultViewport: null });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 
-    await page.goto(`https://www.afl.com.au/matches/team-lineups?GameWeeks=9`, { "waitUntil": "networkidle0" });
-    //await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
+    await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
 
     try {
         await page.waitForSelector(".empty-state__message-label", { timeout: 3000 });
@@ -67,6 +68,8 @@ async function statsCrawl(baseURL, data, browser, callback) {
     console.log(`Crawling Stats for ${baseURL.split('/').pop()}`);
     const statsURL = `${baseURL}#player-stats`;
 
+
+    //const browser = await puppeteer.launch({ headless: true, defaultViewport: null });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 
@@ -226,6 +229,8 @@ async function statsCrawl(baseURL, data, browser, callback) {
 async function matchupCrawl(baseURL, data, browser, callback) {
     console.log(`Crawling matchup for ${baseURL.split('/').pop()}`);
 
+
+    //const browser = await puppeteer.launch({ headless: true, defaultViewport: null });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 
@@ -355,6 +360,8 @@ async function matchupCrawl(baseURL, data, browser, callback) {
 async function breakevenCrawl(baseURL, data, browser, callback) {
     console.log(`Crawling breakevens for ${baseURL.split('/').pop()}`);
 
+
+    //const browser = await puppeteer.launch({ headless: true, defaultViewport: null });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 

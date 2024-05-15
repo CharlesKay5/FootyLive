@@ -79,7 +79,7 @@ async function fixtureCrawl(fixtureURL, data) {
                 game.team0score = fixtureRows[i].getElementsByClassName("fixtures__match-score-total")[0].textContent;
             }
             catch {
-                console.log("No team0score")
+                //console.log("No team0score")
                 game.team0score = "0";
             }
 
@@ -87,7 +87,7 @@ async function fixtureCrawl(fixtureURL, data) {
                 game.team1score = fixtureRows[i].getElementsByClassName("fixtures__match-score-total")[1].textContent;
             }
             catch {
-                console.log("No team1score")
+                //console.log("No team1score")
                 game.team1score = "0";
             }
         
@@ -108,7 +108,7 @@ async function fixtureCrawl(fixtureURL, data) {
 
     data.games = fixtureData["Fixtures"];
     //console.log("Current games data:", data.games);
-
+    console.log("Crawl complete for fixtures")
     await browser.close();
 }
 
