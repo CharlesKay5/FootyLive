@@ -35,6 +35,14 @@ app.use((req, res, next) => {
     req.userId = uuid.v4();
     next();
 });
+app.use((req, res, next) => {
+    if (req.path.substr(-1) === '/' && req.path.length > 1) {
+      const query = req.url.slice(req.path.length);
+      res.redirect(301, req.path.slice(0, -1) + query);
+    } else {
+      next();
+    }
+  });
 
 const serverStartTime = Date.now();
 app.get('/server-start-time', (req, res) => {
@@ -216,6 +224,14 @@ app.post('/update-icon', (req, res) => {
     iconsState[playerId] = icon;
 
     res.json({ status: 'success' });
+});
+
+app.post('/remove-icon', (req, res) => {
+    const playerId = req.body.playerId;
+    // Remove the icon for the player
+    delete iconsState[playerId];
+    
+    res.sendStatus(200);
 });
 
 app.get('/get-all-icons', (req, res) => {

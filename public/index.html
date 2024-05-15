@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1 id="loadingHeader">Fetching Data... you shouldn't be seeing this</h1>
+    <h1 id="loadingHeader"></h1>
 
     <div class="scoreboard">
         <div class="team homeTeamContainer">
@@ -42,7 +42,7 @@
 
         <div class="table-container">
             <div class="teamAndTime">
-                <h3 id="homeTeam">Home</h3>
+                <h3 id="homeTeam"></h3>
             </div>
             <table id="team0">
                 <tr>
@@ -64,7 +64,7 @@
         </div>
         <div class="table-container">
             <div class="teamAndTime">
-                <h3 id="awayTeam">Away</h3>
+                <h3 id="awayTeam"></h3>
             </div>
             <table id="team1">
                 <tr>
@@ -250,10 +250,10 @@
                             breakeven.style.color = '#b13b3b';
                         }
 
-                        const previousIcon = rowIcons[playerId];
-                        if (previousIcon) {
-                            addIcon(row, previousIcon);
-                        }
+                        // const previousIcon = rowIcons[playerId];
+                        // if (previousIcon) {
+                        //     addIcon(row, previousIcon);
+                        // }
 
                         if (player.sub == 1) {
                             addIcon(row, '<i class="customIcon" id="subsitute" style="content: url(\'/icons/greenvest.png\')"></i>');
@@ -471,6 +471,33 @@
             let playerId = row.id;
             rowIcons[playerId] = icon;
             closeTooltip();
+
+            iconCol.querySelector("i").addEventListener('click', function () {
+                // Remove icon from the DOM
+                this.remove();
+                delete rowIcons[playerId];
+                // Send request to the server to remove the icon
+                fetch('/remove-icon', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        playerId: playerId,
+                    }),
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        // Handle success if needed
+                    })
+                    .catch(error => {
+                        console.error('Error removing icon:', error);
+                    });
+
+                fetchAndUpdateIcons();
+            });
 
             fetch('/update-icon', {
                 method: 'POST',
@@ -829,7 +856,7 @@
         }
 
 
-        
+
 
         const letterSubstitutions = {
             '3': ['e'],
