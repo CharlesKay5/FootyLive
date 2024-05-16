@@ -62,6 +62,7 @@ async function fixtureCrawl(fixtureURL, data) {
                 time: 0,
                 location: 0,
                 link: 0,
+                live: 0,
             }
 
             // try {
@@ -92,7 +93,9 @@ async function fixtureCrawl(fixtureURL, data) {
             }
         
                 game.time = fixtureRows[i].getElementsByClassName("fixtures__status-label")[0].textContent;
-         
+                if (game.time == "FULL TIME"){
+                    game.live = 1;
+                }
                 game.location = fixtureRows[i].getElementsByClassName("fixtures__match-venue")[0].textContent;
           
                 game.link = fixtureRows[i].getElementsByClassName("fixtures__details")[0].querySelector("a").href;

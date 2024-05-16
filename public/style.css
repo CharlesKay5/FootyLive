@@ -17,6 +17,7 @@
     --tablehead-background-color: #f2f2f2;
     --input-background-color: #f8f9fa;
     --fixturescoreboard-background-color: #fff;
+    --tablehover-background-color: #ced4da;
 }
 
 [data-theme="dark"] {
@@ -25,9 +26,10 @@
     --table-background-color: #202020;
     --lightrow-background-color: #2a2a2a;
     --darkrow-background-color: #1a1a1a;
-    --tablehead-background-color: #2a2a2a;
+    --tablehead-background-color: #3b3b3b;
     --input-background-color: #202020;
-    --fixturescoreboard-background-color: #2a2a2a;
+    --fixturescoreboard-background-color: #1a1a1a;
+    --tablehover-background-color: #616161;
 }
 
 ::-webkit-scrollbar {
@@ -76,7 +78,9 @@ input {
     justify-content: center;
     align-items: center;
     vertical-align: top;
-    height: 80vh;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 65vh;
 }
 
 .chat-span {
@@ -194,6 +198,11 @@ a {
     color: var(--text-color);
 }
 
+#fixtureHeader {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
 #fixture-data {
     display: flex;
     flex-direction: column;
@@ -209,14 +218,14 @@ a {
     z-index: 999;
     color: var(--text-color);
     background-color: var(--darkrow-background-color);
-    
+
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
     width: 44px;
     height: 44px;
     border-radius: 60px;
-    
+
 }
 
 .fixtureScoreboard {
@@ -266,7 +275,7 @@ a {
 
 [data-theme="dark"] img {
     -webkit-filter: drop-shadow(2px 0px 0 white) drop-shadow(0px 2px 0 white) drop-shadow(-2px -0px 0 white) drop-shadow(-0px -2px 0 white);
-  filter: drop-shadow(2px 0px 0 white) drop-shadow(0px 2px 0 white) drop-shadow(-2px -0px 0 white) drop-shadow(-0px -2px 0 white);
+    filter: drop-shadow(2px 0px 0 white) drop-shadow(0px 2px 0 white) drop-shadow(-2px -0px 0 white) drop-shadow(-0px -2px 0 white);
 
 }
 
@@ -390,19 +399,18 @@ tr {
     height: 36px;
 }
 
-tr td:not(:nth-child(2)):not(:nth-child(3)),
-th:not(:nth-child(2)):not(:nth-child(3)) {
+table:not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)),
+table:not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
     padding: 8px;
     padding-right: 50%;
     text-align: right;
     /* Center align content */
     vertical-align: middle;
-    white-space: nowrap;
 }
 
-tr td:first-child {
+table:not(#timelineTable) tr td:first-child {
     text-align: center;
-    width: 30%;
+    /* The 'wi' property is incomplete. Please complete it or remove it. */
 }
 
 th {
@@ -427,18 +435,19 @@ tr:nth-child(odd) {
 
 /* Table row hover effect */
 tr:hover {
-    background-color: #ced4da;
+    background-color: var(--tablehover-background-color);
     /* Light gray background on hover */
 }
 
-td:nth-child(2) {
+table:not(#timelineTable) td:nth-child(2) {
     text-align: center;
     font-weight: bolder;
+    padding-right: 2px;
     color: rgb(161, 161, 161);
 }
 
 /* Bold fantasy number */
-td:last-child {
+table:not(#timelineTable) td:last-child {
     /* 9th column (index starts from 1) */
     font-weight: bold;
     /* Make the text bold */
@@ -448,18 +457,61 @@ td:last-child {
     font-weight: bold;
 }
 
+#timelineTable {
+    display: none;
+    margin: 15px auto;
+    width: 800px;
+    border-collapse: separate;
+}
+
+#timelinePlayerName {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#timelineTable tr td:not(:first-child) {
+    text-align: left;
+    padding: 15px;
+}
+
+#timelineTable tr td {
+    background-color: var(--darkrow-background-color);
+}
+
+#timelineTable tr td {
+    min-width: 150px;
+    max-width: 170px;
+}
+
 #tooltip {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     opacity: 0;
     width: 250px;
-    height: 350px;
-    background-color: #f2f2f2;
+    height: 380px;
+    background-color: var(--tablehead-background-color);
     border-radius: 10%;
-    align-items: center;
-    line-height: 50px;
     transition: opacity 0.25s ease;
     z-index: 1;
     position: absolute;
     top: 0;
+}
+
+#tooltip #timelineBtn {
+    /* margin: 0px 40px 00px 40px; */
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--tablehead-background-color);
+    color: var(--text-color);
 }
 
 .tooltip::before {
@@ -501,6 +553,18 @@ td:last-child {
 
 #tooltip img {
     width: 250px;
+    margin-bottom: 15px;
+}
+
+#timelineTable img {
+    width: 100px;
+    margin: auto;
+}
+
+#timelineTable td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #tooltip ul {
@@ -550,14 +614,14 @@ i {
     transform: translateX(-50%);
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent #f2f2f2 transparent;
+    border-color: transparent transparent var(--tablehead-background-color) transparent;
 
 }
 
 .triangle.above {
     top: auto;
     bottom: -15px;
-    border-color: #f2f2f2 transparent transparent transparent;
+    border-color: var(--tablehead-background-color) transparent transparent transparent;
 }
 
 #close-btn {
@@ -565,6 +629,7 @@ i {
     position: absolute;
     top: 15px;
     right: 20px;
+    z-index: 1000;
     cursor: pointer;
 }
 
@@ -609,6 +674,12 @@ i {
 
     #homeTeam {
         text-align: left;
+        margin-left: 10px;
+    }
+
+    #awayTeam {
+        text-align: left;
+        margin-left: 10px;
     }
 
     .table-container {
@@ -618,19 +689,26 @@ i {
         padding-right: 0;
         padding-top: 5px;
         margin-bottom: 0px;
-        background-color: var(--table-background-color);
+
         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     }
 
-    th,
-    td {
-        font-size: 12px;
 
-        /* Reduce padding on small screens */
+    .customIcon:not(#tooltip .customIcon) {
+        margin-left: 0px;
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        vertical-align: middle;
     }
 
-    tr td:not(:nth-child(2)):not(:nth-child(3)),
-    th:not(:nth-child(2)):not(:nth-child(3)) {
+    th:not(#timelineTable th),
+    td:not(#timelineTable td) {
+        font-size: 12px;
+    }
+
+    :not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)),
+    :not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
         padding: 0px;
         padding-right: 0;
         text-align: center;
@@ -639,22 +717,22 @@ i {
         white-space: nowrap;
     }
 
-    th:nth-child(n+4):nth-child(-n+8),
-    td:nth-child(n+4):nth-child(-n+8) {
+    :not(#timelineTable) th:nth-child(n+4):nth-child(-n+8),
+    :not(#timelineTable) td:nth-child(n+4):nth-child(-n+8) {
         font-size: 11px;
         text-align: center;
         width: 24px;
     }
 
-    th:nth-child(n+9):nth-child(-n+11),
-    td:nth-child(n+9):nth-child(-n+11) {
+    :not(#timelineTable th) th:nth-child(n+9):nth-child(-n+11),
+    :not(#timelineTable td) td:nth-child(n+9):nth-child(-n+11) {
         font-size: 11px;
         text-align: center;
         width: 30px;
     }
 
-    th:nth-child(n+12),
-    td:nth-child(n+12) {
+    :not(#timelineTable) th:nth-child(n+12),
+    :not(#timelineTable) td:nth-child(n+12) {
         font-size: 12px;
         text-align: center;
         width: 30px;
@@ -677,7 +755,7 @@ i {
         text-align: center;
 
         margin-top: 10px;
-        color: #2a2a2a;
+
     }
 
 
@@ -694,7 +772,7 @@ i {
         height: 120px;
         margin: 20px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
+        background-color: var(--fixturescoreboard-background-color);
     }
 
     #currentPeriod {
@@ -742,7 +820,7 @@ i {
         justify-content: center;
         align-items: center;
         vertical-align: top;
-        height: 80vh;
+        height: 75vh;
     }
 
     .chat-span {
@@ -813,8 +891,46 @@ i {
         height: 500px;
         border-radius: 10px;
         border: 1px solid #dee2e6;
-        padding: 10px;
+        padding: 5px;
         margin-bottom: 10px;
         overflow-y: scroll;
+        font-size: 14px;
     }
+
+
+
+    #darkModeToggle {
+
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #timelineContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #timelineTable {
+        width: 95vw;
+        font-size: 11px;
+    }
+
+    #timelineTable tr td:not(:first-child) {
+        text-align: left;
+        padding: 0;
+    }
+
+    #timelineTable tr td {
+        min-width: 19vw;
+        max-width: 19vw;
+    }
+
+
+    #timelineTable img {
+        width: 100%;
+        margin: auto;
+    }
+
 }

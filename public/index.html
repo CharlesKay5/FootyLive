@@ -112,7 +112,31 @@
             <li><i class="customIcon" id="tagged" style="content: url('/icons/padlock.png')"></i></li>
             <li><i class="customIcon" id="tagger" style="content: url('/icons/tag.png')"></i></li>
         </ul>
+        <button id="timelineBtn">View Timeline</button>
     </div>
+
+    <div>
+        <table id="timelineTable">
+            <tr>
+                <th><i id="hideTimeline" class="fa-solid fa-eye"></i></th>
+                <th id="Q1Header">Q1</th>
+                <th id="Q2Header">Q2</th>
+                <th id="Q3Header">Q3</th>
+                <th id="Q4Header">Q4</th>
+            </tr>
+            <tr>
+                <td id="timelineImage"><img src="" alt="Player image">
+                    <p id="timelinePlayerName">Name</p>
+                </td>
+                <td id="Q1"></td>
+                <td id="Q2"></td>
+                <td id="Q3"></td>
+                <td id="Q4"></td>
+            </tr>
+
+        </table>
+    </div>
+
     <div class="message-container">
         <div id="chatFeed"></div>
         <span class="chat-span">
@@ -132,12 +156,17 @@
         import profanityList from './ProfanityList.js';
     </script> -->
     <script>
+
+        var allowColourChange = true;
+
+
+
         document.addEventListener('DOMContentLoaded', (event) => {
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
         });
         // Variable to prevent colour changes when there is a stat update
-        var allowColourChange = true;
+
 
         // Store the colours of each row
         const rowColours = {};
@@ -225,7 +254,7 @@
                         if (previousColour) {
                             row.style.backgroundColor = previousColour;
                         }
-
+                        
                         const differences = calculateDifferences(player, previousData[playerId]);
                         const cells = [
                             `<td id="iconHolder"></td>`,
@@ -241,6 +270,7 @@
                             `<td class="breakeven">${player.breakeven}</td>`,
                             `<td>${parseInt(player.fantasy)}${renderSuperscript(differences.fantasy)}</td>`
                         ];
+
 
 
                         row.innerHTML = cells.join('');
@@ -282,14 +312,19 @@
                                 }
                             }
                         }
-
                         handleRowColorAndSuperscripts(row, playerId, differences);
                         fetchAndUpdateIcons();
-
+                        formatScoringTimeline(playerId);
 
                         row.querySelector(".playerName").addEventListener('click', function (event) {
                             showTooltip(playerId, player.team, row, event.clientX, event.clientY);
                         });
+
+                        if (player.team === 0) {
+                            Object.assign(previousDataTeam0[playerId], player);
+                        } else {
+                            Object.assign(previousDataTeam1[playerId], player);
+                        }
                     }
                 });
             } else {
@@ -299,8 +334,7 @@
 
         function handleRowColorAndSuperscripts(row, playerId, differences) {
             const fantasyDifference = differences.fantasy;
-            const anyStatChanged = Object.values(differences).some(diff => diff !== 0);
-
+            const anyStatChanged = Object.values(differences).some(diff => diff !== 0 && !isNaN(diff));
             if (row.style.backgroundColor == '') {
                 handleRowColorChange(row, fantasyDifference);
             }
@@ -348,7 +382,6 @@
 
 
         function showTooltip(playerId, team, row, x, y) {
-
             if (!allowColourChange) {
                 return;
             }
@@ -394,7 +427,6 @@
 
             if (tooltipBottom > tableHeight) {
                 // If the tooltip would go past the bottom of the viewport, display it above the mouse position
-                //console.log(tableHeight);
                 tooltip.style.top = `${y - tooltipHeight + window.scrollY - (yOffset)}px`;
                 tooltip.classList.add('above');
                 triangle.classList.add('above');
@@ -447,6 +479,11 @@
                 }
             }
 
+
+            tooltip.querySelector("#timelineBtn").addEventListener('click', function (event) {
+                showTimeline(playerId);
+                closeTooltip();
+            });
         }
 
         function closeTooltip() {
@@ -584,6 +621,89 @@
             closeTooltip();
         }
 
+        let scoringTimeline = {};
+        // let scoringTimeline = {
+        //     "S.Walsh-18": [
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:34",
+        //             "stat": "g",
+        //             "difference": 1,
+        //             "fantasy": 6,
+        //         },
+        //         {
+        //             "quarter": 1,
+        //             "time": "12:35",
+        //             "stat": "g",
+        //             "difference": 2,
+        //             "fantasy": 12,
+        //         },
+        //         {
+        //             "quarter": 2,
+        //             "time": "12:34",
+        //             "stat": "k",
+        //             "difference": -3,
+        //             "fantasy": 9,
+        //         }
+        //     ],
+        // };
+
         // Function to calculate differences in player stats
         function calculateDifferences(newPlayer, oldPlayer) {
             const differences = {};
@@ -596,6 +716,28 @@
                 differences.tackles = newPlayer.tackles - oldPlayer.tackles;
                 differences.hitouts = newPlayer.hitouts - oldPlayer.hitouts;
                 differences.fantasy = newPlayer.fantasy - oldPlayer.fantasy;
+
+
+
+                // Format the scoringTimeline data
+                Object.keys(differences).forEach(key => {
+                    if (differences[key] != 0) {
+
+
+                        if (!scoringTimeline[newPlayer.playerId]) {
+                            scoringTimeline[newPlayer.playerId] = [];
+                        }
+                        scoringTimeline[newPlayer.playerId].push({
+                            quarter: newPlayer.time.split(' ')[1][1],
+                            time: newPlayer.time,
+                            stat: key,
+                            difference: differences[key],
+                            fantasy: newPlayer.fantasy,
+                        });
+                    }
+                });
+                //console.log(scoringTimeline)
+                formatScoringTimeline(newPlayer.playerId);
             } else {
                 // If no old data is available, set differences to 0
                 Object.keys(newPlayer).forEach(key => {
@@ -605,12 +747,99 @@
             return differences;
         }
 
+        function formatScoringTimeline(playerId) {
+            if (!scoringTimeline[playerId]) {
+                scoringTimeline[playerId] = [];
+            }
+
+            const timelineTable = document.getElementById(`timelineTable`);
+
+            if (timelineTable) {
+                //insert data to table based on which quarter it was in
+                for (let i = 0; i < scoringTimeline[playerId].length; i++) {
+                    let quarter = scoringTimeline[playerId][i].quarter;
+                    let time = scoringTimeline[playerId][i].time;
+                    let stat = scoringTimeline[playerId][i].stat;
+                    let difference = scoringTimeline[playerId][i].difference;
+                    let fantasy = scoringTimeline[playerId][i].fantasy;
+                    let sign = difference > 0 ? '+' : '';
+
+                    // add the stat into the existing td
+                    let col;
+                    let header;
+                    let quarterFantasy;
+
+                    if (quarter >= 1 && quarter <= 4) {
+                        col = document.querySelector(`#Q${quarter}`);
+                    } else {
+                        continue;
+                    }
+
+                    let p = document.createElement('p');
+                    p.textContent = `${time}: ${sign}${fantasy} (${difference}${stat})`;
+                    col.appendChild(p);
+
+
+                    // Calculate quarter sums:
+
+                }
+
+                for (let i = 1; i <= 4; i++) {
+                    let header = document.getElementById(`Q${i}Header`);
+                    header.innerText = `Q${i} (${calculateQuarterScore(`Q${i}`)})`;
+                }
+
+
+            }
+        }
+
+        function calculateQuarterScore(quarter) {
+
+            let scoringTimeline = document.getElementById(`${quarter}`).textContent;
+            let quarterSum = 0;
+            let scoringTimelineText = scoringTimeline.replace(/\s/g, '');
+            let positiveScores = scoringTimelineText.split('+').map(data => data.split("(")[0]);
+            let negativeScores = scoringTimelineText.split('-').map(data => data.split("(")[0]);
+            positiveScores.forEach(score => {
+                if (/^\d+$/.test(score)) {
+                    quarterSum += parseInt(score);
+                }
+            });
+            negativeScores.forEach(score => {
+                if (/^\d+$/.test(score)) {
+                    quarterSum -= parseInt(score);
+                }
+            });
+
+            return quarterSum;
+        }
+
+        //formatScoringTimeline('S.Walsh-18');
+
+        function showTimeline(playerId) {
+            const timelineTable = document.getElementById(`timelineTable`);
+            timelineTable.style.display = 'table';
+            timelineTable.querySelector('img').src = `/images/${playerId}.png`;
+            timelineTable.querySelector('#timelinePlayerName').textContent = `${playerId.replace(/-/g, ' ')}`;
+            timelineTable.querySelector("#hideTimeline").addEventListener('click', function (event) {
+                hideTimeline(timelineTable);
+            });
+            timelineTable.scrollIntoView({ behavior: 'smooth' });
+
+            formatScoringTimeline(playerId);
+
+        }
+
+        function hideTimeline(timelineTable) {
+            timelineTable.style.display = 'none';
+        }
+
         // Function to render superscript based on difference
         function renderSuperscript(diff) {
             if (diff !== 0) {
                 var diffInt = parseInt(diff);
                 const color = diffInt > 0 ? 'green' : 'red';
-                const sign = diffInt > 0 ? '+' : '';
+                const sign = diffInt > 0 ? '+' : '-';
                 hideSuperscript();
                 return `<sup style="color: ${color};">${sign}${diffInt}</sup>`;
             } else {
@@ -645,21 +874,17 @@
                         const playerId = `${player.name}-${player.number}`;
                         if (!previousDataTeam0[playerId]) {
                             previousDataTeam0[playerId] = { ...player }; // Create a copy of the player data
-                        } else {
-                            // Update previous data with current values before applying changes
-                            Object.assign(previousDataTeam0[playerId], player);
                         }
+                        //formatScoringTimeline(playerId);
                     });
                     team1Players.forEach(player => {
                         const playerId = `${player.name}-${player.number}`;
                         if (!previousDataTeam1[playerId]) {
                             previousDataTeam1[playerId] = { ...player }; // Create a copy of the player data
-                        } else {
-                            // Update previous data with current values before applying changes
-                            Object.assign(previousDataTeam1[playerId], player);
                         }
+                        //formatScoringTimeline(playerId);
                     });
-                    // Re-render player data with simulated updates
+
                     window.playerData.team0 = team0Players;
                     window.playerData.team1 = team1Players;
                     formatPlayerData(0, previousDataTeam0);
@@ -691,6 +916,7 @@
 
             const timeArray = currentTime.split(' ');
             const quarter = timeArray[1][1];
+            const quarterFull = timeArray[1];
             let minutes = 0;
 
 
@@ -720,27 +946,31 @@
             }
 
             let percentage = ((parseInt(minutes) / 120) * 100) + ((parseInt(quarter) - 1) * 25);
-
-            switch (quarter) {
-                case 1:
-                    if (percentage > 25) {
-                        percentage = 25;
+            switch (quarterFull) {
+                case 'Q1':
+                    if (percentage >= 25) {
+                        percentage = 24;
                     }
                     break;
-                case 2:
-                    if (percentage > 50) {
-                        percentage = 50;
+                case 'Q2':
+                    if (percentage >= 50) {
+                        percentage = 49;
                     }
                     break;
-                case 3:
-                    if (percentage > 75) {
-                        percentage = 75;
+                case "Q3":
+                    if (percentage >= 75) {
+                        percentage = 74;
                     }
                     break;
-                case 'a':
+                case 'Q4':
+                    if (percentage >= 100) {
+                        percentage = 99;
+                    }
+                    break;
+                case 'HALF':
                     percentage = 50;
                     break;
-                case 'i':
+                case 'Time':
                     percentage = 100;
                     break;
                 default:
@@ -750,14 +980,6 @@
             gamePercentage.textContent = Math.ceil(percentage) + '%';
 
         }
-
-
-
-        function storePreviousData(data) {
-            //previousData = data;
-            Object.assign(previousData, data);
-        }
-
 
         document.getElementById('usernameButton').addEventListener('click', function () {
             // Retrieve the value of the messageInput element
@@ -840,7 +1062,6 @@
                                         }),
                                     })
                                         .then(response => response.json())
-                                        //.then(data => console.log(data))
                                         .catch((error) => {
                                             console.error('Error:', error);
                                         });
@@ -904,7 +1125,7 @@
             let words = message.split(' ');
             for (let i = 0; i < words.length; i++) {
                 if (isProfanitySubstitute(words[i].toLowerCase())) {
-                    
+
                     words[i] = '*'.repeat(words[i].length); // Censor the entire word
                 }
             }
@@ -960,7 +1181,6 @@
                 }),
             })
                 .then(response => response.json())
-                //.then(data => console.log(data))
                 .catch((error) => {
                     console.error('Error:', error);
                 });
@@ -1036,7 +1256,7 @@
             if (currentTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
-                
+
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
@@ -1053,63 +1273,63 @@
         //         newTheme = 'dark';
         //     }
         //     document.documentElement.setAttribute('data-theme', newTheme);
-            
+
         // });
 
-        
+
 
         // DEBUG ONLY: Simulate updates to player stats
-        function simulateUpdates() {
-            // Simulate updates to player stats
-            window.playerData.team0.forEach(player => {
-                const playerId = `${player.name}-${player.number}`;
-                if (!previousDataTeam0[playerId]) {
-                    previousDataTeam0[playerId] = { ...player }; // Create a copy of the player data
-                } else {
-                    // Update previous data with current values before applying changes
-                    Object.assign(previousDataTeam0[playerId], player);
-                }
-                console.log("Updating Team 0");
-                // Update each stat with a random value between 0 and 5
-                player.goals = getRandomInt(0, 5);
-                player.behinds = getRandomInt(0, 5);
-                player.kicks = getRandomInt(0, 5);
-                player.handballs = getRandomInt(0, 5);
-                player.marks = getRandomInt(0, 5);
-                player.tackles = getRandomInt(0, 5);
-                player.hitouts = getRandomInt(0, 5);
-                player.fantasy = getRandomInt(0, 100);
-            });
+        // function simulateUpdates() {
+        //     // Simulate updates to player stats
+        //     window.playerData.team0.forEach(player => {
+        //         const playerId = `${player.name}-${player.number}`;
+        //         if (!previousDataTeam0[playerId]) {
+        //             previousDataTeam0[playerId] = { ...player }; // Create a copy of the player data
+        //         } else {
+        //             // Update previous data with current values before applying changes
+        //             Object.assign(previousDataTeam0[playerId], player);
+        //         }
+        //         console.log("Updating Team 0");
+        //         // Update each stat with a random value between 0 and 5
+        //         player.goals = getRandomInt(0, 5);
+        //         player.behinds = getRandomInt(0, 5);
+        //         player.kicks = getRandomInt(0, 5);
+        //         player.handballs = getRandomInt(0, 5);
+        //         player.marks = getRandomInt(0, 5);
+        //         player.tackles = getRandomInt(0, 5);
+        //         player.hitouts = getRandomInt(0, 5);
+        //         player.fantasy = getRandomInt(0, 100);
+        //     });
 
-            window.playerData.team1.forEach(player => {
-                const playerId = `${player.name}-${player.number}`;
-                if (!previousDataTeam1[playerId]) {
-                    previousDataTeam1[playerId] = { ...player }; // Create a copy of the player data
-                } else {
-                    // Update previous data with current values before applying changes
-                    Object.assign(previousDataTeam1[playerId], player);
-                }
-                console.log("Updating Team 1");
-                // Update each stat with a random value between 0 and 5
-                player.goals = getRandomInt(0, 5);
-                player.behinds = getRandomInt(0, 5);
-                player.kicks = getRandomInt(0, 5);
-                player.handballs = getRandomInt(0, 5);
-                player.marks = getRandomInt(0, 5);
-                player.tackles = getRandomInt(0, 5);
-                player.hitouts = getRandomInt(0, 5);
-                player.fantasy = getRandomInt(0, 100);
-            });
+        //     window.playerData.team1.forEach(player => {
+        //         const playerId = `${player.name}-${player.number}`;
+        //         if (!previousDataTeam1[playerId]) {
+        //             previousDataTeam1[playerId] = { ...player }; // Create a copy of the player data
+        //         } else {
+        //             // Update previous data with current values before applying changes
+        //             Object.assign(previousDataTeam1[playerId], player);
+        //         }
+        //         console.log("Updating Team 1");
+        //         // Update each stat with a random value between 0 and 5
+        //         player.goals = getRandomInt(0, 5);
+        //         player.behinds = getRandomInt(0, 5);
+        //         player.kicks = getRandomInt(0, 5);
+        //         player.handballs = getRandomInt(0, 5);
+        //         player.marks = getRandomInt(0, 5);
+        //         player.tackles = getRandomInt(0, 5);
+        //         player.hitouts = getRandomInt(0, 5);
+        //         player.fantasy = getRandomInt(0, 100);
+        //     });
 
-            // Re-render player data with simulated updates
-            formatPlayerData(0, previousDataTeam0);
-            formatPlayerData(1, previousDataTeam1);
-        }
+        //     // Re-render player data with simulated updates
+        //     formatPlayerData(0, previousDataTeam0);
+        //     formatPlayerData(1, previousDataTeam1);
+        // }
 
-        // Function to get a random integer between min and max (inclusive)
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+        // // Function to get a random integer between min and max (inclusive)
+        // function getRandomInt(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
 
         // Simulate updates every 5 seconds
         //setInterval(simulateUpdates, 1000);

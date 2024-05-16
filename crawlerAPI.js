@@ -19,8 +19,8 @@ async function subsCrawl(baseURL, data, browser, callback) {
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 
-    await page.goto(`https://www.afl.com.au/matches/team-lineups?GameWeeks=9`, { "waitUntil": "networkidle0" });
-    //await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
+    //await page.goto(`https://www.afl.com.au/matches/team-lineups?GameWeeks=9`, { "waitUntil": "networkidle0" });
+    await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
 
     try {
         await page.waitForSelector(".empty-state__message-label", { timeout: 3000 });
@@ -323,7 +323,7 @@ async function matchupCrawl(baseURL, data, browser, callback) {
                 // Convert bench time to int from format "25 min"
                 benchTime = parseInt(benchTime.split(" ")[0]);
             }
-            if (injuredPlayerElements[i].textContent.includes("Injured") || benchTime > 25) {
+            if (injuredPlayerElements[i].textContent.includes("Injured")) {
                 injuredPlayers.push(injuredPlayerElements[i].previousElementSibling.textContent);
             }
         }
