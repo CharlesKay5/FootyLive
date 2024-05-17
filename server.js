@@ -26,7 +26,14 @@ wss.on('connection', ws => {
 });
 
 // Serve static files including CSS
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+    setHeaders: (res, path) => {
+        res.setHeader('Cache-Control', 'public, max-age=432000'); // Cache for 5 days
+        res.setHeader('ETag', true); // Enable ETag
+        res.setHeader('Last-Modified', true); // Enable Last-Modified
+    }
+}));
+
 app.use(compression());
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -270,6 +277,23 @@ app.get('/get-all-icons', (req, res) => {
     res.json(iconsState);
 });
 
+
+let scoringTimeline = {};
+
+app.get('/scoringTimeline/:playerId', (req, res) => {
+    const playerId = req.params.playerId;
+    const data = scoringTimeline[playerId] || [];
+    res.json(data);
+});
+
+app.post('/scoringTimeline', (req, res) => {
+    const { playerId, timeline } = req.body;
+    if (!scoringTimeline[playerId]) {
+        scoringTimeline[playerId] = [];
+    }
+    scoringTimeline[playerId] = scoringTimeline[playerId].concat(timeline);
+    res.json({ message: 'Differences received!' });
+});
 
 // Route for serving player images
 app.get('/player-image/:playerId', async (req, res) => {

@@ -116,13 +116,9 @@
 
                         let fixtureScoreboards = document.getElementsByClassName('fixtureScoreboard');
                         if (fixture.time == 'FULL TIME') {
-                            for (let i = 0; i < fixtureScoreboards.length; i++) {
-                                fixtureScoreboards[i].style.borderTop = '8px red solid';
-                            }
+                            fixtureElement.style.borderTop = '8px red solid';
                         } else if (fixture.time.includes("Q")) {
-                            for (let i = 0; i < fixtureScoreboards.length; i++) {
-                                fixtureScoreboards[i].style.borderTop = '8px green solid';
-                            }
+                            fixtureElement.style.borderTop = '8px green solid';
                         }
                     });
                 })
@@ -144,7 +140,7 @@
             if (currentTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
-                
+
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');

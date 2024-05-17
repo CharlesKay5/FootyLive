@@ -54,7 +54,14 @@ td {
     padding: 0;
     cursor: default;
     font-family: "Inter Variable", "Times New Roman", Times, serif;
+    white-space: nowrap;
     /* font-family: "Inter", Arial, "Helvetica Neue", sans-serif; */
+}
+
+#backButton {
+    position:absolute;
+    top: 10px;
+    left: 10px;
 }
 
 .input-container {
@@ -702,9 +709,13 @@ i {
         vertical-align: middle;
     }
 
+    tr:not(#timelineTable tr){
+        height: 14px;
+    }
+
     th:not(#timelineTable th),
     td:not(#timelineTable td) {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     :not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)),

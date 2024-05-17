@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" href="/icons/foop.png">
     <title>FootyLive</title>
 </head>
 
@@ -150,6 +151,7 @@
             </div>
         </span>
     </div>
+    <div id="backButton"><a href="../fixture"><i class="fa-solid fa-arrow-left-long"></i></a></div>
 
     <script type="text/javascript" src="/BannedList.js"></script>
     <!-- <script type="module">
@@ -254,13 +256,13 @@
                         if (previousColour) {
                             row.style.backgroundColor = previousColour;
                         }
-                        
+
                         const differences = calculateDifferences(player, previousData[playerId]);
                         const cells = [
                             `<td id="iconHolder"></td>`,
                             `<td>${player.number}</td>`,
                             `<td class="playerName">${player.name}</td>`,
-                            `<td class="hide-on-mobile">${parseInt(player.goals)}${renderSuperscript(differences.goals)}.${parseInt(player.behinds)}${renderSuperscript(differences.behinds)}</td>`,
+                            `<td class="hide-on-mobile">${parseInt(player.goals)}.${parseInt(player.behinds)}${renderSuperscript(differences.goals)}${renderSuperscript(differences.behinds, "behinds")}</td>`,
                             `<td class="">${parseInt(player.kicks)}${renderSuperscript(differences.kicks)}</td>`,
                             `<td class="">${parseInt(player.handballs)}${renderSuperscript(differences.handballs)}</td>`,
                             `<td class="">${parseInt(player.marks)}${renderSuperscript(differences.marks)}</td>`,
@@ -270,7 +272,6 @@
                             `<td class="breakeven">${player.breakeven}</td>`,
                             `<td>${parseInt(player.fantasy)}${renderSuperscript(differences.fantasy)}</td>`
                         ];
-
 
 
                         row.innerHTML = cells.join('');
@@ -295,11 +296,13 @@
 
                         if (player.benched == 1) {
                             // Add a p element to the .playerName element containing the word "BEN"
+
                             const playerName = row.querySelector('.playerName');
-                            const benched = document.createElement('span');
-                            benched.textContent = "BEN";
-                            benched.classList.add('benched');
-                            playerName.appendChild(benched);
+                            playerName.style.opacity = "20%";
+                            // const benched = document.createElement('span');
+                            // benched.textContent = "BEN";
+                            // benched.classList.add('benched');
+                            // playerName.appendChild(benched);
                         }
 
                         if (player.injured == 1) {
@@ -314,7 +317,7 @@
                         }
                         handleRowColorAndSuperscripts(row, playerId, differences);
                         fetchAndUpdateIcons();
-                        formatScoringTimeline(playerId);
+                        //fetchScoringTimeline(playerId);
 
                         row.querySelector(".playerName").addEventListener('click', function (event) {
                             showTooltip(playerId, player.team, row, event.clientX, event.clientY);
@@ -324,6 +327,11 @@
                             Object.assign(previousDataTeam0[playerId], player);
                         } else {
                             Object.assign(previousDataTeam1[playerId], player);
+                        }
+
+                        if (currentTimelinePlayer) {
+                            //console.log("Fetching current Player");
+                            fetchScoringTimeline(currentTimelinePlayer);
                         }
                     }
                 });
@@ -363,7 +371,7 @@
                     row.style.backgroundColor = '';
                     allowColourChange = true;
                 }
-            }, 3000);
+            }, 5000);
         }
 
         function handleRowColor(row, color) {
@@ -383,7 +391,7 @@
 
         function showTooltip(playerId, team, row, x, y) {
             if (!allowColourChange) {
-                return;
+                //return;
             }
             if (!row) return; // Exit if player row element is not found
             const tooltip = document.getElementById("tooltip");
@@ -600,15 +608,19 @@
             switch (colour) {
                 case 'default':
                     row.style.backgroundColor = '';
+                    row.style.color = "var(--text-color)"
                     break;
                 case 'orange':
                     row.style.backgroundColor = 'rgb(247, 190, 129)';
+                    row.style.color = "#2a2a2a"
                     break;
                 case 'blue':
                     row.style.backgroundColor = 'rgb(206, 227, 246)';
+                    row.style.color = "#2a2a2a"
                     break;
                 case 'purple':
                     row.style.backgroundColor = 'rgb(227, 206, 246)';
+                    row.style.color = "#2a2a2a"
                 default:
                     break;
             }
@@ -621,176 +633,222 @@
             closeTooltip();
         }
 
-        let scoringTimeline = {};
-        // let scoringTimeline = {
-        //     "S.Walsh-18": [
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:34",
-        //             "stat": "g",
-        //             "difference": 1,
-        //             "fantasy": 6,
-        //         },
-        //         {
-        //             "quarter": 1,
-        //             "time": "12:35",
-        //             "stat": "g",
-        //             "difference": 2,
-        //             "fantasy": 12,
-        //         },
-        //         {
-        //             "quarter": 2,
-        //             "time": "12:34",
-        //             "stat": "k",
-        //             "difference": -3,
-        //             "fantasy": 9,
+        ////////////////////////////////////
+        // async function fetchGameStats(trimmedLink, playerName) {
+        //     try {
+        //         const response = await fetch(`/player-stats/${trimmedLink}`);
+        //         if (!response.ok) {
+        //             throw new Error(`HTTP error! status: ${response.status}`);
         //         }
-        //     ],
-        // };
+        //         const allStats = await response.json();
+        //         const playerStats = allStats.players.find(player => player.name === playerName);
+        //         if (playerStats) {
+        //             // console.log(playerStats);
+        //             let quarterStats = playerStats[trimmedLink].q2;
+        //             console.log(quarterStats)
+        //             // Now you can use playerStats.goals, playerStats.behinds, etc.
+        //         } else {
+        //             console.log('Player not found');
+        //         }
+        //     } catch (error) {
+        //         console.log('There was a problem fetching the game stats:', error);
+        //     }
+        // }
 
-        // Function to calculate differences in player stats
+        // // Call the function with the trimmed link and player name
+        // fetchGameStats('5977', 'C.Warner');
+       
+
+        //////////////////////////////////
+
         function calculateDifferences(newPlayer, oldPlayer) {
             const differences = {};
+
             if (oldPlayer) {
-                differences.goals = newPlayer.goals - oldPlayer.goals;
-                differences.behinds = newPlayer.behinds - oldPlayer.behinds;
-                differences.kicks = newPlayer.kicks - oldPlayer.kicks;
-                differences.handballs = newPlayer.handballs - oldPlayer.handballs;
-                differences.marks = newPlayer.marks - oldPlayer.marks;
-                differences.tackles = newPlayer.tackles - oldPlayer.tackles;
-                differences.hitouts = newPlayer.hitouts - oldPlayer.hitouts;
-                differences.fantasy = newPlayer.fantasy - oldPlayer.fantasy;
+                const keys = ['goals', 'behinds', 'kicks', 'handballs', 'marks', 'tackles', 'hitouts', 'fantasy', 'freesfor', 'freesagainst'];
 
+                keys.forEach(key => {
+                    differences[key] = newPlayer[key] - oldPlayer[key];
+                });
 
+                // DEBUG
+                // if (oldPlayer.name == 'N.Anderson') {
+                //     differences.goals = 1;
+                //     differences.behinds = 1;
+                //     differences.kicks = 3;
+                //     differences.handballs = 4;
+                //     differences.marks = 2;
+                //     differences.tackles = 3;
+                //     differences.hitouts = 2;
+                // }
 
-                // Format the scoringTimeline data
+                // if (oldPlayer.name == 'M.Rowell') {
+                //     differences.goals = 9;
+                //     differences.behinds = 2;
+                //     differences.freesfor = 1;
+                //     differences.freesagainst = 3;
+                // }
+
+                let scoringTimeline = [];
+                let playerId = `${newPlayer.name}-${newPlayer.number}`;
+
                 Object.keys(differences).forEach(key => {
-                    if (differences[key] != 0) {
 
+                    if (differences[key] !== 0 && key != 'Fantasy') {
+                        let fantasy = 0;
+                        let keyShorthand;
 
-                        if (!scoringTimeline[newPlayer.playerId]) {
-                            scoringTimeline[newPlayer.playerId] = [];
+                        const timeArray = newPlayer.time.split(' ');
+                        let quarter = timeArray[1][1];
+                        switch (timeArray[0]) {
+                            case 'Full': quarter = 4; break;
+                            case 'Half': quarter = 2; break;
                         }
-                        scoringTimeline[newPlayer.playerId].push({
-                            quarter: newPlayer.time.split(' ')[1][1],
-                            time: newPlayer.time,
-                            stat: key,
-                            difference: differences[key],
-                            fantasy: newPlayer.fantasy,
-                        });
+                        let time = newPlayer.time.split(' ')[2]
+                        console.log(newPlayer.time)
+                        console.log(time)
+                        //console.log("QUARTER " + quarter)
+
+                        switch (key) {
+                            case "goals": fantasy += (differences[key] * 6); keyShorthand = 'g'; break;
+                            case "behinds": fantasy += (differences[key] * 1); keyShorthand = 'b'; break;
+                            case "kicks": fantasy += (differences[key] * 3); keyShorthand = 'k'; break;
+                            case "handballs": fantasy += (differences[key] * 2); keyShorthand = 'h'; break;
+                            case "marks": fantasy += (differences[key] * 3); keyShorthand = 'm'; break;
+                            case "tackles": fantasy += (differences[key] * 4); keyShorthand = 't'; break;
+                            case "hitouts": fantasy += (differences[key] * 1); keyShorthand = 'ho'; break;
+                            case "freesfor": fantasy += (differences[key] * 1); keyShorthand = 'ff'; break;
+                            case "freesagainst": fantasy -= (differences[key] * 3); keyShorthand = 'fa'; break;
+                            default:
+                                break;
+                        }
+                        if (keyShorthand) {
+                            scoringTimeline.push({
+                                quarter: quarter, // Adjust as per the actual data structure
+                                time: time,
+                                stat: keyShorthand,
+                                difference: differences[key],
+                                fantasy: fantasy,
+                            });
+                        }
+
                     }
                 });
-                //console.log(scoringTimeline)
-                formatScoringTimeline(newPlayer.playerId);
+
+                if (scoringTimeline.length > 0) {
+                    fetch('/scoringTimeline', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ playerId, timeline: scoringTimeline })
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Network response was not ok, status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => ('Server response:', data))
+                        .catch(error => console.error('Error:', error));
+                }
             } else {
-                // If no old data is available, set differences to 0
                 Object.keys(newPlayer).forEach(key => {
                     differences[key] = 0;
                 });
             }
+
             return differences;
         }
 
-        function formatScoringTimeline(playerId) {
-            if (!scoringTimeline[playerId]) {
-                scoringTimeline[playerId] = [];
+        function fetchScoringTimeline(playerId) {
+            fetch(`/scoringTimeline/${playerId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok, status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data) {
+                        formatScoringTimeline(playerId, data);
+                    }
+                })
+                .catch(error => console.error('Error fetching scoring timeline:', error));
+        }
+
+        function formatScoringTimeline(playerId, data) {
+            const timelineTable = document.getElementById('timelineTable');
+
+            if (!timelineTable) {
+                console.error("Timeline table not found");
+                return;
             }
 
-            const timelineTable = document.getElementById(`timelineTable`);
-
-            if (timelineTable) {
-                //insert data to table based on which quarter it was in
-                for (let i = 0; i < scoringTimeline[playerId].length; i++) {
-                    let quarter = scoringTimeline[playerId][i].quarter;
-                    let time = scoringTimeline[playerId][i].time;
-                    let stat = scoringTimeline[playerId][i].stat;
-                    let difference = scoringTimeline[playerId][i].difference;
-                    let fantasy = scoringTimeline[playerId][i].fantasy;
-                    let sign = difference > 0 ? '+' : '';
-
-                    // add the stat into the existing td
-                    let col;
-                    let header;
-                    let quarterFantasy;
-
-                    if (quarter >= 1 && quarter <= 4) {
-                        col = document.querySelector(`#Q${quarter}`);
-                    } else {
-                        continue;
-                    }
-
-                    let p = document.createElement('p');
-                    p.textContent = `${time}: ${sign}${fantasy} (${difference}${stat})`;
-                    col.appendChild(p);
-
-
-                    // Calculate quarter sums:
-
+            // Clear existing content
+            for (let i = 1; i <= 4; i++) {
+                const col = document.querySelector(`#Q${i}`);
+                if (col) {
+                    col.innerHTML = '';
                 }
+            }
 
-                for (let i = 1; i <= 4; i++) {
-                    let header = document.getElementById(`Q${i}Header`);
+            data.forEach(entry => {
+                const { quarter, time, stat, difference, fantasy } = entry;
+                const sign = fantasy > 0 ? '+' : '';
+
+                if (quarter >= 1 && quarter <= 4 && entry != 'fantasy') {
+                    const col = document.querySelector(`#Q${quarter}`);
+                    if (col) {
+                        const p = document.createElement('p');
+                        p.textContent = `${time}: ${sign}${fantasy} (${difference}${stat})`;
+                        col.appendChild(p);
+                    }
+                }
+            });
+
+            for (let i = 1; i <= 4; i++) {
+                const header = document.getElementById(`Q${i}Header`);
+                if (header) {
                     header.innerText = `Q${i} (${calculateQuarterScore(`Q${i}`)})`;
                 }
-
-
             }
+        }
+
+        function calculateQuarterScore(quarterId) {
+            const col = document.querySelector(`#${quarterId}`);
+            if (!col) return 0;
+
+            let totalFantasy = 0;
+            col.querySelectorAll('p').forEach(p => {
+                const text = p.textContent;
+                const match = text.match(/([-+]?\d+)\s*\(([-+]?\d+)[a-zA-Z]*\)/);
+                if (match) {
+                    totalFantasy += parseInt(match[1]);
+                }
+            });
+
+            return totalFantasy;
+        }
+
+        let currentTimelinePlayer;
+        function showTimeline(playerId) {
+            if (currentTimelinePlayer != playerId) {
+                for (let i = 1; i <= 4; i++) {
+                    const col = document.querySelector(`#Q${i}`);
+                    col.innerHTML = '';
+                }
+            }
+
+            currentTimelinePlayer = playerId;
+            const timelineTable = document.getElementById('timelineTable');
+            timelineTable.style.display = 'table';
+            timelineTable.querySelector('img').src = `/images/${playerId}.png`;
+            timelineTable.querySelector('#timelinePlayerName').textContent = `${playerId.replace(/-/g, ' ')}`;
+            timelineTable.querySelector("#hideTimeline").addEventListener('click', function (event) {
+                hideTimeline(timelineTable);
+            });
+            timelineTable.scrollIntoView({ behavior: 'smooth' });
+
+            fetchScoringTimeline(playerId);
         }
 
         function calculateQuarterScore(quarter) {
@@ -816,31 +874,28 @@
 
         //formatScoringTimeline('S.Walsh-18');
 
-        function showTimeline(playerId) {
-            const timelineTable = document.getElementById(`timelineTable`);
-            timelineTable.style.display = 'table';
-            timelineTable.querySelector('img').src = `/images/${playerId}.png`;
-            timelineTable.querySelector('#timelinePlayerName').textContent = `${playerId.replace(/-/g, ' ')}`;
-            timelineTable.querySelector("#hideTimeline").addEventListener('click', function (event) {
-                hideTimeline(timelineTable);
-            });
-            timelineTable.scrollIntoView({ behavior: 'smooth' });
 
-            formatScoringTimeline(playerId);
-
-        }
 
         function hideTimeline(timelineTable) {
             timelineTable.style.display = 'none';
+            for (let i = 1; i <= 4; i++) {
+                const col = document.querySelector(`#Q${i}`);
+                col.innerHTML = '';
+            }
+            currentTimelinePlayer = undefined;
+            timelineTable.removeEventListener('click');
         }
 
         // Function to render superscript based on difference
-        function renderSuperscript(diff) {
+        function renderSuperscript(diff, behinds) {
             if (diff !== 0) {
                 var diffInt = parseInt(diff);
                 const color = diffInt > 0 ? 'green' : 'red';
-                const sign = diffInt > 0 ? '+' : '-';
+                const sign = diffInt > 0 ? '+' : '';
                 hideSuperscript();
+                if (behinds == "behinds") {
+                    return `<sup style="color: ${color};">${sign}.${diffInt}</sup>`;
+                }
                 return `<sup style="color: ${color};">${sign}${diffInt}</sup>`;
             } else {
                 return '';
@@ -852,7 +907,7 @@
                 document.querySelectorAll('sup').forEach(sup => {
                     sup.style.visibility = 'hidden';
                 });
-            }, 3000);
+            }, 5000);
         }
 
 
@@ -896,7 +951,7 @@
         fetchAndFormatPlayerData(trimmedLink);
 
         // Function to fetch data every 10 seconds
-        setInterval(fetchAndFormatPlayerData, 10000);
+        setInterval(fetchAndFormatPlayerData, 20000);
 
         function calculateGamePercentage(currentTime) {
 
@@ -967,10 +1022,19 @@
                         percentage = 99;
                     }
                     break;
+                case 'QTR':
+                    percentage = 25;
+                    break;
                 case 'HALF':
                     percentage = 50;
                     break;
-                case 'Time':
+                case '3':
+                    percentage = 75;
+                    break;
+                case '4':
+                    percentage = 100;
+                    break;
+                case 'FULL':
                     percentage = 100;
                     break;
                 default:
@@ -1019,6 +1083,11 @@
 
         function changeUserName(newName) {
             // Send a request to the server to check if the new name is already taken
+
+            if (newName.length > 15) {
+                alert('Username is too long. Please keep it under 15 characters. Your username is ' + newName.length + ' characters long.');
+                return;
+            }
             fetch(`/check-username/${newName}`)
                 .then(response => response.json())
                 .then(data => {

@@ -72,10 +72,10 @@ async function fixtureCrawl(fixtureURL, data) {
             //     console.log("No date")
             // }
 
-                game.team0 = fixtureRows[i].getElementsByClassName("fixtures__match-team-name")[0].textContent;
-           
-                game.team1 = fixtureRows[i].getElementsByClassName("fixtures__match-team-name")[1].textContent;
-           
+            game.team0 = fixtureRows[i].getElementsByClassName("fixtures__match-team-name")[0].textContent;
+
+            game.team1 = fixtureRows[i].getElementsByClassName("fixtures__match-team-name")[1].textContent;
+
             try {
                 game.team0score = fixtureRows[i].getElementsByClassName("fixtures__match-score-total")[0].textContent;
             }
@@ -91,16 +91,16 @@ async function fixtureCrawl(fixtureURL, data) {
                 //console.log("No team1score")
                 game.team1score = "0";
             }
-        
-                game.time = fixtureRows[i].getElementsByClassName("fixtures__status-label")[0].textContent;
-                if (game.time == "FULL TIME"){
-                    game.live = 1;
-                }
-                game.location = fixtureRows[i].getElementsByClassName("fixtures__match-venue")[0].textContent;
-          
-                game.link = fixtureRows[i].getElementsByClassName("fixtures__details")[0].querySelector("a").href;
-        
-            
+
+            game.time = fixtureRows[i].getElementsByClassName("fixtures__status-label")[0].textContent;
+            if (game.time != "FULL TIME" &&  !game.time.includes("pm") && !game.time.includes("am")) {
+                game.live = 1;
+            }
+            game.location = fixtureRows[i].getElementsByClassName("fixtures__match-venue")[0].textContent;
+
+            game.link = fixtureRows[i].getElementsByClassName("fixtures__details")[0].querySelector("a").href;
+
+
             data.games.push(game);
             //console.log("Current games data:", data.games);
         }

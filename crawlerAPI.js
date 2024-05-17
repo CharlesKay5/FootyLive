@@ -111,6 +111,8 @@ async function statsCrawl(baseURL, data, browser, callback) {
                 breakeven: 0,
                 benched: 0,
                 injured: 0,
+                freesfor: 0,
+                freesagainst: 0,
             }
 
             const nameRow = playerStats[i].getElementsByClassName("mc-player-stats-table__player")[0];
@@ -162,6 +164,34 @@ async function statsCrawl(baseURL, data, browser, callback) {
         };
     }, baseURL, data);
     data.players = basicStats["Player"];
+
+
+
+    //////////////////////////
+    const advancedStatsButton = await page.$$("#stats-dropdown-button");
+    await advancedStatsButton[0].click();
+    await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('Enter');
+
+    var advancedStats = await page.evaluate((statsURL, data) => {
+        var playerStats = document.getElementsByClassName("stats-table__body-row");
+        var stats = [];
+        for (let i = 0; i < playerStats.length; i++) {
+            var player = {
+                freesfor: playerStats[i].childNodes[5].textContent,
+                freesagainst: playerStats[i].childNodes[6].textContent,
+            }
+            stats.push(player);
+        }
+        return stats;
+    }, baseURL, data);
+
+    data.players.forEach((player, index) => {
+        player.freesfor = advancedStats[index].freesfor;
+        player.freesagainst = advancedStats[index].freesagainst;
+    });
+
+    ///////////////////////////
 
     await page.goto(statsURL, { "waitUntil": "networkidle0" });
     await page.waitForSelector(".toggle-input__button");
@@ -431,7 +461,7 @@ const puppeteerCrawl = async (baseURL, data) => {
     const [subsData, statsData, matchupData] = await Promise.all([
         subsCrawl(baseURL, data, browser),
         statsCrawl(baseURL, data, browser),
-        matchupCrawl(baseURL, data, browser),        
+        matchupCrawl(baseURL, data, browser),
     ]);
 
     // Assign season average fantasy scores to players
@@ -452,13 +482,13 @@ const puppeteerCrawl = async (baseURL, data) => {
             player.injured = 1;
         }
     });
-    
+
     // Requires data from statscrawl, so it has to be done after
     const [breakevenData] = await Promise.all([
-        breakevenCrawl(baseURL, data, browser)     
+        breakevenCrawl(baseURL, data, browser)
     ]);
     await browser.close();
-    
+
     data.players.forEach((player, index) => {
         player.breakeven = breakevenData.breakevens[`${player.name}-${player.fantasyAvg}`];
     });
