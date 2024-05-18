@@ -71,7 +71,7 @@ td {
     position: relative;
     width: 70%;
     margin-bottom: 5px;
-    ;
+    
 }
 
 input {
@@ -264,6 +264,10 @@ a {
 .fixtureScoreboard .gameInfo {
     text-align: center;
     min-width: 33%;
+}
+#gameLocation {
+    text-align: center;
+    white-space: wrap;
 }
 
 .scoreboard {
@@ -487,7 +491,17 @@ table:not(#timelineTable) td:last-child {
     background-color: var(--darkrow-background-color);
 }
 
-#timelineTable tr td {
+#timelineTable tr td:first-child {
+    min-width: 40px;
+    max-width: 40px;
+}
+
+#timelineTable i {
+    text-align: center;
+    display: block;
+}
+
+#timelineTable tr td:not(:first-child) {
     min-width: 150px;
     max-width: 170px;
 }
@@ -563,7 +577,33 @@ table:not(#timelineTable) td:last-child {
     margin-bottom: 15px;
 }
 
-#timelineTable img {
+
+#timelineInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#timelineText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; /* Adjust as needed */
+    text-align: center;
+}
+
+#timelineText p {
+    text-align: center;
+}
+
+#timelineImage {
+    order: -1;
+}
+
+#timelineHolder {
+    display: none;
+    flex-direction: column;
+    justify-content: center; /* horizontally center children */
+    align-items: center; /* vertically center children */
     width: 100px;
     margin: auto;
 }
@@ -765,10 +805,9 @@ i {
         padding: 0px;
         text-align: center;
 
-        margin-top: 10px;
+        margin-top: 20px;
 
     }
-
 
 
 

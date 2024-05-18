@@ -109,6 +109,8 @@ async function statsCrawl(baseURL, data, browser, callback) {
                 time: 0,
                 sub: 0,
                 breakeven: 0,
+                price: 0,
+                position: 0,
                 benched: 0,
                 injured: 0,
                 freesfor: 0,
@@ -417,7 +419,11 @@ async function breakevenCrawl(baseURL, data, browser, callback) {
                     let average = rows[i].children[4].textContent;
                     if (playerName == rows[i].children[0].children[1].textContent.replace(/\s/g, '').toUpperCase() && parseInt(player.fantasyAvg) == parseInt(average)) {
                         let key = `${player.name}-${player.fantasyAvg}`; // Use name-average as key
-                        breakevens[key] = rows[i].children[5].textContent;
+                        breakevens[key] = {
+                            breakeven: rows[i].children[5].textContent,
+                            price: rows[i].children[2].textContent,
+                            position: rows[i].children[0].getElementsByClassName("playerflag")[0].textContent
+                        };
                         found = true;
                         break;
                     }
@@ -429,7 +435,11 @@ async function breakevenCrawl(baseURL, data, browser, callback) {
                     if (rows[i].children[0] && rows[i].children[0].children[1]) {
                         if (playerName == rows[i].children[0].children[1].textContent.replace(/\s/g, '').toUpperCase()) {
                             let key = `${player.name}-${player.fantasyAvg}`; // Use only name as key
-                            breakevens[key] = rows[i].children[5].textContent;
+                            breakevens[key] = {
+                                breakeven: rows[i].children[5].textContent,
+                                price: rows[i].children[2].textContent,
+                                position: rows[i].children[0].getElementsByClassName("playerflag")[0].textContent
+                            };
                             break;
                         }
                     }
@@ -490,7 +500,14 @@ const puppeteerCrawl = async (baseURL, data) => {
     await browser.close();
 
     data.players.forEach((player, index) => {
-        player.breakeven = breakevenData.breakevens[`${player.name}-${player.fantasyAvg}`];
+        const playerData = breakevenData.breakevens[`${player.name}-${player.fantasyAvg}`];
+        if (playerData) {
+            player.breakeven = playerData.breakeven;
+            player.price = playerData.price;
+            player.position = playerData.position;
+        } else {
+            console.log(`No data found for player: ${player.name}-${player.fantasyAvg}`);
+        }
     });
 
     console.log("CRAWL COMPLETE");

@@ -116,27 +116,37 @@
         <button id="timelineBtn">View Timeline</button>
     </div>
 
-    <div>
-        <table id="timelineTable">
-            <tr>
-                <th><i id="hideTimeline" class="fa-solid fa-eye"></i></th>
-                <th id="Q1Header">Q1</th>
-                <th id="Q2Header">Q2</th>
-                <th id="Q3Header">Q3</th>
-                <th id="Q4Header">Q4</th>
-            </tr>
-            <tr>
-                <td id="timelineImage"><img src="" alt="Player image">
-                    <p id="timelinePlayerName">Name</p>
-                </td>
-                <td id="Q1"></td>
-                <td id="Q2"></td>
-                <td id="Q3"></td>
-                <td id="Q4"></td>
-            </tr>
+    <div id="timelineHolder">
+        <span id="timelineInfo">
+            <img id="timelineImage" style="width: 150px" src="" alt="Player image">
+            <div id="timelineText">
+                <p id="timelinePlayerName">Name</p>
+                <p id="playerPrice">Price</p>
+                <p id="playerPosition">Position</p>
+                <p id="playerBreakeven">BE</p>
+            </div>
+        </span>
+        <div>
+            <table id="timelineTable">
+                <tr>
+                    <th></th>
+                    <th id="Q1Header">Q1</th>
+                    <th id="Q2Header">Q2</th>
+                    <th id="Q3Header">Q3</th>
+                    <th id="Q4Header">Q4</th>
+                </tr>
+                <tr>
+                    <td><i id="hideTimeline" class="fa-solid fa-eye"></i></td>
+                    <td id="Q1"></td>
+                    <td id="Q2"></td>
+                    <td id="Q3"></td>
+                    <td id="Q4"></td>
+                </tr>
 
-        </table>
+            </table>
+        </div>
     </div>
+
 
     <div class="message-container">
         <div id="chatFeed"></div>
@@ -320,7 +330,7 @@
                         //fetchScoringTimeline(playerId);
 
                         row.querySelector(".playerName").addEventListener('click', function (event) {
-                            showTooltip(playerId, player.team, row, event.clientX, event.clientY);
+                            showTooltip(playerId, player.team, row, event.clientX, event.clientY, player);
                         });
 
                         if (player.team === 0) {
@@ -329,12 +339,13 @@
                             Object.assign(previousDataTeam1[playerId], player);
                         }
 
-                        if (currentTimelinePlayer) {
-                            //console.log("Fetching current Player");
-                            fetchScoringTimeline(currentTimelinePlayer);
-                        }
+
                     }
                 });
+                if (currentTimelinePlayer) {
+                    //console.log("Fetching current Player");
+                    fetchScoringTimeline(currentTimelinePlayer);
+                }
             } else {
                 console.error(`Player data for Team ${team} is not available or not in the expected format.`);
             }
@@ -383,13 +394,16 @@
             };
 
             row.style.backgroundColor = colorMap[color] || '';
+            if (colorMap[color]) {
+                row.style.color = '#2a2a2a';
+            }
         }
 
         let colourCircleClickHandlers = [];
         let iconClickHandlers = [];
 
 
-        function showTooltip(playerId, team, row, x, y) {
+        function showTooltip(playerId, team, row, x, y, player) {
             if (!allowColourChange) {
                 //return;
             }
@@ -488,10 +502,12 @@
             }
 
 
-            tooltip.querySelector("#timelineBtn").addEventListener('click', function (event) {
-                showTimeline(playerId);
+            tooltip.querySelector("#timelineBtn").addEventListener('click', function handleClick(event) {
+                showTimeline(playerId, player);
                 closeTooltip();
+                tooltip.querySelector("#timelineBtn").removeEventListener('click', handleClick);
             });
+
         }
 
         function closeTooltip() {
@@ -500,7 +516,10 @@
             tooltip.style.pointerEvents = "none";
         }
 
-
+        function removeTimelineEventListener(tooltip) {
+            const timelineBtn = tooltip.querySelector("#timelineBtn");
+            timelineBtn.removeEventListener('click', showTimeline);
+        }
 
 
 
@@ -657,7 +676,7 @@
 
         // // Call the function with the trimmed link and player name
         // fetchGameStats('5977', 'C.Warner');
-       
+
 
         //////////////////////////////////
 
@@ -688,41 +707,48 @@
                 //     differences.freesfor = 1;
                 //     differences.freesagainst = 3;
                 // }
+                /*
+            let scoringTimeline = [];
+            let playerId = `${newPlayer.name}-${newPlayer.number}`;
 
-                let scoringTimeline = [];
-                let playerId = `${newPlayer.name}-${newPlayer.number}`;
+            Object.keys(differences).forEach(key => {
 
-                Object.keys(differences).forEach(key => {
+                if (differences[key] !== 0 && key != 'Fantasy') {
+                    let fantasy = 0;
+                    let keyShorthand;
 
-                    if (differences[key] !== 0 && key != 'Fantasy') {
-                        let fantasy = 0;
-                        let keyShorthand;
+                    const timeArray = newPlayer.time.split(' ');
+                    let quarter = timeArray[1][1];
+                    switch (timeArray[0]) {
+                        case 'Full': quarter = 4; break;
+                        case 'Half': quarter = 2; break;
+                    }
+                    let time = newPlayer.time.split(' ')[2]
+                    // console.log(newPlayer.time)
+                    // console.log(time)
+                    //console.log("QUARTER " + quarter)
 
-                        const timeArray = newPlayer.time.split(' ');
-                        let quarter = timeArray[1][1];
-                        switch (timeArray[0]) {
-                            case 'Full': quarter = 4; break;
-                            case 'Half': quarter = 2; break;
-                        }
-                        let time = newPlayer.time.split(' ')[2]
-                        console.log(newPlayer.time)
-                        console.log(time)
-                        //console.log("QUARTER " + quarter)
-
-                        switch (key) {
-                            case "goals": fantasy += (differences[key] * 6); keyShorthand = 'g'; break;
-                            case "behinds": fantasy += (differences[key] * 1); keyShorthand = 'b'; break;
-                            case "kicks": fantasy += (differences[key] * 3); keyShorthand = 'k'; break;
-                            case "handballs": fantasy += (differences[key] * 2); keyShorthand = 'h'; break;
-                            case "marks": fantasy += (differences[key] * 3); keyShorthand = 'm'; break;
-                            case "tackles": fantasy += (differences[key] * 4); keyShorthand = 't'; break;
-                            case "hitouts": fantasy += (differences[key] * 1); keyShorthand = 'ho'; break;
-                            case "freesfor": fantasy += (differences[key] * 1); keyShorthand = 'ff'; break;
-                            case "freesagainst": fantasy -= (differences[key] * 3); keyShorthand = 'fa'; break;
-                            default:
-                                break;
-                        }
-                        if (keyShorthand) {
+                    switch (key) {
+                        case "goals": fantasy += (differences[key] * 6); keyShorthand = 'g'; break;
+                        case "behinds": fantasy += (differences[key] * 1); keyShorthand = 'b'; break;
+                        case "kicks": fantasy += (differences[key] * 3); keyShorthand = 'k'; break;
+                        case "handballs": fantasy += (differences[key] * 2); keyShorthand = 'h'; break;
+                        case "marks": fantasy += (differences[key] * 3); keyShorthand = 'm'; break;
+                        case "tackles": fantasy += (differences[key] * 4); keyShorthand = 't'; break;
+                        case "hitouts": fantasy += (differences[key] * 1); keyShorthand = 'ho'; break;
+                        case "freesfor": fantasy += (differences[key] * 1); keyShorthand = 'ff'; break;
+                        case "freesagainst": fantasy -= (differences[key] * 3); keyShorthand = 'fa'; break;
+                        default:
+                            break;
+                    }
+                    if (keyShorthand) {
+                        let q1Score = document.getElementById('Q1').textContent;
+                        let q2Score = document.getElementById('Q2').textContent;
+                        let q3Score = document.getElementById('Q3').textContent;
+                        let q4Score = document.getElementById('Q4').textContent;
+                        let sum = q1Score + q2Score + q3Score + q4Score;
+                        if (sum + fantasy <= newPlayer.fantasy) {
+                            console.log("DON'T PUSH")
                             scoringTimeline.push({
                                 quarter: quarter, // Adjust as per the actual data structure
                                 time: time,
@@ -731,25 +757,28 @@
                                 fantasy: fantasy,
                             });
                         }
-
                     }
-                });
 
-                if (scoringTimeline.length > 0) {
-                    fetch('/scoringTimeline', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ playerId, timeline: scoringTimeline })
-                    })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`Network response was not ok, status: ${response.status}`);
-                            }
-                            return response.json();
-                        })
-                        .then(data => ('Server response:', data))
-                        .catch(error => console.error('Error:', error));
                 }
+            });
+
+            if (scoringTimeline.length > 0) {
+
+
+                fetch('/scoringTimeline', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ playerId, timeline: scoringTimeline })
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Network response was not ok, status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => ('Server response:', data))
+                    .catch(error => console.error('Error:', error));
+            }*/
             } else {
                 Object.keys(newPlayer).forEach(key => {
                     differences[key] = 0;
@@ -777,7 +806,6 @@
 
         function formatScoringTimeline(playerId, data) {
             const timelineTable = document.getElementById('timelineTable');
-
             if (!timelineTable) {
                 console.error("Timeline table not found");
                 return;
@@ -813,24 +841,8 @@
             }
         }
 
-        function calculateQuarterScore(quarterId) {
-            const col = document.querySelector(`#${quarterId}`);
-            if (!col) return 0;
-
-            let totalFantasy = 0;
-            col.querySelectorAll('p').forEach(p => {
-                const text = p.textContent;
-                const match = text.match(/([-+]?\d+)\s*\(([-+]?\d+)[a-zA-Z]*\)/);
-                if (match) {
-                    totalFantasy += parseInt(match[1]);
-                }
-            });
-
-            return totalFantasy;
-        }
-
         let currentTimelinePlayer;
-        function showTimeline(playerId) {
+        function showTimeline(playerId, player) {
             if (currentTimelinePlayer != playerId) {
                 for (let i = 1; i <= 4; i++) {
                     const col = document.querySelector(`#Q${i}`);
@@ -839,16 +851,31 @@
             }
 
             currentTimelinePlayer = playerId;
+            const timelineHolder = document.getElementById('timelineHolder');
+            timelineHolder.style.display = 'flex';
             const timelineTable = document.getElementById('timelineTable');
             timelineTable.style.display = 'table';
-            timelineTable.querySelector('img').src = `/images/${playerId}.png`;
-            timelineTable.querySelector('#timelinePlayerName').textContent = `${playerId.replace(/-/g, ' ')}`;
-            timelineTable.querySelector("#hideTimeline").addEventListener('click', function (event) {
-                hideTimeline(timelineTable);
-            });
-            timelineTable.scrollIntoView({ behavior: 'smooth' });
+            timelineHolder.querySelector('img').src = `/images/${playerId}.png`;
+            timelineHolder.querySelector('#timelinePlayerName').textContent = `${playerId.replace(/-/g, ' ')}`;
+            timelineHolder.querySelector("#hideTimeline").addEventListener('click', handleHideTimelineClick);
+            timelineHolder.scrollIntoView({ behavior: 'smooth' });
+
+            if (player.position.includes("FOR")) {
+                player.position = player.position.replace("FOR", "FWD");
+            }
+            const timelinePrice = timelineHolder.querySelector('#playerPrice');
+            timelinePrice.innerText = player.price;
+            const timelinePosition = timelineHolder.querySelector('#playerPosition');
+            timelinePosition.innerText = player.position;
+            const timelineBreakeven = timelineHolder.querySelector('#playerBreakeven');
+            timelineBreakeven.innerText = "BE: " + player.breakeven;
+
 
             fetchScoringTimeline(playerId);
+        }
+
+        function handleHideTimelineClick() {
+            hideTimeline(timelineHolder);
         }
 
         function calculateQuarterScore(quarter) {
@@ -883,7 +910,7 @@
                 col.innerHTML = '';
             }
             currentTimelinePlayer = undefined;
-            timelineTable.removeEventListener('click');
+            timelineTable.querySelector("#hideTimeline").removeEventListener('click', handleHideTimelineClick);
         }
 
         // Function to render superscript based on difference
@@ -976,16 +1003,21 @@
 
 
             if (homeTeamScore == highestScore) {
-                marginHolder.textContent = `${homeTeam} by ${margin}`;
+                marginHolder.innerHTML = `${homeTeam} <br>by ${margin}`;
             }
             else {
-                marginHolder.textContent = `${awayTeam} by ${margin}`;
+                marginHolder.innerHTML = `${awayTeam} <br>by ${margin}`;
             }
             if (homeTeamScore == awayTeamScore) {
                 if (quarter == 0) {
                     marginHolder.textContent = "TBD";
                 } else {
-                    marginHolder.textContent = "Draw";
+                    if (quaretFull == 'Time') {
+                        marginHolder.textContent = "Draw";
+                    }
+                    else {
+                        marginHolder.textContent = "Scores level"
+                    }
                 }
             }
 
@@ -1001,6 +1033,7 @@
             }
 
             let percentage = ((parseInt(minutes) / 120) * 100) + ((parseInt(quarter) - 1) * 25);
+            //console.log(quarterFull)
             switch (quarterFull) {
                 case 'Q1':
                     if (percentage >= 25) {
@@ -1034,7 +1067,7 @@
                 case '4':
                     percentage = 100;
                     break;
-                case 'FULL':
+                case 'Time':
                     percentage = 100;
                     break;
                 default:
@@ -1331,6 +1364,8 @@
                 localStorage.setItem('theme', 'dark');
             }
         });
+
+
 
 
         // document.getElementById('darkModeToggle').addEventListener('click', function () {

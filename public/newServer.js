@@ -55,6 +55,7 @@ app.get('/server-start-time', (req, res) => {
     res.json({ serverStartTime });
 });
 
+
 app.get('/new-user-id', (req, res) => {
     const userId = randomUsername.getRandomUsername();
     res.json({ userId });
@@ -85,6 +86,7 @@ app.post('/update-username', (req, res) => {
     } else {
         // Remove the old username
         Object.keys(usernames).forEach(id => {
+
             if (usernames[userId]) {
                 usernames[userId].isTaken = false;
             }
@@ -112,6 +114,7 @@ app.post('/update-chat', (req, res) => {
     }
     if (chats[link].length > 100) {
         chats[link].shift();
+
     }
     chats[link].push(message);
 
@@ -123,11 +126,14 @@ app.get('/get-all-chats', (req, res) => {
 });
 
 const fixtureURL = "https://www.afl.com.au/fixture";
+//const fixtureURL = "https://www.afl.com.au/fixture?Competition=1&Season=62&Round=963";
+
 
 let fixture = { games: [] }; // Initialize fixture data
 let links = []; // Array to store links
 let link = '';
-let scoringTimeline = {}; // Declare scoringTimeline here
+const baseURL = `https://www.afl.com.au/afl/matches/${link}`;
+
 
 async function updateFixtureData() {
     try {
@@ -159,6 +165,7 @@ async function updateLiveFixtureData() {
 }
 setInterval(updateLiveFixtureData, 45000);
 
+
 app.post('/game-link', (req, res) => {
     link = req.body.link; // Store the received value in the link variable
 
@@ -166,9 +173,14 @@ app.post('/game-link', (req, res) => {
     res.json({ status: 'success' });
 });
 
+
+
+
 app.get('/trimmedLink', (req, res) => {
     res.json(link.split("/").pop());
 });
+
+
 
 app.get('/fixture/:link', async (req, res) => {
     const link = req.params.link;
@@ -199,6 +211,7 @@ app.get('/fixture/:link', async (req, res) => {
 });
 
 updateFixtureData();
+//setInterval(updateFixtureData, 60000);
 
 app.get('/fixture', (req, res) => {
     const fixturePath = path.join(__dirname, 'public', 'fixture.html');
@@ -223,98 +236,30 @@ async function updatePlayerStats(url) {
 
         const stats = await puppeteerCrawl(url, data);
         const link = url.split("/").pop(); // Extract the link from the url
-        if (!playerStats[link]) {
-            playerStats[link] = { players: [] };
-        }
-
-        const newPlayerData = stats.players;
-        newPlayerData.forEach(newPlayer => {
-            const playerId = `${newPlayer.name}-${newPlayer.number}`;
-            const oldPlayer = playerStats[link].players.find(p => `${p.name}-${p.number}` === playerId);
-
-            const differences = calculateDifferences(newPlayer, oldPlayer);
-            const timelineUpdates = updateScoringTimeline(newPlayer, differences);
-
-            if (!scoringTimeline[playerId]) {
-                scoringTimeline[playerId] = [];
-            }
-            scoringTimeline[playerId] = scoringTimeline[playerId].concat(timelineUpdates);
-
-            // Update player data
-            const playerIndex = playerStats[link].players.findIndex(p => `${p.name}-${p.number}` === playerId);
-            if (playerIndex > -1) {
-                playerStats[link].players[playerIndex] = newPlayer;
-            } else {
-                playerStats[link].players.push(newPlayer);
-            }
-        });
+        playerStats[link] = stats; // Store the stats under the link key
     } catch (error) {
         console.error('Error fetching player stats:', error);
     }
 }
 
-function calculateDifferences(newPlayer, oldPlayer) {
-    const differences = {};
 
-    if (oldPlayer) {
-        const keys = ['goals', 'behinds', 'kicks', 'handballs', 'marks', 'tackles', 'hitouts', 'fantasy', 'freesfor', 'freesagainst'];
-        keys.forEach(key => {
-            differences[key] = newPlayer[key] - oldPlayer[key];
-        });
-    } else {
-        Object.keys(newPlayer).forEach(key => {
-            differences[key] = 0;
-        });
-    }
+const axios = require('axios');
+const { resolveNaptr } = require('dns');
 
-    return differences;
-}
+// async function updatePlayerStats() {
+//     try {
+//         const response = await axios.get('/fetchData');
+//         data = response.data;
+//         data.homeTeamPlayerStats.forEach(playerStat => {
+//             const playerName = `${playerStat.player.player.player.playerName.givenName} ${playerStat.player.player.player.playerName.surname}`;
+//             const goals = playerStat.playerStats.stats.goals;
+//             console.log(`Player: ${playerName}, Goals: ${goals}`);
+//           });
+//     } catch (error) {
+//         console.error('Error fetching data:', error);
+//     }
+// }
 
-function updateScoringTimeline(newPlayer, differences) {
-    let scoringTimeline = [];
-    let playerId = `${newPlayer.name}-${newPlayer.number}`;
-
-    Object.keys(differences).forEach(key => {
-        if (differences[key] !== 0 && key !== 'fantasy') {
-            let fantasy = 0;
-            let keyShorthand;
-
-            const timeArray = newPlayer.time.split(' ');
-            let quarter = timeArray[1][1];
-            switch (timeArray[0]) {
-                case 'Full': quarter = 4; break;
-                case 'Half': quarter = 2; break;
-            }
-            let time = newPlayer.time.split(' ')[2];
-
-            switch (key) {
-                case "goals": fantasy += (differences[key] * 6); keyShorthand = 'g'; break;
-                case "behinds": fantasy += (differences[key] * 1); keyShorthand = 'b'; break;
-                case "kicks": fantasy += (differences[key] * 3); keyShorthand = 'k'; break;
-                case "handballs": fantasy += (differences[key] * 2); keyShorthand = 'h'; break;
-                case "marks": fantasy += (differences[key] * 3); keyShorthand = 'm'; break;
-                case "tackles": fantasy += (differences[key] * 4); keyShorthand = 't'; break;
-                case "hitouts": fantasy += (differences[key] * 1); keyShorthand = 'ho'; break;
-                case "freesfor": fantasy += (differences[key] * 1); keyShorthand = 'ff'; break;
-                case "freesagainst": fantasy -= (differences[key] * 3); keyShorthand = 'fa'; break;
-                default:
-                    break;
-            }
-
-            if (keyShorthand) {
-                scoringTimeline.push({
-                    quarter: quarter,
-                    time: time,
-                    stat: keyShorthand,
-                    difference: differences[key],
-                    fantasy: fantasy,
-                });
-            }
-        }
-    });
-
-    return scoringTimeline;
-}
 
 app.get('/player-stats/:link', (req, res) => {
     const link = req.params.link;
@@ -325,10 +270,48 @@ app.get('/player-stats/:link', (req, res) => {
     }
 });
 
+// Update player stats every 10 seconds
+//setInterval(updatePlayerStats(baseURL), 10000);
+//updatePlayerStats(baseURL);
+//setInterval(() => updatePlayerStats(baseURL), 10000);
+
+let iconsState = {};
+
+app.post('/update-icon', (req, res) => {
+    const { playerId, icon } = req.body;
+    iconsState[playerId] = icon;
+
+    res.json({ status: 'success' });
+});
+
+app.post('/remove-icon', (req, res) => {
+    const playerId = req.body.playerId;
+    // Remove the icon for the player
+    delete iconsState[playerId];
+
+    res.sendStatus(200);
+});
+
+app.get('/get-all-icons', (req, res) => {
+    res.json(iconsState);
+});
+
+
+let scoringTimeline = {};
+
 app.get('/scoringTimeline/:playerId', (req, res) => {
     const playerId = req.params.playerId;
     const data = scoringTimeline[playerId] || [];
     res.json(data);
+});
+
+app.post('/scoringTimeline', (req, res) => {
+    const { playerId, timeline } = req.body;
+    if (!scoringTimeline[playerId]) {
+        scoringTimeline[playerId] = [];
+    }
+    scoringTimeline[playerId] = scoringTimeline[playerId].concat(timeline);
+    res.json({ message: 'Differences received!' });
 });
 
 // Route for serving player images
@@ -357,27 +340,77 @@ app.get('/player-image/:playerId', async (req, res) => {
 
 
 
-let iconsState = {};
+////////////
 
-app.post('/update-icon', (req, res) => {
-    const { playerId, icon } = req.body;
-    iconsState[playerId] = icon;
+app.get('/player-data', async (req, res) => {
+    try {
+        const response = await fetch("https://api.afl.com.au/cfs/afl/playerStats/match/CD_M20240140809", {
+            "headers": {
+                "accept": "*/*",
+                "accept-language": "en-US,en;q=0.9",
+                "if-none-match": "W/\"3b5d60d42f26ab4b4eca91f7fdce2252\"",
+                "priority": "u=1, i",
+                "sec-ch-ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-platform": "\"Windows\"",
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-site": "same-site",
+                "x-media-mis-token": "38f0a9ed7815a91a6ee81bf6b248bcb7",
+                "Referer": "https://www.afl.com.au/",
+            },
+            "method": "GET"
+        });
 
-    res.json({ status: 'success' });
+        if (!response.ok) {
+            throw new Error('Failed to fetch');
+        }
+
+        const data = await response.json();
+
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'An error occurred while fetching player data' });
+    }
 });
 
-app.post('/remove-icon', (req, res) => {
-    const playerId = req.body.playerId;
-    // Remove the icon for the player
-    delete iconsState[playerId];
 
-    res.sendStatus(200);
+app.get('/bench-and-fixture-data', async (req, res) => {
+    try {
+        const response = await fetch("https://api.afl.com.au/cfs/afl/coach/match/CD_M20240140809/teamStats", {
+            "headers": {
+              "accept": "*/*",
+              "accept-language": "en-US,en;q=0.9",
+              "priority": "u=1, i",
+              "sec-ch-ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
+              "sec-ch-ua-mobile": "?0",
+              "sec-ch-ua-platform": "\"Windows\"",
+              "sec-fetch-dest": "empty",
+              "sec-fetch-mode": "cors",
+              "sec-fetch-site": "same-site",
+              "x-media-mis-token": "38f0a9ed7815a91a6ee81bf6b248bcb7",
+              "Referer": "https://www.afl.com.au/",
+            },
+            "body": null,
+            "method": "GET"
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch');
+        }
+
+        const data = await response.json();
+        res.json(data);
+    }
+    catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'An error occurred while fetching bench data' });
+    }
+
 });
 
-app.get('/get-all-icons', (req, res) => {
-    res.json(iconsState);
-});
 
+///////////
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
