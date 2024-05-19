@@ -28,7 +28,12 @@ wss.on('connection', ws => {
 // Serve static files including CSS
 app.use(express.static(path.join(__dirname, 'public'), {
     setHeaders: (res, path) => {
-        res.setHeader('Cache-Control', 'public, max-age=432000'); // Cache for 5 days
+        if (path.endsWith('.css')) {
+            res.setHeader('Cache-Control', 'public, no-store'); // Cache for 5 days
+        } else if (path.endsWith('.jpg') || path.endsWith('.png') || path.endsWith('.gif')) {
+            // Cache images for 5 days
+            res.setHeader('Cache-Control', 'public, max-age=432000');
+        }
         res.setHeader('ETag', true); // Enable ETag
         res.setHeader('Last-Modified', true); // Enable Last-Modified
     }
@@ -228,6 +233,9 @@ async function updatePlayerStats(url) {
         }
 
         const newPlayerData = stats.players;
+        const newPlayerIds = newPlayerData.map(p => `${p.name}-${p.number}`);
+        playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(`${p.name}-${p.number}`));
+
         newPlayerData.forEach(newPlayer => {
             const playerId = `${newPlayer.name}-${newPlayer.number}`;
             const oldPlayer = playerStats[link].players.find(p => `${p.name}-${p.number}` === playerId);
@@ -286,6 +294,12 @@ function updateScoringTimeline(newPlayer, differences) {
                 case 'Half': quarter = 2; break;
             }
             let time = newPlayer.time.split(' ')[2];
+            if (time === undefined) {
+                time = "UPDATE";
+            }
+            if (!Number.isInteger(differences[key])){
+                return;
+            }
 
             switch (key) {
                 case "goals": fantasy += (differences[key] * 6); keyShorthand = 'g'; break;
@@ -345,7 +359,7 @@ app.get('/player-image/:playerId', async (req, res) => {
 
         // Set appropriate response headers
         res.set('Content-Type', 'image/jpeg');
-        res.set('Cache-Control', 'public, max-age=31536000'); // Cache the image for one year (adjust as needed)
+        res.set('Cache-Control', 'public, max-age=432000'); // Cache the image for 5 days
 
         // Send the image content as the response
         res.send(imageBuffer);

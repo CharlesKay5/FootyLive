@@ -58,10 +58,18 @@ td {
     /* font-family: "Inter", Arial, "Helvetica Neue", sans-serif; */
 }
 
+sup {
+    position: absolute;
+    vertical-align: super;
+    overflow: visible;
+    /* font-size: 75%; */
+}
+
 #backButton {
     position:absolute;
     top: 10px;
     left: 10px;
+    z-index: 1001;
 }
 
 .input-container {
@@ -174,6 +182,7 @@ input {
 }
 
 td {
+    position: relative;
     overflow: hidden;
 }
 
@@ -383,6 +392,7 @@ table {
 table td,
 table th {
     border: none;
+    position: relative;
 }
 
 td {
@@ -407,14 +417,14 @@ tbody tr:last-child td:last-child {
 }
 
 tr {
-    height: 36px;
+    height: 38px;
 }
 
 table:not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)),
 table:not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
     padding: 8px;
-    padding-right: 50%;
-    text-align: right;
+    padding-right: 0px;
+    text-align: left;
     /* Center align content */
     vertical-align: middle;
 }
@@ -750,7 +760,7 @@ i {
     }
 
     tr:not(#timelineTable tr){
-        height: 14px;
+        height: 32px;
     }
 
     th:not(#timelineTable th),
@@ -758,8 +768,8 @@ i {
         font-size: 11px;
     }
 
-    :not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)),
-    :not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
+    .table-container tr td:not(:nth-child(2)):not(:nth-child(3)),
+    .table-container th:not(:nth-child(2)):not(:nth-child(3)) {
         padding: 0px;
         padding-right: 0;
         text-align: center;
@@ -768,19 +778,26 @@ i {
         white-space: nowrap;
     }
 
-    :not(#timelineTable) th:nth-child(n+4):nth-child(-n+8),
-    :not(#timelineTable) td:nth-child(n+4):nth-child(-n+8) {
+    :not(#timelineTable) th:nth-child(n+4):nth-child(-n+8):not(#timelineTable th),
+    :not(#timelineTable) td:nth-child(n+4):nth-child(-n+8):not(#timelineTable td) {
         font-size: 11px;
         text-align: center;
-        width: 24px;
+        width: 20px;
+        padding: 1px;
     }
 
-    :not(#timelineTable th) th:nth-child(n+9):nth-child(-n+11),
+    /* :not(#timelineTable th) th:nth-child(n+9):nth-child(-n+11),
     :not(#timelineTable td) td:nth-child(n+9):nth-child(-n+11) {
         font-size: 11px;
         text-align: center;
         width: 30px;
     }
+
+    table:not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)), table:not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
+        padding-right: 0;
+        text-align: center;
+        vertical-align: middle;
+    } */
 
     :not(#timelineTable) th:nth-child(n+12),
     :not(#timelineTable) td:nth-child(n+12) {
@@ -965,6 +982,11 @@ i {
     #timelineTable {
         width: 95vw;
         font-size: 11px;
+    }
+
+    #timelineTable tr td:not(:first-child) {
+        min-width: 20vw;
+        max-width: 20vw;
     }
 
     #timelineTable tr td:not(:first-child) {

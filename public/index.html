@@ -107,8 +107,8 @@
         </ul>
         <ul>
             <li><i class="customIcon" id="injuredPlaying" style="content: url('/icons/bandaid.png')"></i></li>
-            <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li>
-            <li><i class="customIcon" id="subsitute" style="content: url('/icons/greenvest.png')"></i></li>
+            <li><i class="customIcon" id="fire" style="content: url('/icons/fire.png')"></i></li>
+            <li><i class="customIcon" id="ice" style="content: url('/icons/ice.png')"></i></li>
             <li><i class="customIcon" id="subbedOut" style="content: url('/icons/redvest.png')"></i></li>
             <li><i class="customIcon" id="tagged" style="content: url('/icons/padlock.png')"></i></li>
             <li><i class="customIcon" id="tagger" style="content: url('/icons/tag.png')"></i></li>
@@ -316,17 +316,35 @@
                         }
 
                         if (player.injured == 1) {
-                            let existingIcon = row.querySelector("i");
-                            if (!existingIcon) {
-                                addIcon(row, '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>');
-                            } else {
-                                if (existingIcon.style.content != 'url("/icons/redvest.png")') {
-                                    addIcon(row, '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>');
-                                }
+
+                            if (player.benched != 1) {
+                                addIcon(row, '<i class="customIcon" id="injuredPlaying" style="content: url(\'/icons/bandaid.png\')"></i>');
                             }
+
+
+                            let existingIcon = row.querySelector("i");
+
+                            fetch('/get-all-icons')
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error('Failed to fetch icons');
+                                    }
+                                    return response.json();
+                                })
+                                .then(iconsData => {
+                                    // Update the table with fetched icons
+                                    // If playerId in iconsData and the player has redvest icon, don't add redcross
+                                    if (iconsData) {
+                                        Object.keys(iconsData).forEach(icon => {
+                                            if (icon[playerId] !== "<i class=\"customIcon\" id=\"subbedOut\" style=\"content: url('/icons/redvest.png')\"></i>") {
+                                                addIcon(row, '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>');
+                                            }
+                                        })
+                                    }
+                                });
                         }
                         handleRowColorAndSuperscripts(row, playerId, differences);
-                        fetchAndUpdateIcons();
+                        
                         //fetchScoringTimeline(playerId);
 
                         row.querySelector(".playerName").addEventListener('click', function (event) {
@@ -342,6 +360,8 @@
 
                     }
                 });
+                fetchAndUpdateIcons();
+                
                 if (currentTimelinePlayer) {
                     //console.log("Fetching current Player");
                     fetchScoringTimeline(currentTimelinePlayer);
@@ -828,7 +848,11 @@
                     if (col) {
                         const p = document.createElement('p');
                         p.textContent = `${time}: ${sign}${fantasy} (${difference}${stat})`;
-                        col.appendChild(p);
+                        if (col.firstChild) {
+                            col.insertBefore(p, col.firstChild);
+                        } else {
+                            col.appendChild(p);
+                        }
                     }
                 }
             });
@@ -934,6 +958,7 @@
                 document.querySelectorAll('sup').forEach(sup => {
                     sup.style.visibility = 'hidden';
                 });
+                fetchAndFormatPlayerData();
             }, 5000);
         }
 
@@ -1012,7 +1037,7 @@
                 if (quarter == 0) {
                     marginHolder.textContent = "TBD";
                 } else {
-                    if (quaretFull == 'Time') {
+                    if (quarterFull == 'Time') {
                         marginHolder.textContent = "Draw";
                     }
                     else {
@@ -1076,6 +1101,36 @@
             const gamePercentage = document.getElementById('gamePercentage');
             gamePercentage.textContent = Math.ceil(percentage) + '%';
 
+
+            //fireAndIce(percentage);
+        }
+
+        function fireAndIce(percentage) {
+            const playerNames = document.getElementsByClassName("playerName");
+            let averages = [];
+            let fantasy = [];
+            for (let i = 0; i < playerNames.length; i++) {
+                const average = playerNames[i].parentElement.lastElementChild.previousElementSibling.previousElementSibling.textContent;
+                averages.push(average);
+                const fantasyScore = playerNames[i].parentElement.lastElementChild.textContent;
+                fantasy.push(fantasyScore);
+                let hotLevel = (parseFloat(average) * (parseFloat(percentage) / 100)) * 1.2;
+                let coldLevel = ((parseFloat(average) * (parseFloat(percentage) / 100)) * 0.6);
+
+                // Check if the player already has an icon
+                let existingIcon = playerNames[i].parentElement.querySelector("i");
+                if (existingIcon) {
+                    console.log("Player " + playerNames[i].textContent + " already has an icon.");
+                    continue; // Skip to the next iteration
+                }
+
+                if (parseFloat(fantasyScore) >= parseFloat(hotLevel) && average != 0 && fantasyScore != 0 && percentage > 20) {
+                    console.log("Adding fire to " + playerNames[i].textContent);
+                    addIcon(playerNames[i].parentElement, '<i class="customIcon" id="fire" style="content: url(\'/icons/fire.png\')"></i>');
+                } else if (parseFloat(fantasyScore) <= parseFloat(coldLevel) && average != 0 && fantasyScore != 0 && percentage > 20 && average > 80) {
+                    addIcon(playerNames[i].parentElement, '<i class="customIcon" id="ice" style="content: url(\'/icons/ice.png\')"></i>');
+                }
+            }
         }
 
         document.getElementById('usernameButton').addEventListener('click', function () {
