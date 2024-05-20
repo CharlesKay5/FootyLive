@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <link rel="icon" href="/icons/foop.png">
+
     <title>FootyLive</title>
 </head>
 
@@ -106,7 +107,7 @@
             </li>
         </ul>
         <ul>
-            <li><i class="customIcon" id="injuredPlaying" style="content: url('/icons/bandaid.png')"></i></li>
+            <!-- <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li> -->
             <li><i class="customIcon" id="fire" style="content: url('/icons/fire.png')"></i></li>
             <li><i class="customIcon" id="ice" style="content: url('/icons/ice.png')"></i></li>
             <li><i class="customIcon" id="subbedOut" style="content: url('/icons/redvest.png')"></i></li>
@@ -163,7 +164,6 @@
     </div>
     <div id="backButton"><a href="../fixture"><i class="fa-solid fa-arrow-left-long"></i></a></div>
 
-    <script type="text/javascript" src="/BannedList.js"></script>
     <script>
         const socket = new WebSocket('ws://10.0.0.67:8080');
         var allowColourChange = true;
@@ -210,7 +210,7 @@
 
         // Define global variables to store player data for each team
         window.playerData = { team0: [], team1: [] };
-
+        let injuryList = [];
         // Function to format player data into table rows and order by fantasy
         function formatPlayerData(team, previousData) {
             const tableContainer = document.querySelector('.container');
@@ -326,13 +326,12 @@
                         }
 
                         if (player.injured == 1) {
-
-                            if (player.benched != 1) {
+                            if (!injuryList.includes(playerId)) {
+                                injuryList.push(playerId);
+                            };
+                            if (player.benched != 1 && injuryList.includes(playerId)) {
                                 addIcon(row, '<i class="customIcon" id="injuredPlaying" style="content: url(\'/icons/bandaid.png\')"></i>');
                             }
-
-
-                            let existingIcon = row.querySelector("i");
 
                             fetch('/get-all-icons')
                                 .then(response => {
@@ -344,12 +343,8 @@
                                 .then(iconsData => {
                                     // Update the table with fetched icons
                                     // If playerId in iconsData and the player has redvest icon, don't add redcross
-                                    if (iconsData) {
-                                        Object.keys(iconsData).forEach(icon => {
-                                            if (icon[playerId] !== "<i class=\"customIcon\" id=\"subbedOut\" style=\"content: url('/icons/redvest.png')\"></i>") {
-                                                addIcon(row, '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>');
-                                            }
-                                        })
+                                    if (iconsData && iconsData[playerId] !== "<i class=\"customIcon\" id=\"subbedOut\" style=\"content: url('/icons/redvest.png')\"></i>") {
+                                        addIcon(row, '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>');
                                     }
                                 });
                         }
@@ -888,7 +883,6 @@
 
         // Function to fetch player data and format it
         function fetchAndFormatPlayerData() {
-            console.log("FETCHING")
             Promise.all([
                 fetch(`/player-stats/${trimmedLink}`),
                 //fetch(`/${trimmedLink}/player-stats/?team=1`)
@@ -927,7 +921,6 @@
         // Function to fetch data every 10 seconds
         socket.onmessage = function (event) {
             if (event.data === 'playerDataChanged') {
-                console.log("FETCH SOCKET")
                 fetchAndFormatPlayerData(trimmedLink);
             }
         };
@@ -1177,40 +1170,40 @@
         };
 
 
-        function applySubstitutions(word) {
-            let substitutedWord = '';
-            for (const letter of word.toLowerCase()) {
-                if (letterSubstitutions.hasOwnProperty(letter)) {
-                    const substitutions = letterSubstitutions[letter];
-                    substitutedWord += substitutions[Math.floor(Math.random() * substitutions.length)]; // Choose a random substitution
-                } else {
-                    substitutedWord += letter;
-                }
-            }
-            return substitutedWord;
-        }
+        // function applySubstitutions(word) {
+        //     let substitutedWord = '';
+        //     for (const letter of word.toLowerCase()) {
+        //         if (letterSubstitutions.hasOwnProperty(letter)) {
+        //             const substitutions = letterSubstitutions[letter];
+        //             substitutedWord += substitutions[Math.floor(Math.random() * substitutions.length)]; // Choose a random substitution
+        //         } else {
+        //             substitutedWord += letter;
+        //         }
+        //     }
+        //     return substitutedWord;
+        // }
 
-        function isProfanitySubstitute(word) {
-            const substitutedWord = applySubstitutions(word);
-            for (const profanity of profanityList) {
-                if (substitutedWord.toLowerCase().includes(profanity)) {
-                    return true;
-                }
-            }
-            return false;
-        }
+        // function isProfanitySubstitute(word) {
+        //     const substitutedWord = applySubstitutions(word);
+        //     for (const profanity of profanityList) {
+        //         if (substitutedWord.toLowerCase().includes(profanity)) {
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+        // }
 
 
-        function filterProfanity(message) {
-            let words = message.split(' ');
-            for (let i = 0; i < words.length; i++) {
-                if (isProfanitySubstitute(words[i].toLowerCase())) {
+        // function filterProfanity(message) {
+        //     let words = message.split(' ');
+        //     for (let i = 0; i < words.length; i++) {
+        //         if (isProfanitySubstitute(words[i].toLowerCase())) {
 
-                    words[i] = '*'.repeat(words[i].length); // Censor the entire word
-                }
-            }
-            return words.join(' ');
-        }
+        //             words[i] = '*'.repeat(words[i].length); // Censor the entire word
+        //         }
+        //     }
+        //     return words.join(' ');
+        // }
 
 
 
@@ -1220,7 +1213,6 @@
         const userMessageTimestamps = {};
 
         function sendMessage() {
-
             const messageInput = document.getElementById('messageInput');
             const message = messageInput.value.trim();
             if (!message) {
@@ -1247,8 +1239,6 @@
             userMessageTimestamps[userId] = timestamps;
 
             let messageWithId = `${userId}: ${message}`;
-            messageWithId = filterProfanity(messageWithId); // Append the unique identifier to the message
-            //socket.send(messageWithId);
 
             fetch('/update-chat', {
                 method: 'POST',
@@ -1272,6 +1262,7 @@
         }
 
 
+
         // Add an event listener for the 'Enter' key
         document.getElementById('messageInput').addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
@@ -1284,6 +1275,9 @@
 
 
         socket.addEventListener('message', (event) => {
+            if (event.data === 'playerDataChanged') {
+                return;
+            }
             const chatFeed = document.getElementById('chatFeed');
             const newMessage = document.createElement('p');
             if (event.data instanceof Blob) {

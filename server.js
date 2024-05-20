@@ -85,17 +85,23 @@ app.get('/check-username/:username', (req, res) => {
 // Route to update the username
 app.post('/update-username', (req, res) => {
     const { userId, newUsername } = req.body;
-    if (usernames.hasOwnProperty(newUsername) && usernames[newUsername].isTaken) {
+    const filteredUsername = filterProfanity(newUsername);
+
+    if (filteredUsername.includes('*')) {
+        return res.json({ success: false, message: 'Username contains profanity.' });
+    }
+
+    if (usernames.hasOwnProperty(filteredUsername) && usernames[filteredUsername].isTaken) {
         res.json({ success: false });
     } else {
         // Remove the old username
         Object.keys(usernames).forEach(id => {
-            if (usernames[userId]) {
-                usernames[userId].isTaken = false;
+            if (usernames[id] && usernames[id].userId === userId) {
+                usernames[id].isTaken = false;
             }
         });
         // Add the new username
-        usernames[newUsername] = { userId, isTaken: true };
+        usernames[filteredUsername] = { userId, isTaken: true };
         // Write the updated usernames object to usernames.json
         fs.writeFile('usernames.json', JSON.stringify(usernames), (err) => {
             if (err) {
@@ -110,19 +116,24 @@ app.post('/update-username', (req, res) => {
 
 let chats = {};
 
+
+// Route to update the chat
 app.post('/update-chat', (req, res) => {
     const { link, message } = req.body;
+    const filteredMessage = filterProfanity(message);
+
     if (!chats[link]) {
         chats[link] = [];
     }
     if (chats[link].length > 100) {
         chats[link].shift();
     }
-    chats[link].push(message);
+    chats[link].push(filteredMessage);
 
     res.json({ status: 'success' });
 });
 
+// Route to get all chats
 app.get('/get-all-chats', (req, res) => {
     res.json(chats);
 });
@@ -325,9 +336,9 @@ function updateScoringTimeline(newPlayer, differences) {
             }
             let time = newPlayer.time.split(' ')[2];
             if (time === undefined) {
-                time = "UPDATE";
+                return;
             }
-            if (!Number.isInteger(differences[key])){
+            if (!Number.isInteger(differences[key])) {
                 return;
             }
 
@@ -422,6 +433,88 @@ app.get('/get-all-icons', (req, res) => {
     res.json(iconsState);
 });
 
+///////////////////////
+
+const profanityList = require('./public/BannedList.js');
+
+const letterSubstitutions = {
+    '3': ['e'],
+    '4': ['a'],
+    '@': ['a'],
+    '5': ['s'],
+    '1': ['l', 'i'],
+    '7': ['t'],
+    '8': ['b'],
+    '9': ['g'],
+    '0': ['o'],
+    '2': ['z']
+};
+
+function applySubstitutions(word) {
+    let substitutedWord = '';
+    for (const letter of word.toLowerCase()) {
+        if (letterSubstitutions.hasOwnProperty(letter)) {
+            const substitutions = letterSubstitutions[letter];
+            substitutedWord += substitutions[Math.floor(Math.random() * substitutions.length)];
+        } else {
+            substitutedWord += letter;
+        }
+    }
+    return substitutedWord;
+}
+
+function normalizeMessage(message) {
+    return message.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+}
+
+function isProfanitySubstitute(word) {
+    const substitutedWord = applySubstitutions(word);
+    const normalizedWord = normalizeMessage(substitutedWord);
+    for (const profanity of profanityList) {
+        if (normalizedWord.includes(profanity)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function filterProfanity(message) {
+    let words = message.split(' ');
+    for (let i = 0; i < words.length; i++) {
+        if (isProfanitySubstitute(words[i])) {
+            words[i] = '*'.repeat(words[i].length);
+        }
+    }
+
+    // Check the entire message for spaced out profanity
+    const normalizedMessage = normalizeMessage(message);
+    for (const profanity of profanityList) {
+        if (normalizedMessage.includes(profanity)) {
+            return '*'.repeat(message.length);
+        }
+    }
+
+    return words.join(' ');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

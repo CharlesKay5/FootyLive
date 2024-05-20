@@ -30,9 +30,11 @@ var profanityList = [
     "jew",
     "wigger",
     "whigger",
+    "whigga",
     "faggot",
     "fag",
     "dike",
 ];
 
 //export default profanityList;
+module.exports = profanityList;
