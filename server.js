@@ -140,25 +140,47 @@ async function updateFixtureData() {
         await fixtureCrawl(fixtureURL, data);
         fixture = data; // Update fixture data
         links = fixture.games.map(game => game.link);
-        links.forEach(link => updatePlayerStats(link));
+        for (const link of links) {
+            await updatePlayerStats(link);
+        }
+        // Call broadcastMessage after all player stats have been updated
+        broadcastMessage('playerDataChanged');
     } catch (error) {
         console.error('Error fetching fixture data:', error);
     }
 }
 setInterval(updateFixtureData, 120000);
 
+// async function updateLiveFixtureData() {
+//     try {
+//         const data = { games: [] };
+//         await fixtureCrawl(fixtureURL, data);
+//         fixture = data; // Update fixture data
+//         links = fixture.games.map(game => game.link);
+//         fixture.games.forEach((game, index) => {
+//             if (game.live == 1) {
+//                 updatePlayerStats(links[index]);
+//             }
+//         });
+//     } catch (error) {
+//         console.error('Error fetching fixture data:', error);
+//     }
+// }
+// setInterval(updateLiveFixtureData, 45000);
+
 async function updateLiveFixtureData() {
     try {
         const data = { games: [] };
         await fixtureCrawl(fixtureURL, data);
         fixture = data; // Update fixture data
-        links = fixture.games.map(game => game.link);
-        fixture.games.forEach((game, index) => {
+        for (const game of fixture.games) {
             if (game.live == 1) {
-                updatePlayerStats(links[index]);
+                await updatePlayerStats(game.link);
             }
-        });
-    } catch (error) {
+        }
+        broadcastMessage("playerDataChanged");
+    }
+    catch (error) {
         console.error('Error fetching fixture data:', error);
     }
 }
@@ -259,6 +281,14 @@ async function updatePlayerStats(url) {
     } catch (error) {
         console.error('Error fetching player stats:', error);
     }
+}
+
+function broadcastMessage(message) {
+    wss.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(message);
+        }
+    });
 }
 
 function calculateDifferences(newPlayer, oldPlayer) {

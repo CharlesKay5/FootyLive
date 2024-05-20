@@ -47,7 +47,7 @@
             </div>
             <table id="team0">
                 <tr>
-                    <th></th>
+                    <th><i class="fa-solid fa-circle tableFocus"></i></th>
                     <th></th>
                     <th class="playerNameHeader">Name</th>
                     <th class="hide-on-mobile">G.B</th>
@@ -69,7 +69,7 @@
             </div>
             <table id="team1">
                 <tr>
-                    <th></th>
+                    <th><i class="fa-solid fa-circle tableFocus"></i></th>
                     <th></th>
                     <th class="playerNameHeader">Name</th>
                     <th class="hide-on-mobile">G.B</th>
@@ -164,14 +164,21 @@
     <div id="backButton"><a href="../fixture"><i class="fa-solid fa-arrow-left-long"></i></a></div>
 
     <script type="text/javascript" src="/BannedList.js"></script>
-    <!-- <script type="module">
-        import profanityList from './ProfanityList.js';
-    </script> -->
     <script>
-
+        const socket = new WebSocket('ws://10.0.0.67:8080');
         var allowColourChange = true;
 
+        let tableFocusBtns = document.getElementsByClassName('tableFocus')
 
+        for (let i = 0; i < tableFocusBtns.length; i++) {
+            let homeTeam = document.getElementById("homeTeam");
+            let awayTeam = document.getElementById("awayTeam");
+
+            tableFocusBtns[i].addEventListener('click', function () {
+                let team = i > 0 ? awayTeam : homeTeam;
+                team.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
 
         document.addEventListener('DOMContentLoaded', (event) => {
             const savedTheme = localStorage.getItem('theme') || 'light';
@@ -267,20 +274,23 @@
                             row.style.backgroundColor = previousColour;
                         }
 
+                        const timeArray = player.time.split(' ');
+                        const quarterFull = timeArray[1];
+
                         const differences = calculateDifferences(player, previousData[playerId]);
                         const cells = [
                             `<td id="iconHolder"></td>`,
                             `<td>${player.number}</td>`,
                             `<td class="playerName">${player.name}</td>`,
-                            `<td class="hide-on-mobile">${parseInt(player.goals)}.${parseInt(player.behinds)}${renderSuperscript(differences.goals)}${renderSuperscript(differences.behinds, "behinds")}</td>`,
-                            `<td class="">${parseInt(player.kicks)}${renderSuperscript(differences.kicks)}</td>`,
-                            `<td class="">${parseInt(player.handballs)}${renderSuperscript(differences.handballs)}</td>`,
-                            `<td class="">${parseInt(player.marks)}${renderSuperscript(differences.marks)}</td>`,
-                            `<td class="">${parseInt(player.tackles)}${renderSuperscript(differences.tackles)}</td>`,
+                            `<td class="hide-on-mobile">${parseInt(player.goals)}.${parseInt(player.behinds)}${renderSuperscript(differences.goals, quarterFull)}${renderSuperscript(differences.behinds, quarterFull, "behinds")}</td>`,
+                            `<td class="">${parseInt(player.kicks)}${renderSuperscript(differences.kicks, quarterFull)}</td>`,
+                            `<td class="">${parseInt(player.handballs)}${renderSuperscript(differences.handballs, quarterFull)}</td>`,
+                            `<td class="">${parseInt(player.marks)}${renderSuperscript(differences.marks, quarterFull)}</td>`,
+                            `<td class="">${parseInt(player.tackles)}${renderSuperscript(differences.tackles, quarterFull)}</td>`,
                             `<td>${parseInt(player.tog)}%</td>`,
                             `<td>${parseInt(player.fantasyAvg)}</td>`,
                             `<td class="breakeven">${player.breakeven}</td>`,
-                            `<td>${parseInt(player.fantasy)}${renderSuperscript(differences.fantasy)}</td>`
+                            `<td>${parseInt(player.fantasy)}${renderSuperscript(differences.fantasy, quarterFull)}</td>`
                         ];
 
 
@@ -344,7 +354,7 @@
                                 });
                         }
                         handleRowColorAndSuperscripts(row, playerId, differences);
-                        
+
                         //fetchScoringTimeline(playerId);
 
                         row.querySelector(".playerName").addEventListener('click', function (event) {
@@ -361,7 +371,7 @@
                     }
                 });
                 fetchAndUpdateIcons();
-                
+
                 if (currentTimelinePlayer) {
                     //console.log("Fetching current Player");
                     fetchScoringTimeline(currentTimelinePlayer);
@@ -709,96 +719,6 @@
                 keys.forEach(key => {
                     differences[key] = newPlayer[key] - oldPlayer[key];
                 });
-
-                // DEBUG
-                // if (oldPlayer.name == 'N.Anderson') {
-                //     differences.goals = 1;
-                //     differences.behinds = 1;
-                //     differences.kicks = 3;
-                //     differences.handballs = 4;
-                //     differences.marks = 2;
-                //     differences.tackles = 3;
-                //     differences.hitouts = 2;
-                // }
-
-                // if (oldPlayer.name == 'M.Rowell') {
-                //     differences.goals = 9;
-                //     differences.behinds = 2;
-                //     differences.freesfor = 1;
-                //     differences.freesagainst = 3;
-                // }
-                /*
-            let scoringTimeline = [];
-            let playerId = `${newPlayer.name}-${newPlayer.number}`;
-
-            Object.keys(differences).forEach(key => {
-
-                if (differences[key] !== 0 && key != 'Fantasy') {
-                    let fantasy = 0;
-                    let keyShorthand;
-
-                    const timeArray = newPlayer.time.split(' ');
-                    let quarter = timeArray[1][1];
-                    switch (timeArray[0]) {
-                        case 'Full': quarter = 4; break;
-                        case 'Half': quarter = 2; break;
-                    }
-                    let time = newPlayer.time.split(' ')[2]
-                    // console.log(newPlayer.time)
-                    // console.log(time)
-                    //console.log("QUARTER " + quarter)
-
-                    switch (key) {
-                        case "goals": fantasy += (differences[key] * 6); keyShorthand = 'g'; break;
-                        case "behinds": fantasy += (differences[key] * 1); keyShorthand = 'b'; break;
-                        case "kicks": fantasy += (differences[key] * 3); keyShorthand = 'k'; break;
-                        case "handballs": fantasy += (differences[key] * 2); keyShorthand = 'h'; break;
-                        case "marks": fantasy += (differences[key] * 3); keyShorthand = 'm'; break;
-                        case "tackles": fantasy += (differences[key] * 4); keyShorthand = 't'; break;
-                        case "hitouts": fantasy += (differences[key] * 1); keyShorthand = 'ho'; break;
-                        case "freesfor": fantasy += (differences[key] * 1); keyShorthand = 'ff'; break;
-                        case "freesagainst": fantasy -= (differences[key] * 3); keyShorthand = 'fa'; break;
-                        default:
-                            break;
-                    }
-                    if (keyShorthand) {
-                        let q1Score = document.getElementById('Q1').textContent;
-                        let q2Score = document.getElementById('Q2').textContent;
-                        let q3Score = document.getElementById('Q3').textContent;
-                        let q4Score = document.getElementById('Q4').textContent;
-                        let sum = q1Score + q2Score + q3Score + q4Score;
-                        if (sum + fantasy <= newPlayer.fantasy) {
-                            console.log("DON'T PUSH")
-                            scoringTimeline.push({
-                                quarter: quarter, // Adjust as per the actual data structure
-                                time: time,
-                                stat: keyShorthand,
-                                difference: differences[key],
-                                fantasy: fantasy,
-                            });
-                        }
-                    }
-
-                }
-            });
-
-            if (scoringTimeline.length > 0) {
-
-
-                fetch('/scoringTimeline', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ playerId, timeline: scoringTimeline })
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Network response was not ok, status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => ('Server response:', data))
-                    .catch(error => console.error('Error:', error));
-            }*/
             } else {
                 Object.keys(newPlayer).forEach(key => {
                     differences[key] = 0;
@@ -938,8 +858,9 @@
         }
 
         // Function to render superscript based on difference
-        function renderSuperscript(diff, behinds) {
-            if (diff !== 0) {
+        function renderSuperscript(diff, time, behinds) {
+            //console.log(time);
+            if (diff !== 0 && time !== 'Time') {
                 var diffInt = parseInt(diff);
                 const color = diffInt > 0 ? 'green' : 'red';
                 const sign = diffInt > 0 ? '+' : '';
@@ -958,7 +879,7 @@
                 document.querySelectorAll('sup').forEach(sup => {
                     sup.style.visibility = 'hidden';
                 });
-                fetchAndFormatPlayerData();
+                //fetchAndFormatPlayerData();
             }, 5000);
         }
 
@@ -967,6 +888,7 @@
 
         // Function to fetch player data and format it
         function fetchAndFormatPlayerData() {
+            console.log("FETCHING")
             Promise.all([
                 fetch(`/player-stats/${trimmedLink}`),
                 //fetch(`/${trimmedLink}/player-stats/?team=1`)
@@ -1003,7 +925,12 @@
         fetchAndFormatPlayerData(trimmedLink);
 
         // Function to fetch data every 10 seconds
-        setInterval(fetchAndFormatPlayerData, 20000);
+        socket.onmessage = function (event) {
+            if (event.data === 'playerDataChanged') {
+                console.log("FETCH SOCKET")
+                fetchAndFormatPlayerData(trimmedLink);
+            }
+        };
 
         function calculateGamePercentage(currentTime) {
 
@@ -1150,10 +1077,6 @@
             }
         });
 
-
-
-
-        const socket = new WebSocket('ws://10.0.0.67:8080');
 
 
 

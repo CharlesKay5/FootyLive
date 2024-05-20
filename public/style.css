@@ -62,7 +62,7 @@ sup {
     position: absolute;
     vertical-align: super;
     overflow: visible;
-    /* font-size: 75%; */
+    font-size: 65%;
 }
 
 #backButton {
@@ -183,7 +183,6 @@ input {
 
 td {
     position: relative;
-    overflow: hidden;
 }
 
 /* Set background color and font family */
@@ -278,6 +277,9 @@ a {
     text-align: center;
     white-space: wrap;
 }
+p {
+    white-space: wrap;
+}
 
 .scoreboard {
     display: flex;
@@ -337,6 +339,7 @@ a {
     font-weight: bold;
     color: var(--text-color);
     margin-bottom: 0;
+    white-space: wrap;
 }
 
 #gamePercentage {
@@ -719,8 +722,17 @@ i {
 
 
 
+.tableFocus {
+    margin-left: 5px;
+    font-size: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center; /* Add this line */
+}
+
 /* Responsive design for smaller screens */
 @media only screen and (max-width: 600px) {
+
     .container {
         flex-direction: column;
         width: 100%;
@@ -785,19 +797,6 @@ i {
         width: 20px;
         padding: 1px;
     }
-
-    /* :not(#timelineTable th) th:nth-child(n+9):nth-child(-n+11),
-    :not(#timelineTable td) td:nth-child(n+9):nth-child(-n+11) {
-        font-size: 11px;
-        text-align: center;
-        width: 30px;
-    }
-
-    table:not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)), table:not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
-        padding-right: 0;
-        text-align: center;
-        vertical-align: middle;
-    } */
 
     :not(#timelineTable) th:nth-child(n+12),
     :not(#timelineTable) td:nth-child(n+12) {
@@ -1003,6 +1002,28 @@ i {
     #timelineTable img {
         width: 100%;
         margin: auto;
+    }
+
+    sup {
+        position: absolute;
+        bottom: 20px;
+        right: 1px;
+        vertical-align: super;
+        overflow: visible;
+        font-size: 65%;
+    }
+    
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1400px) {
+    sup {
+        position: absolute;
+        bottom: 25px;
+        right: 1px;
+        vertical-align: super;
+        overflow: visible;
+        font-size: 65%;
     }
 
 }
