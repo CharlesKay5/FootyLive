@@ -18,18 +18,20 @@
     --input-background-color: #f8f9fa;
     --fixturescoreboard-background-color: #fff;
     --tablehover-background-color: #ced4da;
+    --chatoutline-color: #dee2e6;
 }
 
 [data-theme="dark"] {
     --text-color: #f8f9fa;
-    --background-color: #2a2a2a;
+    --background-color: #1a1a1a;
     --table-background-color: #202020;
     --lightrow-background-color: #2a2a2a;
     --darkrow-background-color: #1a1a1a;
     --tablehead-background-color: #3b3b3b;
     --input-background-color: #202020;
-    --fixturescoreboard-background-color: #1a1a1a;
+    --fixturescoreboard-background-color: #202020;
     --tablehover-background-color: #616161;
+    --chatoutline-color: #616161;
 }
 
 ::-webkit-scrollbar {
@@ -113,7 +115,7 @@ input {
     width: 50%;
     height: 40px;
     border-radius: 10px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--chatoutline-color);
     padding-right: 50px;
     padding-left: 10px
         /* Make room for the button */
@@ -124,7 +126,7 @@ input {
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--chatoutline-color);;
     background-color: #007bff;
     color: white;
 
@@ -135,7 +137,7 @@ input {
     width: 20%;
     height: 40px;
     border-radius: 10px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--chatoutline-color);;
     padding-right: 50px;
     /* Make room for the button */
     padding-left: 10px
@@ -148,7 +150,7 @@ input {
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--chatoutline-color);;
     background-color: #007bff;
     color: white;
     margin: 0;
@@ -160,7 +162,7 @@ input {
     width: 60%;
     height: 500px;
     border-radius: 10px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--chatoutline-color);
     padding: 10px;
     margin-bottom: 10px;
     overflow-y: scroll;
@@ -731,7 +733,7 @@ i {
 }
 
 /* Responsive design for smaller screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
 
     .container {
         flex-direction: column;
@@ -805,11 +807,7 @@ i {
         width: 30px;
     }
 
-    .hide-on-mobile {
-        display: none;
-        /* Hide elements on small screens */
-    }
-
+    
 
 
     .scoreboard {
@@ -904,7 +902,6 @@ i {
         width: 100%;
         height: 40px;
         border-radius: 10px;
-        border: 1px solid #dee2e6;
         padding-right: 50px;
         /* Make room for the button */
     }
@@ -918,9 +915,6 @@ i {
         width: 44px;
         height: 44px;
         border-radius: 10px;
-        border: 1px solid #dee2e6;
-        background-color: #007bff;
-        color: white;
         margin: 0;
     }
 
@@ -928,7 +922,6 @@ i {
         width: 100%;
         height: 40px;
         border-radius: 10px;
-        border: 1px solid #dee2e6;
         padding-right: 50px;
         /* Make room for the button */
     }
@@ -942,9 +935,6 @@ i {
         width: 44px;
         height: 44px;
         border-radius: 10px;
-        border: 1px solid #dee2e6;
-        background-color: #007bff;
-        color: white;
         margin: 0;
 
     }
@@ -956,7 +946,7 @@ i {
         width: 90%;
         height: 500px;
         border-radius: 10px;
-        border: 1px solid #dee2e6;
+        border: 1px solid var(--chatoutline-color);
         padding: 5px;
         margin-bottom: 10px;
         overflow-y: scroll;
@@ -1024,6 +1014,14 @@ i {
         vertical-align: super;
         overflow: visible;
         font-size: 65%;
+    }
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .hide-on-mobile {
+        display: none;
+        /* Hide elements on small screens */
     }
 
 }

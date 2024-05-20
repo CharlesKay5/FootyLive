@@ -150,45 +150,29 @@ async function updateFixtureData() {
         const data = { games: [] };
         await fixtureCrawl(fixtureURL, data);
         fixture = data; // Update fixture data
-        links = fixture.games.map(game => game.link);
-        for (const link of links) {
-            await updatePlayerStats(link);
-        }
+        const updatePromises = fixture.games
+            .filter(game => game.live == 0)
+            .map(game => updatePlayerStats(game.link));
+
+        await Promise.all(updatePromises);
         // Call broadcastMessage after all player stats have been updated
         broadcastMessage('playerDataChanged');
     } catch (error) {
         console.error('Error fetching fixture data:', error);
     }
 }
-setInterval(updateFixtureData, 120000);
-
-// async function updateLiveFixtureData() {
-//     try {
-//         const data = { games: [] };
-//         await fixtureCrawl(fixtureURL, data);
-//         fixture = data; // Update fixture data
-//         links = fixture.games.map(game => game.link);
-//         fixture.games.forEach((game, index) => {
-//             if (game.live == 1) {
-//                 updatePlayerStats(links[index]);
-//             }
-//         });
-//     } catch (error) {
-//         console.error('Error fetching fixture data:', error);
-//     }
-// }
-// setInterval(updateLiveFixtureData, 45000);
+setInterval(updateFixtureData, 1200000);
 
 async function updateLiveFixtureData() {
     try {
         const data = { games: [] };
         await fixtureCrawl(fixtureURL, data);
         fixture = data; // Update fixture data
-        for (const game of fixture.games) {
-            if (game.live == 1) {
-                await updatePlayerStats(game.link);
-            }
-        }
+        const updatePromises = fixture.games
+            .filter(game => game.live == 1)
+            .map(game => updatePlayerStats(game.link));
+
+        await Promise.all(updatePromises);
         broadcastMessage("playerDataChanged");
     }
     catch (error) {
