@@ -138,7 +138,9 @@ app.get('/get-all-chats', (req, res) => {
     res.json(chats);
 });
 
-const fixtureURL = "https://www.afl.com.au/fixture";
+// const fixtureURL = "https://www.afl.com.au/fixture";
+// 964 = round 10
+ const fixtureURL = "https://www.afl.com.au/fixture?Competition=1&Season=62&Round=954";
 
 let fixture = { games: [] }; // Initialize fixture data
 let links = []; // Array to store links
@@ -198,11 +200,17 @@ app.get('/fixture/:link', async (req, res) => {
 
     try {
         // Fetch player data from /player-stats endpoint using axios
-        const response = await axios.get(`http://localhost:5000/player-stats/${trimmedLink}`);
-        if (!response.data) {
-            throw new Error('Failed to fetch player data');
+        // const response = await axios.get(`http://localhost:5000/player-stats/${trimmedLink}`);
+        // if (!response.data) {
+        //     throw new Error('Failed to fetch player data');
+        // }
+        // const playerData = response.data; // Use a local variable instead of a global one
+        const filePath = path.join(matchesFolderPath, `${trimmedLink}.json`);
+        if (!fs.existsSync(filePath)) {
+            throw new Error('Player stats file not found');
         }
-        const playerData = response.data; // Use a local variable instead of a global one
+        const playerData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
 
         // Read index.html file
         const indexPath = path.join(__dirname, 'public', 'index.html');
@@ -235,7 +243,44 @@ app.get('/fixture-links', (req, res) => {
     res.json(links);
 });
 
+// Add this code in your server file (e.g., server.js)
+
+app.get('/previous-fixtures', (req, res) => {
+    const matchesFolderPath = path.join(__dirname, 'matches');
+    
+    fs.readdir(matchesFolderPath, (err, files) => {
+        if (err) {
+            console.error('Error reading matches folder:', err);
+            res.status(500).json({ error: 'Error reading matches folder' });
+            return;
+        }
+
+        const fixtureData = [];
+        files.forEach(file => {
+            const filePath = path.join(matchesFolderPath, file);
+            try {
+                const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+                fixtureData.push(data);
+            } catch (error) {
+                console.error('Error reading fixture file:', error);
+            }
+        });
+
+        res.json(fixtureData);
+    });
+});
+
+
+
 let playerStats = {}; // Change this to an object
+
+// Set the folder for matches to be stored
+const matchesFolderPath = path.join(__dirname, 'matches');
+
+// Ensure the matches folder exists
+if (!fs.existsSync(matchesFolderPath)) {
+    fs.mkdirSync(matchesFolderPath);
+}
 
 async function updatePlayerStats(url) {
     try {
@@ -272,6 +317,10 @@ async function updatePlayerStats(url) {
             } else {
                 playerStats[link].players.push(newPlayer);
             }
+
+            const filePath = path.join(matchesFolderPath, `${link}.json`);
+            fs.writeFileSync(filePath, JSON.stringify(stats));
+
         });
     } catch (error) {
         console.error('Error fetching player stats:', error);
@@ -358,11 +407,25 @@ function updateScoringTimeline(newPlayer, differences) {
 app.get('/player-stats/:link', (req, res) => {
     const link = req.params.link;
     if (playerStats[link]) {
-        res.json(playerStats[link]); // Send the stats for the specific link
+        // Send the stats from memory
+        res.json(playerStats[link]);
     } else {
-        res.status(500).json({ error: 'Player stats not found for this link' });
+        // Fallback to reading the stats from the file in the matches folder
+        const filePath = path.join(matchesFolderPath, `${link}.json`);
+        if (fs.existsSync(filePath)) {
+            try {
+                const playerData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+                res.json(playerData);
+            } catch (error) {
+                console.error('Error reading player stats from file:', error);
+                res.status(500).json({ error: 'Error reading player stats from file' });
+            }
+        } else {
+            res.status(404).json({ error: 'Player stats not found for this link' });
+        }
     }
 });
+
 
 app.get('/scoringTimeline/:playerId', (req, res) => {
     const playerId = req.params.playerId;

@@ -279,6 +279,91 @@ a {
     text-align: center;
     white-space: wrap;
 }
+
+#fixtures-list h2 {
+    margin-top: 40px;
+}
+
+#fixtures-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.fixtureContainer {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    
+}
+
+.fixtureContainer a {
+    border-top: 8px #2a2a2a solid;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 70%;
+    height: 120px;
+    margin: 20px;
+    /* Add space around the scoreboard */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add drop shadow */
+    background-color: var(--fixturescoreboard-background-color);
+}
+
+.previousFixture {
+    border-top: 8px darkblue solid;
+    display: flex;
+    flex-direction: wrap;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 500px;
+    height: 120px;
+    margin: 20px;
+    /* Add space around the scoreboard */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add drop shadow */
+    background-color: var(--fixturescoreboard-background-color);
+}
+
+
+.previousGameInfo {
+    text-align: center;
+    min-width: 33%;
+    line-height: 1.2;
+    padding: 15px;
+    
+}
+
+.previousFixture img {
+
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+
+.previousFixture ul {
+    list-style: none;
+}
+
+.hide-on-desktop {
+    display: none;
+}
+
+
 p {
     white-space: wrap;
 }
@@ -307,9 +392,9 @@ p {
 #awayTeamIcon {
     width: 80px;
     height: 80px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
 }
 
 .team {
@@ -381,7 +466,7 @@ p {
 h2 {
     font-size: 24px;
     font-weight: bold;
-    color: #2a2a2a;
+    color: var(--text-color);
     /* Dark text color */
 }
 
@@ -732,6 +817,26 @@ i {
     text-align: center; /* Add this line */
 }
 
+#round-list {
+    list-style-type: none; /* Remove the default list bullets */
+    
+    overflow: hidden; /* Add this if you want to contain floated items */
+    display: flex; /* Add this line */
+    justify-content: center; /* Add this line */
+    align-items: center; /* Add this line */
+}
+
+#round-list li {
+    text-align: center;
+    width: 20px;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    background-color: var(--tablehead-background-color);
+    border-radius: 20px;
+    
+}
+
 /* Responsive design for smaller screens */
 @media only screen and (max-width: 950px) {
 
@@ -852,6 +957,7 @@ i {
     #awayTeamIcon {
         width: 50px;
         height: 50px;
+        padding: 10px;
     }
 
     .fixtureScoreboard .homeTeamContainer {
@@ -871,6 +977,9 @@ i {
         padding: 15px;
         line-height: 1;
     }
+
+
+    
 
     .input-container {
         position: relative;
@@ -1002,7 +1111,34 @@ i {
         overflow: visible;
         font-size: 65%;
     }
-    
+
+    .fixtureContainer {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        margin: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0px;
+        
+    }
+
+    #fixtures-list h2 {
+        margin-top: 20px;
+    }
+
+
+    .previousGameInfo  {
+        padding: 0;
+    }
+
+    .fixtureContainer a {
+        width: 80%;
+    }
+    .fixtureContainer a .team img {
+       
+        margin: 10px;
+    }
 
 }
 

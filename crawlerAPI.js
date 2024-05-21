@@ -19,8 +19,8 @@ async function subsCrawl(baseURL, data, browser, callback) {
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 
-    //await page.goto(`https://www.afl.com.au/matches/team-lineups?GameWeeks=9`, { "waitUntil": "networkidle0" });
-    await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
+    await page.goto(`https://www.afl.com.au/matches/team-lineups?GameWeeks=0`, { "waitUntil": "networkidle0" });
+    // await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
 
     try {
         await page.waitForSelector(".empty-state__message-label", { timeout: 3000 });
@@ -115,7 +115,21 @@ async function statsCrawl(baseURL, data, browser, callback) {
                 injured: 0,
                 freesfor: 0,
                 freesagainst: 0,
+                round: 0,
+                date: 0,
+                trimmedLink: 0,
             }
+            let pageURL = window.location.href;
+            let splitLinks = pageURL.split('/')
+            player.trimmedLink = splitLinks[splitLinks.length - 1].split("#")[0]
+
+            const roundAndDate = document.getElementsByClassName("mc-header__date-wrapper js-match-start-time")[0].textContent;
+            let cleanString = roundAndDate.trim().replace(/^'|'\s*$/g, '');
+            const parts = cleanString.split('•').map(part => part.trim());
+            const round = parts[0]; // "Round 11"
+            const dateAndTime = parts.slice(1).join(' • ').replace(/\s*\(.*?\)\s*/g, '');
+            player.round = round;
+            player.date = dateAndTime;
 
             const nameRow = playerStats[i].getElementsByClassName("mc-player-stats-table__player")[0];
             const firstName = nameRow.firstChild.textContent.trim();

@@ -15,7 +15,35 @@
     <div id="fixture-data">
         <!-- Fixture data will be displayed here -->
     </div>
-
+    <br>
+    <hr>
+    <ul id="round-list">
+        <li data-round="1">1</li>
+        <li data-round="2">2</li>
+        <li data-round="3">3</li>
+        <li data-round="4">4</li>
+        <li data-round="5">5</li>
+        <li data-round="6">6</li>
+        <li data-round="7">7</li>
+        <li data-round="8">8</li>
+        <li data-round="9">9</li>
+        <li data-round="10">10</li>
+        <li data-round="11">11</li>
+        <li data-round="12">12</li>
+        <li data-round="13">13</li>
+        <li data-round="14">14</li>
+        <li data-round="15">15</li>
+        <li data-round="16">16</li>
+        <li data-round="17">17</li>
+        <li data-round="18">18</li>
+        <li data-round="19">19</li>
+        <li data-round="20">20</li>
+        <li data-round="21">21</li>
+        <li data-round="22">22</li>
+        <li data-round="23">23</li>
+        <li data-round="23">24</li>
+    </ul>
+    <div id="fixtures-list"></div>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const savedTheme = localStorage.getItem('theme') || 'light';
@@ -31,6 +59,92 @@
                     throw error; // Propagate the error
                 });
         }
+
+        async function fetchPreviousFixtures() {
+            try {
+                const response = await fetch('/previous-fixtures');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const fixtureData = await response.json();
+                displayPreviousFixtures(fixtureData);
+            } catch (error) {
+                console.error('Error fetching previous fixtures:', error);
+            }
+        }
+
+        function displayPreviousFixtures(fixtureData) {
+            const fixturesList = document.getElementById('fixtures-list');
+            fixturesList.innerHTML = ''; // Clear any existing data
+
+            // Step 1: Group fixtures by round
+            const fixturesByRound = fixtureData.reduce((acc, fixture) => {
+                let playerWithTeam0 = fixture.players.find(player => player.team === 0);
+                let playerWithTeam1 = fixture.players.find(player => player.team === 1);
+
+                if (playerWithTeam0 && playerWithTeam1) {
+                    const round = playerWithTeam0.round; // Example: "Round 11"
+                    if (!acc[round]) {
+                        acc[round] = [];
+                    }
+                    acc[round].push({
+                        team0: playerWithTeam0.teamName,
+                        team1: playerWithTeam1.teamName,
+                        date: playerWithTeam0.date,
+                        link: playerWithTeam0.trimmedLink
+                    });
+                }
+                return acc;
+            }, {});
+
+            // Step 2: Extract and sort rounds in descending order and remove the latest round
+            const sortedRounds = Object.keys(fixturesByRound)
+                .map(roundStr => ({
+                    roundStr,
+                    roundNum: parseInt(roundStr.replace('Round ', ''))
+                })) // Extract the round number
+                .sort((a, b) => b.roundNum - a.roundNum); // Sort in descending order
+
+            // Remove the latest round
+            sortedRounds.shift();
+
+            // Step 3: Create list items for each round
+            sortedRounds.forEach(({ roundStr }) => {
+                const roundHeader = document.createElement('h2');
+                roundHeader.textContent = `${roundStr}:`;
+                fixturesList.appendChild(roundHeader);
+
+                const fixtureContainer = document.createElement('div');
+                fixtureContainer.classList.add('fixtureContainer');
+
+                const roundFixtures = fixturesByRound[roundStr];
+                roundFixtures.forEach(fixture => {
+                    const listItem = document.createElement('a');
+                    listItem.href = `/fixture/${fixture.link}`;
+                    listItem.innerHTML = `
+                <div class="team homeTeamContainer">
+                    <img id="homeTeamIcon" src="/svg/${fixture.team0.replace(/\s+/g, '')}.svg" alt="Home Team Logo">
+                </div>
+                <div class="previousGameInfo">
+                    <p>${fixture.team0} vs ${fixture.team1}</p>
+                    <br>
+                    <p id="gameLocation">${fixture.date}</p>
+                </div>
+                <div class="team awayTeamContainer">
+                    <img id="awayTeamIcon" src="/svg/${fixture.team1.replace(/\s+/g, '')}.svg" alt="Away Team Logo">
+                </div>
+            `;
+                    fixtureContainer.appendChild(listItem); // Append the list item to the fixtureContainer
+                });
+
+                fixturesList.appendChild(fixtureContainer); // Append the fixtureContainer to fixturesList
+            });
+        }
+
+
+
+        // Call the function to fetch and display previous fixtures on page load
+        document.addEventListener('DOMContentLoaded', fetchPreviousFixtures);
 
         // Function to format and display fixture data
         function displayFixtureData() {
