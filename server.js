@@ -138,9 +138,9 @@ app.get('/get-all-chats', (req, res) => {
     res.json(chats);
 });
 
-// const fixtureURL = "https://www.afl.com.au/fixture";
+const fixtureURL = "https://www.afl.com.au/fixture";
 // 964 = round 10
- const fixtureURL = "https://www.afl.com.au/fixture?Competition=1&Season=62&Round=954";
+// const fixtureURL = "https://www.afl.com.au/fixture?Competition=1&Season=62&Round=964";
 
 let fixture = { games: [] }; // Initialize fixture data
 let links = []; // Array to store links
@@ -247,7 +247,7 @@ app.get('/fixture-links', (req, res) => {
 
 app.get('/previous-fixtures', (req, res) => {
     const matchesFolderPath = path.join(__dirname, 'matches');
-    
+
     fs.readdir(matchesFolderPath, (err, files) => {
         if (err) {
             console.error('Error reading matches folder:', err);
@@ -367,7 +367,7 @@ function updateScoringTimeline(newPlayer, differences) {
                 case 'Full': quarter = 4; break;
                 case 'Half': quarter = 2; break;
             }
-            let time = newPlayer.time.split(' ')[2];
+            let time = timeArray[2];
             if (time === undefined) {
                 return;
             }
@@ -391,6 +391,7 @@ function updateScoringTimeline(newPlayer, differences) {
 
             if (keyShorthand) {
                 scoringTimeline.push({
+                    playerId: playerId,
                     quarter: quarter,
                     time: time,
                     stat: keyShorthand,
@@ -400,6 +401,39 @@ function updateScoringTimeline(newPlayer, differences) {
             }
         }
     });
+
+    let groupedByRound = {};
+    scoringTimeline.forEach(item => {
+        let round = newPlayer.round;
+        if (!groupedByRound[round]) {
+            groupedByRound[round] = [];
+        }
+        groupedByRound[round].push(item);
+    });
+
+    let existingData = {};
+    if (fs.existsSync('timelineData.json')) {
+        existingData = JSON.parse(fs.readFileSync('timelineData.json', 'utf-8'));
+    }
+
+    // Merge existing data with new data
+    for (let round in groupedByRound) {
+        if (!existingData[round]) {
+            existingData[round] = groupedByRound[round];
+        } else {
+            groupedByRound[round].forEach(newItem => {
+                if (!existingData[round].some(existingItem =>
+                    existingItem.playerId === newItem.playerId &&
+                    existingItem.quarter === newItem.quarter &&
+                    existingItem.time === newItem.time &&
+                    existingItem.stat === newItem.stat)) {
+                    existingData[round].push(newItem);
+                }
+            });
+        }
+    }
+
+    fs.writeFileSync('timelineData.json', JSON.stringify(existingData, null, 2));
 
     return scoringTimeline;
 }
@@ -427,10 +461,31 @@ app.get('/player-stats/:link', (req, res) => {
 });
 
 
-app.get('/scoringTimeline/:playerId', (req, res) => {
+app.get('/scoringTimeline/:playerId/:round', (req, res) => {
     const playerId = req.params.playerId;
-    const data = scoringTimeline[playerId] || [];
-    res.json(data);
+    const round = req.params.round;
+
+    // Read the JSON data from the file
+    let timelineData;
+    try {
+        timelineData = JSON.parse(fs.readFileSync('timelineData.json', 'utf8'));
+    } catch (error) {
+        return res.status(500).json({ error: 'Error reading timeline data file' });
+    }
+
+    // Find the data for the specified round and player
+    const roundData = timelineData[round];
+    if (!roundData) {
+        return res.json([]);
+        //return res.status(404).json({ error: `No data found for round ${round}` });
+    }
+
+    const playerData = roundData.filter(player => player.playerId === playerId);
+    if (!playerData.length) {
+        return res.status(404).json({ error: `No data found for player ${playerId} in round ${round}` });
+    }
+
+    res.json(playerData);
 });
 
 // Route for serving player images

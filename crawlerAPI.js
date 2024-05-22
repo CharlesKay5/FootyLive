@@ -19,8 +19,8 @@ async function subsCrawl(baseURL, data, browser, callback) {
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 
-    await page.goto(`https://www.afl.com.au/matches/team-lineups?GameWeeks=0`, { "waitUntil": "networkidle0" });
-    // await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
+    //await page.goto(`https://www.afl.com.au/matches/team-lineups?GameWeeks=10`, { "waitUntil": "networkidle0" });
+    await page.goto(`https://www.afl.com.au/matches/team-lineups`, { "waitUntil": "networkidle0" });
 
     try {
         await page.waitForSelector(".empty-state__message-label", { timeout: 3000 });

@@ -369,7 +369,7 @@
 
                 if (currentTimelinePlayer) {
                     //console.log("Fetching current Player");
-                    fetchScoringTimeline(currentTimelinePlayer);
+                    //fetchScoringTimeline(currentTimelinePlayer, firstPlayerTeam0.round);
                 }
             } else {
                 console.error(`Player data for Team ${team} is not available or not in the expected format.`);
@@ -723,8 +723,8 @@
             return differences;
         }
 
-        function fetchScoringTimeline(playerId) {
-            fetch(`/scoringTimeline/${playerId}`)
+        function fetchScoringTimeline(playerId, round) {
+            fetch(`/scoringTimeline/${playerId}/${round}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Network response was not ok, status: ${response.status}`);
@@ -736,7 +736,9 @@
                         formatScoringTimeline(playerId, data);
                     }
                 })
-                .catch(error => console.error('Error fetching scoring timeline:', error));
+                .catch(error => {
+                    alert('The scoring timeline data is missing or unavailable. \nNOTE: timeline data is not available for games prior to round 11', error);
+                });
         }
 
         function formatScoringTimeline(playerId, data) {
@@ -810,7 +812,7 @@
             timelineBreakeven.innerText = "BE: " + player.breakeven;
 
 
-            fetchScoringTimeline(playerId);
+            fetchScoringTimeline(playerId, player.round);
         }
 
         function handleHideTimelineClick() {

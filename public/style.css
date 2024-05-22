@@ -588,7 +588,7 @@ table:not(#timelineTable) td:last-child {
 }
 
 #timelineTable tr td {
-    background-color: var(--darkrow-background-color);
+    background-color: var(--table-background-color);
 }
 
 #timelineTable tr td:first-child {
