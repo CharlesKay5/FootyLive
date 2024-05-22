@@ -68,7 +68,7 @@ sup {
 }
 
 #backButton {
-    position:absolute;
+    position: absolute;
     top: 10px;
     left: 10px;
     z-index: 1001;
@@ -81,7 +81,7 @@ sup {
     position: relative;
     width: 70%;
     margin-bottom: 5px;
-    
+
 }
 
 input {
@@ -126,7 +126,8 @@ input {
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    border: 1px solid var(--chatoutline-color);;
+    border: 1px solid var(--chatoutline-color);
+    ;
     background-color: #007bff;
     color: white;
 
@@ -137,7 +138,8 @@ input {
     width: 20%;
     height: 40px;
     border-radius: 10px;
-    border: 1px solid var(--chatoutline-color);;
+    border: 1px solid var(--chatoutline-color);
+    ;
     padding-right: 50px;
     /* Make room for the button */
     padding-left: 10px
@@ -150,7 +152,8 @@ input {
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    border: 1px solid var(--chatoutline-color);;
+    border: 1px solid var(--chatoutline-color);
+    ;
     background-color: #007bff;
     color: white;
     margin: 0;
@@ -245,6 +248,20 @@ a {
 
 }
 
+#backToTop {
+    z-index: 999;
+    color: var(--text-color);
+    background-color: var(--darkrow-background-color);
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 60px;
+    display: none;
+}
+
 .fixtureScoreboard {
     border-top: 8px darkblue solid;
     display: flex;
@@ -275,6 +292,7 @@ a {
     text-align: center;
     min-width: 33%;
 }
+
 #gameLocation {
     text-align: center;
     white-space: wrap;
@@ -289,7 +307,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .fixtureContainer {
@@ -300,7 +318,7 @@ a {
     margin: auto;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0px;
-    
+
 }
 
 .fixtureContainer a {
@@ -342,7 +360,7 @@ a {
     min-width: 33%;
     line-height: 1.2;
     padding: 15px;
-    
+
 }
 
 .previousFixture img {
@@ -394,7 +412,7 @@ p {
     height: 80px;
     padding-left: 10px;
     padding-right: 10px;
-    
+
 }
 
 .team {
@@ -687,7 +705,8 @@ table:not(#timelineTable) td:last-child {
 #timelineText {
     display: flex;
     flex-direction: column;
-    margin-left: 10px; /* Adjust as needed */
+    margin-left: 10px;
+    /* Adjust as needed */
     text-align: center;
 }
 
@@ -702,8 +721,10 @@ table:not(#timelineTable) td:last-child {
 #timelineHolder {
     display: none;
     flex-direction: column;
-    justify-content: center; /* horizontally center children */
-    align-items: center; /* vertically center children */
+    justify-content: center;
+    /* horizontally center children */
+    align-items: center;
+    /* vertically center children */
     width: 100px;
     margin: auto;
 }
@@ -814,16 +835,22 @@ i {
     font-size: 10px;
     display: inline-block;
     vertical-align: middle;
-    text-align: center; /* Add this line */
+    text-align: center;
+    /* Add this line */
 }
 
 #round-list {
-    list-style-type: none; /* Remove the default list bullets */
-    
-    overflow: hidden; /* Add this if you want to contain floated items */
-    display: flex; /* Add this line */
-    justify-content: center; /* Add this line */
-    align-items: center; /* Add this line */
+    list-style-type: none;
+    /* Remove the default list bullets */
+
+    overflow: hidden;
+    /* Add this if you want to contain floated items */
+    display: flex;
+    /* Add this line */
+    justify-content: center;
+    /* Add this line */
+    align-items: center;
+    /* Add this line */
 }
 
 #round-list li {
@@ -834,11 +861,34 @@ i {
     display: inline-block;
     background-color: var(--tablehead-background-color);
     border-radius: 20px;
-    
+
 }
 
 /* Responsive design for smaller screens */
 @media only screen and (max-width: 950px) {
+
+    #round-list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        padding-left: 60px;
+        padding-right: 60px;
+        grid-gap: 2px;
+        /* Space between grid items */
+        justify-items: center;
+        /* Center items horizontally */
+        align-items: center;
+        justify-content: center;
+    }
+
+    #backToTop {
+        display: block;
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        left: 10px;
+    }
+
 
     .container {
         flex-direction: column;
@@ -878,7 +928,7 @@ i {
         vertical-align: middle;
     }
 
-    tr:not(#timelineTable tr){
+    tr:not(#timelineTable tr) {
         height: 32px;
     }
 
@@ -912,7 +962,7 @@ i {
         width: 30px;
     }
 
-    
+
 
 
     .scoreboard {
@@ -979,7 +1029,7 @@ i {
     }
 
 
-    
+
 
     .input-container {
         position: relative;
@@ -1120,7 +1170,7 @@ i {
         margin: auto;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 0px;
-        
+
     }
 
     #fixtures-list h2 {
@@ -1128,15 +1178,16 @@ i {
     }
 
 
-    .previousGameInfo  {
+    .previousGameInfo {
         padding: 0;
     }
 
     .fixtureContainer a {
         width: 80%;
     }
+
     .fixtureContainer a .team img {
-       
+
         margin: 10px;
     }
 

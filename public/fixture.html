@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <h1 id="fixtureHeader">Fixtures</h1>
+    <h1 id="fixtureHeader" style="text-align: center;">This Week's Fixtures</h1>
     <button id="darkModeToggle"><i class="fa-solid fa-star-half-stroke"></i></button>
+    <button id="backToTop"><i class="fa-solid fa-up-long"></i></button>
     <div id="fixture-data">
         <!-- Fixture data will be displayed here -->
     </div>
@@ -41,13 +42,38 @@
         <li data-round="21">21</li>
         <li data-round="22">22</li>
         <li data-round="23">23</li>
-        <li data-round="23">24</li>
+        <li data-round="24">24</li>
     </ul>
     <div id="fixtures-list"></div>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const listItems = document.getElementsByTagName("li");
+
+            for (let i = 0; i < listItems.length; i++) {
+                listItems[i].addEventListener("click", (event) => {
+                    const round = event.target.getAttribute("data-round");
+                    // scroll into view
+                    try {
+                        document.getElementById(`round-${round}`).scrollIntoView({ behavior: 'smooth' });
+                    } catch {
+                        alert("Round hasn't occured yet!")
+                    }
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const backToTop = document.getElementById("backToTop");
+            backToTop.addEventListener("click", (event) => {
+                const fixtureHeader = document.getElementById("fixtureHeader");
+                // scroll into view
+                fixtureHeader.scrollIntoView({ behavior: 'smooth' });
+            });
         });
 
         // Function to fetch fixture data from the server
@@ -112,6 +138,7 @@
             sortedRounds.forEach(({ roundStr }) => {
                 const roundHeader = document.createElement('h2');
                 roundHeader.textContent = `${roundStr}:`;
+                roundHeader.id = `round-${roundStr.split(' ')[1]}`;
                 fixturesList.appendChild(roundHeader);
 
                 const fixtureContainer = document.createElement('div');
