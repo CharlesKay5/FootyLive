@@ -10,40 +10,42 @@
 </head>
 
 <body>
-    <h1 id="fixtureHeader" style="text-align: center;">This Week's Fixtures</h1>
+    <div id="round-selector">
+        <ul id="round-list">
+            <li data-round="0">OR</li>
+            <li data-round="1">1</li>
+            <li data-round="2">2</li>
+            <li data-round="3">3</li>
+            <li data-round="4">4</li>
+            <li data-round="5">5</li>
+            <li data-round="6">6</li>
+            <li data-round="7">7</li>
+            <li data-round="8">8</li>
+            <li data-round="9">9</li>
+            <li data-round="10">10</li>
+            <li data-round="11">11</li>
+            <li data-round="12">12</li>
+            <li data-round="13">13</li>
+            <li data-round="14">14</li>
+            <li data-round="15">15</li>
+            <li data-round="16">16</li>
+            <li data-round="17">17</li>
+            <li data-round="18">18</li>
+            <li data-round="19">19</li>
+            <li data-round="20">20</li>
+            <li data-round="21">21</li>
+            <li data-round="22">22</li>
+            <li data-round="23">23</li>
+            <li data-round="24">24</li>
+        </ul>
+    </div>
     <button id="darkModeToggle"><i class="fa-solid fa-star-half-stroke"></i></button>
     <button id="backToTop"><i class="fa-solid fa-up-long"></i></button>
     <div id="fixture-data">
         <!-- Fixture data will be displayed here -->
     </div>
     <br>
-    <hr>
-    <ul id="round-list">
-        <li data-round="1">1</li>
-        <li data-round="2">2</li>
-        <li data-round="3">3</li>
-        <li data-round="4">4</li>
-        <li data-round="5">5</li>
-        <li data-round="6">6</li>
-        <li data-round="7">7</li>
-        <li data-round="8">8</li>
-        <li data-round="9">9</li>
-        <li data-round="10">10</li>
-        <li data-round="11">11</li>
-        <li data-round="12">12</li>
-        <li data-round="13">13</li>
-        <li data-round="14">14</li>
-        <li data-round="15">15</li>
-        <li data-round="16">16</li>
-        <li data-round="17">17</li>
-        <li data-round="18">18</li>
-        <li data-round="19">19</li>
-        <li data-round="20">20</li>
-        <li data-round="21">21</li>
-        <li data-round="22">22</li>
-        <li data-round="23">23</li>
-        <li data-round="24">24</li>
-    </ul>
+
     <div id="fixtures-list"></div>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -51,6 +53,9 @@
             document.documentElement.setAttribute('data-theme', savedTheme);
         });
 
+        let visibleFixutre = document.getElementById('fixture-data');
+        let visibleFixtureHead = document.getElementById('fixture-data');
+        let visibleListItem = document.querySelector('li[data-round="11"]');
         document.addEventListener('DOMContentLoaded', (event) => {
             const listItems = document.getElementsByTagName("li");
 
@@ -58,11 +63,18 @@
                 listItems[i].addEventListener("click", (event) => {
                     const round = event.target.getAttribute("data-round");
                     // scroll into view
-                    try {
-                        document.getElementById(`round-${round}`).scrollIntoView({ behavior: 'smooth' });
-                    } catch {
-                        alert("Round hasn't occured yet!")
-                    }
+                    listItems[i].style.backgroundColor = "blue";
+                    document.getElementById(`round-${round}`).style.display = "block";
+                    document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
+
+                    visibleFixutre.style.display = "none";
+                    visibleFixtureHead.style.display = "none";
+                    //console.log(visibleListItem)
+                    visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
+                    visibleFixutre = document.getElementById(`round-${round}`);
+                    visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
+                    visibleListItem = listItems[i];
+                    
                 });
             }
         });
@@ -76,8 +88,20 @@
             });
         });
 
+        // Call the function to fetch and display previous fixtures on page load
+        document.addEventListener('DOMContentLoaded', fetchPreviousFixtures);
+
+        function hidePreviousFixtures() {
+            for (let i = 0; i < 24; i++) {
+                const roundHeader = document.getElementById(`round-${i}`);
+                if (roundHeader) { roundHeader.style.display = "none"; }
+                const roundTable = document.getElementsByClassName(`round-${i}`)[0];
+                if (roundTable) { roundTable.style.display = "none"; }
+            }
+        }
+
         // Function to fetch fixture data from the server
-        function fetchFixtureData() {
+        function fetchFixtureData(fixtures) {
             return fetch('/fixture-data')
                 .then(response => response.json())
                 .catch(error => {
@@ -85,6 +109,7 @@
                     throw error; // Propagate the error
                 });
         }
+
 
         async function fetchPreviousFixtures() {
             try {
@@ -109,7 +134,10 @@
                 let playerWithTeam1 = fixture.players.find(player => player.team === 1);
 
                 if (playerWithTeam0 && playerWithTeam1) {
-                    const round = playerWithTeam0.round; // Example: "Round 11"
+                    const round0 = parseInt(playerWithTeam0.round.replace('Round ', ''));
+                    const round1 = parseInt(playerWithTeam1.round.replace('Round ', ''));
+                    const round = `Round ${Math.max(round0, round1)}`; // Use the higher round
+
                     if (!acc[round]) {
                         acc[round] = [];
                     }
@@ -117,11 +145,17 @@
                         team0: playerWithTeam0.teamName,
                         team1: playerWithTeam1.teamName,
                         date: playerWithTeam0.date,
-                        link: playerWithTeam0.trimmedLink
+                        link: playerWithTeam0.trimmedLink,
+                        homeScore: fixture.score.HomeScoreTotal,
+                        awayScore: fixture.score.AwayScoreTotal,
                     });
                 }
                 return acc;
             }, {});
+            const roundNumbers = Object.keys(fixturesByRound).map(round => parseInt(round.replace('Round ', '')));
+            const maxRoundNumber = Math.max(...roundNumbers);
+            delete fixturesByRound[`Round ${maxRoundNumber}`];
+            delete fixturesByRound[`Round ${maxRoundNumber}`];
 
             // Step 2: Extract and sort rounds in descending order and remove the latest round
             const sortedRounds = Object.keys(fixturesByRound)
@@ -142,98 +176,157 @@
                 fixturesList.appendChild(roundHeader);
 
                 const fixtureContainer = document.createElement('div');
-                fixtureContainer.classList.add('fixtureContainer');
+                fixtureContainer.classList.add('dateContainer');
+                fixtureContainer.classList.add(`round-${roundStr.split(' ')[1]}`);
 
                 const roundFixtures = fixturesByRound[roundStr];
                 roundFixtures.forEach(fixture => {
                     const listItem = document.createElement('a');
                     listItem.href = `/fixture/${fixture.link}`;
+                    listItem.classList.add("fixtureScoreboard");
+                    // listItem.innerHTML = `
+                    //     <div class="team homeTeamContainer">
+                    //         <img id="homeTeamIcon" src="/svg/${fixture.team0.replace(/\s+/g, '')}.svg" alt="Home Team Logo">
+                    //     </div>
+                    //     <div class="previousGameInfo">
+                    //         <p>${fixture.team0} vs ${fixture.team1}</p>
+                    //         <br>
+                    //         <p id="gameLocation">${fixture.date}</p>
+                    //     </div>
+                    //     <div class="team awayTeamContainer">
+                    //         <img id="awayTeamIcon" src="/svg/${fixture.team1.replace(/\s+/g, '')}.svg" alt="Away Team Logo">
+                    //     </div>
+                    // `;
+                    let winning = '';
+                    const highestScore = Math.max(fixture.homeScore, fixture.awayScore);
+                    const lowestScore = Math.min(fixture.homeScore, fixture.awayScore);
+                    const margin = highestScore - lowestScore;
+                    if (fixture.homeScore == highestScore) {
+                        winning = `${fixture.team0} <br>by ${margin}`;
+                    }
+                    else {
+                        winning = `${fixture.team1} <br>by ${margin}`;
+                    }
+
+                    if (fixture.homeScore == fixture.awayScore) {
+                        if (highestScore == 0) {
+                            winning = "TBD";
+                        } else {
+                            winning = "Draw";
+                        }
+                    }
+
                     listItem.innerHTML = `
-                <div class="team homeTeamContainer">
-                    <img id="homeTeamIcon" src="/svg/${fixture.team0.replace(/\s+/g, '')}.svg" alt="Home Team Logo">
-                </div>
-                <div class="previousGameInfo">
-                    <p>${fixture.team0} vs ${fixture.team1}</p>
-                    <br>
-                    <p id="gameLocation">${fixture.date}</p>
-                </div>
-                <div class="team awayTeamContainer">
-                    <img id="awayTeamIcon" src="/svg/${fixture.team1.replace(/\s+/g, '')}.svg" alt="Away Team Logo">
-                </div>
-            `;
+                            
+                            <div class="team homeTeamContainer">
+                                <h2 class="hide-on-mobile">${fixture.team0}</h2>
+                                <img id="homeTeamIcon" src="/svg/${fixture.team0.replace(/\s+/g, '')}.svg" alt="Home Team Logo">
+                                <h2 id="homeTeamScore">${fixture.homeScore}</h2>
+                            </div>
+                            <div class="gameInfo">
+                                <h2 id="currentPeriod">${fixture.date}</h2>
+                                <p id="margin">${winning}</p>
+                            </div>
+                            <div class="team awayTeamContainer">
+                                <h2 id="awayTeamScore">${fixture.awayScore}</h2>
+                                <img id="awayTeamIcon" src="/svg/${fixture.team1.replace(/\s+/g, '')}.svg" alt="Away Team Logo">
+                                <h2 class="hide-on-mobile">${fixture.team1}</h2>
+                            </div>
+                            `;
+
                     fixtureContainer.appendChild(listItem); // Append the list item to the fixtureContainer
                 });
 
                 fixturesList.appendChild(fixtureContainer); // Append the fixtureContainer to fixturesList
             });
+            hidePreviousFixtures();
         }
 
 
 
-        // Call the function to fetch and display previous fixtures on page load
-        document.addEventListener('DOMContentLoaded', fetchPreviousFixtures);
+
 
         // Function to format and display fixture data
-        function displayFixtureData() {
+        function displayCurrentFixtures() {
             const fixtureDataContainer = document.getElementById('fixture-data');
             fixtureDataContainer.innerHTML = ''; // Clear previous data
 
             fetchFixtureData()
                 .then(data => {
-                    // Iterate over each fixture and create HTML elements to display them
+                    const fixturesByDate = {};
+
+                    // Group fixtures by date
                     data.games.forEach(fixture => {
+                        const fixtureDate = fixture.date; // Assuming fixture.date is in a suitable format
 
-                        const localLink = fixture.link.split("/").pop();
+                        if (!fixturesByDate[fixtureDate]) {
+                            fixturesByDate[fixtureDate] = [];
+                        }
+                        fixturesByDate[fixtureDate].push(fixture);
+                    });
 
-                        const fixtureElement = document.createElement('a');
-                        fixtureElement.href = '/';
-                        fixtureElement.classList.add('fixtureScoreboard');
+                    // Create and append elements for each date and its fixtures
+                    for (const date in fixturesByDate) {
+                        const dateContainer = document.createElement('div');
+                        dateContainer.classList.add('date-container');
 
-                        fixtureElement.addEventListener('click', function (event) {
-                            event.preventDefault();
-                            //console.log("FIXTURE LINK: ", fixture.link);
-                            fetch('/game-link', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    link: fixture.link
-                                })
-                            }).then(response => {
-                                if (response.ok) {
-                                    window.location.href = `/fixture/${localLink}`;
-                                } else {
-                                    console.error('Error setting game link:', response.status);
-                                }
-                            }).catch(error => {
-                                console.error('Error setting game link:', error);
+                        const dateHeader = document.createElement('h2');
+                        dateHeader.classList.add('date-header');
+                        dateHeader.textContent = date;
+
+                        dateContainer.appendChild(dateHeader);
+
+                        fixturesByDate[date].forEach(fixture => {
+                            const localLink = fixture.link.split("/").pop();
+
+                            const fixtureElement = document.createElement('a');
+                            fixtureElement.href = '/';
+                            fixtureElement.classList.add('fixtureScoreboard');
+
+                            fixtureElement.addEventListener('click', function (event) {
+                                event.preventDefault();
+                                fetch('/game-link', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        link: fixture.link
+                                    })
+                                }).then(response => {
+                                    if (response.ok) {
+                                        window.location.href = `/fixture/${localLink}`;
+                                    } else {
+                                        console.error('Error setting game link:', response.status);
+                                    }
+                                }).catch(error => {
+                                    console.error('Error setting game link:', error);
+                                });
                             });
-                        });
 
-                        let winning = "";
-                        const highestScore = Math.max(fixture.team0score, fixture.team1score);
-                        const lowestScore = Math.min(fixture.team0score, fixture.team1score);
-                        const margin = highestScore - lowestScore;
-                        const team0NameForIcon = fixture.team0.replace(/\s/g, '');
-                        const team1NameForIcon = fixture.team1.replace(/\s/g, '');
+                            let winning = "";
+                            const highestScore = Math.max(fixture.team0score, fixture.team1score);
+                            const lowestScore = Math.min(fixture.team0score, fixture.team1score);
+                            const margin = highestScore - lowestScore;
+                            const team0NameForIcon = fixture.team0.replace(/\s/g, '');
+                            const team1NameForIcon = fixture.team1.replace(/\s/g, '');
 
-                        if (fixture.team0score == highestScore) {
-                            winning = `${fixture.team0} <br>by ${margin}`;
-                        }
-                        else {
-                            winning = `${fixture.team1} <br>by ${margin}`;
-                        }
-
-                        if (fixture.team0score == fixture.team1score) {
-                            if (highestScore == 0) {
-                                winning = "TBD";
-                            } else {
-                                winning = "Draw";
+                            if (fixture.team0score == highestScore) {
+                                winning = `${fixture.team0} <br>by ${margin}`;
                             }
-                        }
+                            else {
+                                winning = `${fixture.team1} <br>by ${margin}`;
+                            }
 
-                        fixtureElement.innerHTML = `
+                            if (fixture.team0score == fixture.team1score) {
+                                if (highestScore == 0) {
+                                    winning = "TBD";
+                                } else {
+                                    winning = "Draw";
+                                }
+                            }
+
+                            fixtureElement.innerHTML = `
                             
                             <div class="team homeTeamContainer">
                                 <h2 class="hide-on-mobile">${fixture.team0}</h2>
@@ -254,15 +347,17 @@
                      
                         `;
 
-                        fixtureDataContainer.appendChild(fixtureElement);
+                            if (fixture.time == 'FULL TIME') {
+                                fixtureElement.style.borderTop = '8px red solid';
+                            } else if (fixture.time.includes("Q")) {
+                                fixtureElement.style.borderTop = '8px green solid';
+                            }
 
-                        let fixtureScoreboards = document.getElementsByClassName('fixtureScoreboard');
-                        if (fixture.time == 'FULL TIME') {
-                            fixtureElement.style.borderTop = '8px red solid';
-                        } else if (fixture.time.includes("Q")) {
-                            fixtureElement.style.borderTop = '8px green solid';
-                        }
-                    });
+                            dateContainer.appendChild(fixtureElement);
+                        });
+
+                        fixtureDataContainer.appendChild(dateContainer);
+                    }
                 })
                 .catch(error => {
                     // Handle errors, e.g., display an error message
@@ -271,11 +366,12 @@
                 });
         }
 
+
         // Function to fetch and display fixture data initially upon page load
-        displayFixtureData();
+        displayCurrentFixtures();
 
         // Function to fetch and display fixture data every 10 seconds
-        setInterval(displayFixtureData, 60000);
+        setInterval(displayCurrentFixtures, 60000);
 
         document.getElementById('darkModeToggle').addEventListener('click', function () {
             const currentTheme = document.documentElement.getAttribute('data-theme');

@@ -38,7 +38,7 @@
     display: none;
 }
 
-/* Reset default browser styles */
+
 html,
 body,
 h1,
@@ -57,7 +57,6 @@ td {
     cursor: default;
     font-family: "Inter Variable", "Times New Roman", Times, serif;
     white-space: nowrap;
-    /* font-family: "Inter", Arial, "Helvetica Neue", sans-serif; */
 }
 
 sup {
@@ -118,7 +117,6 @@ input {
     border: 1px solid var(--chatoutline-color);
     padding-right: 50px;
     padding-left: 10px
-        /* Make room for the button */
 }
 
 #messageButton {
@@ -139,9 +137,7 @@ input {
     height: 40px;
     border-radius: 10px;
     border: 1px solid var(--chatoutline-color);
-    ;
     padding-right: 50px;
-    /* Make room for the button */
     padding-left: 10px
 }
 
@@ -190,15 +186,10 @@ td {
     position: relative;
 }
 
-/* Set background color and font family */
 body {
     background-color: var(--background-color);
-
-    /* Light gray background */
     color: var(--text-color);
-    /* Dark text color */
     margin: 0;
-    /* Remove default margin */
 }
 
 a {
@@ -262,6 +253,32 @@ a {
     display: none;
 }
 
+
+#round-selector {
+    position: sticky;
+    top: 0;
+    padding-top: 10px;
+    height: 50px;
+    overflow: scroll;
+    background-color: var(--input-background-color);
+    z-index: 1002;
+}
+
+.dateContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: auto;
+}
+
+.date-header {
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
 .fixtureScoreboard {
     border-top: 8px darkblue solid;
     display: flex;
@@ -269,12 +286,10 @@ a {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    width: 70%;
+    width: 1100px;
     height: 120px;
     margin: 20px;
-    /* Add space around the scoreboard */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Add drop shadow */
     background-color: var(--fixturescoreboard-background-color);
 }
 
@@ -298,27 +313,15 @@ a {
     white-space: wrap;
 }
 
-#fixtures-list h2 {
-    margin-top: 40px;
-}
-
 #fixtures-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}
-
-.fixtureContainer {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin: auto;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0px;
-
+    text-align: center;
+    background-color: var(--background-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .fixtureContainer a {
@@ -331,9 +334,7 @@ a {
     width: 70%;
     height: 120px;
     margin: 20px;
-    /* Add space around the scoreboard */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Add drop shadow */
     background-color: var(--fixturescoreboard-background-color);
 }
 
@@ -348,9 +349,7 @@ a {
     width: 500px;
     height: 120px;
     margin: 20px;
-    /* Add space around the scoreboard */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Add drop shadow */
     background-color: var(--fixturescoreboard-background-color);
 }
 
@@ -434,8 +433,6 @@ p {
 #homeTeamSecondaryScore,
 #awayTeamSecondaryScore {
     font-size: 1em;
-    /* 16px */
-
 }
 
 #currentPeriod {
@@ -451,44 +448,30 @@ p {
     text-align: center;
 }
 
-/* Container for the tables */
 .container {
     visibility: hidden;
     display: flex;
     align-items: flex-start;
-    /* Center align tables horizontally */
     justify-content: center;
-    /* Center container horizontally */
     width: 100%;
-    /* Full width */
 }
 
-/* Style for each table */
 .table-container {
     padding: 20px;
     background-color: var(--table-background-color);
-    /* White background */
     border-radius: 10px;
-    /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Soft shadow */
     margin: 0 10px;
-    /* Add spacing between tables */
     overflow-x: auto;
-    /* Enable horizontal scrolling on small screens */
     width: 80%;
-    /* Set initial width */
 }
 
-/* Table heading styles */
 h2 {
     font-size: 24px;
     font-weight: bold;
     color: var(--text-color);
-    /* Dark text color */
 }
 
-/* Table styles */
 table {
     width: 100%;
     border: none;
@@ -533,13 +516,11 @@ table:not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
     padding: 8px;
     padding-right: 0px;
     text-align: left;
-    /* Center align content */
     vertical-align: middle;
 }
 
 table:not(#timelineTable) tr td:first-child {
     text-align: center;
-    /* The 'wi' property is incomplete. Please complete it or remove it. */
 }
 
 th {
@@ -551,21 +532,16 @@ th {
     text-align: left;
 }
 
-/* Alternating row colors */
 tr:nth-child(even) {
     background-color: var(--darkrow-background-color);
-    /* Darker shade for even rows */
 }
 
 tr:nth-child(odd) {
     background-color: var(--lightrow-background-color);
-    /* Lighter shade for odd rows */
 }
 
-/* Table row hover effect */
 tr:hover {
     background-color: var(--tablehover-background-color);
-    /* Light gray background on hover */
 }
 
 table:not(#timelineTable) td:nth-child(2) {
@@ -575,11 +551,8 @@ table:not(#timelineTable) td:nth-child(2) {
     color: rgb(161, 161, 161);
 }
 
-/* Bold fantasy number */
 table:not(#timelineTable) td:last-child {
-    /* 9th column (index starts from 1) */
     font-weight: bold;
-    /* Make the text bold */
 }
 
 .breakeven {
@@ -641,7 +614,6 @@ table:not(#timelineTable) td:last-child {
 }
 
 #tooltip #timelineBtn {
-    /* margin: 0px 40px 00px 40px; */
     height: 35px;
     text-align: center;
     font-size: 14px;
@@ -662,7 +634,6 @@ table:not(#timelineTable) td:last-child {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid #2a2a2a;
-    /* Adjust color to match tooltip */
 }
 
 .tooltip.above::before {
@@ -670,7 +641,6 @@ table:not(#timelineTable) td:last-child {
     bottom: -10px;
     border-bottom: none;
     border-top: 10px solid #2a2a2a;
-    /* Adjust color to match tooltip */
 }
 
 #tooltip ul {
@@ -706,7 +676,6 @@ table:not(#timelineTable) td:last-child {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    /* Adjust as needed */
     text-align: center;
 }
 
@@ -722,9 +691,7 @@ table:not(#timelineTable) td:last-child {
     display: none;
     flex-direction: column;
     justify-content: center;
-    /* horizontally center children */
     align-items: center;
-    /* vertically center children */
     width: 100px;
     margin: auto;
 }
@@ -737,15 +704,13 @@ table:not(#timelineTable) td:last-child {
 
 #tooltip ul {
     margin-top: -20px;
-    /* Adjust the margin as needed */
 }
 
 #tooltip ul:last-child {
     margin-top: -40px;
-    /* Adjust the margin as needed */
+
 }
 
-/* Tooltip text */
 #tooltip img {
     width: 250px;
 
@@ -808,7 +773,6 @@ i {
     height: 30px;
     border-radius: 50%;
     margin: 2px;
-    /* Adjust spacing between circles */
 }
 
 #orange {
@@ -836,21 +800,16 @@ i {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-    /* Add this line */
+
 }
 
 #round-list {
     list-style-type: none;
-    /* Remove the default list bullets */
-
     overflow: hidden;
-    /* Add this if you want to contain floated items */
     display: flex;
-    /* Add this line */
     justify-content: center;
-    /* Add this line */
     align-items: center;
-    /* Add this line */
+
 }
 
 #round-list li {
@@ -864,21 +823,21 @@ i {
 
 }
 
-/* Responsive design for smaller screens */
 @media only screen and (max-width: 950px) {
 
     #round-list {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        padding-left: 60px;
-        padding-right: 60px;
-        grid-gap: 2px;
-        /* Space between grid items */
-        justify-items: center;
-        /* Center items horizontally */
-        align-items: center;
-        justify-content: center;
+        display: contents;
+        overflow: scroll;
+        justify-content: flex-start;
+    }
+
+    #round-list li {
+        padding: 10px;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        text-align: center;
     }
 
     #backToTop {
@@ -893,9 +852,7 @@ i {
     .container {
         flex-direction: column;
         width: 100%;
-        /* Stack tables vertically on small screens */
         align-items: center;
-        /* Center tables vertically */
     }
 
     #homeTeam {
@@ -910,7 +867,7 @@ i {
 
     .table-container {
         width: calc(98%);
-        /* Adjust width of tables to full page with slight gap */
+
         padding-left: 0;
         padding-right: 0;
         padding-top: 5px;
@@ -942,7 +899,6 @@ i {
         padding: 0px;
         padding-right: 0;
         text-align: center;
-        /* Center align content */
         vertical-align: middle;
         white-space: nowrap;
     }
@@ -987,7 +943,7 @@ i {
         align-items: center;
         justify-content: center;
         border-radius: 20px;
-        width: 90%;
+        width: 85vw;
         height: 120px;
         margin: 20px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -1062,14 +1018,12 @@ i {
         height: 40px;
         border-radius: 10px;
         padding-right: 50px;
-        /* Make room for the button */
     }
 
     #messageButton {
         position: absolute;
         right: 0;
         top: 50%;
-        /* Move the top edge to the center of the container */
         transform: translateY(-50%);
         width: 44px;
         height: 44px;
@@ -1082,14 +1036,12 @@ i {
         height: 40px;
         border-radius: 10px;
         padding-right: 50px;
-        /* Make room for the button */
     }
 
     #usernameButton {
         position: absolute;
         right: 0;
         top: 50%;
-        /* Move the top edge to the center of the container */
         transform: translateY(-50%);
         width: 44px;
         height: 44px;
@@ -1208,7 +1160,6 @@ i {
 @media only screen and (max-width: 1400px) {
     .hide-on-mobile {
         display: none;
-        /* Hide elements on small screens */
     }
 
 }

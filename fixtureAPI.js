@@ -51,6 +51,7 @@ async function fixtureCrawl(fixtureURL, data) {
 
         var fixtureRows = document.getElementsByClassName("fixtures__content");
 
+        let prevDate = null;
         for (let i = 0; i < fixtureRows.length; i++) {
 
             var game = {
@@ -65,12 +66,11 @@ async function fixtureCrawl(fixtureURL, data) {
                 live: 0,
             }
 
-            // try {
-            //     game.date = document.getElementsByClassName("fixtures__date-header")[i].textContent;
-            // }
-            // catch {
-            //     console.log("No date")
-            // }
+            let dateHeader = fixtureRows[i].parentElement.previousElementSibling;
+            if (dateHeader && dateHeader.className === "fixtures__date-header") {
+                prevDate = dateHeader.textContent;
+            }
+            game.date = prevDate;
 
             game.team0 = fixtureRows[i].getElementsByClassName("fixtures__match-team-name")[0].textContent;
 
@@ -93,7 +93,7 @@ async function fixtureCrawl(fixtureURL, data) {
             }
 
             game.time = fixtureRows[i].getElementsByClassName("fixtures__status-label")[0].textContent;
-            if (game.time != "FULL TIME" &&  !game.time.includes("pm") && !game.time.includes("am")) {
+            if (game.time != "FULL TIME" && !game.time.includes("pm") && !game.time.includes("am")) {
                 game.live = 1;
             }
             game.location = fixtureRows[i].getElementsByClassName("fixtures__match-venue")[0].textContent;
