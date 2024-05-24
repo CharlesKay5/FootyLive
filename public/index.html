@@ -1098,6 +1098,7 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.isTaken) {
+                        alert('This username is already taken');
                         console.log('This username is already taken.');
                     } else {
                         // If the new name is not taken, update the user's name
@@ -1114,14 +1115,6 @@
                             .then(response => response.json())
                             .then(data => {
                                 if (data.success) {
-
-                                    newName = filterProfanity(newName);
-                                    if (newName.includes('*')) {
-                                        alert('Username contains profanity. Please choose a different username.');
-                                        return;
-                                    }
-
-                                    console.log('Username updated successfully.');
 
                                     let updateMessage = `${userId} has changed their username to ${newName}`;
                                     socket.send(updateMessage);
@@ -1147,7 +1140,7 @@
                                     // Update the displayed username
                                     //document.getElementById('displayedUsername').textContent = newName;
                                 } else {
-                                    console.log('Failed to update username.');
+                                    alert('Failed to update username. Username may be taken or contain profanity');
                                 }
                             });
                     }

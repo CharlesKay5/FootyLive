@@ -1,0 +1,914 @@
+Statistical profiling result from isolate-0x130008000-27885-v8.log, (14451 ticks, 10865 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+      4    0.0%          /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+    288    2.0%    2.0%  Builtin: LoadIC
+    101    0.7%    0.7%  Builtin: FindOrderedHashMapEntry
+     91    0.6%    0.6%  JS: *debugLevel /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Debug.js:87:16
+     74    0.5%    0.5%  Builtin: BaselineOutOfLinePrologue
+     71    0.5%    0.5%  Builtin: Call_ReceiverIsNullOrUndefined
+     69    0.5%    0.5%  Builtin: KeyedLoadIC_Megamorphic
+     64    0.4%    0.4%  Builtin: CompileLazy
+     54    0.4%    0.4%  JS: *outerNext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4316:31
+     53    0.4%    0.4%  Builtin: KeyedLoadIC_PolymorphicName
+     52    0.4%    0.4%  Builtin: Call_ReceiverIsNotNullOrUndefined
+     51    0.4%    0.4%  JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+     48    0.3%    0.3%  Builtin: KeyedLoadIC
+     48    0.3%    0.3%  Builtin: CreateTypedArray
+     46    0.3%    0.3%  Builtin: CallFunction_ReceiverIsNotNullOrUndefined
+     46    0.3%    0.3%  Builtin: CallFunction_ReceiverIsAny
+     45    0.3%    0.3%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4323:132
+     42    0.3%    0.3%  Builtin: CallFunction_ReceiverIsNullOrUndefined
+     41    0.3%    0.3%  Builtin: ToBooleanForBaselineJump
+     40    0.3%    0.3%  Builtin: StrictEqual_Baseline
+     39    0.3%    0.3%  Builtin: StoreIC
+     37    0.3%    0.3%  Builtin: GrowFastSmiOrObjectElements
+     34    0.2%    0.2%  JS: *Subscriber2 /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:658:27
+     30    0.2%    0.2%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:210:49
+     30    0.2%    0.2%  Builtin: KeyedStoreIC_Megamorphic
+     29    0.2%    0.2%  JS: *processImmediate node:internal/timers:433:28
+     29    0.2%    0.2%  JS: *listener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:406:26
+     27    0.2%    0.2%  Builtin: MapPrototypeSet
+     26    0.2%    0.2%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:5038:92
+     26    0.2%    0.2%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3985:92
+     26    0.2%    0.2%  Builtin: GetProperty
+     25    0.2%    0.2%  JS: *importDebug /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Debug.js:40:27
+     25    0.2%    0.2%  Builtin: AsyncFunctionEnter
+     24    0.2%    0.2%  JS: *Subscription2.unsubscribe /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:330:53
+     24    0.2%    0.2%  JS: *OperatorSubscriber2._this._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1053:40
+     24    0.2%    0.2%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:40:46
+     24    0.2%    0.2%  Builtin: ArrayPrototypeSplice
+     23    0.2%    0.2%  Builtin: CreateDataProperty
+     22    0.2%    0.2%  Builtin: LoadIC_Megamorphic
+     21    0.1%    0.1%  JS: *startLoop /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:149:12
+     21    0.1%    0.1%  JS: *mergeInternals /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4306:28
+     21    0.1%    0.1%  Builtin: AsyncFunctionAwaitUncaught
+     20    0.1%    0.1%  Builtin: DefineKeyedOwnIC
+     19    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+     18    0.1%    0.1%  JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+     18    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3983:37
+     18    0.1%    0.1%  Builtin: StringEqual
+     18    0.1%    0.1%  Builtin: KeyedStoreIC
+     18    0.1%    0.1%  Builtin: ArrayPrototypeLastIndexOf
+     17    0.1%    0.1%  JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+     17    0.1%    0.1%  Builtin: RecordWriteSaveFP
+     17    0.1%    0.1%  Builtin: ArrayIteratorPrototypeNext
+     16    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:207:47
+     16    0.1%    0.1%  Builtin: LoadIC_NoFeedback
+     16    0.1%    0.1%  Builtin: LoadGlobalIC
+     16    0.1%    0.1%  Builtin: BaselineLeaveFrame
+     15    0.1%    0.1%  Builtin: RunMicrotasks
+     15    0.1%    0.1%  Builtin: PerformPromiseThen
+     15    0.1%    0.1%  Builtin: MapPrototypeDelete
+     15    0.1%    0.1%  Builtin: FulfillPromise
+     14    0.1%    0.1%  JS: *writeOrBuffer node:internal/streams/writable:540:23
+     14    0.1%    0.1%  JS: *ReplaySubject2.next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1688:47
+     14    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:405:37
+     14    0.1%    0.1%  Builtin: FastNewClosure
+     14    0.1%    0.1%  Builtin: CloneFastJSArray
+     13    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+     13    0.1%    0.1%  Builtin: ObjectKeys
+     13    0.1%    0.1%  Builtin: LoadICBaseline
+     13    0.1%    0.1%  Builtin: JSConstructStubGeneric
+     13    0.1%    0.1%  Builtin: Call_ReceiverIsNotNullOrUndefined_Baseline_Compact
+     12    0.1%    0.1%  Builtin: ResolvePromise
+     12    0.1%    0.1%  Builtin: FastNewObject
+     12    0.1%    0.1%  Builtin: Call_ReceiverIsAny
+     11    0.1%    0.1%  JS: *dataMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:541:14
+     11    0.1%    0.1%  JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+     11    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:6995:76
+     11    0.1%    0.1%  Builtin: InterpreterEntryTrampoline
+     11    0.1%    0.1%  Builtin: FastNewFunctionContextFunction
+     11    0.1%    0.1%  Builtin: Call_ReceiverIsNullOrUndefined_Baseline_Compact
+     10    0.1%    0.1%  JS: *readableAddChunkPushByteMode node:internal/streams/readable:461:38
+     10    0.1%    0.1%  JS: *finalizeInterceptions /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:146:32
+     10    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1000:22
+     10    0.1%    0.1%  Builtin: StringToLowerCaseIntl
+     10    0.1%    0.1%  Builtin: SetPrototypeDelete
+     10    0.1%    0.1%  Builtin: JSRunMicrotasksEntry
+     10    0.1%    0.1%  Builtin: ArrayPrototypePush
+      9    0.1%    0.1%  JS: *resolve /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:106:12
+      9    0.1%    0.1%  JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/event-target.js:203:35
+      9    0.1%    0.1%  JS: *on /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/mitt/mitt.js:53:65
+      9    0.1%    0.1%  JS: *maybeReadMore node:internal/streams/readable:855:23
+      9    0.1%    0.1%  JS: *getInfo /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:185:10
+      9    0.1%    0.1%  JS: *frame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:67:15
+      9    0.1%    0.1%  JS: *clearBuffer node:internal/streams/writable:735:21
+      9    0.1%    0.1%  JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      9    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:5036:37
+      9    0.1%    0.1%  Builtin: PromisePrototypeThen
+      9    0.1%    0.1%  Builtin: ArrayPrototypeValues
+      9    0.1%    0.1%  Builtin: ArrayIndexOfSmiOrObject
+      8    0.1%    0.1%  JS: *responseExtraInfo /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:69:22
+      8    0.1%    0.1%  JS: *getPayloadLength16 /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:363:21
+      8    0.1%    0.1%  JS: *get node:internal/bootstrap/node:374:8
+      8    0.1%    0.1%  JS: *Readable.read node:internal/streams/readable:645:35
+      8    0.1%    0.1%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:410:16
+      8    0.1%    0.1%  Builtin: ResumeGeneratorTrampoline
+      8    0.1%    0.1%  Builtin: LoadICTrampoline
+      8    0.1%    0.1%  Builtin: KeyedLoadICTrampoline_Megamorphic
+      8    0.1%    0.1%  Builtin: FindNonDefaultConstructorOrConstruct
+      8    0.1%    0.1%  Builtin: ExtractFastJSArray
+      8    0.1%    0.1%  Builtin: DefineNamedOwnIC
+      8    0.1%    0.1%  Builtin: CreateShallowObjectLiteral
+      7    0.0%    0.0%  JS: ^onStreamRead node:internal/stream_base_commons:168:22
+      7    0.0%    0.0%  JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:302:7
+      7    0.0%    0.0%  JS: *randomFillSync node:internal/crypto/random:117:24
+      7    0.0%    0.0%  JS: *getStderr node:internal/bootstrap/switches/is_main_thread:170:19
+      7    0.0%    0.0%  JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      7    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:153:43
+      7    0.0%    0.0%  Builtin: SetPrototypeAdd
+      7    0.0%    0.0%  Builtin: PromiseThenFinally
+      7    0.0%    0.0%  Builtin: EnqueueMicrotask
+      7    0.0%    0.0%  Builtin: Construct_Baseline
+      7    0.0%    0.0%  Builtin: ConstructFunction
+      7    0.0%    0.0%  Builtin: BitwiseOr_Baseline
+      7    0.0%    0.0%  Builtin: AsyncFunctionAwaitResolveClosure
+      6    0.0%    0.0%  JS: ^writeOrBuffer node:internal/streams/writable:540:23
+      6    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9308:80
+      6    0.0%    0.0%  JS: *valueOrThrow /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:94:17
+      6    0.0%    0.0%  JS: *socketOnData /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1302:22
+      6    0.0%    0.0%  JS: *get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/node_modules/debug/src/common.js:125:9
+      6    0.0%    0.0%  JS: *createOperatorSubscriber /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1043:38
+      6    0.0%    0.0%  JS: *Subscription2.add /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:397:45
+      6    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3231:50
+      6    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:125:36
+      6    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:208:364
+      6    0.0%    0.0%  Builtin: NewRestArgumentsElements
+      6    0.0%    0.0%  Builtin: KeyedLoadICBaseline
+      6    0.0%    0.0%  Builtin: Construct
+      6    0.0%    0.0%  Builtin: CallBoundFunction
+      6    0.0%    0.0%  Builtin: ArrayPrototypeShift
+      5    0.0%    0.0%  JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      5    0.0%    0.0%  JS: *receiverOnMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1208:27
+      5    0.0%    0.0%  JS: *processTicksAndRejections node:internal/process/task_queues:67:35
+      5    0.0%    0.0%  JS: *onwrite node:internal/streams/writable:607:17
+      5    0.0%    0.0%  JS: *continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:192:19
+      5    0.0%    0.0%  JS: *CdpHTTPResponse /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPResponse.js:25:16
+      5    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:157:13
+      5    0.0%    0.0%  Builtin: PromiseCapabilityDefaultResolve
+      5    0.0%    0.0%  Builtin: LoadGlobalICTrampoline
+      5    0.0%    0.0%  Builtin: JsonParse
+      5    0.0%    0.0%  Builtin: JSBuiltinsConstructStub
+      5    0.0%    0.0%  Builtin: FastFunctionPrototypeBind
+      5    0.0%    0.0%  Builtin: CopyDataProperties
+      5    0.0%    0.0%  Builtin: CloneObjectIC_Slow
+      5    0.0%    0.0%  Builtin: CallApiCallback
+      5    0.0%    0.0%  Builtin: ArrayIncludesSmiOrObject
+      4    0.0%    0.0%  JS: ^processTicksAndRejections node:internal/process/task_queues:67:35
+      4    0.0%    0.0%  JS: ^onwrite node:internal/streams/writable:607:17
+      4    0.0%    0.0%  JS: ^clearBuffer node:internal/streams/writable:735:21
+      4    0.0%    0.0%  JS: ^#onLogEntryAdded /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:405:21
+      4    0.0%    0.0%  JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      4    0.0%    0.0%  JS: *onStreamRead node:internal/stream_base_commons:168:22
+      4    0.0%    0.0%  JS: *on /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:43:7
+      4    0.0%    0.0%  JS: *off /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/mitt/mitt.js:56:19
+      4    0.0%    0.0%  JS: *of /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3639:16
+      4    0.0%    0.0%  JS: *frame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:199:10
+      4    0.0%    0.0%  JS: *doWrite node:internal/streams/writable:579:17
+      4    0.0%    0.0%  JS: *abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:294:16
+      4    0.0%    0.0%  JS: *Observable2.subscribe /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:906:49
+      4    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:6206:34
+      4    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1002:38
+      4    0.0%    0.0%  JS: *#onLoadingFinished /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:436:23
+      4    0.0%    0.0%  Builtin: TypedArrayPrototypeLength
+      4    0.0%    0.0%  Builtin: StringAdd_CheckNone
+      4    0.0%    0.0%  Builtin: PromiseFulfillReactionJob
+      4    0.0%    0.0%  Builtin: NewPromiseCapability
+      4    0.0%    0.0%  Builtin: MapPrototypeGet
+      4    0.0%    0.0%  Builtin: JSEntry
+      4    0.0%    0.0%  Builtin: Increment_Baseline
+      4    0.0%    0.0%  Builtin: FunctionPrototypeHasInstance
+      4    0.0%    0.0%  Builtin: FindOrderedHashSetEntry
+      4    0.0%    0.0%  Builtin: FastNewRestArguments
+      4    0.0%    0.0%  Builtin: CreateEmptyArrayLiteral
+      4    0.0%    0.0%  Builtin: Call_ReceiverIsAny_Baseline_Compact
+      4    0.0%    0.0%  Builtin: CEntry_Return1_ArgvOnStack_BuiltinExit
+      4    0.0%    0.0%  Builtin: ArrayMap
+      3    0.0%    0.0%  JS: ^startLoop /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:149:12
+      3    0.0%    0.0%  JS: ^get node:internal/streams/readable:130:8
+      3    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9520:78
+      3    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9119:76
+      3    0.0%    0.0%  JS: ^_abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:161:17
+      3    0.0%    0.0%  JS: ^#onRequestPaused /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:256:21
+      3    0.0%    0.0%  JS: ^#checkLifecycleComplete /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/LifecycleWatcher.js:136:28
+      3    0.0%    0.0%  JS: *writeU_Int16BE node:internal/buffer:832:24
+      3    0.0%    0.0%  JS: *wrapper /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:236:27
+      3    0.0%    0.0%  JS: *shift node:internal/fixed_queue:108:8
+      3    0.0%    0.0%  JS: *popScheduler /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:2781:26
+      3    0.0%    0.0%  JS: *maybeReadMore_ node:internal/streams/readable:862:24
+      3    0.0%    0.0%  JS: *insert node:internal/timers:361:16
+      3    0.0%    0.0%  JS: *getRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:114:15
+      3    0.0%    0.0%  JS: *from /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3624:18
+      3    0.0%    0.0%  JS: *emitAfterScript node:internal/async_hooks:517:25
+      3    0.0%    0.0%  JS: *assert /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/assert.js:16:16
+      3    0.0%    0.0%  JS: *append node:internal/linkedlist:30:16
+      3    0.0%    0.0%  JS: *_write node:internal/streams/writable:445:16
+      3    0.0%    0.0%  JS: *_unrefTimer node:net:506:52
+      3    0.0%    0.0%  JS: *Subscriber2.complete /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:689:48
+      3    0.0%    0.0%  JS: *Subscriber2._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:704:45
+      3    0.0%    0.0%  JS: *Observable2.lift /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:900:44
+      3    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4356:101
+      3    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4332:28
+      3    0.0%    0.0%  JS: *#onLoadingFailed /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:462:21
+      3    0.0%    0.0%  Builtin: StringPrototypeStartsWith
+      3    0.0%    0.0%  Builtin: StrictEqual
+      3    0.0%    0.0%  Builtin: RunMicrotasksTrampoline
+      3    0.0%    0.0%  Builtin: PromiseResolveThenableJob
+      3    0.0%    0.0%  Builtin: PromiseResolve
+      3    0.0%    0.0%  Builtin: ObjectEntries
+      3    0.0%    0.0%  Builtin: NumberIsInteger
+      3    0.0%    0.0%  Builtin: JSEntryTrampoline
+      3    0.0%    0.0%  Builtin: InstanceOf_Baseline
+      3    0.0%    0.0%  Builtin: FastNewClosureBaseline
+      3    0.0%    0.0%  Builtin: ErrorConstructor
+      3    0.0%    0.0%  Builtin: DefineKeyedOwnICBaseline
+      3    0.0%    0.0%  Builtin: CloneObjectIC
+      3    0.0%    0.0%  Builtin: BitwiseAnd_Baseline
+      2    0.0%    0.0%  RegExp: [^ ]* [^ ]* (.*)
+      2    0.0%    0.0%  JS: ^storeRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:117:17
+      2    0.0%    0.0%  JS: ^shouldColorize node:internal/util/colors:17:17
+      2    0.0%    0.0%  JS: ^setTimeout node:timers:142:20
+      2    0.0%    0.0%  JS: ^set node:internal/streams/writable:254:8
+      2    0.0%    0.0%  JS: ^processPromiseRejections node:internal/process/promises:221:34
+      2    0.0%    0.0%  JS: ^outerNext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4316:31
+      2    0.0%    0.0%  JS: ^insert node:internal/timers:361:16
+      2    0.0%    0.0%  JS: ^get extensionName /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/permessage-deflate.js:77:27
+      2    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/node_modules/debug/src/common.js:125:9
+      2    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9691:71
+      2    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9673:74
+      2    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9670:72
+      2    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9640:75
+      2    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9619:75
+      2    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9344:77
+      2    0.0%    0.0%  JS: ^fromStringFast node:buffer:441:24
+      2    0.0%    0.0%  JS: ^emit node:events:466:44
+      2    0.0%    0.0%  JS: ^createPool node:buffer:152:20
+      2    0.0%    0.0%  JS: ^_write node:internal/streams/writable:445:16
+      2    0.0%    0.0%  JS: ^__values /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1385:61
+      2    0.0%    0.0%  JS: ^CdpHTTPResponse /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPResponse.js:25:16
+      2    0.0%    0.0%  JS: ^CdpHTTPRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:24:16
+      2    0.0%    0.0%  JS: ^<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Mutex.js:14:1
+      2    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:410:16
+      2    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:133:12
+      2    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/IsolatedWorld.js:152:36
+      2    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:215:42
+      2    0.0%    0.0%  JS: ^#removeFramesRecursively /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:389:29
+      2    0.0%    0.0%  JS: ^#onTargetCreated /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:144:24
+      2    0.0%    0.0%  JS: ^#onAttachedToTarget /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:201:27
+      2    0.0%    0.0%  JS: ^#handleFrameTree /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:246:21
+      2    0.0%    0.0%  JS: ^#createIsolatedWorld /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:306:31
+      2    0.0%    0.0%  JS: *wrappedFn node:internal/errors:536:21
+      2    0.0%    0.0%  JS: *resolve node:path:1095:10
+      2    0.0%    0.0%  JS: *resolve /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:62:12
+      2    0.0%    0.0%  JS: *remove node:internal/linkedlist:16:16
+      2    0.0%    0.0%  JS: *queuedRedirectInfo /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:75:23
+      2    0.0%    0.0%  JS: *off /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:60:8
+      2    0.0%    0.0%  JS: *mergeAll /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4408:22
+      2    0.0%    0.0%  JS: *get node:internal/bootstrap/node:100:8
+      2    0.0%    0.0%  JS: *get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9691:71
+      2    0.0%    0.0%  JS: *createWriteWrap node:internal/stream_base_commons:110:25
+      2    0.0%    0.0%  JS: *checkComplete /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4311:35
+      2    0.0%    0.0%  JS: *_mask /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/buffer-util.js:45:15
+      2    0.0%    0.0%  JS: *Subscriber2.next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:674:44
+      2    0.0%    0.0%  JS: *ProtocolError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:48:1
+      2    0.0%    0.0%  JS: *OperatorSubscriber2.unsubscribe /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1080:59
+      2    0.0%    0.0%  JS: *FastBuffer node:internal/buffer:960:14
+      2    0.0%    0.0%  JS: *Deferred /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:57:16
+      2    0.0%    0.0%  JS: *CdpHTTPRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:24:16
+      2    0.0%    0.0%  JS: *<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:43:1
+      2    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4392:37
+      2    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4330:20
+      2    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:96:30
+      2    0.0%    0.0%  JS: *#patchRequestEventHeaders /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:289:30
+      2    0.0%    0.0%  JS: *#onResponse /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/LifecycleWatcher.js:92:16
+      2    0.0%    0.0%  Builtin: ToString
+      2    0.0%    0.0%  Builtin: StringPrototypeTrim
+      2    0.0%    0.0%  Builtin: StoreICBaseline
+      2    0.0%    0.0%  Builtin: StoreFastElementIC_Standard
+      2    0.0%    0.0%  Builtin: StoreFastElementIC_GrowNoTransitionHandleCOW
+      2    0.0%    0.0%  Builtin: SetOrSetIteratorToList
+      2    0.0%    0.0%  Builtin: RegExpMatchFast
+      2    0.0%    0.0%  Builtin: PromisePrototypeFinally
+      2    0.0%    0.0%  Builtin: PromiseConstructor
+      2    0.0%    0.0%  Builtin: PromiseAll
+      2    0.0%    0.0%  Builtin: MapConstructor
+      2    0.0%    0.0%  Builtin: LoadICTrampoline_Megamorphic
+      2    0.0%    0.0%  Builtin: HandleApiCall
+      2    0.0%    0.0%  Builtin: GreaterThan_Baseline
+      2    0.0%    0.0%  Builtin: GreaterThanOrEqual_Baseline
+      2    0.0%    0.0%  Builtin: CallVarargs
+      2    0.0%    0.0%  Builtin: CEntry_Return1_ArgvOnStack_NoBuiltinExit
+      2    0.0%    0.0%  Builtin: ArrayReduce
+      2    0.0%    0.0%  Builtin: ArrayPrototypeReverse
+      2    0.0%    0.0%  Builtin: ArrayForEach
+      2    0.0%    0.0%  Builtin: Add_Baseline
+      1    0.0%    0.0%  RegExp: ^[\040\t]*\/\/[@#] sourceURL=\s*(\S*?)\s*$
+      1    0.0%    0.0%  JS: ~send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+      1    0.0%    0.0%  JS: ~onStreamRead node:internal/stream_base_commons:168:22
+      1    0.0%    0.0%  JS: ~next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/QueryHandler.js:33:22
+      1    0.0%    0.0%  JS: ~matchupCrawl /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:272:28
+      1    0.0%    0.0%  JS: ~innerFrom /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3193:23
+      1    0.0%    0.0%  JS: ~goto /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:584:19
+      1    0.0%    0.0%  JS: ~getBufferedUUID node:internal/crypto/random:384:25
+      1    0.0%    0.0%  JS: ~commit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Input.js:224:21
+      1    0.0%    0.0%  JS: ~Writable node:internal/streams/writable:384:18
+      1    0.0%    0.0%  JS: ~ErrorPrepareStackTrace node:internal/errors:162:32
+      1    0.0%    0.0%  JS: ~#evaluate /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:325:20
+      1    0.0%    0.0%  JS: ^writeU_Int16BE node:internal/buffer:832:24
+      1    0.0%    0.0%  JS: ^write node:string_decoder:94:47
+      1    0.0%    0.0%  JS: ^write node:buffer:620:12
+      1    0.0%    0.0%  JS: ^valueOrThrow /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:94:17
+      1    0.0%    0.0%  JS: ^toString /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:79:13
+      1    0.0%    0.0%  JS: ^toNamespacedPath node:path:1269:19
+      1    0.0%    0.0%  JS: ^terminate /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/WaitTask.js:119:20
+      1    0.0%    0.0%  JS: ^takeQueuedRedirectInfo /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:84:27
+      1    0.0%    0.0%  JS: ^shift node:internal/fixed_queue:108:8
+      1    0.0%    0.0%  JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:302:7
+      1    0.0%    0.0%  JS: ^response /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:74:13
+      1    0.0%    0.0%  JS: ^resourceType /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:47:17
+      1    0.0%    0.0%  JS: ^resolve node:path:1095:10
+      1    0.0%    0.0%  JS: ^rerunAll /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/WaitTask.js:191:19
+      1    0.0%    0.0%  JS: ^realpathSync node:fs:2630:22
+      1    0.0%    0.0%  JS: ^readableAddChunkPushByteMode node:internal/streams/readable:461:38
+      1    0.0%    0.0%  JS: ^readUInt16BE node:internal/buffer:329:22
+      1    0.0%    0.0%  JS: ^prepareStackTraceCallback node:internal/errors:131:35
+      1    0.0%    0.0%  JS: ^piped /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:871:28
+      1    0.0%    0.0%  JS: ^percolateUp node:internal/priority_queue:69:14
+      1    0.0%    0.0%  JS: ^onceHandler /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:93:29
+      1    0.0%    0.0%  JS: ^once /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:92:9
+      1    0.0%    0.0%  JS: ^nextTick node:internal/process/task_queues:103:18
+      1    0.0%    0.0%  JS: ^newAsyncId node:internal/async_hooks:417:20
+      1    0.0%    0.0%  JS: ^navigate /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:162:36
+      1    0.0%    0.0%  JS: ^markAsUntransferable node:internal/buffer:1050:30
+      1    0.0%    0.0%  JS: ^isTypedArray node:internal/util/types:9:22
+      1    0.0%    0.0%  JS: ^isNavigationRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:80:24
+      1    0.0%    0.0%  JS: ^isEmpty node:internal/fixed_queue:95:10
+      1    0.0%    0.0%  JS: ^isEmpty node:internal/fixed_queue:67:10
+      1    0.0%    0.0%  JS: ^insert node:internal/priority_queue:26:9
+      1    0.0%    0.0%  JS: ^importDebug /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Debug.js:40:27
+      1    0.0%    0.0%  JS: ^howMuchToRead node:internal/streams/readable:628:23
+      1    0.0%    0.0%  JS: ^getRequestWillBeSent /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:99:25
+      1    0.0%    0.0%  JS: ^getRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:114:15
+      1    0.0%    0.0%  JS: ^getOptionValue node:internal/options:48:24
+      1    0.0%    0.0%  JS: ^get promise /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:117:16
+      1    0.0%    0.0%  JS: ^get node:net:690:16
+      1    0.0%    0.0%  JS: ^get node:internal/streams/duplex:162:8
+      1    0.0%    0.0%  JS: ^get node:internal/bootstrap/node:412:8
+      1    0.0%    0.0%  JS: ^get node:internal/bootstrap/node:100:8
+      1    0.0%    0.0%  JS: ^get node:fs:3268:8
+      1    0.0%    0.0%  JS: ^get id /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:114:11
+      1    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9655:73
+      1    0.0%    0.0%  JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/mitt/mitt.js:41:35
+      1    0.0%    0.0%  JS: ^fromString node:buffer:460:20
+      1    0.0%    0.0%  JS: ^from /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3624:18
+      1    0.0%    0.0%  JS: ^frame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:77:10
+      1    0.0%    0.0%  JS: ^finish node:internal/streams/writable:940:16
+      1    0.0%    0.0%  JS: ^finalizeInterceptions /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:146:32
+      1    0.0%    0.0%  JS: ^exports2.isArrayLike /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:2798:36
+      1    0.0%    0.0%  JS: ^evaluate /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/IsolatedWorld.js:90:19
+      1    0.0%    0.0%  JS: ^doWrite node:internal/streams/writable:579:17
+      1    0.0%    0.0%  JS: ^dispose /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Realm.js:38:12
+      1    0.0%    0.0%  JS: ^default /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/mitt/mitt.js:50:12
+      1    0.0%    0.0%  JS: ^createUnsafeBuffer node:internal/buffer:1061:28
+      1    0.0%    0.0%  JS: ^createCdpHandle /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/IsolatedWorld.js:146:20
+      1    0.0%    0.0%  JS: ^convertConsoleMessageLevel /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:82:36
+      1    0.0%    0.0%  JS: ^concat /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/buffer-util.js:15:16
+      1    0.0%    0.0%  JS: ^clearTimeout node:timers:187:22
+      1    0.0%    0.0%  JS: ^callListener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/event-target.js:286:22
+      1    0.0%    0.0%  JS: ^assert /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/assert.js:16:16
+      1    0.0%    0.0%  JS: ^addFrame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameTree.js:49:13
+      1    0.0%    0.0%  JS: ^_write /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:89:9
+      1    0.0%    0.0%  JS: ^_subtype /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Target.js:61:13
+      1    0.0%    0.0%  JS: ^_resolveBody /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPResponse.js:67:17
+      1    0.0%    0.0%  JS: ^_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      1    0.0%    0.0%  JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      1    0.0%    0.0%  JS: ^__values /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:285:61
+      1    0.0%    0.0%  JS: ^Subscription2.unsubscribe /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:330:53
+      1    0.0%    0.0%  JS: ^Subscription2.add /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:397:45
+      1    0.0%    0.0%  JS: ^Subject2._throwIfClosed /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1420:51
+      1    0.0%    0.0%  JS: ^Socket._writeGeneric node:net:922:42
+      1    0.0%    0.0%  JS: ^Readable.read node:internal/streams/readable:645:35
+      1    0.0%    0.0%  JS: ^PuppeteerError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:18:16
+      1    0.0%    0.0%  JS: ^Module._resolveLookupPaths node:internal/modules/cjs/loader:840:38
+      1    0.0%    0.0%  JS: ^EventEmitter /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:34:16
+      1    0.0%    0.0%  JS: ^ConsumerObserver2.next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:732:50
+      1    0.0%    0.0%  JS: ^CdpFrame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:279:272
+      1    0.0%    0.0%  JS: ^Callback /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16
+      1    0.0%    0.0%  JS: ^<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:48:1
+      1    0.0%    0.0%  JS: ^<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Target.js:158:1
+      1    0.0%    0.0%  JS: ^<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/JSHandle.js:15:1
+      1    0.0%    0.0%  JS: ^<anonymous> node:internal/validators:175:40
+      1    0.0%    0.0%  JS: ^<anonymous> node:internal/fs/rimraf:80:18
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:6997:32
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:6995:76
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:5036:37
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4332:28
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1000:22
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/mitt/mitt.js:61:32
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:96:30
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:608:39
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:169:13
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:157:13
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:153:43
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:145:48
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:137:42
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Browser.js:184:50
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+      1    0.0%    0.0%  JS: ^#patchRequestEventHeaders /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:289:30
+      1    0.0%    0.0%  JS: ^#onTargetInfoChanged /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:174:28
+      1    0.0%    0.0%  JS: ^#onSessionDetached /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:141:26
+      1    0.0%    0.0%  JS: ^#onResponseReceivedExtraInfo /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:399:33
+      1    0.0%    0.0%  JS: ^#onResponseReceived /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:382:24
+      1    0.0%    0.0%  JS: ^#onRequestFailed /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/LifecycleWatcher.js:86:21
+      1    0.0%    0.0%  JS: ^#onRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:306:15
+      1    0.0%    0.0%  JS: ^#onLoadingFinished /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:436:23
+      1    0.0%    0.0%  JS: ^#onExecutionContextCreated /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:361:31
+      1    0.0%    0.0%  JS: ^#onAttachedToTarget /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:301:27
+      1    0.0%    0.0%  JS: *writeUInt16BE node:internal/buffer:841:23
+      1    0.0%    0.0%  JS: *setTimeout node:timers:142:20
+      1    0.0%    0.0%  JS: *resolve /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:70:12
+      1    0.0%    0.0%  JS: *popAsyncContext node:internal/async_hooks:553:25
+      1    0.0%    0.0%  JS: *piped /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:871:28
+      1    0.0%    0.0%  JS: *operate /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:999:21
+      1    0.0%    0.0%  JS: *map /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:3982:17
+      1    0.0%    0.0%  JS: *isInteropObservable /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:2826:33
+      1    0.0%    0.0%  JS: *initAsyncResource node:internal/timers:155:27
+      1    0.0%    0.0%  JS: *hasLift /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:995:21
+      1    0.0%    0.0%  JS: *hasHooks node:internal/async_hooks:470:18
+      1    0.0%    0.0%  JS: *getQueuedEventGroup /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkEventManager.js:123:24
+      1    0.0%    0.0%  JS: *get node:internal/streams/duplex:162:8
+      1    0.0%    0.0%  JS: *get node:internal/bootstrap/node:412:8
+      1    0.0%    0.0%  JS: *get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9688:79
+      1    0.0%    0.0%  JS: *get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9344:77
+      1    0.0%    0.0%  JS: *fromStringFast node:buffer:441:24
+      1    0.0%    0.0%  JS: *execFinalizer /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:449:27
+      1    0.0%    0.0%  JS: *errorContext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:594:26
+      1    0.0%    0.0%  JS: *consume /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:104:10
+      1    0.0%    0.0%  JS: *clearTimeout node:timers:187:22
+      1    0.0%    0.0%  JS: *assertSize node:internal/crypto/random:81:20
+      1    0.0%    0.0%  JS: *allocUnsafe node:buffer:401:42
+      1    0.0%    0.0%  JS: *Timeout node:internal/timers:165:14
+      1    0.0%    0.0%  JS: *Subject2.next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1425:41
+      1    0.0%    0.0%  JS: *Socket._read node:net:706:34
+      1    0.0%    0.0%  JS: *OperatorSubscriber2._this._complete /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1069:48
+      1    0.0%    0.0%  JS: *OperatorSubscriber2 /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1049:35
+      1    0.0%    0.0%  JS: *Observable2.pipe /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:948:44
+      1    0.0%    0.0%  JS: *ConsumerObserver2.next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:732:50
+      1    0.0%    0.0%  JS: *<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:19:1
+      1    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:6208:92
+      1    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4360:22
+      1    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:37:41
+      1    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:169:13
+      1    0.0%    0.0%  JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:88:76
+      1    0.0%    0.0%  JS: *#onRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:306:15
+      1    0.0%    0.0%  JS: *#onRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/LifecycleWatcher.js:72:15
+      1    0.0%    0.0%  Builtin: WeakCollectionSet
+      1    0.0%    0.0%  Builtin: TypedArrayPrototypeSet
+      1    0.0%    0.0%  Builtin: TypedArrayPrototypeByteOffset
+      1    0.0%    0.0%  Builtin: ToBoolean
+      1    0.0%    0.0%  Builtin: StringPrototypeEndsWith
+      1    0.0%    0.0%  Builtin: StringIndexOf
+      1    0.0%    0.0%  Builtin: StoreInArrayLiteralIC
+      1    0.0%    0.0%  Builtin: StoreIC_NoFeedback
+      1    0.0%    0.0%  Builtin: PromiseValueThunkFinally
+      1    0.0%    0.0%  Builtin: PromisePrototypeCatch
+      1    0.0%    0.0%  Builtin: PromiseAllResolveElementClosure
+      1    0.0%    0.0%  Builtin: ObjectIs
+      1    0.0%    0.0%  Builtin: ObjectCreate
+      1    0.0%    0.0%  Builtin: MathTrunc
+      1    0.0%    0.0%  Builtin: MapIteratorToList
+      1    0.0%    0.0%  Builtin: LoadGlobalIC_NoFeedback
+      1    0.0%    0.0%  Builtin: LoadGlobalICInsideTypeof
+      1    0.0%    0.0%  Builtin: LoadGlobalICBaseline
+      1    0.0%    0.0%  Builtin: LessThanOrEqual_Baseline
+      1    0.0%    0.0%  Builtin: KeyedStoreICTrampoline
+      1    0.0%    0.0%  Builtin: KeyedHasIC
+      1    0.0%    0.0%  Builtin: JsonStringify
+      1    0.0%    0.0%  Builtin: IterableToListWithSymbolLookup
+      1    0.0%    0.0%  Builtin: GetIteratorBaseline
+      1    0.0%    0.0%  Builtin: DefineNamedOwnIC_NoFeedback
+      1    0.0%    0.0%  Builtin: DefineKeyedOwnIC_Megamorphic
+      1    0.0%    0.0%  Builtin: ConstructFunctionForwardVarargs
+      1    0.0%    0.0%  Builtin: CallWithArrayLike
+      1    0.0%    0.0%  Builtin: CallForwardVarargs
+      1    0.0%    0.0%  Builtin: CallApiGetter
+      1    0.0%    0.0%  Builtin: AsyncFunctionResolve
+      1    0.0%    0.0%  Builtin: AsyncFunctionAwaitCaught
+      1    0.0%    0.0%  Builtin: ArrayPrototypeSort
+      1    0.0%    0.0%  Builtin: ArrayPrototypeFind
+      1    0.0%    0.0%  Builtin: ArrayPrototypeConcat
+      1    0.0%    0.0%  Builtin: ArrayIncludes
+      1    0.0%    0.0%  Builtin: ArrayBufferIsView
+      1    0.0%    0.0%  Builtin: AddSmi_Baseline
+      1    0.0%    0.0%  Builtin: AdaptorWithBuiltinExitFrame
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+   3582   24.8%   24.8%  JavaScript
+      0    0.0%    0.0%  C++
+    665    4.6%    4.6%  GC
+      4    0.0%          Shared libraries
+  10865   75.2%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  10865   75.2%  UNKNOWN
+    783    7.2%    JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+    769   98.2%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+    727   94.5%        JS: *processImmediate node:internal/timers:433:28
+     42    5.5%        JS: ^processImmediate node:internal/timers:433:28
+     14    1.8%      JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+     14  100.0%        JS: ^processImmediate node:internal/timers:433:28
+    372    3.4%    JS: *debugLevel /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Debug.js:87:16
+    367   98.7%      Builtin: AsyncFunctionAwaitResolveClosure
+    283   77.1%        Builtin: CallApiCallback
+    263   92.9%          JS: *processImmediate node:internal/timers:433:28
+     20    7.1%          JS: *runNextTicks node:internal/process/task_queues:58:22
+     20  100.0%            JS: ^processImmediate node:internal/timers:433:28
+      7    1.9%        JS: ^runNextTicks node:internal/process/task_queues:58:22
+      7  100.0%          JS: ^processImmediate node:internal/timers:433:28
+      4    1.1%      JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      4  100.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      3   75.0%          JS: *processImmediate node:internal/timers:433:28
+      1   25.0%          JS: ^processImmediate node:internal/timers:433:28
+    289    2.7%    JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+    276   95.5%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+    276  100.0%        JS: *processImmediate node:internal/timers:433:28
+     13    4.5%      JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+     13  100.0%        JS: *processImmediate node:internal/timers:433:28
+    259    2.4%    JS: *PuppeteerError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:18:16
+    182   70.3%      JS: *ProtocolError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:48:1
+    135   74.2%        JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+     63   46.7%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+     18   28.6%            JS: ^_abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:161:17
+     11   17.5%            JS: ^#applyProtocolCacheDisabled /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:201:38
+      7   11.1%            JS: ^initialize /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:158:21
+      6    9.5%            JS: ^addClient /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:49:20
+      5    7.9%            JS: ^#applyProtocolRequestInterception /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:181:44
+      3    4.8%            JS: ^releaseObject /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/JSHandle.js:77:29
+      3    4.8%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:319:18
+      3    4.8%            JS: ^#onAttachedToTarget /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:201:27
+      3    4.8%            JS: ^#evaluate /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:325:20
+      2    3.2%            JS: ^#createIsolatedWorld /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:306:31
+      1    1.6%            JS: ~up /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Input.js:108:13
+      1    1.6%            JS: ^#initialize /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:311:22
+     46   34.1%          JS: *abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:294:16
+     27   58.7%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+     17   37.0%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:279:30
+      2    4.3%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:408:30
+     26   19.3%          JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+      7   26.9%            JS: ^#evaluate /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:325:20
+      4   15.4%            JS: ^initialize /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:158:21
+      4   15.4%            JS: *addClient /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:49:20
+      3   11.5%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:319:18
+      2    7.7%            JS: ^releaseObject /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/JSHandle.js:77:29
+      2    7.7%            JS: ^#onAttachedToTarget /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:201:27
+      2    7.7%            JS: ^#createIsolatedWorld /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:306:31
+      1    3.8%            JS: ^#applyProtocolRequestInterception /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:181:44
+      1    3.8%            JS: ^#applyProtocolCacheDisabled /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:201:38
+     45   24.7%        JS: ^<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:91:1
+     45  100.0%          JS: ^Callback /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16
+     45  100.0%            JS: ^create /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:21:11
+      2    1.1%        JS: ^TargetCloseError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:85:1
+      2  100.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:189:13
+      2  100.0%            JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+     63   24.3%      JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+     48   76.2%        JS: *continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:192:19
+     36   75.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+     32   88.9%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      4   11.1%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+     12   25.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:279:30
+      7   58.3%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      5   41.7%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+     15   23.8%        JS: ^continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:192:19
+     15  100.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:279:30
+     15  100.0%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+     13    5.0%      JS: ^ProtocolError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:48:1
+     11   84.6%        JS: ^<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:91:1
+     11  100.0%          JS: ^Callback /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16
+     11  100.0%            JS: ^create /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:21:11
+      2   15.4%        JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      2  100.0%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+      1   50.0%            JS: ^initialize /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:158:21
+      1   50.0%            JS: ^addClient /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:49:20
+    163    1.5%    JS: ^wrapSafe node:internal/modules/cjs/loader:1255:18
+    163  100.0%      JS: ^Module._compile node:internal/modules/cjs/loader:1311:37
+    162   99.4%        JS: ^Module._extensions..js node:internal/modules/cjs/loader:1370:37
+    162  100.0%          JS: ^Module.load node:internal/modules/cjs/loader:1195:33
+    162  100.0%            JS: ^Module._load node:internal/modules/cjs/loader:951:24
+    144    1.3%    JS: ^PuppeteerError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:18:16
+     76   52.8%      JS: ^ProtocolError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:48:1
+     45   59.2%        JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+     31   68.9%          JS: *abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:294:16
+     30   96.8%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+      1    3.2%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:279:30
+     12   26.7%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+      3   25.0%            JS: ^#applyProtocolCacheDisabled /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:201:38
+      2   16.7%            JS: ^releaseObject /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/JSHandle.js:77:29
+      2   16.7%            JS: ^initialize /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:158:21
+      2   16.7%            JS: ^#createIsolatedWorld /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:306:31
+      1    8.3%            JS: ^silentDetach /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:207:30
+      1    8.3%            JS: ^adoptBackendNode /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/IsolatedWorld.js:101:27
+      1    8.3%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:319:18
+      2    4.4%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:74:9
+      1   50.0%            JS: ~close /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Page.js:846:16
+      1   50.0%            JS: ^silentDetach /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:207:30
+     31   40.8%        JS: ^<instance_members_initializer> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:91:1
+     31  100.0%          JS: ^Callback /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16
+     31  100.0%            JS: ^create /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:21:11
+     40   27.8%      JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+     40  100.0%        JS: *continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:192:19
+     30   75.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+     23   76.7%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      7   23.3%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+     10   25.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:279:30
+      8   80.0%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      2   20.0%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+     28   19.4%      JS: *ProtocolError /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Errors.js:48:1
+     28  100.0%        JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+     23   82.1%          JS: *abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:294:16
+     23  100.0%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+      5   17.9%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+      2   40.0%            JS: ^releaseObject /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/JSHandle.js:77:29
+      1   20.0%            JS: ^initialize /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:158:21
+      1   20.0%            JS: ^#createIsolatedWorld /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/FrameManager.js:306:31
+      1   20.0%            JS: ^#applyProtocolCacheDisabled /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:201:38
+    132    1.2%    JS: *clearBuffer node:internal/streams/writable:735:21
+    132  100.0%      JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:302:7
+    114   86.4%        JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+     66   57.9%          JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+     37   56.1%            JS: *abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:294:16
+     29   43.9%            JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+     48   42.1%          JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+     48  100.0%            JS: *continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:192:19
+     11    8.3%        JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      7   63.6%          JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      7  100.0%            JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+      4   36.4%          JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+      4  100.0%            JS: ^continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:192:19
+      7    5.3%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:88:76
+      7  100.0%          JS: ^create /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:21:11
+      7  100.0%            JS: ^_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+    114    1.0%    JS: *randomFillSync node:internal/crypto/random:117:24
+     77   67.5%      JS: *frame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:67:15
+     77  100.0%        JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:302:7
+     62   80.5%          JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+     46   74.2%            JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+     16   25.8%            JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+     15   19.5%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+     11   73.3%            JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      4   26.7%            JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+     37   32.5%      JS: ^frame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:67:15
+     37  100.0%        JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:302:7
+     31   83.8%          JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+     26   83.9%            JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      5   16.1%            JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+      5   13.5%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:88:76
+      5  100.0%            JS: ^create /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:21:11
+      1    2.7%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      1  100.0%            JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+    112    1.0%    JS: *fromStringFast node:buffer:441:24
+    104   92.9%      JS: ^fromString node:buffer:460:20
+     64   61.5%        JS: ^from node:buffer:292:28
+     62   96.9%          JS: ^writeFile node:internal/fs/promises:1193:25
+     61   98.4%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/server.js:300:45
+      1    1.6%            JS: ~<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/server.js:300:45
+      2    3.1%          JS: ~writeFile node:internal/fs/promises:1193:25
+      2  100.0%            JS: ~<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/server.js:300:45
+     40   38.5%        JS: *writeFile node:internal/fs/promises:1193:25
+     40  100.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/server.js:300:45
+     40  100.0%            Builtin: ArrayMap
+      8    7.1%      JS: *frame /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:67:15
+      8  100.0%        JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:302:7
+      4   50.0%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      3   75.0%            JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+      1   25.0%            JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      4   50.0%          JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      3   75.0%            JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      1   25.0%            JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+
+    288    2.0%  Builtin: LoadIC
+     21    7.3%    JS: *debugLevel /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Debug.js:87:16
+     21  100.0%      Builtin: AsyncFunctionAwaitResolveClosure
+     16   76.2%        Builtin: CallApiCallback
+     16  100.0%          JS: *processImmediate node:internal/timers:433:28
+     19    6.6%    JS: ^#onRequestPaused /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:256:21
+     16   84.2%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      6   37.5%        JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      6  100.0%          JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      6  100.0%            JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      6   37.5%        JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      6  100.0%          JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      6  100.0%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      4   25.0%        JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      4  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      4  100.0%            JS: *processImmediate node:internal/timers:433:28
+      3   15.8%      JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      2   66.7%        JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      2  100.0%          JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      2  100.0%            JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      1   33.3%        JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/mitt/mitt.js:61:32
+      1  100.0%          Builtin: ArrayMap
+      1  100.0%            JS: ^emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/mitt/mitt.js:59:20
+     15    5.2%    Builtin: AsyncFunctionAwaitResolveClosure
+     11   73.3%      Builtin: CallApiCallback
+      9   81.8%        JS: *processImmediate node:internal/timers:433:28
+      2   18.2%        JS: *runNextTicks node:internal/process/task_queues:58:22
+      2  100.0%          JS: ^processImmediate node:internal/timers:433:28
+     12    4.2%    JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:207:47
+     12  100.0%      JS: *outerNext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4316:31
+     12  100.0%        JS: *OperatorSubscriber2._this._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1053:40
+     12  100.0%          JS: *listener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:406:26
+      7   58.3%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      5   41.7%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+     11    3.8%    JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+     11  100.0%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+     11  100.0%        JS: *processImmediate node:internal/timers:433:28
+      9    3.1%    JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      2   22.2%      JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      2  100.0%        JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      2  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      2  100.0%            JS: *processImmediate node:internal/timers:433:28
+      2   22.2%      JS: ^#onDetachedFromTarget /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:283:29
+      2  100.0%        JS: ^detachedListener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:123:34
+      2  100.0%          JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      2  100.0%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      2   22.2%      JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      2  100.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      2  100.0%          JS: *processImmediate node:internal/timers:433:28
+      1   11.1%      JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      1  100.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      1  100.0%          JS: *processImmediate node:internal/timers:433:28
+      1   11.1%      JS: ^#onRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:306:15
+      1  100.0%        JS: ^#onRequestPaused /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:256:21
+      1  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      1  100.0%            JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      1   11.1%      JS: ^#onContextConsoleApiCalled /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/IsolatedWorld.js:51:31
+      1  100.0%        JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      1  100.0%          JS: ^#onConsoleAPI /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:190:18
+      1  100.0%            JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      7    2.4%    JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      7  100.0%      JS: *processImmediate node:internal/timers:433:28
+      7    2.4%    JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      3   42.9%      JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      3  100.0%        JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      3  100.0%          JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      3  100.0%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      3   42.9%      JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      3  100.0%        JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      3  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      3  100.0%            JS: *processImmediate node:internal/timers:433:28
+      1   14.3%      JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      1  100.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      1  100.0%          JS: *processImmediate node:internal/timers:433:28
+      6    2.1%    JS: ^#onRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:306:15
+      4   66.7%      JS: ^#onRequestPaused /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:256:21
+      4  100.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      3   75.0%          JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      3  100.0%            JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      1   25.0%          JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      1  100.0%            JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      2   33.3%      JS: ^#onRequestWillBeSent /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:209:25
+      2  100.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      1   50.0%          JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      1  100.0%            JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      1   50.0%          JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      1  100.0%            JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      6    2.1%    JS: *startLoop /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:149:12
+      4   66.7%      JS: *writeOrBuffer node:internal/streams/writable:540:23
+      4  100.0%        JS: *socketOnData /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1302:22
+      4  100.0%          JS: *readableAddChunkPushByteMode node:internal/streams/readable:461:38
+      4  100.0%            JS: *onStreamRead node:internal/stream_base_commons:168:22
+      1   16.7%      JS: ^_write /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:89:9
+      1  100.0%        JS: ^writeOrBuffer node:internal/streams/writable:540:23
+      1  100.0%          JS: *Writable.write node:internal/streams/writable:496:36
+      1  100.0%            JS: ^socketOnData /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1302:22
+      1   16.7%      JS: *_write /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:89:9
+      1  100.0%        JS: ^writeOrBuffer node:internal/streams/writable:540:23
+      1  100.0%          JS: *socketOnData /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1302:22
+      1  100.0%            JS: *readableAddChunkPushByteMode node:internal/streams/readable:461:38
+      5    1.7%    JS: ^onStreamRead node:internal/stream_base_commons:168:22
+      5    1.7%    JS: ^#onResponseReceived /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:382:24
+      5  100.0%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      2   40.0%        JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      2  100.0%          JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      2  100.0%            JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      2   40.0%        JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      2  100.0%          JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      2  100.0%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      1   20.0%        JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      1  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      1  100.0%            JS: *processImmediate node:internal/timers:433:28
+      4    1.4%    JS: ^CdpHTTPRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:24:16
+      4  100.0%      JS: ^#onRequest /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:306:15
+      2   50.0%        JS: ^#onRequestWillBeSent /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:209:25
+      1   50.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      1  100.0%            JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      1   50.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      1  100.0%            JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      2   50.0%        JS: ^#onRequestPaused /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:256:21
+      2  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      1   50.0%            JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      1   50.0%            JS: *_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      4    1.4%    JS: ^#emitResponseEvent /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:361:23
+      4  100.0%      JS: ^#onResponseReceived /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:382:24
+      3   75.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      3  100.0%          JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      3  100.0%            JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      1   25.0%        JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      1  100.0%          JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      1  100.0%            JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      3    1.0%    JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9640:75
+      2   66.7%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:207:47
+      2  100.0%        JS: *outerNext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4316:31
+      2  100.0%          JS: *OperatorSubscriber2._this._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1053:40
+      2  100.0%            JS: *listener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:406:26
+      1   33.3%      JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:207:47
+      1  100.0%        JS: *outerNext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4316:31
+      1  100.0%          JS: *OperatorSubscriber2._this._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1053:40
+      1  100.0%            JS: *listener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:406:26
+      3    1.0%    JS: ^get /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:9619:75
+      3  100.0%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:207:47
+      3  100.0%        JS: *outerNext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4316:31
+      3  100.0%          JS: *OperatorSubscriber2._this._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1053:40
+      3  100.0%            JS: *listener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:406:26
+      3    1.0%    JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      3  100.0%      JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      3  100.0%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      3  100.0%          JS: *processImmediate node:internal/timers:433:28
+      3    1.0%    JS: ^_isTargetExposed /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Target.js:145:21
+      3  100.0%      JS: ^#onDetachedFromTarget /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Browser.js:156:29
+      3  100.0%        JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      3  100.0%          JS: ^#onDetachedFromTarget /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:283:29
+      3  100.0%            JS: ^detachedListener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ChromeTargetManager.js:123:34
+      3    1.0%    JS: ^#onRequestWillBeSent /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:209:25
+      3  100.0%      JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/NetworkManager.js:57:37
+      2   66.7%        JS: *onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      2  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:41:26
+      2  100.0%            JS: *processImmediate node:internal/timers:433:28
+      1   33.3%        JS: *emit /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/EventEmitter.js:82:9
+      1  100.0%          JS: ^_onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:71:15
+      1  100.0%            JS: ^onMessage /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:108:20
+      3    1.0%    JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/sender.js:302:7
+      2   66.7%      JS: *send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      2  100.0%        JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      2  100.0%          JS: *abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:294:16
+      2  100.0%            JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+      1   33.3%      JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:447:7
+      1  100.0%        JS: *_rawSend /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:86:13
+      1  100.0%          JS: ^send /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:62:9
+      1  100.0%            JS: ^_abort /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:161:17
+      3    1.0%    JS: *outerNext /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4316:31
+      3  100.0%      JS: *OperatorSubscriber2._this._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1053:40
+      2   66.7%        JS: *listener /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/common/util.js:406:26
+      1   50.0%          JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      1  100.0%            Builtin: CallApiCallback
+      1   50.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      1  100.0%            Builtin: CallApiCallback
+      1   33.3%        JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4323:132
+      1  100.0%          JS: *OperatorSubscriber2._this._next /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:1053:40
+      1  100.0%            JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/third_party/rxjs/rxjs.js:4323:132
+      3    1.0%    JS: *maybeReadMore node:internal/streams/readable:855:23
+      3  100.0%      JS: *readableAddChunkPushByteMode node:internal/streams/readable:461:38
+      2   66.7%        JS: ^Readable.push node:internal/streams/readable:385:35
+      2  100.0%          JS: ^onStreamRead node:internal/stream_base_commons:168:22
+      1   33.3%        JS: *onStreamRead node:internal/stream_base_commons:168:22
+      3    1.0%    JS: *getPayloadLength16 /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:363:21
+      3  100.0%      JS: *startLoop /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:149:12
+      2   66.7%        JS: *writeOrBuffer node:internal/streams/writable:540:23
+      1   50.0%          JS: *socketOnData /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1302:22
+      1  100.0%            JS: *readableAddChunkPushByteMode node:internal/streams/readable:461:38
+      1   50.0%          JS: *Writable.write node:internal/streams/writable:496:36
+      1  100.0%            JS: ^socketOnData /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1302:22
+      1   33.3%        JS: ^_write /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:89:9
+      1  100.0%          JS: ^writeOrBuffer node:internal/streams/writable:540:23
+      1  100.0%            JS: *Writable.write node:internal/streams/writable:496:36
+      3    1.0%    JS: *getInfo /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:185:10
+      3  100.0%      JS: *startLoop /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:149:12
+      2   66.7%        JS: *writeOrBuffer node:internal/streams/writable:540:23
+      2  100.0%          JS: *socketOnData /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/websocket.js:1302:22
+      2  100.0%            JS: *readableAddChunkPushByteMode node:internal/streams/readable:461:38
+      1   33.3%        JS: ^_write /Users/charles/Desktop/FootyLive/FootyLive/node_modules/ws/lib/receiver.js:89:9
+      1  100.0%          JS: ^writeOrBuffer node:internal/streams/writable:540:23
+      1  100.0%            JS: *Writable.write node:internal/streams/writable:496:36
+      3    1.0%    JS: *_continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/HTTPRequest.js:100:20
+      3  100.0%      JS: *continue /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/HTTPRequest.js:192:19
+      3  100.0%        JS: ^<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/crawlerAPI.js:74:30
+      3  100.0%          JS: *<anonymous> /Users/charles/Desktop/FootyLive/FootyLive/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:237:50
+      3  100.0%            Builtin: CallApiCallback
+

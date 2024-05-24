@@ -110,7 +110,7 @@
                 });
         }
 
-
+        let maxRoundNumber = 0;
         async function fetchPreviousFixtures() {
             try {
                 const response = await fetch('/previous-fixtures');
@@ -152,8 +152,10 @@
                 }
                 return acc;
             }, {});
+
+            // Remove latest round
             const roundNumbers = Object.keys(fixturesByRound).map(round => parseInt(round.replace('Round ', '')));
-            const maxRoundNumber = Math.max(...roundNumbers);
+            maxRoundNumber = Math.max(...roundNumbers);
             delete fixturesByRound[`Round ${maxRoundNumber}`];
             delete fixturesByRound[`Round ${maxRoundNumber}`];
 

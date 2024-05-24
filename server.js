@@ -1,6 +1,6 @@
 const express = require('express');
-const puppeteerCrawl = require('./crawlerAPI.js'); // Importing your logic file
-const fixtureCrawl = require('./fixtureAPI.js'); // Importing your logic file
+const puppeteerCrawl = require('./crawlerAPI.js');
+const fixtureCrawl = require('./fixtureAPI.js');
 const randomUsername = require('./public/randomUsername.js');
 const fs = require('fs');
 const path = require('path');
@@ -65,7 +65,7 @@ app.get('/new-user-id', (req, res) => {
     res.json({ userId });
 });
 
-let usernames = {};
+let usernames = new Map();
 
 // Route to check if a username is taken
 app.get('/check-username/:username', (req, res) => {
@@ -76,10 +76,10 @@ app.get('/check-username/:username', (req, res) => {
             res.status(500).json({ error: 'An error occurred while reading the file.' });
             return;
         }
-        const usernames = JSON.parse(data);
-        const isTaken = usernames.hasOwnProperty(username) && usernames[username].isTaken;
-        res.json({ isTaken });
+        usernames = new Map(Object.entries(JSON.parse(data)));
     });
+    const isTaken = usernames.has(username) && usernames.get(username).isTaken;
+    res.json({ isTaken });
 });
 
 // Route to update the username
@@ -91,26 +91,26 @@ app.post('/update-username', (req, res) => {
         return res.json({ success: false, message: 'Username contains profanity.' });
     }
 
-    if (usernames.hasOwnProperty(filteredUsername) && usernames[filteredUsername].isTaken) {
+    if (usernames.has(filteredUsername) && usernames.get(filteredUsername).isTaken) {
         res.json({ success: false });
     } else {
         // Remove the old username
-        Object.keys(usernames).forEach(id => {
-            if (usernames[id] && usernames[id].userId === userId) {
-                usernames[id].isTaken = false;
+        for (let [username, user] of usernames) {
+            if (user.userId === userId) {
+                user.isTaken = false;
             }
-        });
+        }
         // Add the new username
-        usernames[filteredUsername] = { userId, isTaken: true };
-        // Write the updated usernames object to usernames.json
-        fs.writeFile('usernames.json', JSON.stringify(usernames), (err) => {
+        usernames.set(filteredUsername, { userId, isTaken: true });
+
+        fs.promises.writeFile('usernames.json', JSON.stringify(Object.fromEntries(usernames)), (err) => {
             if (err) {
                 console.error(err);
                 res.status(500).json({ error: 'An error occurred while writing to the file.' });
                 return;
             }
-            res.json({ success: true });
         });
+        res.json({ success: true });
     }
 });
 
@@ -166,19 +166,25 @@ async function updateFixtureData() {
 setInterval(updateFixtureData, 1200000);
 
 async function updateLiveFixtureData() {
+    console.log("UPDATING LIVE FIXRURES")
+    // Filter live games
+    const liveGames = fixture.games.filter(game => game.live == 1);
+
+    // If no live games, return early
+    if (liveGames.length === 0) {
+        console.log("No live games at the moment.");
+        return;
+    }
+
     try {
-        const data = { games: [] };
-        await fixtureCrawl(fixtureURL, data);
-        fixture = data; // Update fixture data
-        const updatePromises = fixture.games
-            .filter(game => game.live == 1)
-            .map(game => updatePlayerStats(game.link));
+        // Use the fixture data that was already fetched by updateFixtureData
+        const updatePromises = liveGames.map(game => updatePlayerStats(game.link));
 
         await Promise.all(updatePromises);
         broadcastMessage("playerDataChanged");
     }
     catch (error) {
-        console.error('Error fetching fixture data:', error);
+        console.error('Error updating live fixture data:', error);
     }
 }
 setInterval(updateLiveFixtureData, 45000);
@@ -200,11 +206,6 @@ app.get('/fixture/:link', async (req, res) => {
 
     try {
         // Fetch player data from /player-stats endpoint using axios
-        // const response = await axios.get(`http://localhost:5000/player-stats/${trimmedLink}`);
-        // if (!response.data) {
-        //     throw new Error('Failed to fetch player data');
-        // }
-        // const playerData = response.data; // Use a local variable instead of a global one
         const filePath = path.join(matchesFolderPath, `${trimmedLink}.json`);
         if (!fs.existsSync(filePath)) {
             throw new Error('Player stats file not found');
@@ -243,8 +244,6 @@ app.get('/fixture-links', (req, res) => {
     res.json(links);
 });
 
-// Add this code in your server file (e.g., server.js)
-
 app.get('/previous-fixtures', (req, res) => {
     const matchesFolderPath = path.join(__dirname, 'matches');
 
@@ -272,12 +271,10 @@ app.get('/previous-fixtures', (req, res) => {
 
 
 
-let playerStats = {}; // Change this to an object
+let playerStats = {};
 
-// Set the folder for matches to be stored
 const matchesFolderPath = path.join(__dirname, 'matches');
 
-// Ensure the matches folder exists
 if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
 }
@@ -289,7 +286,7 @@ async function updatePlayerStats(url) {
         };
 
         const stats = await puppeteerCrawl(url, data);
-        const link = url.split("/").pop(); // Extract the link from the url
+        const link = url.split("/").pop();
         if (!playerStats[link]) {
             playerStats[link] = { players: [] };
         }
@@ -298,7 +295,7 @@ async function updatePlayerStats(url) {
         const newPlayerIds = newPlayerData.map(p => `${p.name}-${p.number}`);
         playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(`${p.name}-${p.number}`));
 
-        newPlayerData.forEach(newPlayer => {
+        await Promise.all(newPlayerData.map(async (newPlayer) => {
             const playerId = `${newPlayer.name}-${newPlayer.number}`;
             const oldPlayer = playerStats[link].players.find(p => `${p.name}-${p.number}` === playerId);
 
@@ -319,9 +316,9 @@ async function updatePlayerStats(url) {
             }
 
             const filePath = path.join(matchesFolderPath, `${link}.json`);
-            fs.writeFileSync(filePath, JSON.stringify(stats));
+            await fs.promises.writeFile(filePath, JSON.stringify(stats));
+        }));
 
-        });
     } catch (error) {
         console.error('Error fetching player stats:', error);
     }
@@ -352,72 +349,64 @@ function calculateDifferences(newPlayer, oldPlayer) {
     return differences;
 }
 
-function updateScoringTimeline(newPlayer, differences) {
-    let scoringTimeline = [];
-    let playerId = `${newPlayer.name}-${newPlayer.number}`;
+async function updateScoringTimeline(newPlayer, differences) {
+    const scoringTimeline = [];
+    const playerId = `${newPlayer.name}-${newPlayer.number}`;
 
-    Object.keys(differences).forEach(key => {
-        if (differences[key] !== 0 && key !== 'fantasy') {
+    for (const [key, value] of Object.entries(differences)) {
+        if (value !== 0 && key !== 'fantasy' && Number.isInteger(value)) {
             let fantasy = 0;
             let keyShorthand;
-
             const timeArray = newPlayer.time.split(' ');
             let quarter = timeArray[1][1];
             switch (timeArray[0]) {
                 case 'Full': quarter = 4; break;
                 case 'Half': quarter = 2; break;
             }
-            let time = timeArray[2];
-            if (time === undefined) {
-                return;
-            }
-            if (!Number.isInteger(differences[key])) {
-                return;
-            }
+            const time = timeArray[2];
+            if (!time) continue;
 
             switch (key) {
-                case "goals": fantasy += (differences[key] * 6); keyShorthand = 'g'; break;
-                case "behinds": fantasy += (differences[key] * 1); keyShorthand = 'b'; break;
-                case "kicks": fantasy += (differences[key] * 3); keyShorthand = 'k'; break;
-                case "handballs": fantasy += (differences[key] * 2); keyShorthand = 'h'; break;
-                case "marks": fantasy += (differences[key] * 3); keyShorthand = 'm'; break;
-                case "tackles": fantasy += (differences[key] * 4); keyShorthand = 't'; break;
-                case "hitouts": fantasy += (differences[key] * 1); keyShorthand = 'ho'; break;
-                case "freesfor": fantasy += (differences[key] * 1); keyShorthand = 'ff'; break;
-                case "freesagainst": fantasy -= (differences[key] * 3); keyShorthand = 'fa'; break;
+                case "goals": fantasy += (value * 6); keyShorthand = 'g'; break;
+                case "behinds": fantasy += (value * 1); keyShorthand = 'b'; break;
+                case "kicks": fantasy += (value * 3); keyShorthand = 'k'; break;
+                case "handballs": fantasy += (value * 2); keyShorthand = 'h'; break;
+                case "marks": fantasy += (value * 3); keyShorthand = 'm'; break;
+                case "tackles": fantasy += (value * 4); keyShorthand = 't'; break;
+                case "hitouts": fantasy += (value * 1); keyShorthand = 'ho'; break;
+                case "freesfor": fantasy += (value * 1); keyShorthand = 'ff'; break;
+                case "freesagainst": fantasy -= (value * 3); keyShorthand = 'fa'; break;
                 default:
-                    break;
+                    continue;
             }
 
-            if (keyShorthand) {
-                scoringTimeline.push({
-                    playerId: playerId,
-                    quarter: quarter,
-                    time: time,
-                    stat: keyShorthand,
-                    difference: differences[key],
-                    fantasy: fantasy,
-                });
-            }
+            scoringTimeline.push({
+                playerId,
+                quarter,
+                time,
+                stat: keyShorthand,
+                difference: value,
+                fantasy,
+            });
         }
-    });
-
-    let groupedByRound = {};
-    scoringTimeline.forEach(item => {
-        let round = newPlayer.round;
-        if (!groupedByRound[round]) {
-            groupedByRound[round] = [];
-        }
-        groupedByRound[round].push(item);
-    });
-
-    let existingData = {};
-    if (fs.existsSync('timelineData.json')) {
-        existingData = JSON.parse(fs.readFileSync('timelineData.json', 'utf-8'));
     }
 
-    // Merge existing data with new data
-    for (let round in groupedByRound) {
+    const groupedByRound = scoringTimeline.reduce((acc, item) => {
+        const round = newPlayer.round;
+        acc[round] = acc[round] || [];
+        acc[round].push(item);
+        return acc;
+    }, {});
+
+    let existingData = {};
+    try {
+        const data = await fs.readFile('timelineData.json', 'utf-8');
+        existingData = JSON.parse(data);
+    } catch (err) {
+        // Handle file read error
+    }
+
+    for (const round in groupedByRound) {
         if (!existingData[round]) {
             existingData[round] = groupedByRound[round];
         } else {
@@ -433,11 +422,14 @@ function updateScoringTimeline(newPlayer, differences) {
         }
     }
 
-    fs.writeFileSync('timelineData.json', JSON.stringify(existingData, null, 2));
+    try {
+        await fs.promises.writeFile('timelineData.json', JSON.stringify(existingData, null, 2));
+    } catch (err) {
+        // Handle file write error
+    }
 
     return scoringTimeline;
 }
-
 app.get('/player-stats/:link', (req, res) => {
     const link = req.params.link;
     if (playerStats[link]) {
@@ -525,7 +517,6 @@ app.post('/update-icon', (req, res) => {
 
 app.post('/remove-icon', (req, res) => {
     const playerId = req.body.playerId;
-    // Remove the icon for the player
     delete iconsState[playerId];
 
     res.sendStatus(200);
@@ -534,8 +525,6 @@ app.post('/remove-icon', (req, res) => {
 app.get('/get-all-icons', (req, res) => {
     res.json(iconsState);
 });
-
-///////////////////////
 
 const profanityList = require('./public/BannedList.js');
 
@@ -598,25 +587,6 @@ function filterProfanity(message) {
 
     return words.join(' ');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
