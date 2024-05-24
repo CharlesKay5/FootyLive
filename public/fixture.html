@@ -56,25 +56,44 @@
         let visibleFixutre = document.getElementById('fixture-data');
         let visibleFixtureHead = document.getElementById('fixture-data');
         let visibleListItem = document.querySelector('li[data-round="11"]');
+
         document.addEventListener('DOMContentLoaded', (event) => {
             const listItems = document.getElementsByTagName("li");
 
             for (let i = 0; i < listItems.length; i++) {
                 listItems[i].addEventListener("click", (event) => {
                     const round = event.target.getAttribute("data-round");
-                    // scroll into view
-                    listItems[i].style.backgroundColor = "blue";
-                    document.getElementById(`round-${round}`).style.display = "block";
-                    document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
+                    let latestRound = document.getElementById("fixture-data").className;
+                    // FIX THIS
+                    // FIX Opening Round
+                    // case for when selected round is latest round
+                    if (i == latestRound) {
+                        latestRound.style.display = "flex";
 
-                    visibleFixutre.style.display = "none";
-                    visibleFixtureHead.style.display = "none";
-                    //console.log(visibleListItem)
-                    visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
-                    visibleFixutre = document.getElementById(`round-${round}`);
-                    visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
-                    visibleListItem = listItems[i];
-                    
+                        visibleFixutre.style.display = "none";
+                        visibleFixtureHead.style.display = "none";
+                        //console.log(visibleListItem)
+                        visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
+                        visibleFixutre = document.getElementById(`round-${round}`);
+                        visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
+                        visibleListItem = listItems[i];
+                    }
+                    else {
+
+
+                        // show selected round
+                        listItems[i].style.backgroundColor = "blue";
+                        document.getElementById(`round-${round}`).style.display = "block";
+                        document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
+
+                        visibleFixutre.style.display = "none";
+                        visibleFixtureHead.style.display = "none";
+                        //console.log(visibleListItem)
+                        visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
+                        visibleFixutre = document.getElementById(`round-${round}`);
+                        visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
+                        visibleListItem = listItems[i];
+                    }
                 });
             }
         });
@@ -110,7 +129,6 @@
                 });
         }
 
-        let maxRoundNumber = 0;
         async function fetchPreviousFixtures() {
             try {
                 const response = await fetch('/previous-fixtures');
@@ -128,7 +146,7 @@
             const fixturesList = document.getElementById('fixtures-list');
             fixturesList.innerHTML = ''; // Clear any existing data
 
-            // Step 1: Group fixtures by round
+            // Group fixtures by round
             const fixturesByRound = fixtureData.reduce((acc, fixture) => {
                 let playerWithTeam0 = fixture.players.find(player => player.team === 0);
                 let playerWithTeam1 = fixture.players.find(player => player.team === 1);
@@ -153,13 +171,12 @@
                 return acc;
             }, {});
 
-            // Remove latest round
             const roundNumbers = Object.keys(fixturesByRound).map(round => parseInt(round.replace('Round ', '')));
-            maxRoundNumber = Math.max(...roundNumbers);
-            delete fixturesByRound[`Round ${maxRoundNumber}`];
-            delete fixturesByRound[`Round ${maxRoundNumber}`];
+            const maxRoundNumber = Math.max(...roundNumbers);
+            console.log(maxRoundNumber)
 
-            // Step 2: Extract and sort rounds in descending order and remove the latest round
+
+            // Extract and sort rounds in descending order and remove the latest round
             const sortedRounds = Object.keys(fixturesByRound)
                 .map(roundStr => ({
                     roundStr,
@@ -170,7 +187,7 @@
             // Remove the latest round
             sortedRounds.shift();
 
-            // Step 3: Create list items for each round
+            // Create list items for each round
             sortedRounds.forEach(({ roundStr }) => {
                 const roundHeader = document.createElement('h2');
                 roundHeader.textContent = `${roundStr}:`;
@@ -256,7 +273,17 @@
             fetchFixtureData()
                 .then(data => {
                     const fixturesByDate = {};
+                    console.log(data);
+                    fixtureDataContainer.classList.add(data.games[0].round);
 
+                    // Hide the li with rounds that haven't occured yet
+                    let listItems = document.getElementsByTagName("li");
+                    let latestRound = document.getElementById("fixture-data").className;
+                    for (let i = 0; i < listItems.length; i++) {
+                        if (parseInt(listItems[i].getAttribute("data-round")) > parseInt(latestRound)) {
+                            listItems[i].style.display = 'none';
+                        }
+                    }
                     // Group fixtures by date
                     data.games.forEach(fixture => {
                         const fixtureDate = fixture.date; // Assuming fixture.date is in a suitable format

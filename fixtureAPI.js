@@ -64,7 +64,9 @@ async function fixtureCrawl(fixtureURL, data) {
                 location: 0,
                 link: 0,
                 live: 0,
+                round: 0,
             }
+            game.round = document.getElementsByClassName("competition-nav__round-list-item is-active competition-nav__round-list-item--current-round ")[0].firstElementChild.textContent;
 
             let dateHeader = fixtureRows[i].parentElement.previousElementSibling;
             if (dateHeader && dateHeader.className === "fixtures__date-header") {
