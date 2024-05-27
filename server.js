@@ -398,10 +398,11 @@ async function updateScoringTimeline(newPlayer, differences) {
     }, {});
 
     try {
-        const data = await fs.readFile('timelineData.json', 'utf-8');
+        const data = await fs.promises.readFile('timelineData.json', 'utf-8');
         existingData = JSON.parse(data);
     } catch (err) {
         console.log("UNABLE TO READ TIMELINE DATA");
+        console.error(err);
     }
 
     for (const round in groupedByRound) {
@@ -422,6 +423,7 @@ async function updateScoringTimeline(newPlayer, differences) {
 
     try {
         await fs.promises.writeFile('timelineData.json', JSON.stringify(existingData, null, 2));
+        // console.log("existingData", existingData);
     } catch (err) {
         console.log("ERROR WRITING TIMELINE DATA");
         throw err;

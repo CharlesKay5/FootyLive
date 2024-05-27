@@ -8,7 +8,7 @@ const data = {
 };
 
 async function crawlAllUrls() {
-    for (let i = 2953; i <= 2954; i++) {
+    for (let i = 2953; i <= 2961; i++) {
         await statsCrawl(`https://dtlive.com.au/afl/livescores.php?GameID=${i}`, data);
     }
 }
