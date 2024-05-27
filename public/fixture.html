@@ -10,9 +10,10 @@
 </head>
 
 <body>
+    <div id="top-of-page"></div>
     <div id="round-selector">
         <ul id="round-list">
-            <li data-round="0">OR</li>
+            <!-- <li data-round="0">OR</li> -->
             <li data-round="1">1</li>
             <li data-round="2">2</li>
             <li data-round="3">3</li>
@@ -56,7 +57,7 @@
         let visibleFixutre = document.getElementById('fixture-data');
         let visibleFixtureHead = document.getElementById('fixture-data');
         let visibleListItem = document.querySelector('li[data-round="11"]');
-
+        let latestRoundElement = document.getElementById("fixture-data");
         document.addEventListener('DOMContentLoaded', (event) => {
             const listItems = document.getElementsByTagName("li");
 
@@ -64,32 +65,40 @@
                 listItems[i].addEventListener("click", (event) => {
                     const round = event.target.getAttribute("data-round");
                     let latestRound = document.getElementById("fixture-data").className;
-                    // FIX THIS
-                    // FIX Opening Round
+                    
                     // case for when selected round is latest round
-                    if (i == latestRound) {
-                        latestRound.style.display = "flex";
+                    if (i == latestRound - 1) {
+                        
+                        latestRoundElement.style.display = "flex";
+                        listItems[i].style.backgroundColor = "blue";
+                        listItems[i].style.color = "white";
 
+                        
                         visibleFixutre.style.display = "none";
                         visibleFixtureHead.style.display = "none";
-                        //console.log(visibleListItem)
                         visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
-                        visibleFixutre = document.getElementById(`round-${round}`);
+                        visibleListItem.style.color = "var(--text-color)";
+                        visibleFixutre = latestRoundElement;
                         visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
                         visibleListItem = listItems[i];
+
+                        
                     }
                     else {
 
-
+                        
                         // show selected round
                         listItems[i].style.backgroundColor = "blue";
+                        listItems[i].style.color = "white";
                         document.getElementById(`round-${round}`).style.display = "block";
                         document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
 
                         visibleFixutre.style.display = "none";
                         visibleFixtureHead.style.display = "none";
-                        //console.log(visibleListItem)
+                       
                         visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
+                        visibleListItem.style.color = "var(--text-color)";
+                        
                         visibleFixutre = document.getElementById(`round-${round}`);
                         visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
                         visibleListItem = listItems[i];
@@ -101,9 +110,9 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             const backToTop = document.getElementById("backToTop");
             backToTop.addEventListener("click", (event) => {
-                const fixtureHeader = document.getElementById("fixtureHeader");
+                const topOfPage = document.getElementById("top-of-page");
                 // scroll into view
-                fixtureHeader.scrollIntoView({ behavior: 'smooth' });
+                topOfPage .scrollIntoView({ behavior: 'smooth' });
             });
         });
 
@@ -173,8 +182,6 @@
 
             const roundNumbers = Object.keys(fixturesByRound).map(round => parseInt(round.replace('Round ', '')));
             const maxRoundNumber = Math.max(...roundNumbers);
-            console.log(maxRoundNumber)
-
 
             // Extract and sort rounds in descending order and remove the latest round
             const sortedRounds = Object.keys(fixturesByRound)
@@ -221,10 +228,10 @@
                     const lowestScore = Math.min(fixture.homeScore, fixture.awayScore);
                     const margin = highestScore - lowestScore;
                     if (fixture.homeScore == highestScore) {
-                        winning = `${fixture.team0} <br>by ${margin}`;
+                        winning = `${fixture.team0} by ${margin}`;
                     }
                     else {
-                        winning = `${fixture.team1} <br>by ${margin}`;
+                        winning = `${fixture.team1} by ${margin}`;
                     }
 
                     if (fixture.homeScore == fixture.awayScore) {
@@ -273,7 +280,6 @@
             fetchFixtureData()
                 .then(data => {
                     const fixturesByDate = {};
-                    console.log(data);
                     fixtureDataContainer.classList.add(data.games[0].round);
 
                     // Hide the li with rounds that haven't occured yet
@@ -282,6 +288,9 @@
                     for (let i = 0; i < listItems.length; i++) {
                         if (parseInt(listItems[i].getAttribute("data-round")) > parseInt(latestRound)) {
                             listItems[i].style.display = 'none';
+                        } else if (parseInt(listItems[i].getAttribute("data-round")) == latestRound) {
+                            listItems[i].style.backgroundColor = "blue";
+                            listItems[i].style.color = "white";
                         }
                     }
                     // Group fixtures by date

@@ -60,6 +60,7 @@
                     <th>AVG</th>
                     <th>BE</th>
                     <th>AF</th>
+                    <!-- <th>SC</th> -->
                 </tr>
                 <!-- Player data for Team 0 will be inserted here -->
             </table>
@@ -82,6 +83,7 @@
                     <th>AVG</th>
                     <th>BE</th>
                     <th>AF</th>
+                    <!-- <th>SC</th> -->
                 </tr>
                 <!-- Player data for Team 1 will be inserted here -->
             </table>
@@ -107,7 +109,7 @@
             </li>
         </ul>
         <ul>
-            <!-- <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li> -->
+            <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li>
             <li><i class="customIcon" id="fire" style="content: url('/icons/fire.png')"></i></li>
             <li><i class="customIcon" id="ice" style="content: url('/icons/ice.png')"></i></li>
             <li><i class="customIcon" id="subbedOut" style="content: url('/icons/redvest.png')"></i></li>
@@ -165,7 +167,7 @@
     <div id="backButton"><a href="../fixture"><i class="fa-solid fa-arrow-left-long"></i></a></div>
 
     <script>
-        const socket = new WebSocket('ws://10.0.0.67:8080');
+        const socket = new WebSocket('ws://localhost:8080');
         var allowColourChange = true;
 
         let tableFocusBtns = document.getElementsByClassName('tableFocus')
@@ -289,8 +291,9 @@
                             `<td class="">${parseInt(player.tackles)}${renderSuperscript(differences.tackles, quarterFull)}</td>`,
                             `<td>${parseInt(player.tog)}%</td>`,
                             `<td>${parseInt(player.fantasyAvg)}</td>`,
-                            `<td class="breakeven">${player.breakeven}</td>`,
-                            `<td>${parseInt(player.fantasy)}${renderSuperscript(differences.fantasy, quarterFull)}</td>`
+                            `<td class="breakeven">${parseInt(player.breakeven)}</td>`,
+                            `<td>${parseInt(player.fantasy)}${renderSuperscript(differences.fantasy, quarterFull)}</td>`,
+                            //`<td>${parseInt(player.supercoach)}${renderSuperscript(differences.supercoach, quarterFull)}</td>`,
                         ];
 
 
@@ -325,7 +328,10 @@
                             // playerName.appendChild(benched);
                         }
 
-                        if (player.injured == 1) {
+                        // Get the icon currently on the player
+                        
+                        let injuredIcon = rowIcons[playerId] === '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>';
+                        if (player.injured == 1 || injuredIcon) {
                             if (!injuryList.includes(playerId)) {
                                 injuryList.push(playerId);
                             };
@@ -348,6 +354,7 @@
                                     }
                                 });
                         }
+                        console.log("Injury List: " + injuryList);
                         handleRowColorAndSuperscripts(row, playerId, differences);
 
                         //fetchScoringTimeline(playerId);
@@ -923,7 +930,11 @@
         // Function to fetch data every 10 seconds
         socket.onmessage = function (event) {
             if (event.data === 'playerDataChanged') {
+                console.log("UPDATING")
                 fetchAndFormatPlayerData(trimmedLink);
+            }
+            else {
+                console.log(event.data);
             }
         };
 

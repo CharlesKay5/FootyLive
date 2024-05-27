@@ -152,11 +152,9 @@ async function updateFixtureData() {
         const data = { games: [] };
         await fixtureCrawl(fixtureURL, data);
         fixture = data; // Update fixture data
-        const updatePromises = fixture.games
-            .filter(game => game.live == 0)
-            .map(game => updatePlayerStats(game.link));
-
-        await Promise.all(updatePromises);
+        for (const game of fixture.games.filter(game => game.live == 0)) {
+            await updatePlayerStats(game.link);
+        }
         // Call broadcastMessage after all player stats have been updated
         broadcastMessage('playerDataChanged');
     } catch (error) {
@@ -349,6 +347,7 @@ function calculateDifferences(newPlayer, oldPlayer) {
     return differences;
 }
 
+let existingData = {};
 async function updateScoringTimeline(newPlayer, differences) {
     const scoringTimeline = [];
     const playerId = `${newPlayer.name}-${newPlayer.number}`;
@@ -398,12 +397,11 @@ async function updateScoringTimeline(newPlayer, differences) {
         return acc;
     }, {});
 
-    let existingData = {};
     try {
         const data = await fs.readFile('timelineData.json', 'utf-8');
         existingData = JSON.parse(data);
     } catch (err) {
-        // Handle file read error
+        console.log("UNABLE TO READ TIMELINE DATA");
     }
 
     for (const round in groupedByRound) {
@@ -425,7 +423,8 @@ async function updateScoringTimeline(newPlayer, differences) {
     try {
         await fs.promises.writeFile('timelineData.json', JSON.stringify(existingData, null, 2));
     } catch (err) {
-        // Handle file write error
+        console.log("ERROR WRITING TIMELINE DATA");
+        throw err;
     }
 
     return scoringTimeline;

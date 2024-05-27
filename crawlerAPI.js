@@ -10,7 +10,40 @@ const path = require('path');
 // =======================================
 const puppeteer = require('puppeteer');
 
-
+async function supercoachCrawl() {
+    const supercoachScores = fetch("https://supercoach.heraldsun.com.au/2024/api/afl/classic/v1/players-cf?embed=notes%2Codds%2Cplayer_stats%2Cpositions&round=10&xredir=1", {
+        headers: {
+            "accept": "application/json",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "authorization": "Bearer 7b991d44a5c09b7f12948123ea198da1896afcca",
+            "priority": "u=1, i",
+            "sec-ch-ua": "\"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "Referer": "https://supercoach.heraldsun.com.au/afl/classic/team/field",
+        },
+        body: null,
+        method: "GET"
+    }).then(data => data.text())
+        .then(data => {
+            let jData = JSON.parse(data);
+            let result = jData.map(player => ({
+                playerName: player.first_name.charAt(0) + '.' + player.last_name,
+                livepts: player.player_stats[0].livepts,
+                supercoachPrice: player.player_stats[0].price,
+            }));
+            //console.log(result);
+            return result;
+            //fs.promises.writeFile('fetchedStats.json', JSON.stringify(result));
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    return supercoachScores;
+}
 
 async function subsCrawl(baseURL, data, browser, callback) {
     console.log(`Crawling subs for ${baseURL.split('/').pop()}`);
@@ -63,7 +96,7 @@ async function subsCrawl(baseURL, data, browser, callback) {
     }
 }
 
-async function statsCrawl(baseURL, data, browser, callback) {
+async function statsCrawl(baseURL, data, browser, supercoachScores) {
     console.log(`Crawling Stats for ${baseURL.split('/').pop()}`);
     const statsURL = `${baseURL}#player-stats`;
 
@@ -83,8 +116,7 @@ async function statsCrawl(baseURL, data, browser, callback) {
 
     await page.goto(statsURL, { "waitUntil": "networkidle0" });
 
-    var basicStats = await page.evaluate((statsURL, data) => {
-
+    var basicStats = await page.evaluate((statsURL, data, supercoachScores) => {
         var playerStats = document.getElementsByClassName("stats-table__body-row   ");
         for (let i = 0; i < playerStats.length; i++) {
 
@@ -118,7 +150,10 @@ async function statsCrawl(baseURL, data, browser, callback) {
                 round: 0,
                 date: 0,
                 trimmedLink: 0,
+                supercoach: 0,
+                supercoachPrice: 0,
             }
+
             let pageURL = window.location.href;
             let splitLinks = pageURL.split('/')
             player.trimmedLink = splitLinks[splitLinks.length - 1].split("#")[0]
@@ -136,6 +171,10 @@ async function statsCrawl(baseURL, data, browser, callback) {
             const lastName = nameRow.querySelector('strong').textContent.trim();
             const fullName = (firstName[0] + '.' + lastName);
             player.name = fullName;
+
+            player.supercoach = supercoachScores.find(supercoachPlayer => supercoachPlayer.playerName === player.name).livepts;
+            player.supercoachPrice = supercoachScores.find(supercoachPlayer => supercoachPlayer.playerName === player.name).supercoachPrice;
+
 
             player.goals = playerStats[i].childNodes[3].textContent;
 
@@ -178,7 +217,7 @@ async function statsCrawl(baseURL, data, browser, callback) {
             "Player": data.players,
 
         };
-    }, baseURL, data);
+    }, baseURL, data, supercoachScores);
     data.players = basicStats["Player"];
 
 
@@ -260,12 +299,7 @@ async function statsCrawl(baseURL, data, browser, callback) {
     //await browser.close();
     await page.close();
 
-    // Pass data to callback function or return it directly
-    if (callback) {
-        callback(data);
-    } else {
-        return data;
-    }
+    return data;
 
 }
 
@@ -481,12 +515,10 @@ async function breakevenCrawl(baseURL, data, browser, callback) {
 
 const puppeteerCrawl = async (baseURL, data) => {
     const browser = await puppeteer.launch({ headless: true, defaultViewport: null });
-
-    const [subsData, statsData, matchupData] = await Promise.all([
-        subsCrawl(baseURL, data, browser),
-        statsCrawl(baseURL, data, browser),
-        matchupCrawl(baseURL, data, browser),
-    ]);
+    const supercoachScores = await supercoachCrawl();
+    const subsData = await subsCrawl(baseURL, data, browser);
+    const statsData = await statsCrawl(baseURL, data, browser, supercoachScores);
+    const matchupData = await matchupCrawl(baseURL, data, browser);
 
     // Assign season average fantasy scores to players
     data.players.forEach((player, index) => {
