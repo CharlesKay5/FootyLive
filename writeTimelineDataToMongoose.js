@@ -32,7 +32,7 @@ async function retryInsert(batch, round, retries = 3, delay = 1000) {
     // Insert data into the "rounds" collection
     await Round.findOneAndUpdate(
       { round }, // Filter by round
-      { $push: { stats: { $each: batch } } }, // Push each item of the batch into the "stats" array
+      { $addToSet: { stats: { $each: batch } } }, // Add each item of the batch to the "stats" array if it does not exist
       { upsert: true, new: true }
     );
     console.log(`Data for ${round} inserted successfully`);
@@ -48,7 +48,6 @@ async function retryInsert(batch, round, retries = 3, delay = 1000) {
     }
   }
 }
-
 
 // Call the function to insert data
 insertData(jsonData);

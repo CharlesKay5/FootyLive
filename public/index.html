@@ -402,7 +402,6 @@
         function handleRowColorChange(row, fantasyDifference) {
             if (fantasyDifference > 0) {
                 row.style.backgroundColor = 'lightgreen';
-                console.log(row.id + " GREEN")
             } else if (fantasyDifference < 0) {
                 row.style.backgroundColor = 'lightcoral';
             }
@@ -1080,7 +1079,7 @@
             gamePercentage.textContent = Math.ceil(percentage) + '%';
 
 
-            //fireAndIce(percentage);
+            fireAndIce(percentage);
         }
 
         function fireAndIce(percentage) {
@@ -1098,14 +1097,15 @@
                 // Check if the player already has an icon
                 let existingIcon = playerNames[i].parentElement.querySelector("i");
                 if (existingIcon) {
-                    console.log("Player " + playerNames[i].textContent + " already has an icon.");
+                    // console.log("Player " + playerNames[i].textContent + " already has an icon.");
                     continue; // Skip to the next iteration
                 }
 
-                if (parseFloat(fantasyScore) >= parseFloat(hotLevel) && average != 0 && fantasyScore != 0 && percentage > 20) {
-                    console.log("Adding fire to " + playerNames[i].textContent);
+                if (parseFloat(fantasyScore) >= parseFloat(hotLevel) && average !== 0 && fantasyScore !== 0 && percentage > 20) {
+                    // console.log("Adding fire to " + playerNames[i].textContent);
                     addIcon(playerNames[i].parentElement, '<i class="customIcon" id="fire" style="content: url(\'/icons/fire.png\')"></i>');
-                } else if (parseFloat(fantasyScore) <= parseFloat(coldLevel) && average != 0 && fantasyScore != 0 && percentage > 20 && average > 80) {
+                } else if (parseFloat(fantasyScore) <= parseFloat(coldLevel) && average !== 0 && fantasyScore !== 0 && percentage > 20 && average > 55) {
+                    // console.log((playerNames[i].parentElement.id))
                     addIcon(playerNames[i].parentElement, '<i class="customIcon" id="ice" style="content: url(\'/icons/ice.png\')"></i>');
                 }
             }
@@ -1155,7 +1155,7 @@
                 .then(data => {
                     if (data.isTaken) {
                         alert('This username is already taken');
-                        console.log('This username is already taken.');
+                        // console.log('This username is already taken.');
                     } else {
                         // If the new name is not taken, update the user's name
                         fetch('/update-username', {
