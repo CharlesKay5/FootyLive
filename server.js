@@ -10,6 +10,15 @@ const bodyParser = require('body-parser');
 const WebSocket = require('ws');
 const uuid = require('uuid');
 const { v4: uuidv4 } = require('uuid');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/scoringTimeline');
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+    console.log('Connected to MongoDB');
+});
 
 const app = express();
 const port = 5000;
@@ -348,6 +357,8 @@ function calculateDifferences(newPlayer, oldPlayer) {
 }
 
 let existingData = {};
+const { PlayerStat, Round } = require('./models');
+
 async function updateScoringTimeline(newPlayer, differences) {
     const scoringTimeline = [];
     const playerId = `${newPlayer.name}-${newPlayer.number}`;
@@ -359,10 +370,19 @@ async function updateScoringTimeline(newPlayer, differences) {
             const timeArray = newPlayer.time.split(' ');
             let quarter = timeArray[1][1];
             switch (timeArray[0]) {
+                case 'QTR': quarter = 1; break;
+                case '3QT': quarter = 3; break;
                 case 'Full': quarter = 4; break;
                 case 'Half': quarter = 2; break;
             }
+            switch (quarter) {
+                case 'A': quarter = 2; break;
+            }
+            
             const time = timeArray[2];
+            if (time == "TIME") {
+                time == "30:00";
+            }
             if (!time) continue;
 
             switch (key) {
@@ -390,47 +410,19 @@ async function updateScoringTimeline(newPlayer, differences) {
         }
     }
 
-    const groupedByRound = scoringTimeline.reduce((acc, item) => {
-        const round = newPlayer.round;
-        acc[round] = acc[round] || [];
-        acc[round].push(item);
-        return acc;
-    }, {});
+    const round = newPlayer.round;
 
-    try {
-        const data = await fs.promises.readFile('timelineData.json', 'utf-8');
-        existingData = JSON.parse(data);
-    } catch (err) {
-        console.log("UNABLE TO READ TIMELINE DATA");
-        console.error(err);
-    }
-
-    for (const round in groupedByRound) {
-        if (!existingData[round]) {
-            existingData[round] = groupedByRound[round];
-        } else {
-            groupedByRound[round].forEach(newItem => {
-                if (!existingData[round].some(existingItem =>
-                    existingItem.playerId === newItem.playerId &&
-                    existingItem.quarter === newItem.quarter &&
-                    existingItem.time === newItem.time &&
-                    existingItem.stat === newItem.stat)) {
-                    existingData[round].push(newItem);
-                }
-            });
-        }
-    }
-
-    try {
-        await fs.promises.writeFile('timelineData.json', JSON.stringify(existingData, null, 2));
-        // console.log("existingData", existingData);
-    } catch (err) {
-        console.log("ERROR WRITING TIMELINE DATA");
-        throw err;
+    for (const item of scoringTimeline) {
+        await Round.findOneAndUpdate(
+            { round },
+            { $push: { stats: item } },
+            { upsert: true, new: true }
+        );
     }
 
     return scoringTimeline;
 }
+
 app.get('/player-stats/:link', (req, res) => {
     const link = req.params.link;
     if (playerStats[link]) {
@@ -454,32 +446,28 @@ app.get('/player-stats/:link', (req, res) => {
 });
 
 
-app.get('/scoringTimeline/:playerId/:round', (req, res) => {
+app.get('/scoringTimeline/:playerId/:round', async (req, res) => {
     const playerId = req.params.playerId;
     const round = req.params.round;
 
-    // Read the JSON data from the file
-    let timelineData;
     try {
-        timelineData = JSON.parse(fs.readFileSync('timelineData.json', 'utf8'));
+        const roundData = await Round.findOne({ round }).lean();
+        if (!roundData) {
+            return res.json([]);
+        }
+
+        const playerData = roundData.stats.filter(player => player.playerId === playerId);
+        if (!playerData.length) {
+            return res.status(404).json({ error: `No data found for player ${playerId} in round ${round}` });
+        }
+
+        res.json(playerData);
     } catch (error) {
-        return res.status(500).json({ error: 'Error reading timeline data file' });
+        console.error('Error fetching timeline data:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-
-    // Find the data for the specified round and player
-    const roundData = timelineData[round];
-    if (!roundData) {
-        return res.json([]);
-        //return res.status(404).json({ error: `No data found for round ${round}` });
-    }
-
-    const playerData = roundData.filter(player => player.playerId === playerId);
-    if (!playerData.length) {
-        return res.status(404).json({ error: `No data found for player ${playerId} in round ${round}` });
-    }
-
-    res.json(playerData);
 });
+
 
 // Route for serving player images
 app.get('/player-image/:playerId', async (req, res) => {

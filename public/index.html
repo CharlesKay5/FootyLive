@@ -109,7 +109,7 @@
             </li>
         </ul>
         <ul>
-            <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li>
+            <!-- <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li> -->
             <li><i class="customIcon" id="fire" style="content: url('/icons/fire.png')"></i></li>
             <li><i class="customIcon" id="ice" style="content: url('/icons/ice.png')"></i></li>
             <li><i class="customIcon" id="subbedOut" style="content: url('/icons/redvest.png')"></i></li>
@@ -272,10 +272,6 @@
                         const playerId = `${player.name}-${player.number}`;
                         const previousColour = rowColours[playerId];
 
-                        if (previousColour) {
-                            row.style.backgroundColor = previousColour;
-                        }
-
                         const timeArray = player.time.split(' ');
                         const quarterFull = timeArray[1];
 
@@ -329,7 +325,7 @@
                         }
 
                         // Get the icon currently on the player
-                        
+
                         let injuredIcon = rowIcons[playerId] === '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>';
                         if (player.injured == 1 || injuredIcon) {
                             if (!injuryList.includes(playerId)) {
@@ -354,7 +350,7 @@
                                     }
                                 });
                         }
-                        console.log("Injury List: " + injuryList);
+                        // console.log("Injury List: " + injuryList);
                         handleRowColorAndSuperscripts(row, playerId, differences);
 
                         //fetchScoringTimeline(playerId);
@@ -376,7 +372,7 @@
 
                 if (currentTimelinePlayer) {
                     //console.log("Fetching current Player");
-                    //fetchScoringTimeline(currentTimelinePlayer, firstPlayerTeam0.round);
+                    fetchScoringTimeline(currentTimelinePlayer, firstPlayerTeam0.round);
                 }
             } else {
                 console.error(`Player data for Team ${team} is not available or not in the expected format.`);
@@ -386,9 +382,10 @@
         function handleRowColorAndSuperscripts(row, playerId, differences) {
             const fantasyDifference = differences.fantasy;
             const anyStatChanged = Object.values(differences).some(diff => diff !== 0 && !isNaN(diff));
-            if (row.style.backgroundColor == '') {
-                handleRowColorChange(row, fantasyDifference);
-            }
+            // // if (row.style.backgroundColor == '') {
+            //     handleRowColorChange(row, fantasyDifference);
+            // // }
+            handleRowColorChange(row, fantasyDifference);
 
             if (anyStatChanged) {
                 row.querySelectorAll('sup').forEach(sup => {
@@ -397,7 +394,7 @@
                 allowColourChange = false;
             }
 
-            if (rowColours[playerId]) {
+            if (allowColourChange && rowColours[playerId]) {
                 handleRowColor(row, rowColours[playerId]);
             }
         }
@@ -405,17 +402,36 @@
         function handleRowColorChange(row, fantasyDifference) {
             if (fantasyDifference > 0) {
                 row.style.backgroundColor = 'lightgreen';
+                console.log(row.id + " GREEN")
             } else if (fantasyDifference < 0) {
                 row.style.backgroundColor = 'lightcoral';
             }
 
+            const colorMap = {
+                'default': '',
+                'orange': 'rgb(247, 190, 129)',
+                'blue': 'rgb(206, 227, 246)',
+                'purple': 'rgb(227, 206, 246)'
+            };
+
+            if (fantasyDifference === 0) {
+                row.style.backgroundColor = colorMap[rowColours[row.id]] || '';
+                if (row.style.backgroundColor != '') {
+                    row.style.color = "#2a2a2a"
+                }
+            }
+
             setTimeout(() => {
                 if (['', 'lightgreen', 'lightcoral'].includes(row.style.backgroundColor)) {
-                    row.style.backgroundColor = '';
+                    row.style.backgroundColor = colorMap[rowColours[row.id]] || '';
+                    if (row.style.backgroundColor != '') {
+                        row.style.color = "#2a2a2a"
+                    }
                     allowColourChange = true;
                 }
             }, 5000);
         }
+
 
         function handleRowColor(row, color) {
             const colorMap = {
@@ -424,16 +440,43 @@
                 'blue': 'rgb(206, 227, 246)',
                 'purple': 'rgb(227, 206, 246)'
             };
-
             row.style.backgroundColor = colorMap[color] || '';
             if (colorMap[color]) {
                 row.style.color = '#2a2a2a';
             }
+
+            if (colorMap[color] === '') {
+                localStorage.removeItem(row.id, color);
+            } else {
+                localStorage.setItem(row.id, color);
+            }
         }
+
+
+        window.onload = function () {
+            // Get all the rows
+            var rows = document.getElementsByTagName('tr');
+
+            // Iterate over the rows
+            for (var i = 0; i < rows.length; i++) {
+                // Get the row's id
+                var id = rows[i].id;
+
+                // Check if a color is stored in local storage for this id
+                var color = localStorage.getItem(id);
+
+                // If a color is stored, apply it to the row
+                if (color) {
+                    rowColours[id] = color;
+                    handleRowColor(rows[i], color);
+                }
+            }
+        };
+
+
 
         let colourCircleClickHandlers = [];
         let iconClickHandlers = [];
-
 
         function showTooltip(playerId, team, row, x, y, player) {
             if (!allowColourChange) {
@@ -660,6 +703,7 @@
                 case 'default':
                     row.style.backgroundColor = '';
                     row.style.color = "var(--text-color)"
+                    localStorage.removeItem(row.id, colour);
                     break;
                 case 'orange':
                     row.style.backgroundColor = 'rgb(247, 190, 129)';
@@ -678,6 +722,7 @@
 
             if (colour != 'default') {
                 rowColours[playerId] = colour;
+                localStorage.setItem(row.id, colour);
             } else {
                 delete rowColours[playerId];
             }
@@ -744,7 +789,7 @@
                     }
                 })
                 .catch(error => {
-                    alert('The scoring timeline data is missing or unavailable. \nNOTE: timeline data is not available for games prior to round 11', error);
+                    alert('The scoring timeline data is missing or unavailable.', error);
                 });
         }
 
@@ -930,7 +975,7 @@
         // Function to fetch data every 10 seconds
         socket.onmessage = function (event) {
             if (event.data === 'playerDataChanged') {
-                console.log("UPDATING")
+                // console.log("UPDATING")
                 fetchAndFormatPlayerData(trimmedLink);
             }
             else {
