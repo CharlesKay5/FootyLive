@@ -296,7 +296,7 @@ app.get('/fixture/:link', async (req, res) => {
 updateFixtureData();
 
 app.get('/fixture', (req, res) => {
-    const fixturePath = path.join(__dirname, '..', 'public', 'fixture.html');
+    const fixturePath = path.join(__dirname, 'fixture.html');
     res.sendFile(fixturePath);
 });
 
