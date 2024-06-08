@@ -24,6 +24,7 @@
     "node-fetch": "^3.3.2",
     "path": "^0.12.7",
     "puppeteer": "^22.9.0",
+    "rendertron-middleware": "^0.1.5",
     "uuid": "^9.0.1",
     "ws": "^8.17.0",
     "xml2js": "^0.6.2"

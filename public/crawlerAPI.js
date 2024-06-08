@@ -5,11 +5,6 @@ const fs = require("fs");
 const path = require('path');
 
 
-// =======================================
-// web crawler
-// =======================================
-const puppeteer = require('puppeteer');
-
 async function supercoachCrawl() {
     const supercoachScores = fetch("https://supercoach.heraldsun.com.au/2024/api/afl/classic/v1/players-cf?embed=notes%2Codds%2Cplayer_stats%2Cpositions&round=10&xredir=1", {
         headers: {
