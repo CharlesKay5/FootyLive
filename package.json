@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "shx rm -rf dist/ && shx cp -r src/ dist/"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +26,8 @@
     "uuid": "^9.0.1",
     "ws": "^8.17.0",
     "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "shx": "^0.3.4"
   }
 }
