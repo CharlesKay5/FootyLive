@@ -2,6 +2,7 @@ const express = require('express');
 const puppeteerCrawl = require('./crawlerAPI.js');
 const fixtureCrawl = require('./fixtureAPI.js');
 const randomUsername = require('./public/randomUsername.js');
+// const dtliveChat = require('./dtliveChatAPI.js');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios').default;
@@ -12,7 +13,8 @@ const uuid = require('uuid');
 const { v4: uuidv4 } = require('uuid');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/scoringTimeline');
+// mongoose.connect('mongodb://localhost:27017/scoringTimeline');
+mongoose.connect('mongodb+srv://charleskay5:aJ9o4v7pDkiGp7sW@scoringtimelinecluster.fgr38ho.mongodb.net/?retryWrites=true&w=majority&appName=ScoringTimelineCluster');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -21,9 +23,21 @@ db.once('open', function () {
 });
 
 const app = express();
-const port = 5000;
-const wss = new WebSocket.Server({ port: 8080 });
-wss.on('connection', ws => {
+const port = process.env.PORT || 5000;
+
+
+
+// Correct way to initialize WebSocket server listening on a specific port
+const wss = new WebSocket.Server({ port: process.env.PORT || 8080 });
+
+wss.on('connection', (ws, request) => {
+
+    const ip = request.socket.remoteAddress;
+    const userAgent = request.headers['user-agent'];
+
+    // Log the device information
+    console.log(`New connection from ${ip}, User-Agent: ${userAgent}`);
+    
     ws.on('message', message => {
         // Broadcast the message to all clients
         wss.clients.forEach(client => {
@@ -146,6 +160,44 @@ app.post('/update-chat', (req, res) => {
 app.get('/get-all-chats', (req, res) => {
     res.json(chats);
 });
+
+/////////////////
+
+
+app.get('/dtlive-chat/:link', async (req, res) => {
+    const trimmedLink = req.params.link;
+    try {
+        const response = await fetch(`https://dtlive.com.au/afl/xml/G${trimmedLink - 3032}-CG1Chat.json`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        const cleanedData = data.map(({ UserName, ChatText, ChatID }) => ({
+            UserName: filterProfanity(UserName),
+            ChatText: filterProfanity(ChatText),
+            ChatID
+        }));
+
+        res.set('Cache-Control', 'no-store');
+        res.json(cleanedData);
+    } catch (error) {
+        console.error('Error fetching or processing chat data:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+////////////////
 
 const fixtureURL = "https://www.afl.com.au/fixture";
 // 964 = round 10
@@ -377,6 +429,7 @@ async function updateScoringTimeline(newPlayer, differences) {
             }
             switch (quarter) {
                 case 'A': quarter = 2; break;
+                case 'T': quarter = 1; break;
             }
             
             const time = timeArray[2];

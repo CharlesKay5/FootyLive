@@ -160,11 +160,49 @@ input {
 #chatFeed {
     width: 60%;
     height: 500px;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     border: 1px solid var(--chatoutline-color);
     padding: 10px;
     margin-bottom: 10px;
     overflow-y: scroll;
+}
+
+#chatFeed div, #chatFeed p {
+    word-wrap: break-word;
+    white-space: normal;
+    margin: 10px;
+}
+
+.chatbutton-container {
+    width: 60%;
+    margin-left: -21px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.chatbutton-container button {
+    padding: 5px 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-top: 1px solid var(--chatoutline-color);
+    border-right: 1px solid var(--chatoutline-color);
+    border-left: 1px solid var(--chatoutline-color);
+    border-bottom: none;
+    cursor: pointer;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chatbutton-container #FootyLiveChat {
+    background-color: var(--darkrow-background-color);
+}
+
+.chatbutton-container button:hover {
+    background-color: var(--tablehead-background-color);
 }
 
 .teamAndTime {
@@ -1056,12 +1094,23 @@ i {
     #chatFeed {
         width: 90%;
         height: 500px;
-        border-radius: 10px;
+
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
         border: 1px solid var(--chatoutline-color);
         padding: 5px;
         margin-bottom: 10px;
         overflow-y: scroll;
         font-size: 14px;
+    }
+
+    .chatbutton-container {
+        width: 90%;
+        margin-left: -11px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
     }
 
 

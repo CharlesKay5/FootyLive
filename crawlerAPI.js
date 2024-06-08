@@ -172,8 +172,8 @@ async function statsCrawl(baseURL, data, browser, supercoachScores) {
             const fullName = (firstName[0] + '.' + lastName);
             player.name = fullName;
 
-            player.supercoach = supercoachScores.find(supercoachPlayer => supercoachPlayer.playerName === player.name).livepts;
-            player.supercoachPrice = supercoachScores.find(supercoachPlayer => supercoachPlayer.playerName === player.name).supercoachPrice;
+            // player.supercoach = supercoachScores.find(supercoachPlayer => supercoachPlayer.playerName === player.name).livepts;
+            // player.supercoachPrice = supercoachScores.find(supercoachPlayer => supercoachPlayer.playerName === player.name).supercoachPrice;
 
 
             player.goals = playerStats[i].childNodes[3].textContent;
@@ -515,9 +515,9 @@ async function breakevenCrawl(baseURL, data, browser, callback) {
 
 const puppeteerCrawl = async (baseURL, data) => {
     const browser = await puppeteer.launch({ headless: true, defaultViewport: null });
-    const supercoachScores = await supercoachCrawl();
+    // const supercoachScores = await supercoachCrawl();
     const subsData = await subsCrawl(baseURL, data, browser);
-    const statsData = await statsCrawl(baseURL, data, browser, supercoachScores);
+    const statsData = await statsCrawl(baseURL, data, browser/*, supercoachScores*/);
     const matchupData = await matchupCrawl(baseURL, data, browser);
 
     // Assign season average fantasy scores to players
