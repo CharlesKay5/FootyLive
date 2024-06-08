@@ -49,7 +49,7 @@ wss.on('connection', (ws, request) => {
 });
 
 // Serve static files including CSS
-app.use(express.static(path.join(__dirname, 'public'), {
+app.use(express.static(path.join(__dirname, '..', '/public'), {
     setHeaders: (res, path) => {
         if (path.endsWith('.css')) {
             res.setHeader('Cache-Control', 'public, no-store'); // Cache for 5 days
@@ -273,7 +273,7 @@ app.get('/fixture/:link', async (req, res) => {
 
 
         // Read index.html file
-        const indexPath = path.join(__dirname, 'public', 'index.html');
+        const indexPath = path.join(__dirname, '..', 'public', 'index.html');
         let indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
         // Replace placeholder in index.html with player data
@@ -291,7 +291,7 @@ app.get('/fixture/:link', async (req, res) => {
 updateFixtureData();
 
 app.get('/fixture', (req, res) => {
-    const fixturePath = path.join(__dirname, 'public', 'fixture.html');
+    const fixturePath = path.join(__dirname, '..', 'public', 'fixture.html');
     res.sendFile(fixturePath);
 });
 
@@ -332,7 +332,7 @@ app.get('/previous-fixtures', (req, res) => {
 
 let playerStats = {};
 
-const matchesFolderPath = path.join(__dirname, 'matches');
+const matchesFolderPath = path.join(__dirname, '..', 'matches');
 
 if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
