@@ -78,9 +78,9 @@ app.use((req, res, next) => {
     }
 });
 
-app.get('/', (req, res) => {
-    res.redirect('/fixture');
-});
+// app.get('/', (req, res) => {
+//     res.redirect('/fixture');
+// });
 
 
 const serverStartTime = Date.now();
