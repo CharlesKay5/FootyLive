@@ -37,7 +37,7 @@ wss.on('connection', (ws, request) => {
 
     // Log the device information
     console.log(`New connection from ${ip}, User-Agent: ${userAgent}`);
-    
+
     ws.on('message', message => {
         // Broadcast the message to all clients
         wss.clients.forEach(client => {
@@ -49,7 +49,7 @@ wss.on('connection', (ws, request) => {
 });
 
 // Serve static files including CSS
-app.use(express.static(path.join(__dirname, 'public'), {
+app.use(express.static(path.join(__dirname, '..', '/public'), {
     setHeaders: (res, path) => {
         if (path.endsWith('.css')) {
             res.setHeader('Cache-Control', 'public, no-store'); // Cache for 5 days
@@ -77,6 +77,11 @@ app.use((req, res, next) => {
         next();
     }
 });
+
+app.get('/', (req, res) => {
+    res.redirect('/fixture');
+});
+
 
 const serverStartTime = Date.now();
 app.get('/server-start-time', (req, res) => {
@@ -273,7 +278,7 @@ app.get('/fixture/:link', async (req, res) => {
 
 
         // Read index.html file
-        const indexPath = path.join(__dirname, 'public', 'index.html');
+        const indexPath = path.join(__dirname, '..', 'public', 'index.html');
         let indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
         // Replace placeholder in index.html with player data
@@ -291,7 +296,7 @@ app.get('/fixture/:link', async (req, res) => {
 updateFixtureData();
 
 app.get('/fixture', (req, res) => {
-    const fixturePath = path.join(__dirname, 'public', 'fixture.html');
+    const fixturePath = path.join(__dirname, '..', 'public', 'fixture.html');
     res.sendFile(fixturePath);
 });
 
@@ -332,7 +337,7 @@ app.get('/previous-fixtures', (req, res) => {
 
 let playerStats = {};
 
-const matchesFolderPath = path.join(__dirname, 'matches');
+const matchesFolderPath = path.join(__dirname, '..', 'matches');
 
 if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
@@ -431,7 +436,7 @@ async function updateScoringTimeline(newPlayer, differences) {
                 case 'A': quarter = 2; break;
                 case 'T': quarter = 1; break;
             }
-            
+
             const time = timeArray[2];
             if (time == "TIME") {
                 time == "30:00";

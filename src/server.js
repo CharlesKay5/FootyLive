@@ -37,7 +37,7 @@ wss.on('connection', (ws, request) => {
 
     // Log the device information
     console.log(`New connection from ${ip}, User-Agent: ${userAgent}`);
-    
+
     ws.on('message', message => {
         // Broadcast the message to all clients
         wss.clients.forEach(client => {
@@ -77,6 +77,11 @@ app.use((req, res, next) => {
         next();
     }
 });
+
+app.get('/', (req, res) => {
+    res.redirect('/fixture');
+});
+
 
 const serverStartTime = Date.now();
 app.get('/server-start-time', (req, res) => {
@@ -431,7 +436,7 @@ async function updateScoringTimeline(newPlayer, differences) {
                 case 'A': quarter = 2; break;
                 case 'T': quarter = 1; break;
             }
-            
+
             const time = timeArray[2];
             if (time == "TIME") {
                 time == "30:00";

@@ -272,7 +272,7 @@ async function statsCrawl(baseURL, data, browser, supercoachScores) {
     data.playerSeasonStats = playerSeasonStats;
 
     // Download player images
-    const imageDirectory = "./public/images";
+    const imageDirectory = "../public/images";
     if (data.players) {
         for (let i = 0; i < data.players.length; i++) {
             const playerId = `${data.players[i].name}-${data.players[i].number}`;
