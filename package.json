@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "shx rm -rf dist/ && shx mkdir dist/ && shx cp -r public/* dist/ && shx cp -r src/*.js dist/ && shx cp -r matches dist/"
+    "build": "shx rm -rf dist/ && shx mkdir dist/ && shx cp -r public dist/ && shx cp -r src dist/ && shx cp -r matches dist/"
   },
   "keywords": [],
   "author": "",
