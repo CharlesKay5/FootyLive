@@ -1,7 +1,7 @@
 const express = require('express');
 const puppeteerCrawl = require('./crawlerAPI.js');
 const fixtureCrawl = require('./fixtureAPI.js');
-const randomUsername = require('./public/randomUsername.js');
+const randomUsername = require('../public/randomUsername.js');
 // const dtliveChat = require('./dtliveChatAPI.js');
 const fs = require('fs');
 const path = require('path');
@@ -568,7 +568,7 @@ app.get('/get-all-icons', (req, res) => {
     res.json(iconsState);
 });
 
-const profanityList = require('./public/BannedList.js');
+const profanityList = require('../public/BannedList.js');
 
 const letterSubstitutions = {
     '3': ['e'],
