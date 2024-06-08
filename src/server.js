@@ -309,7 +309,7 @@ app.get('/fixture-links', (req, res) => {
 });
 
 app.get('/previous-fixtures', (req, res) => {
-    const matchesFolderPath = path.join(__dirname, 'matches');
+    const matchesFolderPath = path.join(__dirname, '..', 'matches');
 
     fs.readdir(matchesFolderPath, (err, files) => {
         if (err) {
@@ -636,5 +636,5 @@ function filterProfanity(message) {
 }
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on ${port}`);
 });
