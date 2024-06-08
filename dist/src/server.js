@@ -414,7 +414,7 @@ function calculateDifferences(newPlayer, oldPlayer) {
 }
 
 let existingData = {};
-const { PlayerStat, Round } = require('./models');
+const { PlayerStat, Round } = require('./models.js');
 
 async function updateScoringTimeline(newPlayer, differences) {
     const scoringTimeline = [];
