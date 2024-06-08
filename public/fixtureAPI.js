@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require('path');
+require('dotenv').config();
 
 
 // =======================================
@@ -18,7 +19,19 @@ async function fixtureCrawl(fixtureURL, data) {
     console.log("Crawling fixtures...");
 
 
-    const browser = await puppeteer.launch({ headless: true, defaultViewport: null });
+    const browser = await puppeteer.launch({ 
+        args: [
+            "--disable-setuid-sandbox",
+            "--no-sandbox",
+            "--single-process",
+            "--no-zygote",
+        ],
+        executablePath: process.env.NODE_ENV === 'production' 
+            ? process.env.PUPPETEER_EXECUTABLE_PATH
+            : puppeteer.executablePath(),
+        headless: true, 
+        defaultViewport: null 
+    });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
 
