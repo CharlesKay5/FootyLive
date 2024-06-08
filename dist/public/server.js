@@ -309,7 +309,7 @@ app.get('/fixture-links', (req, res) => {
 });
 
 app.get('/previous-fixtures', (req, res) => {
-    const matchesFolderPath = path.join(__dirname, '..', 'matches');
+    const matchesFolderPath = path.join(__dirname, 'matches');
 
     fs.readdir(matchesFolderPath, (err, files) => {
         if (err) {
@@ -337,7 +337,7 @@ app.get('/previous-fixtures', (req, res) => {
 
 let playerStats = {};
 
-const matchesFolderPath = path.join(__dirname, '..', 'matches');
+const matchesFolderPath = path.join(__dirname, 'matches');
 
 if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
