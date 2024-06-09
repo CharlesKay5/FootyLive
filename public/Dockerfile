@@ -6,6 +6,11 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 WORKDIR /usr/src/app/public
 
 COPY package*.json ./
+RUN chown -R pptruser:pptruser /usr/src/app
+USER pptruser
+
 RUN npm install
 COPY . .
+RUN chown -R pptruser:pptruser /usr/src/app/public
+
 CMD [ "node", "server.js" ]
