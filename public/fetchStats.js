@@ -50,6 +50,18 @@ function fetchData(players, teamName, teamType, gameDetails, trimmedLink) {
 
 function fetchPlayerData(trimmedLink) {
     return fetch(`https://new.dtlive.com.au/storage/games/${trimmedLink}.json`, {
+        headers: {
+            "accept": "application/json, text/javascript, */*; q=0.01",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "sec-ch-ua": "\"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "x-requested-with": "XMLHttpRequest",
+            "Referer": `https://new.dtlive.com.au/games/${trimmedLink}`,
+        },
         body: null,
         method: "GET"
     })
