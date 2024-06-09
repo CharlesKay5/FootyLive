@@ -1,5 +1,7 @@
 const express = require('express');
-const puppeteerCrawl = require('./crawlerAPI.js');
+// const puppeteerCrawl = require('./crawlerAPI.js');
+const fetchStats = require('./fetchStats.js');
+const fetchFixture = require('./fetchFixture.js');
 const fixtureCrawl = require('./fixtureAPI.js');
 const randomUsername = require('./randomUsername.js');
 // const dtliveChat = require('./dtliveChatAPI.js');
@@ -215,11 +217,16 @@ let scoringTimeline = {}; // Declare scoringTimeline here
 
 async function updateFixtureData() {
     try {
-        const data = { games: [] };
-        await fixtureCrawl(fixtureURL, data);
+        // const data = { games: [] };
+        // await fixtureCrawl(fixtureURL, data);
+        const data = await fetchFixture();
         fixture = data; // Update fixture data
-        for (const game of fixture.games.filter(game => game.live == 0)) {
-            await updatePlayerStats(game.link);
+        // console.log(fixture);
+        for (const game of fixture.games) {
+            if (game.live === 0) {
+                console.log("Updating stats for " + game.link);
+                await updatePlayerStats(game.link);
+            }
         }
         // Call broadcastMessage after all player stats have been updated
         broadcastMessage('playerDataChanged');
@@ -230,7 +237,7 @@ async function updateFixtureData() {
 setInterval(updateFixtureData, 1200000);
 
 async function updateLiveFixtureData() {
-    console.log("UPDATING LIVE FIXRURES")
+    console.log("UPDATING LIVE FIXTURES")
     // Filter live games
     const liveGames = fixture.games.filter(game => game.live == 1);
 
@@ -343,21 +350,31 @@ if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
 }
 
-async function updatePlayerStats(url) {
+async function updatePlayerStats(trimmedLink) {
     try {
-        const data = {
-            players: []
-        };
+        // const data = {
+        //     players: []
+        // };
 
-        const stats = await puppeteerCrawl(url, data);
-        const link = url.split("/").pop();
+        // const stats = await puppeteerCrawl(url, data);
+
+        console.log("Fetching stats...");
+        const stats = await fetchStats(trimmedLink);
+
+        console.log("Stats fetched!");
+
+
+        const link = trimmedLink;
         if (!playerStats[link]) {
             playerStats[link] = { players: [] };
         }
 
         const newPlayerData = stats.players;
-        const newPlayerIds = newPlayerData.map(p => `${p.name}-${p.number}`);
-        playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(`${p.name}-${p.number}`));
+        const newPlayerIds = newPlayerData.map(p => p.playerID);
+
+        // Filter out players from the existing player data that are not present in the new data
+        playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(p.playerID));
+
 
         await Promise.all(newPlayerData.map(async (newPlayer) => {
             const playerId = `${newPlayer.name}-${newPlayer.number}`;
@@ -528,28 +545,48 @@ app.get('/scoringTimeline/:playerId/:round', async (req, res) => {
 
 
 // Route for serving player images
-app.get('/player-image/:playerId', async (req, res) => {
+app.get('/player-image/:playerId', (req, res) => {
     const playerId = req.params.playerId;
-    try {
-        // Fetch player data including the image URL
-        const playerData = await puppeteerCrawl.getPlayerData(playerId); // Implement this function in puppeteerCrawl.js
-        const imageUrl = playerData.photo; // Assuming the player data includes a 'photo' field with the image URL
+    const imagePath = path.join(__dirname, 'images', `${playerId}.png`);
 
-        // Fetch the image content
-        const imageResponse = await fetch(imageUrl);
-        const imageBuffer = await imageResponse.buffer();
+    fs.readFile(imagePath, (err, data) => {
+        if (err) {
+            console.error('Error fetching player image:', err);
+            res.status(500).send('Error fetching player image');
+            return;
+        }
 
         // Set appropriate response headers
-        res.set('Content-Type', 'image/jpeg');
+        res.set('Content-Type', 'image/png');
         res.set('Cache-Control', 'public, max-age=432000'); // Cache the image for 5 days
 
         // Send the image content as the response
-        res.send(imageBuffer);
-    } catch (error) {
-        console.error('Error fetching player image:', error);
-        res.status(500).send('Error fetching player image');
-    }
+        res.send(data);
+    });
 });
+
+// app.get('/player-image/:playerId', async (req, res) => {
+//     const playerId = req.params.playerId;
+//     try {
+//         // Fetch player data including the image URL
+//         const playerData = await puppeteerCrawl.getPlayerData(playerId); // Implement this function in puppeteerCrawl.js
+//         const imageUrl = playerData.photo; // Assuming the player data includes a 'photo' field with the image URL
+
+//         // Fetch the image content
+//         const imageResponse = await fetch(imageUrl);
+//         const imageBuffer = await imageResponse.buffer();
+
+//         // Set appropriate response headers
+//         res.set('Content-Type', 'image/jpeg');
+//         res.set('Cache-Control', 'public, max-age=432000'); // Cache the image for 5 days
+
+//         // Send the image content as the response
+//         res.send(imageBuffer);
+//     } catch (error) {
+//         console.error('Error fetching player image:', error);
+//         res.status(500).send('Error fetching player image');
+//     }
+// });
 
 
 
