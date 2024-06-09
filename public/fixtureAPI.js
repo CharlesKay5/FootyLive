@@ -1,10 +1,6 @@
 // =======================================
 // import node modules
 // =======================================
-const express = require("express");
-const bodyParser = require("body-parser");
-const fs = require("fs");
-const path = require('path');
 require('dotenv').config();
 
 
@@ -12,7 +8,6 @@ require('dotenv').config();
 // web crawler
 // =======================================
 const puppeteer = require('puppeteer');
-const { text } = require("body-parser");
 
 
 async function fixtureCrawl(fixtureURL, data) {

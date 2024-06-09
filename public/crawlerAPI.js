@@ -3,7 +3,7 @@
 // =======================================
 const fs = require("fs");
 const path = require('path');
-const { executablePath } = require("puppeteer");
+const puppeteer = require("puppeteer");
 require('dotenv').config();
 
 
