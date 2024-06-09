@@ -1,10 +1,10 @@
 const express = require('express');
-// const puppeteerCrawl = require('./crawlerAPI.js');
+const puppeteerCrawl = require('./crawlerAPI.js');
 const fetchStats = require('./fetchStats.js');
 const fetchFixture = require('./fetchFixture.js');
 const fixtureCrawl = require('./fixtureAPI.js');
 const randomUsername = require('./randomUsername.js');
-// const dtliveChat = require('./dtliveChatAPI.js');
+const dtliveChat = require('./dtliveChatAPI.js');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios').default;
@@ -219,9 +219,16 @@ async function updateFixtureData() {
     try {
         // const data = { games: [] };
         // await fixtureCrawl(fixtureURL, data);
+
         const data = await fetchFixture();
+
         fixture = data; // Update fixture data
-        // console.log(fixture);
+        
+        // Puppeteer setup
+        // for (const game of fixture.games.filter(game => game.live == 0)) {
+        //     await updatePlayerStats(game.link);
+        // }
+        // Fetch setup
         for (const game of fixture.games) {
             if (game.live === 0) {
                 console.log("Updating stats for " + game.link);
@@ -349,8 +356,8 @@ const matchesFolderPath = path.join(__dirname, 'matches');
 if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
 }
-
 async function updatePlayerStats(trimmedLink) {
+// async function updatePlayerStats(url) {
     try {
         // const data = {
         //     players: []
@@ -358,11 +365,12 @@ async function updatePlayerStats(trimmedLink) {
 
         // const stats = await puppeteerCrawl(url, data);
 
-        console.log("Fetching stats...");
+        console.log("Fetching stats for " + trimmedLink);
         const stats = await fetchStats(trimmedLink);
 
         console.log("Stats fetched!");
-
+        
+        // const link = url.split("/").pop();
 
         const link = trimmedLink;
         if (!playerStats[link]) {
@@ -370,8 +378,12 @@ async function updatePlayerStats(trimmedLink) {
         }
 
         const newPlayerData = stats.players;
-        const newPlayerIds = newPlayerData.map(p => p.playerID);
+        // Puppeteer setup
+        // const newPlayerIds = newPlayerData.map(p => `${p.name}-${p.number}`);
+        // playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(`${p.name}-${p.number}`));
 
+        // Fetch setup 
+        const newPlayerIds = newPlayerData.map(p => p.playerID);
         // Filter out players from the existing player data that are not present in the new data
         playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(p.playerID));
 

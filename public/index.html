@@ -171,8 +171,9 @@
     <div id="backButton"><a href="/fixture"><i class="fa-solid fa-arrow-left-long"></i></a></div>
 
     <script>
-        // CHANGE FOR PRODUCTION
+        // FOR PRODUCTION
         const socket = new WebSocket('wss://main.d27dagwzt4i3uz.amplifyapp.com:8080');
+        // const socket = new WebSocket('ws://localhost:8080');
         
         
         var allowColourChange = true;
@@ -268,7 +269,7 @@
                     awayTeamIcon.src = `/svg/${firstPlayerTeam1.teamName.replace(/\s/g, '')}.svg`;
                 }
 
-                calculateGamePercentage(currentTime);
+                // calculateGamePercentage(currentTime);
 
                 // Sort the players by their fantasy score
                 const sortedPlayers = teamData.sort((a, b) => b.fantasy - a.fantasy);

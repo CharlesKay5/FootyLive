@@ -511,19 +511,21 @@ async function breakevenCrawl(baseURL, data, browser, callback) {
 }
 
 const puppeteerCrawl = async (baseURL, data) => {
-    const browser = await puppeteer.launch({ 
-        args: [
-            "--disable-setuid-sandbox",
-            "--no-sandbox",
-            "--single-process",
-            "--no-zygote",
-        ],
-        executablePath: process.env.NODE_ENV === 'production' 
-            ? process.env.PUPPETEER_EXECUTABLE_PATH
-            : puppeteer.executablePath(),
-        headless: true, 
-        defaultViewport: null 
-    });
+    // const browser = await puppeteer.launch({ 
+    //     args: [
+    //         "--disable-setuid-sandbox",
+    //         "--no-sandbox",
+    //         "--single-process",
+    //         "--no-zygote",
+    //     ],
+    //     executablePath: process.env.NODE_ENV === 'production' 
+    //         ? process.env.PUPPETEER_EXECUTABLE_PATH
+    //         : puppeteer.executablePath(),
+    //     headless: true, 
+    //     defaultViewport: null 
+    // });
+    const browser = await puppeteer.launch({ headless: true, defaultViewport: null })
+
     // const supercoachScores = await supercoachCrawl();
     const subsData = await subsCrawl(baseURL, data, browser);
     const statsData = await statsCrawl(baseURL, data, browser/*, supercoachScores*/);

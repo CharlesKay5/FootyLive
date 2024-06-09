@@ -67,6 +67,7 @@ function fetchPlayerData(trimmedLink) {
     })
     .then(response => response.text())
     .then(async data => {
+        // console.log(data);
         const jData = JSON.parse(data);
     
         const homePlayers = fetchData(jData.home.players, jData.gameDetails.homeTeamName, 0, jData.gameDetails, trimmedLink);

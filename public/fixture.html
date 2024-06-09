@@ -315,7 +315,9 @@
                         dateContainer.appendChild(dateHeader);
 
                         fixturesByDate[date].forEach(fixture => {
-                            const localLink = fixture.link.split("/").pop();
+                            // const localLink = fixture.link.split("/").pop();
+                            const localLink = fixture.link;
+
 
                             const fixtureElement = document.createElement('a');
                             fixtureElement.href = '/';
