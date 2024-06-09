@@ -8,6 +8,6 @@ WORKDIR /usr/src/app/public
 COPY package*.json ./
 
 USER root
-RUN npm install
+RUN npm ci
 COPY . .
 CMD [ "node", "server.js" ]
