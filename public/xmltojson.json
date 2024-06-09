@@ -1,0 +1,5907 @@
+{
+    "xml": {
+        "Game": [
+            {
+                "Time": [
+                    "8pm"
+                ],
+                "Location": [
+                    "SCG"
+                ],
+                "HomeTeam": [
+                    "Sydney"
+                ],
+                "HomeTeamShort": [
+                    "Syd"
+                ],
+                "AwayTeam": [
+                    "Melbourne"
+                ],
+                "AwayTeamShort": [
+                    "Melb"
+                ],
+                "PercComplete": [
+                    "100"
+                ],
+                "Round": [
+                    "0"
+                ],
+                "Year": [
+                    "2024"
+                ],
+                "HomeTeamGoal": [
+                    "12"
+                ],
+                "HomeTeamBehind": [
+                    "14"
+                ],
+                "AwayTeamGoal": [
+                    "9"
+                ],
+                "AwayTeamBehind": [
+                    "10"
+                ],
+                "CurrentQuarter": [
+                    "4"
+                ],
+                "CurrentTime": [
+                    "35:31"
+                ]
+            }
+        ],
+        "Home": [
+            {
+                "Player": [
+                    {
+                        "PlayerID": [
+                            "1097"
+                        ],
+                        "Name": [
+                            "I.Heeney"
+                        ],
+                        "IconImage": [
+                            "jet.png"
+                        ],
+                        "JumperNumber": [
+                            "5"
+                        ],
+                        "Selection": [
+                            "HFFL"
+                        ],
+                        "Kick": [
+                            "17"
+                        ],
+                        "Handball": [
+                            "9"
+                        ],
+                        "Mark": [
+                            "5"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "7"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "121"
+                        ],
+                        "RelDT": [
+                            "151"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "121"
+                        ],
+                        "TOGPerc": [
+                            "79"
+                        ],
+                        "ETOG": [
+                            "6335"
+                        ],
+                        "ETOGPerc": [
+                            "80.3"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "722"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "17"
+                        ],
+                        "FantasyAvg": [
+                            "80.00"
+                        ],
+                        "FantasyBE": [
+                            "80"
+                        ],
+                        "DTPrice": [
+                            "722"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "152"
+                        ],
+                        "Name": [
+                            "B.Grundy"
+                        ],
+                        "IconImage": [
+                            "fire.png"
+                        ],
+                        "JumperNumber": [
+                            "4"
+                        ],
+                        "Selection": [
+                            "RK"
+                        ],
+                        "Kick": [
+                            "12"
+                        ],
+                        "Handball": [
+                            "11"
+                        ],
+                        "Mark": [
+                            "4"
+                        ],
+                        "Hitout": [
+                            "33"
+                        ],
+                        "Tackle": [
+                            "6"
+                        ],
+                        "FreeFor": [
+                            "3"
+                        ],
+                        "FreeAgainst": [
+                            "4"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "118"
+                        ],
+                        "RelDT": [
+                            "148"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "118"
+                        ],
+                        "TOGPerc": [
+                            "78"
+                        ],
+                        "ETOG": [
+                            "6279"
+                        ],
+                        "ETOGPerc": [
+                            "79.6"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "677"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "18"
+                        ],
+                        "FantasyAvg": [
+                            "75.00"
+                        ],
+                        "FantasyBE": [
+                            "75"
+                        ],
+                        "DTPrice": [
+                            "677"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1647"
+                        ],
+                        "Name": [
+                            "N.Blakey"
+                        ],
+                        "JumperNumber": [
+                            "22"
+                        ],
+                        "Selection": [
+                            "HBFL"
+                        ],
+                        "Kick": [
+                            "18"
+                        ],
+                        "Handball": [
+                            "8"
+                        ],
+                        "Mark": [
+                            "9"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "0"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "99"
+                        ],
+                        "RelDT": [
+                            "124"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "99"
+                        ],
+                        "TOGPerc": [
+                            "78"
+                        ],
+                        "ETOG": [
+                            "6279"
+                        ],
+                        "ETOGPerc": [
+                            "79.6"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "644"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "12"
+                        ],
+                        "FantasyAvg": [
+                            "71.40"
+                        ],
+                        "FantasyBE": [
+                            "71"
+                        ],
+                        "DTPrice": [
+                            "644"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "689"
+                        ],
+                        "Name": [
+                            "H.Cunningham"
+                        ],
+                        "JumperNumber": [
+                            "7"
+                        ],
+                        "Selection": [
+                            "INT1"
+                        ],
+                        "Kick": [
+                            "14"
+                        ],
+                        "Handball": [
+                            "4"
+                        ],
+                        "Mark": [
+                            "10"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "92"
+                        ],
+                        "RelDT": [
+                            "115"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "92"
+                        ],
+                        "TOGPerc": [
+                            "83"
+                        ],
+                        "ETOG": [
+                            "6648"
+                        ],
+                        "ETOGPerc": [
+                            "84.3"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "496"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "16"
+                        ],
+                        "FantasyAvg": [
+                            "55.00"
+                        ],
+                        "FantasyBE": [
+                            "55"
+                        ],
+                        "DTPrice": [
+                            "496"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1952"
+                        ],
+                        "Name": [
+                            "M.Roberts"
+                        ],
+                        "JumperNumber": [
+                            "34"
+                        ],
+                        "Selection": [
+                            "WL"
+                        ],
+                        "Kick": [
+                            "16"
+                        ],
+                        "Handball": [
+                            "3"
+                        ],
+                        "Mark": [
+                            "8"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "91"
+                        ],
+                        "RelDT": [
+                            "114"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "91"
+                        ],
+                        "TOGPerc": [
+                            "84"
+                        ],
+                        "ETOG": [
+                            "6700"
+                        ],
+                        "ETOGPerc": [
+                            "84.9"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "245"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "27"
+                        ],
+                        "FantasyAvg": [
+                            "30.80"
+                        ],
+                        "FantasyBE": [
+                            "27"
+                        ],
+                        "DTPrice": [
+                            "245"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1713"
+                        ],
+                        "Name": [
+                            "C.Warner"
+                        ],
+                        "JumperNumber": [
+                            "1"
+                        ],
+                        "Selection": [
+                            "C"
+                        ],
+                        "Kick": [
+                            "17"
+                        ],
+                        "Handball": [
+                            "9"
+                        ],
+                        "Mark": [
+                            "4"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "1"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "2"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "88"
+                        ],
+                        "RelDT": [
+                            "110"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "88"
+                        ],
+                        "TOGPerc": [
+                            "81"
+                        ],
+                        "ETOG": [
+                            "6508"
+                        ],
+                        "ETOGPerc": [
+                            "82.5"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "837"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-2"
+                        ],
+                        "FantasyAvg": [
+                            "92.70"
+                        ],
+                        "FantasyBE": [
+                            "93"
+                        ],
+                        "DTPrice": [
+                            "837"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1310"
+                        ],
+                        "Name": [
+                            "T.Papley"
+                        ],
+                        "JumperNumber": [
+                            "11"
+                        ],
+                        "Selection": [
+                            "FPL"
+                        ],
+                        "Kick": [
+                            "15"
+                        ],
+                        "Handball": [
+                            "5"
+                        ],
+                        "Mark": [
+                            "4"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "87"
+                        ],
+                        "RelDT": [
+                            "109"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "87"
+                        ],
+                        "TOGPerc": [
+                            "81"
+                        ],
+                        "ETOG": [
+                            "6468"
+                        ],
+                        "ETOGPerc": [
+                            "82"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "598"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "9"
+                        ],
+                        "FantasyAvg": [
+                            "66.20"
+                        ],
+                        "FantasyBE": [
+                            "66"
+                        ],
+                        "DTPrice": [
+                            "598"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1649"
+                        ],
+                        "Name": [
+                            "J.McInerney"
+                        ],
+                        "JumperNumber": [
+                            "27"
+                        ],
+                        "Selection": [
+                            "INT2"
+                        ],
+                        "Kick": [
+                            "7"
+                        ],
+                        "Handball": [
+                            "13"
+                        ],
+                        "Mark": [
+                            "6"
+                        ],
+                        "Hitout": [
+                            "1"
+                        ],
+                        "Tackle": [
+                            "4"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "3"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "79"
+                        ],
+                        "RelDT": [
+                            "99"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "79"
+                        ],
+                        "TOGPerc": [
+                            "86"
+                        ],
+                        "ETOG": [
+                            "6867"
+                        ],
+                        "ETOGPerc": [
+                            "87.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "639"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "3"
+                        ],
+                        "FantasyAvg": [
+                            "70.80"
+                        ],
+                        "FantasyBE": [
+                            "71"
+                        ],
+                        "DTPrice": [
+                            "639"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1651"
+                        ],
+                        "Name": [
+                            "J.Rowbottom"
+                        ],
+                        "JumperNumber": [
+                            "8"
+                        ],
+                        "Selection": [
+                            "R"
+                        ],
+                        "Kick": [
+                            "12"
+                        ],
+                        "Handball": [
+                            "9"
+                        ],
+                        "Mark": [
+                            "0"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "7"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "3"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "2"
+                        ],
+                        "DT": [
+                            "77"
+                        ],
+                        "RelDT": [
+                            "96"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "77"
+                        ],
+                        "TOGPerc": [
+                            "79"
+                        ],
+                        "ETOG": [
+                            "6328"
+                        ],
+                        "ETOGPerc": [
+                            "80.2"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "716"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-1"
+                        ],
+                        "FantasyAvg": [
+                            "79.30"
+                        ],
+                        "FantasyBE": [
+                            "79"
+                        ],
+                        "DTPrice": [
+                            "716"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1616"
+                        ],
+                        "Name": [
+                            "J.Jordon"
+                        ],
+                        "JumperNumber": [
+                            "17"
+                        ],
+                        "Selection": [
+                            "RR"
+                        ],
+                        "Kick": [
+                            "8"
+                        ],
+                        "Handball": [
+                            "10"
+                        ],
+                        "Mark": [
+                            "3"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "7"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "2"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "76"
+                        ],
+                        "RelDT": [
+                            "95"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "76"
+                        ],
+                        "TOGPerc": [
+                            "71"
+                        ],
+                        "ETOG": [
+                            "6368"
+                        ],
+                        "ETOGPerc": [
+                            "80.7"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "454"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "11"
+                        ],
+                        "FantasyAvg": [
+                            "50.30"
+                        ],
+                        "FantasyBE": [
+                            "50"
+                        ],
+                        "DTPrice": [
+                            "454"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1821"
+                        ],
+                        "Name": [
+                            "B.Campbell"
+                        ],
+                        "JumperNumber": [
+                            "16"
+                        ],
+                        "Selection": [
+                            "INT3"
+                        ],
+                        "Kick": [
+                            "12"
+                        ],
+                        "Handball": [
+                            "4"
+                        ],
+                        "Mark": [
+                            "7"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "74"
+                        ],
+                        "RelDT": [
+                            "93"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "74"
+                        ],
+                        "TOGPerc": [
+                            "68"
+                        ],
+                        "ETOG": [
+                            "5433"
+                        ],
+                        "ETOGPerc": [
+                            "68.9"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "589"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "4"
+                        ],
+                        "FantasyAvg": [
+                            "65.20"
+                        ],
+                        "FantasyBE": [
+                            "65"
+                        ],
+                        "DTPrice": [
+                            "589"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "716"
+                        ],
+                        "Name": [
+                            "D.Rampe"
+                        ],
+                        "JumperNumber": [
+                            "24"
+                        ],
+                        "Selection": [
+                            "BPR"
+                        ],
+                        "Kick": [
+                            "13"
+                        ],
+                        "Handball": [
+                            "6"
+                        ],
+                        "Mark": [
+                            "6"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "0"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "70"
+                        ],
+                        "RelDT": [
+                            "88"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "70"
+                        ],
+                        "TOGPerc": [
+                            "87"
+                        ],
+                        "ETOG": [
+                            "7289"
+                        ],
+                        "ETOGPerc": [
+                            "92.4"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "538"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "4"
+                        ],
+                        "FantasyAvg": [
+                            "59.60"
+                        ],
+                        "FantasyBE": [
+                            "60"
+                        ],
+                        "DTPrice": [
+                            "538"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1423"
+                        ],
+                        "Name": [
+                            "O.Florent"
+                        ],
+                        "JumperNumber": [
+                            "13"
+                        ],
+                        "Selection": [
+                            "CHB"
+                        ],
+                        "Kick": [
+                            "10"
+                        ],
+                        "Handball": [
+                            "8"
+                        ],
+                        "Mark": [
+                            "3"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "69"
+                        ],
+                        "RelDT": [
+                            "86"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "69"
+                        ],
+                        "TOGPerc": [
+                            "91"
+                        ],
+                        "ETOG": [
+                            "7244"
+                        ],
+                        "ETOGPerc": [
+                            "91.8"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "641"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-1"
+                        ],
+                        "FantasyAvg": [
+                            "71.00"
+                        ],
+                        "FantasyBE": [
+                            "71"
+                        ],
+                        "DTPrice": [
+                            "641"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1822"
+                        ],
+                        "Name": [
+                            "E.Gulden"
+                        ],
+                        "JumperNumber": [
+                            "21"
+                        ],
+                        "Selection": [
+                            "WR"
+                        ],
+                        "Kick": [
+                            "16"
+                        ],
+                        "Handball": [
+                            "4"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "69"
+                        ],
+                        "RelDT": [
+                            "86"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "69"
+                        ],
+                        "TOGPerc": [
+                            "89"
+                        ],
+                        "ETOG": [
+                            "7281"
+                        ],
+                        "ETOGPerc": [
+                            "92.3"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "1015"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-18"
+                        ],
+                        "FantasyAvg": [
+                            "112.50"
+                        ],
+                        "FantasyBE": [
+                            "112"
+                        ],
+                        "DTPrice": [
+                            "1015"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1425"
+                        ],
+                        "Name": [
+                            "W.Hayward"
+                        ],
+                        "JumperNumber": [
+                            "9"
+                        ],
+                        "Selection": [
+                            "FPR"
+                        ],
+                        "Kick": [
+                            "8"
+                        ],
+                        "Handball": [
+                            "2"
+                        ],
+                        "Mark": [
+                            "4"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "2"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "60"
+                        ],
+                        "RelDT": [
+                            "75"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "60"
+                        ],
+                        "TOGPerc": [
+                            "83"
+                        ],
+                        "ETOG": [
+                            "6849"
+                        ],
+                        "ETOGPerc": [
+                            "86.8"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "569"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-1"
+                        ],
+                        "FantasyAvg": [
+                            "63.00"
+                        ],
+                        "FantasyBE": [
+                            "63"
+                        ],
+                        "DTPrice": [
+                            "569"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1424"
+                        ],
+                        "Name": [
+                            "R.Fox"
+                        ],
+                        "IconImage": [
+                            "tag.png"
+                        ],
+                        "JumperNumber": [
+                            "42"
+                        ],
+                        "Selection": [
+                            "FF"
+                        ],
+                        "Kick": [
+                            "6"
+                        ],
+                        "Handball": [
+                            "3"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "6"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "2"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "57"
+                        ],
+                        "RelDT": [
+                            "71"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "56"
+                        ],
+                        "TOGPerc": [
+                            "91"
+                        ],
+                        "ETOG": [
+                            "7690"
+                        ],
+                        "ETOGPerc": [
+                            "97.5"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "499"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "1"
+                        ],
+                        "FantasyAvg": [
+                            "55.30"
+                        ],
+                        "FantasyBE": [
+                            "55"
+                        ],
+                        "DTPrice": [
+                            "499"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "701"
+                        ],
+                        "Name": [
+                            "J.Lloyd"
+                        ],
+                        "JumperNumber": [
+                            "44"
+                        ],
+                        "Selection": [
+                            "HBFR"
+                        ],
+                        "Kick": [
+                            "8"
+                        ],
+                        "Handball": [
+                            "5"
+                        ],
+                        "Mark": [
+                            "5"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "56"
+                        ],
+                        "RelDT": [
+                            "70"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "56"
+                        ],
+                        "TOGPerc": [
+                            "83"
+                        ],
+                        "ETOG": [
+                            "6647"
+                        ],
+                        "ETOGPerc": [
+                            "84.3"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "810"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-14"
+                        ],
+                        "FantasyAvg": [
+                            "89.70"
+                        ],
+                        "FantasyBE": [
+                            "90"
+                        ],
+                        "DTPrice": [
+                            "810"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1533"
+                        ],
+                        "Name": [
+                            "T.McCartin"
+                        ],
+                        "JumperNumber": [
+                            "30"
+                        ],
+                        "Selection": [
+                            "FB"
+                        ],
+                        "Kick": [
+                            "7"
+                        ],
+                        "Handball": [
+                            "2"
+                        ],
+                        "Mark": [
+                            "7"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "0"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "46"
+                        ],
+                        "RelDT": [
+                            "58"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "46"
+                        ],
+                        "TOGPerc": [
+                            "97"
+                        ],
+                        "ETOG": [
+                            "7661"
+                        ],
+                        "ETOGPerc": [
+                            "97.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "413"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "0"
+                        ],
+                        "FantasyAvg": [
+                            "45.70"
+                        ],
+                        "FantasyBE": [
+                            "46"
+                        ],
+                        "DTPrice": [
+                            "413"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1673"
+                        ],
+                        "Name": [
+                            "H.McLean"
+                        ],
+                        "IconImage": [
+                            "spud.gif"
+                        ],
+                        "JumperNumber": [
+                            "2"
+                        ],
+                        "Selection": [
+                            "INT4"
+                        ],
+                        "Kick": [
+                            "4"
+                        ],
+                        "Handball": [
+                            "1"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "10"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "4"
+                        ],
+                        "Goal": [
+                            "2"
+                        ],
+                        "Behind": [
+                            "2"
+                        ],
+                        "DT": [
+                            "40"
+                        ],
+                        "RelDT": [
+                            "50"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "40"
+                        ],
+                        "TOGPerc": [
+                            "76"
+                        ],
+                        "ETOG": [
+                            "6040"
+                        ],
+                        "ETOGPerc": [
+                            "76.6"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "592"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-11"
+                        ],
+                        "FantasyAvg": [
+                            "65.60"
+                        ],
+                        "FantasyBE": [
+                            "66"
+                        ],
+                        "DTPrice": [
+                            "592"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1820"
+                        ],
+                        "Name": [
+                            "L.McDonald"
+                        ],
+                        "JumperNumber": [
+                            "6"
+                        ],
+                        "Selection": [
+                            "CHF"
+                        ],
+                        "Kick": [
+                            "5"
+                        ],
+                        "Handball": [
+                            "3"
+                        ],
+                        "Mark": [
+                            "3"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "1"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "37"
+                        ],
+                        "RelDT": [
+                            "46"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "37"
+                        ],
+                        "TOGPerc": [
+                            "83"
+                        ],
+                        "ETOG": [
+                            "7654"
+                        ],
+                        "ETOGPerc": [
+                            "97"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "494"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-8"
+                        ],
+                        "FantasyAvg": [
+                            "54.70"
+                        ],
+                        "FantasyBE": [
+                            "55"
+                        ],
+                        "DTPrice": [
+                            "494"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1653"
+                        ],
+                        "Name": [
+                            "S.Wicks"
+                        ],
+                        "JumperNumber": [
+                            "15"
+                        ],
+                        "Selection": [
+                            "INT5"
+                        ],
+                        "Kick": [
+                            "2"
+                        ],
+                        "Handball": [
+                            "3"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "1"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "25"
+                        ],
+                        "RelDT": [
+                            "31"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "25"
+                        ],
+                        "TOGPerc": [
+                            "30"
+                        ],
+                        "ETOG": [
+                            "7370"
+                        ],
+                        "ETOGPerc": [
+                            "93.4"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "513"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-14"
+                        ],
+                        "FantasyAvg": [
+                            "56.80"
+                        ],
+                        "FantasyBE": [
+                            "57"
+                        ],
+                        "DTPrice": [
+                            "513"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1529"
+                        ],
+                        "Name": [
+                            "J.Amartey"
+                        ],
+                        "IconImage": [
+                            "redvest.png"
+                        ],
+                        "JumperNumber": [
+                            "36"
+                        ],
+                        "Selection": [
+                            "HFFR"
+                        ],
+                        "Kick": [
+                            "3"
+                        ],
+                        "Handball": [
+                            "0"
+                        ],
+                        "Mark": [
+                            "1"
+                        ],
+                        "Hitout": [
+                            "2"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "23"
+                        ],
+                        "RelDT": [
+                            "29"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "23"
+                        ],
+                        "TOGPerc": [
+                            "43"
+                        ],
+                        "ETOG": [
+                            "3690"
+                        ],
+                        "ETOGPerc": [
+                            "46.8"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "459"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-12"
+                        ],
+                        "FantasyAvg": [
+                            "50.80"
+                        ],
+                        "FantasyBE": [
+                            "51"
+                        ],
+                        "DTPrice": [
+                            "459"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1178"
+                        ],
+                        "Name": [
+                            "L.Melican"
+                        ],
+                        "JumperNumber": [
+                            "43"
+                        ],
+                        "Selection": [
+                            "BPL"
+                        ],
+                        "Kick": [
+                            "4"
+                        ],
+                        "Handball": [
+                            "1"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "0"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "20"
+                        ],
+                        "RelDT": [
+                            "25"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "20"
+                        ],
+                        "TOGPerc": [
+                            "80"
+                        ],
+                        "ETOG": [
+                            "6802"
+                        ],
+                        "ETOGPerc": [
+                            "86.2"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "336"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-7"
+                        ],
+                        "FantasyAvg": [
+                            "40.90"
+                        ],
+                        "FantasyBE": [
+                            "37"
+                        ],
+                        "DTPrice": [
+                            "336"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Away": [
+            {
+                "Player": [
+                    {
+                        "PlayerID": [
+                            "505"
+                        ],
+                        "Name": [
+                            "J.Viney"
+                        ],
+                        "IconImage": [
+                            "jet.png"
+                        ],
+                        "JumperNumber": [
+                            "7"
+                        ],
+                        "Selection": [
+                            "HFFL"
+                        ],
+                        "Kick": [
+                            "19"
+                        ],
+                        "Handball": [
+                            "11"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "7"
+                        ],
+                        "FreeFor": [
+                            "4"
+                        ],
+                        "FreeAgainst": [
+                            "2"
+                        ],
+                        "Goal": [
+                            "2"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "123"
+                        ],
+                        "RelDT": [
+                            "154"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "123"
+                        ],
+                        "TOGPerc": [
+                            "79"
+                        ],
+                        "ETOG": [
+                            "6675"
+                        ],
+                        "ETOGPerc": [
+                            "84.6"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "903"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "10"
+                        ],
+                        "FantasyAvg": [
+                            "100.00"
+                        ],
+                        "FantasyBE": [
+                            "100"
+                        ],
+                        "DTPrice": [
+                            "903"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "882"
+                        ],
+                        "Name": [
+                            "C.Salem"
+                        ],
+                        "JumperNumber": [
+                            "3"
+                        ],
+                        "Selection": [
+                            "RR"
+                        ],
+                        "Kick": [
+                            "20"
+                        ],
+                        "Handball": [
+                            "7"
+                        ],
+                        "Mark": [
+                            "5"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "2"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "95"
+                        ],
+                        "RelDT": [
+                            "119"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "95"
+                        ],
+                        "TOGPerc": [
+                            "80"
+                        ],
+                        "ETOG": [
+                            "6816"
+                        ],
+                        "ETOGPerc": [
+                            "86.4"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "700"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "7"
+                        ],
+                        "FantasyAvg": [
+                            "77.50"
+                        ],
+                        "FantasyBE": [
+                            "78"
+                        ],
+                        "DTPrice": [
+                            "700"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1209"
+                        ],
+                        "Name": [
+                            "C.Oliver"
+                        ],
+                        "IconImage": [
+                            "bandaid.png"
+                        ],
+                        "JumperNumber": [
+                            "13"
+                        ],
+                        "Selection": [
+                            "R"
+                        ],
+                        "Kick": [
+                            "18"
+                        ],
+                        "Handball": [
+                            "12"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "89"
+                        ],
+                        "RelDT": [
+                            "111"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "89"
+                        ],
+                        "TOGPerc": [
+                            "82"
+                        ],
+                        "ETOG": [
+                            "6570"
+                        ],
+                        "ETOGPerc": [
+                            "83.3"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "1027"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-11"
+                        ],
+                        "FantasyAvg": [
+                            "113.80"
+                        ],
+                        "FantasyBE": [
+                            "114"
+                        ],
+                        "DTPrice": [
+                            "1027"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1079"
+                        ],
+                        "Name": [
+                            "C.Petracca"
+                        ],
+                        "JumperNumber": [
+                            "5"
+                        ],
+                        "Selection": [
+                            "C"
+                        ],
+                        "Kick": [
+                            "11"
+                        ],
+                        "Handball": [
+                            "15"
+                        ],
+                        "Mark": [
+                            "1"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "2"
+                        ],
+                        "DT": [
+                            "87"
+                        ],
+                        "RelDT": [
+                            "109"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "87"
+                        ],
+                        "TOGPerc": [
+                            "84"
+                        ],
+                        "ETOG": [
+                            "6558"
+                        ],
+                        "ETOGPerc": [
+                            "83.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "957"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-8"
+                        ],
+                        "FantasyAvg": [
+                            "106.00"
+                        ],
+                        "FantasyBE": [
+                            "106"
+                        ],
+                        "DTPrice": [
+                            "957"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "478"
+                        ],
+                        "Name": [
+                            "M.Gawn"
+                        ],
+                        "JumperNumber": [
+                            "11"
+                        ],
+                        "Selection": [
+                            "RK"
+                        ],
+                        "Kick": [
+                            "8"
+                        ],
+                        "Handball": [
+                            "6"
+                        ],
+                        "Mark": [
+                            "1"
+                        ],
+                        "Hitout": [
+                            "37"
+                        ],
+                        "Tackle": [
+                            "4"
+                        ],
+                        "FreeFor": [
+                            "6"
+                        ],
+                        "FreeAgainst": [
+                            "4"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "87"
+                        ],
+                        "RelDT": [
+                            "109"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "87"
+                        ],
+                        "TOGPerc": [
+                            "82"
+                        ],
+                        "ETOG": [
+                            "7185"
+                        ],
+                        "ETOGPerc": [
+                            "91.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "831"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-2"
+                        ],
+                        "FantasyAvg": [
+                            "92.10"
+                        ],
+                        "FantasyBE": [
+                            "92"
+                        ],
+                        "DTPrice": [
+                            "831"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "296"
+                        ],
+                        "Name": [
+                            "S.May"
+                        ],
+                        "JumperNumber": [
+                            "1"
+                        ],
+                        "Selection": [
+                            "FB"
+                        ],
+                        "Kick": [
+                            "14"
+                        ],
+                        "Handball": [
+                            "7"
+                        ],
+                        "Mark": [
+                            "5"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "81"
+                        ],
+                        "RelDT": [
+                            "101"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "81"
+                        ],
+                        "TOGPerc": [
+                            "90"
+                        ],
+                        "ETOG": [
+                            "7611"
+                        ],
+                        "ETOGPerc": [
+                            "96.5"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "627"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "5"
+                        ],
+                        "FantasyAvg": [
+                            "69.50"
+                        ],
+                        "FantasyBE": [
+                            "69"
+                        ],
+                        "DTPrice": [
+                            "627"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1115"
+                        ],
+                        "Name": [
+                            "E.Langdon"
+                        ],
+                        "JumperNumber": [
+                            "15"
+                        ],
+                        "Selection": [
+                            "WL"
+                        ],
+                        "Kick": [
+                            "10"
+                        ],
+                        "Handball": [
+                            "9"
+                        ],
+                        "Mark": [
+                            "4"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "79"
+                        ],
+                        "RelDT": [
+                            "99"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "79"
+                        ],
+                        "TOGPerc": [
+                            "90"
+                        ],
+                        "ETOG": [
+                            "7172"
+                        ],
+                        "ETOGPerc": [
+                            "90.9"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "654"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "3"
+                        ],
+                        "FantasyAvg": [
+                            "72.40"
+                        ],
+                        "FantasyBE": [
+                            "72"
+                        ],
+                        "DTPrice": [
+                            "654"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1927"
+                        ],
+                        "Name": [
+                            "B.Howes"
+                        ],
+                        "JumperNumber": [
+                            "22"
+                        ],
+                        "Selection": [
+                            "INT1"
+                        ],
+                        "Kick": [
+                            "9"
+                        ],
+                        "Handball": [
+                            "8"
+                        ],
+                        "Mark": [
+                            "7"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "74"
+                        ],
+                        "RelDT": [
+                            "93"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "74"
+                        ],
+                        "TOGPerc": [
+                            "74"
+                        ],
+                        "ETOG": [
+                            "6163"
+                        ],
+                        "ETOGPerc": [
+                            "78.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "200"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "22"
+                        ],
+                        "FantasyAvg": [
+                            "0.00"
+                        ],
+                        "FantasyBE": [
+                            "22"
+                        ],
+                        "DTPrice": [
+                            "200"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1924"
+                        ],
+                        "Name": [
+                            "J.McVee"
+                        ],
+                        "JumperNumber": [
+                            "4"
+                        ],
+                        "Selection": [
+                            "HBFL"
+                        ],
+                        "Kick": [
+                            "14"
+                        ],
+                        "Handball": [
+                            "6"
+                        ],
+                        "Mark": [
+                            "6"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "0"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "73"
+                        ],
+                        "RelDT": [
+                            "91"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "73"
+                        ],
+                        "TOGPerc": [
+                            "78"
+                        ],
+                        "ETOG": [
+                            "6789"
+                        ],
+                        "ETOGPerc": [
+                            "86.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "416"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "11"
+                        ],
+                        "FantasyAvg": [
+                            "46.10"
+                        ],
+                        "FantasyBE": [
+                            "46"
+                        ],
+                        "DTPrice": [
+                            "416"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1108"
+                        ],
+                        "Name": [
+                            "A.Neal-Bullen"
+                        ],
+                        "JumperNumber": [
+                            "30"
+                        ],
+                        "Selection": [
+                            "FPL"
+                        ],
+                        "Kick": [
+                            "6"
+                        ],
+                        "Handball": [
+                            "9"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "6"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "68"
+                        ],
+                        "RelDT": [
+                            "85"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "68"
+                        ],
+                        "TOGPerc": [
+                            "83"
+                        ],
+                        "ETOG": [
+                            "6647"
+                        ],
+                        "ETOGPerc": [
+                            "84.3"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "656"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-2"
+                        ],
+                        "FantasyAvg": [
+                            "72.70"
+                        ],
+                        "FantasyBE": [
+                            "73"
+                        ],
+                        "DTPrice": [
+                            "656"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1618"
+                        ],
+                        "Name": [
+                            "T.Sparrow"
+                        ],
+                        "JumperNumber": [
+                            "32"
+                        ],
+                        "Selection": [
+                            "INT2"
+                        ],
+                        "Kick": [
+                            "3"
+                        ],
+                        "Handball": [
+                            "10"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "9"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "3"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "63"
+                        ],
+                        "RelDT": [
+                            "79"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "63"
+                        ],
+                        "TOGPerc": [
+                            "80"
+                        ],
+                        "ETOG": [
+                            "6345"
+                        ],
+                        "ETOGPerc": [
+                            "80.4"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "601"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-2"
+                        ],
+                        "FantasyAvg": [
+                            "66.60"
+                        ],
+                        "FantasyBE": [
+                            "67"
+                        ],
+                        "DTPrice": [
+                            "601"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1503"
+                        ],
+                        "Name": [
+                            "B.Fritsch"
+                        ],
+                        "JumperNumber": [
+                            "31"
+                        ],
+                        "Selection": [
+                            "FF"
+                        ],
+                        "Kick": [
+                            "6"
+                        ],
+                        "Handball": [
+                            "0"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "4"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "59"
+                        ],
+                        "RelDT": [
+                            "74"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "59"
+                        ],
+                        "TOGPerc": [
+                            "92"
+                        ],
+                        "ETOG": [
+                            "7521"
+                        ],
+                        "ETOGPerc": [
+                            "95.3"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "570"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-2"
+                        ],
+                        "FantasyAvg": [
+                            "63.10"
+                        ],
+                        "FantasyBE": [
+                            "63"
+                        ],
+                        "DTPrice": [
+                            "570"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1851"
+                        ],
+                        "Name": [
+                            "J.Bowey"
+                        ],
+                        "IconImage": [
+                            "bandaid.png"
+                        ],
+                        "JumperNumber": [
+                            "17"
+                        ],
+                        "Selection": [
+                            "HBFR"
+                        ],
+                        "Kick": [
+                            "13"
+                        ],
+                        "Handball": [
+                            "1"
+                        ],
+                        "Mark": [
+                            "3"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "1"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "54"
+                        ],
+                        "RelDT": [
+                            "68"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "54"
+                        ],
+                        "TOGPerc": [
+                            "48"
+                        ],
+                        "ETOG": [
+                            "3819"
+                        ],
+                        "ETOGPerc": [
+                            "48.4"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "562"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-3"
+                        ],
+                        "FantasyAvg": [
+                            "62.30"
+                        ],
+                        "FantasyBE": [
+                            "62"
+                        ],
+                        "DTPrice": [
+                            "562"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1706"
+                        ],
+                        "Name": [
+                            "T.Rivers"
+                        ],
+                        "JumperNumber": [
+                            "24"
+                        ],
+                        "Selection": [
+                            "BPL"
+                        ],
+                        "Kick": [
+                            "10"
+                        ],
+                        "Handball": [
+                            "7"
+                        ],
+                        "Mark": [
+                            "4"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "0"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "53"
+                        ],
+                        "RelDT": [
+                            "66"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "53"
+                        ],
+                        "TOGPerc": [
+                            "80"
+                        ],
+                        "ETOG": [
+                            "6404"
+                        ],
+                        "ETOGPerc": [
+                            "81.2"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "691"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-10"
+                        ],
+                        "FantasyAvg": [
+                            "76.50"
+                        ],
+                        "FantasyBE": [
+                            "77"
+                        ],
+                        "DTPrice": [
+                            "691"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "407"
+                        ],
+                        "Name": [
+                            "A.Tomlinson"
+                        ],
+                        "JumperNumber": [
+                            "20"
+                        ],
+                        "Selection": [
+                            "CHB"
+                        ],
+                        "Kick": [
+                            "10"
+                        ],
+                        "Handball": [
+                            "2"
+                        ],
+                        "Mark": [
+                            "3"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "2"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "53"
+                        ],
+                        "RelDT": [
+                            "66"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "53"
+                        ],
+                        "TOGPerc": [
+                            "100"
+                        ],
+                        "ETOG": [
+                            "7888"
+                        ],
+                        "ETOGPerc": [
+                            "100"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "462"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "1"
+                        ],
+                        "FantasyAvg": [
+                            "54.50"
+                        ],
+                        "FantasyBE": [
+                            "51"
+                        ],
+                        "DTPrice": [
+                            "462"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1085"
+                        ],
+                        "Name": [
+                            "J.Lever"
+                        ],
+                        "IconImage": [
+                            "padlock.png"
+                        ],
+                        "JumperNumber": [
+                            "8"
+                        ],
+                        "Selection": [
+                            "BPR"
+                        ],
+                        "Kick": [
+                            "9"
+                        ],
+                        "Handball": [
+                            "3"
+                        ],
+                        "Mark": [
+                            "6"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "0"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "48"
+                        ],
+                        "RelDT": [
+                            "60"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "48"
+                        ],
+                        "TOGPerc": [
+                            "100"
+                        ],
+                        "ETOG": [
+                            "7888"
+                        ],
+                        "ETOGPerc": [
+                            "100"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "494"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-3"
+                        ],
+                        "FantasyAvg": [
+                            "54.70"
+                        ],
+                        "FantasyBE": [
+                            "55"
+                        ],
+                        "DTPrice": [
+                            "494"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "2111"
+                        ],
+                        "Name": [
+                            "C.Windsor"
+                        ],
+                        "JumperNumber": [
+                            "6"
+                        ],
+                        "Selection": [
+                            "WR"
+                        ],
+                        "Kick": [
+                            "6"
+                        ],
+                        "Handball": [
+                            "7"
+                        ],
+                        "Mark": [
+                            "0"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "4"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "45"
+                        ],
+                        "RelDT": [
+                            "56"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "45"
+                        ],
+                        "TOGPerc": [
+                            "81"
+                        ],
+                        "ETOG": [
+                            "6555"
+                        ],
+                        "ETOGPerc": [
+                            "83.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "282"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "6"
+                        ],
+                        "FantasyAvg": [
+                            "0.00"
+                        ],
+                        "FantasyBE": [
+                            "31"
+                        ],
+                        "DTPrice": [
+                            "282"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1923"
+                        ],
+                        "Name": [
+                            "J.Rooyen"
+                        ],
+                        "JumperNumber": [
+                            "2"
+                        ],
+                        "Selection": [
+                            "HFFR"
+                        ],
+                        "Kick": [
+                            "3"
+                        ],
+                        "Handball": [
+                            "7"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "1"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "45"
+                        ],
+                        "RelDT": [
+                            "56"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "45"
+                        ],
+                        "TOGPerc": [
+                            "83"
+                        ],
+                        "ETOG": [
+                            "6613"
+                        ],
+                        "ETOGPerc": [
+                            "83.8"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "466"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-3"
+                        ],
+                        "FantasyAvg": [
+                            "51.60"
+                        ],
+                        "FantasyBE": [
+                            "52"
+                        ],
+                        "DTPrice": [
+                            "466"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1614"
+                        ],
+                        "Name": [
+                            "K.Chandler"
+                        ],
+                        "JumperNumber": [
+                            "37"
+                        ],
+                        "Selection": [
+                            "INT3"
+                        ],
+                        "Kick": [
+                            "4"
+                        ],
+                        "Handball": [
+                            "7"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "3"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "44"
+                        ],
+                        "RelDT": [
+                            "55"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "44"
+                        ],
+                        "TOGPerc": [
+                            "82"
+                        ],
+                        "ETOG": [
+                            "6550"
+                        ],
+                        "ETOGPerc": [
+                            "83"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "533"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-6"
+                        ],
+                        "FantasyAvg": [
+                            "59.00"
+                        ],
+                        "FantasyBE": [
+                            "59"
+                        ],
+                        "DTPrice": [
+                            "533"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1505"
+                        ],
+                        "Name": [
+                            "C.Spargo"
+                        ],
+                        "JumperNumber": [
+                            "9"
+                        ],
+                        "Selection": [
+                            "INT4"
+                        ],
+                        "Kick": [
+                            "5"
+                        ],
+                        "Handball": [
+                            "7"
+                        ],
+                        "Mark": [
+                            "1"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "2"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "1"
+                        ],
+                        "DT": [
+                            "36"
+                        ],
+                        "RelDT": [
+                            "45"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "36"
+                        ],
+                        "TOGPerc": [
+                            "77"
+                        ],
+                        "ETOG": [
+                            "6788"
+                        ],
+                        "ETOGPerc": [
+                            "86.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "411"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-4"
+                        ],
+                        "FantasyAvg": [
+                            "45.50"
+                        ],
+                        "FantasyBE": [
+                            "46"
+                        ],
+                        "DTPrice": [
+                            "411"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1211"
+                        ],
+                        "Name": [
+                            "J.Schache"
+                        ],
+                        "JumperNumber": [
+                            "19"
+                        ],
+                        "Selection": [
+                            "CHF"
+                        ],
+                        "Kick": [
+                            "3"
+                        ],
+                        "Handball": [
+                            "1"
+                        ],
+                        "Mark": [
+                            "2"
+                        ],
+                        "Hitout": [
+                            "1"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "1"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "2"
+                        ],
+                        "DT": [
+                            "29"
+                        ],
+                        "RelDT": [
+                            "36"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "28"
+                        ],
+                        "TOGPerc": [
+                            "76"
+                        ],
+                        "ETOG": [
+                            "6116"
+                        ],
+                        "ETOGPerc": [
+                            "77.5"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "355"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-4"
+                        ],
+                        "FantasyAvg": [
+                            "25.00"
+                        ],
+                        "FantasyBE": [
+                            "39"
+                        ],
+                        "DTPrice": [
+                            "355"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "1852"
+                        ],
+                        "Name": [
+                            "B.Laurie"
+                        ],
+                        "IconImage": [
+                            "redvest.png"
+                        ],
+                        "JumperNumber": [
+                            "16"
+                        ],
+                        "Selection": [
+                            "FPR"
+                        ],
+                        "Kick": [
+                            "3"
+                        ],
+                        "Handball": [
+                            "5"
+                        ],
+                        "Mark": [
+                            "1"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "1"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "0"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "26"
+                        ],
+                        "RelDT": [
+                            "33"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "26"
+                        ],
+                        "TOGPerc": [
+                            "42"
+                        ],
+                        "ETOG": [
+                            "3556"
+                        ],
+                        "ETOGPerc": [
+                            "45.1"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "200"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "2"
+                        ],
+                        "FantasyAvg": [
+                            "24.50"
+                        ],
+                        "FantasyBE": [
+                            "22"
+                        ],
+                        "DTPrice": [
+                            "200"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    },
+                    {
+                        "PlayerID": [
+                            "879"
+                        ],
+                        "Name": [
+                            "J.Billings"
+                        ],
+                        "IconImage": [
+                            "greenvest.png"
+                        ],
+                        "JumperNumber": [
+                            "14"
+                        ],
+                        "Selection": [
+                            "INT5"
+                        ],
+                        "Kick": [
+                            "1"
+                        ],
+                        "Handball": [
+                            "1"
+                        ],
+                        "Mark": [
+                            "0"
+                        ],
+                        "Hitout": [
+                            "0"
+                        ],
+                        "Tackle": [
+                            "2"
+                        ],
+                        "FreeFor": [
+                            "0"
+                        ],
+                        "FreeAgainst": [
+                            "1"
+                        ],
+                        "Goal": [
+                            "0"
+                        ],
+                        "Behind": [
+                            "0"
+                        ],
+                        "DT": [
+                            "10"
+                        ],
+                        "RelDT": [
+                            "13"
+                        ],
+                        "SCScore": [
+                            "0"
+                        ],
+                        "PredictedScore": [
+                            "10"
+                        ],
+                        "TOGPerc": [
+                            "38"
+                        ],
+                        "ETOG": [
+                            "3090"
+                        ],
+                        "ETOGPerc": [
+                            "39.2"
+                        ],
+                        "CurrentBench": [
+                            "N"
+                        ],
+                        "FantasyPrice": [
+                            "538"
+                        ],
+                        "FantasyTotalPriceChange": [
+                            "0"
+                        ],
+                        "FantasyEstimatedPriceChange": [
+                            "-21"
+                        ],
+                        "FantasyAvg": [
+                            "60.70"
+                        ],
+                        "FantasyBE": [
+                            "60"
+                        ],
+                        "DTPrice": [
+                            "538"
+                        ],
+                        "DTTotalPriceChange": [
+                            "0"
+                        ],
+                        "DTAvg": [
+                            "0.00"
+                        ],
+                        "DTBE": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Tracker": [
+            {
+                "Event": [
+                    {
+                        "TrackerID": [
+                            "2139444"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "J.Viney"
+                        ],
+                        "Text": [
+                            "-2 (-1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139443"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "C.Oliver"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139442"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "T.Sparrow"
+                        ],
+                        "Text": [
+                            "-2 (-1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139441"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "E.Langdon"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139440"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "B.Howes"
+                        ],
+                        "Text": [
+                            "-2 (-1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139439"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "M.Gawn"
+                        ],
+                        "Text": [
+                            "-5 (-1k,-2ho)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139438"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "C.Spargo"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139437"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "J.Rowbottom"
+                        ],
+                        "Text": [
+                            "-4 (-1t)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139436"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:31"
+                        ],
+                        "Name": [
+                            "B.Grundy"
+                        ],
+                        "Text": [
+                            "+5 (1k,2ho)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139435"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:30"
+                        ],
+                        "Name": [
+                            "M.Roberts"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139434"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "C.Windsor"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139433"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "J.Rooyen"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139432"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "J.McVee"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139431"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "J.Lever"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139430"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "J.Billings"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139429"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "M.Roberts"
+                        ],
+                        "Text": [
+                            "+3 (1m)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139428"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "H.McLean"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139427"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "J.Jordon"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139426"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "H.Cunningham"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139425"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "35:04"
+                        ],
+                        "Name": [
+                            "N.Blakey"
+                        ],
+                        "Text": [
+                            "+6 (1k,1m)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139424"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "34:44"
+                        ],
+                        "Name": [
+                            "M.Gawn"
+                        ],
+                        "Text": [
+                            "+1 (1ho)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139423"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "34:44"
+                        ],
+                        "Name": [
+                            "J.Rowbottom"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139422"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:38"
+                        ],
+                        "Name": [
+                            "A.Neal-Bullen"
+                        ],
+                        "Text": [
+                            "-2 (-1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139421"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:38"
+                        ],
+                        "Name": [
+                            "B.Fritsch"
+                        ],
+                        "Text": [
+                            "+9 (1k,1g)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139420"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:38"
+                        ],
+                        "Name": [
+                            "R.Fox"
+                        ],
+                        "Text": [
+                            "+4 (1t)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139419"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:38"
+                        ],
+                        "Name": [
+                            "J.Amartey"
+                        ],
+                        "Text": [
+                            "-4 (-1t)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139418"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:18"
+                        ],
+                        "Name": [
+                            "C.Oliver"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139417"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:18"
+                        ],
+                        "Name": [
+                            "B.Fritsch"
+                        ],
+                        "Text": [
+                            "+1 (1ff)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139416"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:18"
+                        ],
+                        "Name": [
+                            "T.McCartin"
+                        ],
+                        "Text": [
+                            "+6 (1k,1m)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139415"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:18"
+                        ],
+                        "Name": [
+                            "J.Lloyd"
+                        ],
+                        "Text": [
+                            "-3 (1fa)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139414"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "33:18"
+                        ],
+                        "Name": [
+                            "J.Amartey"
+                        ],
+                        "Text": [
+                            "+4 (1t)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139413"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "J.Rooyen"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139412"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "T.Sparrow"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139411"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "T.Rivers"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139410"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "A.Neal-Bullen"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139409"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "J.Lever"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139408"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "E.Langdon"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139407"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "B.Howes"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139406"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:45"
+                        ],
+                        "Name": [
+                            "J.Rowbottom"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139405"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:14"
+                        ],
+                        "Name": [
+                            "T.Sparrow"
+                        ],
+                        "Text": [
+                            "+4 (1t)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139404"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:14"
+                        ],
+                        "Name": [
+                            "S.Wicks"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139403"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:14"
+                        ],
+                        "Name": [
+                            "J.Lloyd"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139402"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "32:14"
+                        ],
+                        "Name": [
+                            "N.Blakey"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139401"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "31:58"
+                        ],
+                        "Name": [
+                            "M.Roberts"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139400"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "31:58"
+                        ],
+                        "Name": [
+                            "N.Blakey"
+                        ],
+                        "Text": [
+                            "+3 (1m)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139399"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "31:13"
+                        ],
+                        "Name": [
+                            "M.Gawn"
+                        ],
+                        "Text": [
+                            "-1 (-1ho)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139398"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "31:13"
+                        ],
+                        "Name": [
+                            "E.Gulden"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139397"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "31:13"
+                        ],
+                        "Name": [
+                            "B.Grundy"
+                        ],
+                        "Text": [
+                            "+1 (1ho)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139396"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "30:13"
+                        ],
+                        "Name": [
+                            "J.Viney"
+                        ],
+                        "Text": [
+                            "+2 (1h)"
+                        ]
+                    },
+                    {
+                        "TrackerID": [
+                            "2139395"
+                        ],
+                        "Quarter": [
+                            "4"
+                        ],
+                        "Time": [
+                            "30:13"
+                        ],
+                        "Name": [
+                            "C.Spargo"
+                        ],
+                        "Text": [
+                            "+3 (1k)"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Media": [
+            {
+                "Item": [
+                    {
+                        "MediaID": [
+                            "10000000"
+                        ],
+                        "Type": [
+                            "filler"
+                        ],
+                        "ForceShow": [
+                            "N"
+                        ]
+                    },
+                    {
+                        "MediaID": [
+                            "9999999"
+                        ],
+                        "Type": [
+                            "filler"
+                        ],
+                        "ForceShow": [
+                            "N"
+                        ]
+                    },
+                    {
+                        "MediaID": [
+                            "9999998"
+                        ],
+                        "Type": [
+                            "filler"
+                        ],
+                        "ForceShow": [
+                            "N"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Selection": [
+            {
+                "Change": [
+                    {
+                        "OurPlayerID": [
+                            "701"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Jake"
+                        ],
+                        "LastName": [
+                            "Lloyd"
+                        ],
+                        "Position": [
+                            "HBFR"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "716"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Dane"
+                        ],
+                        "LastName": [
+                            "Rampe"
+                        ],
+                        "Position": [
+                            "BPR"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1310"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Tom"
+                        ],
+                        "LastName": [
+                            "Papley"
+                        ],
+                        "Position": [
+                            "FPL"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1713"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Chad"
+                        ],
+                        "LastName": [
+                            "Warner"
+                        ],
+                        "Position": [
+                            "C"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "334"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Joel"
+                        ],
+                        "LastName": [
+                            "Hamling"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "365"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Taylor"
+                        ],
+                        "LastName": [
+                            "Adams"
+                        ],
+                        "Position": [
+                            "C"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1407"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Peter"
+                        ],
+                        "LastName": [
+                            "Ladhams"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1951"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Angus"
+                        ],
+                        "LastName": [
+                            "Sheldrick"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1953"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Corey"
+                        ],
+                        "LastName": [
+                            "Warner"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "2030"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Caleb"
+                        ],
+                        "LastName": [
+                            "Mitchell"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "2046"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "William"
+                        ],
+                        "LastName": [
+                            "Edwards"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1407"
+                        ],
+                        "Direction": [
+                            "Late Out"
+                        ],
+                        "FirstName": [
+                            "Peter"
+                        ],
+                        "LastName": [
+                            "Ladhams"
+                        ],
+                        "Position": [
+                            ""
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1951"
+                        ],
+                        "Direction": [
+                            "Late Out"
+                        ],
+                        "FirstName": [
+                            "Angus"
+                        ],
+                        "LastName": [
+                            "Sheldrick"
+                        ],
+                        "Position": [
+                            ""
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1953"
+                        ],
+                        "Direction": [
+                            "Late Out"
+                        ],
+                        "FirstName": [
+                            "Corey"
+                        ],
+                        "LastName": [
+                            "Warner"
+                        ],
+                        "Position": [
+                            ""
+                        ],
+                        "TeamID": [
+                            "14"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1209"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Clayton"
+                        ],
+                        "LastName": [
+                            "Oliver"
+                        ],
+                        "Position": [
+                            "R"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1505"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Charlie"
+                        ],
+                        "LastName": [
+                            "Spargo"
+                        ],
+                        "Position": [
+                            "FPR"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1725"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Thomas"
+                        ],
+                        "LastName": [
+                            "Fullarton"
+                        ],
+                        "Position": [
+                            "EMERG"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1925"
+                        ],
+                        "Direction": [
+                            "In"
+                        ],
+                        "FirstName": [
+                            "Taj"
+                        ],
+                        "LastName": [
+                            "Woewodin"
+                        ],
+                        "Position": [
+                            "EMERG"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "489"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Tom"
+                        ],
+                        "LastName": [
+                            "McDonald"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1686"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Kysaiah"
+                        ],
+                        "LastName": [
+                            "Kropinyeri-Pickett"
+                        ],
+                        "Position": [
+                            "FPL"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "2044"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Will"
+                        ],
+                        "LastName": [
+                            "Verrall"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "2128"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Kynan"
+                        ],
+                        "LastName": [
+                            "Brown"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "2132"
+                        ],
+                        "Direction": [
+                            "Out"
+                        ],
+                        "FirstName": [
+                            "Koltyn"
+                        ],
+                        "LastName": [
+                            "Tholstrup"
+                        ],
+                        "Position": [
+                            "INT"
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "489"
+                        ],
+                        "Direction": [
+                            "Late Out"
+                        ],
+                        "FirstName": [
+                            "Tom"
+                        ],
+                        "LastName": [
+                            "McDonald"
+                        ],
+                        "Position": [
+                            ""
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1725"
+                        ],
+                        "Direction": [
+                            "Late Out"
+                        ],
+                        "FirstName": [
+                            "Thomas"
+                        ],
+                        "LastName": [
+                            "Fullarton"
+                        ],
+                        "Position": [
+                            ""
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    },
+                    {
+                        "OurPlayerID": [
+                            "1925"
+                        ],
+                        "Direction": [
+                            "Late Out"
+                        ],
+                        "FirstName": [
+                            "Taj"
+                        ],
+                        "LastName": [
+                            "Woewodin"
+                        ],
+                        "Position": [
+                            ""
+                        ],
+                        "TeamID": [
+                            "10"
+                        ],
+                        "OR": [
+                            ""
+                        ],
+                        "SelectionType": [
+                            "Final"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

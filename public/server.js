@@ -1,6 +1,6 @@
 const express = require('express');
 const puppeteerCrawl = require('./crawlerAPI.js');
-const fetchStats = require('./fetchStats.js');
+const fetchStats = require('./fetchStatsXML.js');
 const fetchFixture = require('./fetchFixture.js');
 const fixtureCrawl = require('./fixtureAPI.js');
 const randomUsername = require('./randomUsername.js');
@@ -378,6 +378,7 @@ async function updatePlayerStats(trimmedLink) {
         }
 
         const newPlayerData = stats.players;
+        console.log(newPlayerData)
         // Puppeteer setup
         // const newPlayerIds = newPlayerData.map(p => `${p.name}-${p.number}`);
         // playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(`${p.name}-${p.number}`));
