@@ -28,7 +28,7 @@ const port = process.env.PORT || 5000;
 
 
 // Correct way to initialize WebSocket server listening on a specific port
-const wss = new WebSocket.Server({ port: process.env.PORT || 8080 });
+const wss = new WebSocket.Server({ port: process.env.WS_PORT || 8080 });
 
 wss.on('connection', (ws, request) => {
 
