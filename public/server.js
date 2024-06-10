@@ -37,7 +37,7 @@ app.listen(port, () => {
 
 const server = http.createServer();
 const wss = new WebSocket.Server({ server });
-server.listen(wsPort, () => {
+server.listen(wsPort, '0.0.0.0', () => {
     const serverAddress = server.address();
     const hostname = serverAddress.address === '::' ? 'localhost' : serverAddress.address;
     console.log(`WebSocket server is listening on port ${serverAddress.port}`);
