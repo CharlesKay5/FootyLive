@@ -46,13 +46,6 @@ httpServer.on('upgrade', (req, socket, head) => {
 //     console.log(`Server is running on ${port}`);
 // });
 
-
-server.on('upgrade', (request, socket, head) => {
-    wss.handleUpgrade(request, socket, head, (ws) => {
-        wss.emit('connection', ws, request);
-    });
-});
-
 wss.on('connection', (ws, request) => {
 
     const ip = request.socket.remoteAddress;
