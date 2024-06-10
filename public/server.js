@@ -32,6 +32,15 @@ const port = process.env.PORT || 5000;
 
 const server = http.createServer();
 const wss = new WebSocket.Server({ server });
+server.listen(port, () => {
+    console.log(`WS Server is listening on port ${port}`);
+});
+
+server.on('upgrade', (request, socket, head) => {
+    wss.handleUpgrade(request, socket, head, (ws) => {
+        wss.emit('connection', ws, request);
+    });
+});
 
 wss.on('connection', (ws, request) => {
 
@@ -49,6 +58,10 @@ wss.on('connection', (ws, request) => {
             }
         });
     });
+});
+
+wss.on('error', (error) => {
+    console.error('WebSocket server error:', error);
 });
 
 // Serve static files including CSS

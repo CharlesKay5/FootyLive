@@ -172,10 +172,19 @@
 
     <script>
         // FOR PRODUCTION
-        const socket = new WebSocket('ws://footylive.onrender.com');
+        const socket = new WebSocket('wss://footylive.onrender.com');
         // const socket = new WebSocket('ws://localhost:8080');
-        
-        
+
+        socket.addEventListener('open', (event) => {
+            console.log('WebSocket is open now.');
+        });
+        socket.addEventListener('error', (event) => {
+            console.error('WebSocket error observed:', event);
+        });
+        socket.addEventListener('close', (event) => {
+            console.log('WebSocket is closed now.', event);
+        });
+
         var allowColourChange = true;
 
         let tableFocusBtns = document.getElementsByClassName('tableFocus')
@@ -257,7 +266,7 @@
                     homeTeamIcon.src = `/svg/${firstPlayerTeam0.teamName.replace(/\s/g, '')}.svg`;
 
                     currentTime = `${firstPlayerTeam0.time}`;
-                    
+
                 }
 
                 // Set team name and scores for away team
@@ -950,10 +959,10 @@
             ])
                 .then(responses => Promise.all(responses.map(response => response.json())))
                 .then(data => {
-            
+
                     const team0Players = data[0].players.filter(player => player.team === 0);
                     const team1Players = data[0].players.filter(player => player.team === 1);
-                  
+
                     team0Players.forEach(player => {
                         const playerId = `${player.name}-${player.number}`;
                         if (!previousDataTeam0[playerId]) {
@@ -971,7 +980,7 @@
 
                     window.playerData.team0 = team0Players;
                     window.playerData.team1 = team1Players;
-                    
+
                     formatPlayerData(0, previousDataTeam0);
                     formatPlayerData(1, previousDataTeam1);
                 });
@@ -1011,7 +1020,7 @@
             const quarter = timeArray[0][1];
             const quarterFull = timeArray[1];
             let minutes = 0;
-            
+
 
             if (homeTeamScore == highestScore) {
                 marginHolder.innerHTML = `${homeTeam} <br>by ${margin}`;
@@ -1042,7 +1051,7 @@
             } catch {
                 minutes = 120;
             }
-            
+
             let percentage = ((parseInt(minutes) / 120) * 100) + ((parseInt(quarter) - 1) * 25);
             //console.log(quarterFull)
             switch (quarterFull) {
