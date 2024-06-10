@@ -32,7 +32,7 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 const httpServer = app.listen(port)
-const wss = new ws.Server({ noServer: true })
+const wss = new WebSocket.Server({ noServer: true })
 
 
 httpServer.on('upgrade', (req, socket, head) => {
