@@ -67,7 +67,6 @@
                 .then(response => response.json())
                 .then(data => {
                     latestRound = data.currentRound;
-                    console.log(latestRound)
                     visibleListItem = document.querySelector(`li[data-round="${latestRound}"]`);
                 })
                 .catch(error => {
@@ -75,7 +74,6 @@
                 });
 
 
-            console.log(visibleListItem)
             for (let i = 0; i < listItems.length; i++) {
                 listItems[i].addEventListener("click", (event) => {
                     const round = event.target.getAttribute("data-round");
