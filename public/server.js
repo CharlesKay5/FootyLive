@@ -31,7 +31,7 @@ const port = process.env.PORT || 5000;
 
 
 const server = http.createServer();
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ server, port: 8080 });
 server.listen(port, () => {
     console.log(`WS Server is listening on port ${port}`);
 });
