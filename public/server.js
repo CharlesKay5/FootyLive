@@ -28,12 +28,13 @@ db.once('open', function () {
 const app = express();
 
 const port = process.env.PORT || 5000;
+const wsPort = process.env.WS_PORT || 8080;
 
 
 const server = http.createServer();
-const wss = new WebSocket.Server({ server, port: 8080 });
-server.listen(port, () => {
-    console.log(`WS Server is listening on port ${port}`);
+const wss = new WebSocket.Server({ server });
+server.listen(wsPort, () => {
+    console.log(`WS Server is listening on port ${wsPort}`);
 });
 
 server.on('upgrade', (request, socket, head) => {
