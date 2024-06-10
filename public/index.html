@@ -256,7 +256,6 @@
                     // console.log(firstPlayerTeam0)
                     homeTeamIcon.src = `/svg/${firstPlayerTeam0.teamName.replace(/\s/g, '')}.svg`;
 
-
                     currentTime = `${firstPlayerTeam0.time}`;
                 }
 
@@ -269,7 +268,7 @@
                     awayTeamIcon.src = `/svg/${firstPlayerTeam1.teamName.replace(/\s/g, '')}.svg`;
                 }
 
-                // calculateGamePercentage(currentTime);
+                calculateGamePercentage(currentTime);
 
                 // Sort the players by their fantasy score
                 const sortedPlayers = teamData.sort((a, b) => b.fantasy - a.fantasy);
@@ -1008,10 +1007,10 @@
             const margin = highestScore - lowestScore;
 
             const timeArray = currentTime.split(' ');
-            const quarter = timeArray[1][1];
+            const quarter = timeArray[0][1];
             const quarterFull = timeArray[1];
             let minutes = 0;
-
+            
 
             if (homeTeamScore == highestScore) {
                 marginHolder.innerHTML = `${homeTeam} <br>by ${margin}`;
@@ -1038,11 +1037,11 @@
                 return;
             }
             try {
-                minutes = timeArray[2].split(':')[0];
+                minutes = timeArray[1].split(':')[0];
             } catch {
                 minutes = 120;
             }
-
+            
             let percentage = ((parseInt(minutes) / 120) * 100) + ((parseInt(quarter) - 1) * 25);
             //console.log(quarterFull)
             switch (quarterFull) {
@@ -1083,6 +1082,9 @@
                     break;
                 default:
                     break;
+            }
+            if (percentage > 100) {
+                percentage = 100;
             }
             const gamePercentage = document.getElementById('gamePercentage');
             gamePercentage.textContent = Math.ceil(percentage) + '%';

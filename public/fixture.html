@@ -408,6 +408,13 @@
                                 }
                             }
 
+                            let gameTime;
+                            if (fixture.time.length  > 0) {
+                                gameTime = fixture.time;
+                            }
+                            else {
+                                gameTime = "Q1 00:00";
+                            }
                             fixtureElement.innerHTML = `
                             
                             <div class="team homeTeamContainer">
@@ -416,7 +423,7 @@
                                 <h2 id="homeTeamScore">${fixture.team0score}</h2>
                             </div>
                             <div class="gameInfo">
-                                <h2 id="currentPeriod">${fixture.time}</h2>
+                                <h2 id="currentPeriod">${gameTime}</h2>
                                 <p id="margin">${winning}</p>
                                 <p id="gameLocation">${fixture.location}</p>
                             </div>
