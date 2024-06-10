@@ -172,8 +172,9 @@
 
     <script>
         // FOR PRODUCTION
-        const socket = new WebSocket('wss://footylive.onrender.com:8080');
+        // const socket = new WebSocket('wss://footylive.onrender.com:8080');
         // const socket = new WebSocket('ws://localhost:8080');
+        const socket = new WebSocket('wss://localhost:8080');
 
         socket.addEventListener('open', (event) => {
             console.log('WebSocket is open now.');
