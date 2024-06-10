@@ -1,4 +1,4 @@
-const { PlayerStat, Round } = require('./models');
+const { PlayerStat, Round } = require('../public/models');
 const fs = require('fs');
 const mongoose = require('mongoose');
 
