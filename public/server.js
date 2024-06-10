@@ -1,8 +1,8 @@
 const express = require('express');
-const puppeteerCrawl = require('./crawlerAPI.js');
+// const puppeteerCrawl = require('./crawlerAPI.js');
 const fetchStats = require('./fetchStatsXML.js');
 const fetchFixture = require('./fetchFixture.js');
-const fixtureCrawl = require('./fixtureAPI.js');
+// const fixtureCrawl = require('./fixtureAPI.js');
 const randomUsername = require('./randomUsername.js');
 const dtliveChat = require('./dtliveChatAPI.js');
 const fs = require('fs');
