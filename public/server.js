@@ -28,21 +28,24 @@ db.once('open', function () {
 
 
 const port = process.env.PORT || 5000;
-const wsPort = process.env.WS_PORT || 8080;
+// const wsPort = process.env.WS_PORT || 8080;
 
 const app = express();
-app.listen(port, () => {
+const httpServer = app.listen(port)
+const wss = new ws.Server({ noServer: true })
+
+
+httpServer.on('upgrade', (req, socket, head) => {
+    wss.handleUpgrade(req, socket, head, (ws) => {
+        wss.emit('connection', ws, req)
+    })
+})
+
+
+httpServer.listen(port, () => {
     console.log(`Server is running on ${port}`);
 });
 
-const server = http.createServer();
-const wss = new WebSocket.Server({ server });
-server.listen(wsPort, '0.0.0.0', () => {
-    const serverAddress = server.address();
-    const hostname = serverAddress.address === '::' ? 'localhost' : serverAddress.address;
-    console.log(`WebSocket server is listening on port ${serverAddress.port}`);
-    console.log(`WebSocket server URL: ws://${hostname}:${serverAddress.port}`);
-});
 
 server.on('upgrade', (request, socket, head) => {
     wss.handleUpgrade(request, socket, head, (ws) => {
@@ -314,7 +317,7 @@ updateFixtureData();
 app.get('/fixture', (req, res) => {
     const fixturePath = path.join(__dirname, 'fixture.html');
     const error = req.query.error;
-    
+
     // Read fixture.html file
     let fixtureHtml = fs.readFileSync(fixturePath, 'utf-8');
 
