@@ -25,11 +25,15 @@ db.once('open', function () {
     console.log('Connected to MongoDB');
 });
 
-const app = express();
+
 
 const port = process.env.PORT || 5000;
 const wsPort = process.env.WS_PORT || 8080;
 
+const app = express();
+app.listen(port, () => {
+    console.log(`Server is running on ${port}`);
+});
 
 const server = http.createServer();
 const wss = new WebSocket.Server({ server });
@@ -688,6 +692,3 @@ function filterProfanity(message) {
     return words.join(' ');
 }
 
-app.listen(port, () => {
-    console.log(`Server is running on ${port}`);
-});
