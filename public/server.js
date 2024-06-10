@@ -38,7 +38,10 @@ app.listen(port, () => {
 const server = http.createServer();
 const wss = new WebSocket.Server({ server });
 server.listen(wsPort, () => {
-    console.log(`WS Server is listening on port ${wsPort}`);
+    const serverAddress = server.address();
+    const hostname = serverAddress.address === '::' ? 'localhost' : serverAddress.address;
+    console.log(`WebSocket server is listening on port ${serverAddress.port}`);
+    console.log(`WebSocket server URL: ws://${hostname}:${serverAddress.port}`);
 });
 
 server.on('upgrade', (request, socket, head) => {
