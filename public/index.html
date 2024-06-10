@@ -253,7 +253,7 @@
                     homeTeam.textContent = `${firstPlayerTeam0.teamName}`;
                     homeTeamScore.textContent = `${firstPlayerTeam0.teamScoreTotal}`;
                     homeTeamSecondaryScore.textContent = `${firstPlayerTeam0.teamScore}`;
-
+                    console.log(firstPlayerTeam0)
                     homeTeamIcon.src = `/svg/${firstPlayerTeam0.teamName.replace(/\s/g, '')}.svg`;
 
 
@@ -950,10 +950,10 @@
             ])
                 .then(responses => Promise.all(responses.map(response => response.json())))
                 .then(data => {
-
+                    console.log(data);
                     const team0Players = data[0].players.filter(player => player.team === 0);
                     const team1Players = data[0].players.filter(player => player.team === 1);
-
+                    console.log(team1Players)
                     team0Players.forEach(player => {
                         const playerId = `${player.name}-${player.number}`;
                         if (!previousDataTeam0[playerId]) {
@@ -971,6 +971,7 @@
 
                     window.playerData.team0 = team0Players;
                     window.playerData.team1 = team1Players;
+                    
                     formatPlayerData(0, previousDataTeam0);
                     formatPlayerData(1, previousDataTeam1);
                 });

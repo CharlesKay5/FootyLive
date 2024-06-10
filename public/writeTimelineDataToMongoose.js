@@ -2,7 +2,7 @@ const { PlayerStat, Round } = require('./models');
 const fs = require('fs');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/scoringTimeline', {
+mongoose.connect('mongodb+srv://charleskay5:aJ9o4v7pDkiGp7sW@scoringtimelinecluster.fgr38ho.mongodb.net/scoringTimeline?retryWrites=true&w=majority&appName=ScoringTimelineCluster', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   // Adjust timeout settings
@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/scoringTimeline', {
   socketTimeoutMS: 60000, // 60 seconds
 });
 
-const data = fs.readFileSync('timelineData1.json', 'utf-8');
+const data = fs.readFileSync('timelineData2.json', 'utf-8');
 const jsonData = JSON.parse(data);
 
 async function insertData(data) {

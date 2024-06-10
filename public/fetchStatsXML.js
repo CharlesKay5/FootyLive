@@ -25,8 +25,8 @@ function fetchData(players, teamName, teamType, gameDetails, trimmedLink) {
         tog: player.TOGPerc[0],
         fantasy: player.DT[0],
         fantasyAvg: player.FantasyAvg[0],
-        team: teamType[0],
-        teamName: teamName[0],
+        team: teamType,
+        teamName: teamName,
         url: null,
         teamScore: `${gameDetails[`${teamType ? 'Away' : 'Home'}TeamGoal`]}.${gameDetails[`${teamType ? 'Away' : 'Home'}TeamBehind`]}`,
         teamScoreTotal: parseInt(gameDetails[`${teamType ? 'Away' : 'Home'}TeamGoal`]) * 6 + parseInt(gameDetails[`${teamType ? 'Away' : 'Home'}TeamBehind`]),
@@ -65,7 +65,16 @@ function fetchPlayerData(trimmedLink) {
             body: null,
             method: "GET"
         })
-            .then(response => response.text())
+            .then(response =>{
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        resolve({ players: [] });
+                    } else {
+                        reject(new Error(`HTTP error! status: ${response.status}`));
+                    }
+                }
+                return response.text();
+            })
             .then(async str => {
                 const sanitizeXmlString = (xmlString) => {
                     // Remove characters that are not letters, numbers, or allowed special characters
@@ -92,5 +101,5 @@ function fetchPlayerData(trimmedLink) {
     });
 }
 
-
+// fetchPlayerData(2976);
 module.exports = fetchPlayerData;

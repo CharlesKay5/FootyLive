@@ -22,15 +22,15 @@ function fetchFixtureData() {
     
         fixtureData.games = jData.games.map(game => ({
             date: game.date,
-            team0: game.hteam,
-            team1: game.ateam,
+            team0: game.hteam.includes("Greater Western Sydney") ? "GWS Giants" : game.hteam,
+            team1: game.ateam.includes("Greater Western Sydney") ? "GWS Giants" : game.ateam,
             team0score: game.hscore,
             team1score: game.ascore,
             time: game.timestr || "",
             location: game.venue,
             link: (parseInt(game.id) - 32837),
             live: game.timestr && game.timestr.includes("Q") ? 1 : 0,
-            round: game.round,
+            round: game.round === "Opening Round" ? 0 : game.round,
         }));
         // console.log(fixtureData);
         return fixtureData;

@@ -16,7 +16,7 @@ const { v4: uuidv4 } = require('uuid');
 const mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://localhost:27017/scoringTimeline');
-mongoose.connect('mongodb+srv://charleskay5:aJ9o4v7pDkiGp7sW@scoringtimelinecluster.fgr38ho.mongodb.net/?retryWrites=true&w=majority&appName=ScoringTimelineCluster');
+mongoose.connect('mongodb+srv://charleskay5:aJ9o4v7pDkiGp7sW@scoringtimelinecluster.fgr38ho.mongodb.net/scoringTimeline?retryWrites=true&w=majority&appName=ScoringTimelineCluster');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -174,7 +174,7 @@ app.get('/get-all-chats', (req, res) => {
 app.get('/dtlive-chat/:link', async (req, res) => {
     const trimmedLink = req.params.link;
     try {
-        const response = await fetch(`https://dtlive.com.au/afl/xml/G${trimmedLink - 3032}-CG1Chat.json`);
+        const response = await fetch(`https://dtlive.com.au/afl/xml/G${trimmedLink}-CG1Chat.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -194,42 +194,19 @@ app.get('/dtlive-chat/:link', async (req, res) => {
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-////////////////
-
-const fixtureURL = "https://www.afl.com.au/fixture";
-// 964 = round 10
-// const fixtureURL = "https://www.afl.com.au/fixture?Competition=1&Season=62&Round=964";
-
-let fixture = { games: [] }; // Initialize fixture data
-let links = []; // Array to store links
+let fixture = { games: [] };
+let links = [];
 let link = '';
-let scoringTimeline = {}; // Declare scoringTimeline here
-
+let scoringTimeline = {};
+let currentRound = 0;
 async function updateFixtureData() {
     try {
-        // const data = { games: [] };
-        // await fixtureCrawl(fixtureURL, data);
 
         const data = await fetchFixture();
 
-        fixture = data; // Update fixture data
-        
-        // Puppeteer setup
-        // for (const game of fixture.games.filter(game => game.live == 0)) {
-        //     await updatePlayerStats(game.link);
-        // }
-        // Fetch setup
+        fixture = data;
         for (const game of fixture.games) {
+            currentRound = game.round;
             if (game.live === 0) {
                 console.log("Updating stats for " + game.link);
                 await updatePlayerStats(game.link);
@@ -267,10 +244,14 @@ async function updateLiveFixtureData() {
 }
 setInterval(updateLiveFixtureData, 45000);
 
+app.get('/current-round', (req, res) => {
+    res.json({ currentRound });
+});
+
 app.post('/game-link', (req, res) => {
     link = req.body.link; // Store the received value in the link variable
 
-    updatePlayerStats(link);
+    // updatePlayerStats(link);
     res.json({ status: 'success' });
 });
 
@@ -280,7 +261,7 @@ app.get('/trimmedLink', (req, res) => {
 
 app.get('/fixture/:link', async (req, res) => {
     const link = req.params.link;
-    const trimmedLink = link.split("/").pop();
+    const trimmedLink = link;
 
     try {
         // Fetch player data from /player-stats endpoint using axios
@@ -290,9 +271,8 @@ app.get('/fixture/:link', async (req, res) => {
         }
         const playerData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-
         // Read index.html file
-        const indexPath = path.join(__dirname, '..', 'public', 'index.html');
+        const indexPath = path.join(__dirname, 'index.html');
         let indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
         // Replace placeholder in index.html with player data
@@ -303,7 +283,7 @@ app.get('/fixture/:link', async (req, res) => {
         res.send(indexHtml);
     } catch (error) {
         console.error('Error fetching player data:', error);
-        res.status(500).send('Internal Server Error');
+        res.redirect(`/fixture?error=Data%20for%20this%20game%20is%20not%20yet%20available,%20please%20try%20again%20closer%20to%20first%20bounce!`);
     }
 });
 
@@ -311,8 +291,22 @@ updateFixtureData();
 
 app.get('/fixture', (req, res) => {
     const fixturePath = path.join(__dirname, 'fixture.html');
-    res.sendFile(fixturePath);
+    const error = req.query.error;
+    
+    // Read fixture.html file
+    let fixtureHtml = fs.readFileSync(fixturePath, 'utf-8');
+
+    // Include the error message in the HTML if it exists
+    if (error) {
+        const alertScript = `<script>alert("${decodeURIComponent(error)}");</script>`;
+        fixtureHtml = fixtureHtml.replace('<!-- {{alert}} -->', alertScript);
+    } else {
+        fixtureHtml = fixtureHtml.replace('<!-- {{alert}} -->', '');
+    }
+
+    res.send(fixtureHtml);
 });
+
 
 app.get('/fixture-data', (req, res) => {
     res.json(fixture);
@@ -357,7 +351,7 @@ if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
 }
 async function updatePlayerStats(trimmedLink) {
-// async function updatePlayerStats(url) {
+    // async function updatePlayerStats(url) {
     try {
         // const data = {
         //     players: []
@@ -369,50 +363,44 @@ async function updatePlayerStats(trimmedLink) {
         const stats = await fetchStats(trimmedLink);
 
         console.log("Stats fetched!");
-        
-        // const link = url.split("/").pop();
 
-        const link = trimmedLink;
-        if (!playerStats[link]) {
-            playerStats[link] = { players: [] };
+        if (stats.players.length === 0) {
+            console.log(`No data found for trimmedLink: ${trimmedLink}`);
+        } else {
+            const link = trimmedLink;
+            if (!playerStats[link]) {
+                playerStats[link] = { players: [] };
+            }
+
+            const newPlayerData = stats.players;
+            // console.log(newPlayerData);
+
+            const newPlayerIds = newPlayerData.map(p => p.playerID);
+            playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(p.playerID));
+
+            await Promise.all(newPlayerData.map(async (newPlayer) => {
+                const playerId = `${newPlayer.name}-${newPlayer.number}`;
+                const oldPlayer = playerStats[link].players.find(p => `${p.name}-${p.number}` === playerId);
+
+                const differences = calculateDifferences(newPlayer, oldPlayer);
+                const timelineUpdates = updateScoringTimeline(newPlayer, differences);
+
+                if (!scoringTimeline[playerId]) {
+                    scoringTimeline[playerId] = [];
+                }
+                scoringTimeline[playerId] = scoringTimeline[playerId].concat(timelineUpdates);
+
+                const playerIndex = playerStats[link].players.findIndex(p => `${p.name}-${p.number}` === playerId);
+                if (playerIndex > -1) {
+                    playerStats[link].players[playerIndex] = newPlayer;
+                } else {
+                    playerStats[link].players.push(newPlayer);
+                }
+
+                const filePath = path.join(matchesFolderPath, `${link}.json`);
+                await fs.promises.writeFile(filePath, JSON.stringify(stats));
+            }));
         }
-
-        const newPlayerData = stats.players;
-        console.log(newPlayerData)
-        // Puppeteer setup
-        // const newPlayerIds = newPlayerData.map(p => `${p.name}-${p.number}`);
-        // playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(`${p.name}-${p.number}`));
-
-        // Fetch setup 
-        const newPlayerIds = newPlayerData.map(p => p.playerID);
-        // Filter out players from the existing player data that are not present in the new data
-        playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(p.playerID));
-
-
-        await Promise.all(newPlayerData.map(async (newPlayer) => {
-            const playerId = `${newPlayer.name}-${newPlayer.number}`;
-            const oldPlayer = playerStats[link].players.find(p => `${p.name}-${p.number}` === playerId);
-
-            const differences = calculateDifferences(newPlayer, oldPlayer);
-            const timelineUpdates = updateScoringTimeline(newPlayer, differences);
-
-            if (!scoringTimeline[playerId]) {
-                scoringTimeline[playerId] = [];
-            }
-            scoringTimeline[playerId] = scoringTimeline[playerId].concat(timelineUpdates);
-
-            // Update player data
-            const playerIndex = playerStats[link].players.findIndex(p => `${p.name}-${p.number}` === playerId);
-            if (playerIndex > -1) {
-                playerStats[link].players[playerIndex] = newPlayer;
-            } else {
-                playerStats[link].players.push(newPlayer);
-            }
-
-            const filePath = path.join(matchesFolderPath, `${link}.json`);
-            await fs.promises.writeFile(filePath, JSON.stringify(stats));
-        }));
-
     } catch (error) {
         console.error('Error fetching player stats:', error);
     }

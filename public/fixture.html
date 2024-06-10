@@ -13,7 +13,7 @@
     <div id="top-of-page"></div>
     <div id="round-selector">
         <ul id="round-list">
-            <!-- <li data-round="0">OR</li> -->
+            <li data-round="0">OR</li>
             <li data-round="1">1</li>
             <li data-round="2">2</li>
             <li data-round="3">3</li>
@@ -48,6 +48,7 @@
     <br>
 
     <div id="fixtures-list"></div>
+    <!-- {{alert}} -->
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const savedTheme = localStorage.getItem('theme') || 'light';
@@ -56,24 +57,41 @@
 
         let visibleFixutre = document.getElementById('fixture-data');
         let visibleFixtureHead = document.getElementById('fixture-data');
-        let visibleListItem = document.querySelector('li[data-round="11"]');
+        let lastClickedListItem = null;
         let latestRoundElement = document.getElementById("fixture-data");
         document.addEventListener('DOMContentLoaded', (event) => {
             const listItems = document.getElementsByTagName("li");
+            let latestRound = 0;
+            let visibleListItem;
+            fetch('/current-round')
+                .then(response => response.json())
+                .then(data => {
+                    latestRound = data.currentRound;
+                    console.log(latestRound)
+                    visibleListItem = document.querySelector(`li[data-round="${latestRound}"]`);
+                })
+                .catch(error => {
+                    console.error('Error fetching current round:', error);
+                });
 
+
+            console.log(visibleListItem)
             for (let i = 0; i < listItems.length; i++) {
                 listItems[i].addEventListener("click", (event) => {
                     const round = event.target.getAttribute("data-round");
-                    let latestRound = document.getElementById("fixture-data").className;
-                    
+
+                    if (lastClickedListItem === listItems[i]) {
+                        return;
+                    }
+                    lastClickedListItem = listItems[i];
+
                     // case for when selected round is latest round
-                    if (i == latestRound - 1) {
-                        
+                    if (i == latestRound) {
                         latestRoundElement.style.display = "flex";
                         listItems[i].style.backgroundColor = "blue";
                         listItems[i].style.color = "white";
 
-                        
+
                         visibleFixutre.style.display = "none";
                         visibleFixtureHead.style.display = "none";
                         visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
@@ -82,23 +100,26 @@
                         visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
                         visibleListItem = listItems[i];
 
-                        
+
                     }
                     else {
-
-                        
                         // show selected round
                         listItems[i].style.backgroundColor = "blue";
                         listItems[i].style.color = "white";
+                        if (document.getElementById(`round-${round}`)) { }
                         document.getElementById(`round-${round}`).style.display = "block";
                         document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
 
                         visibleFixutre.style.display = "none";
-                        visibleFixtureHead.style.display = "none";
-                       
+                        try {
+                            visibleFixtureHead.style.display = "none";
+                        } catch {
+
+                        }
+
                         visibleListItem.style.backgroundColor = "var(--tablehead-background-color)";
                         visibleListItem.style.color = "var(--text-color)";
-                        
+
                         visibleFixutre = document.getElementById(`round-${round}`);
                         visibleFixtureHead = document.getElementsByClassName(`round-${round}`)[0];
                         visibleListItem = listItems[i];
@@ -112,7 +133,7 @@
             backToTop.addEventListener("click", (event) => {
                 const topOfPage = document.getElementById("top-of-page");
                 // scroll into view
-                topOfPage .scrollIntoView({ behavior: 'smooth' });
+                topOfPage.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
@@ -154,7 +175,6 @@
         function displayPreviousFixtures(fixtureData) {
             const fixturesList = document.getElementById('fixtures-list');
             fixturesList.innerHTML = ''; // Clear any existing data
-
             // Group fixtures by round
             const fixturesByRound = fixtureData.reduce((acc, fixture) => {
                 let playerWithTeam0 = fixture.players.find(player => player.team === 0);
@@ -168,13 +188,14 @@
                     if (!acc[round]) {
                         acc[round] = [];
                     }
+                    // console.log(fixture);
                     acc[round].push({
                         team0: playerWithTeam0.teamName,
                         team1: playerWithTeam1.teamName,
                         date: playerWithTeam0.date,
                         link: playerWithTeam0.trimmedLink,
-                        homeScore: fixture.score.HomeScoreTotal,
-                        awayScore: fixture.score.AwayScoreTotal,
+                        homeScore: playerWithTeam0.teamScoreTotal,
+                        awayScore: playerWithTeam1.teamScoreTotal,
                     });
                 }
                 return acc;
@@ -206,6 +227,7 @@
                 fixtureContainer.classList.add(`round-${roundStr.split(' ')[1]}`);
 
                 const roundFixtures = fixturesByRound[roundStr];
+
                 roundFixtures.forEach(fixture => {
                     const listItem = document.createElement('a');
                     listItem.href = `/fixture/${fixture.link}`;
@@ -227,6 +249,7 @@
                     const highestScore = Math.max(fixture.homeScore, fixture.awayScore);
                     const lowestScore = Math.min(fixture.homeScore, fixture.awayScore);
                     const margin = highestScore - lowestScore;
+
                     if (fixture.homeScore == highestScore) {
                         winning = `${fixture.team0} by ${margin}`;
                     }
@@ -268,6 +291,27 @@
             hidePreviousFixtures();
         }
 
+        function formatDate(dateStr) {
+            // Append the AEST timezone offset "+10:00" to make it explicit
+            // Note: This does not account for AEDT (UTC+11:00)
+            const dateStrWithAEST = dateStr + "+10:00";
+
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            const date = new Date(dateStrWithAEST); // This will convert the AEST time to the client's local time
+            const dayOfWeek = days[date.getDay()];
+            const dayOfMonth = date.getDate();
+            const month = months[date.getMonth()];
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const ampm = date.toTimeString().split(":")[0] >= 12 ? "PM" : "AM";
+            const formattedHours = ((hours + 11) % 12 + 1);
+            const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+            const time = `${formattedHours}:${formattedMinutes} ${ampm}`;
+
+            return `${dayOfWeek} ${dayOfMonth} ${month}, ${time}`;
+        }
 
 
 
@@ -310,7 +354,7 @@
 
                         const dateHeader = document.createElement('h2');
                         dateHeader.classList.add('date-header');
-                        dateHeader.textContent = date;
+                        dateHeader.textContent = formatDate(date);
 
                         dateContainer.appendChild(dateHeader);
 
@@ -352,10 +396,10 @@
                             const team1NameForIcon = fixture.team1.replace(/\s/g, '');
 
                             if (fixture.team0score == highestScore) {
-                                winning = `${fixture.team0} <br>by ${margin}`;
+                                winning = `${fixture.team0} by ${margin}`;
                             }
                             else {
-                                winning = `${fixture.team1} <br>by ${margin}`;
+                                winning = `${fixture.team1} by ${margin}`;
                             }
 
                             if (fixture.team0score == fixture.team1score) {
@@ -376,7 +420,6 @@
                             <div class="gameInfo">
                                 <h2 id="currentPeriod">${fixture.time}</h2>
                                 <p id="margin">${winning}</p>
-                                <br>
                                 <p id="gameLocation">${fixture.location}</p>
                             </div>
                             <div class="team awayTeamContainer">
@@ -387,7 +430,7 @@
                      
                         `;
 
-                            if (fixture.time == 'FULL TIME') {
+                            if (fixture.time == 'Full Time') {
                                 fixtureElement.style.borderTop = '8px red solid';
                             } else if (fixture.time.includes("Q")) {
                                 fixtureElement.style.borderTop = '8px green solid';
