@@ -242,7 +242,7 @@ async function updateLiveFixtureData() {
         console.error('Error updating live fixture data:', error);
     }
 }
-setInterval(updateLiveFixtureData, 45000);
+setInterval(updateLiveFixtureData, 30000);
 
 app.get('/current-round', (req, res) => {
     res.json({ currentRound });
