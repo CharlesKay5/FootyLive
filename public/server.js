@@ -5,6 +5,7 @@ const fetchFixture = require('./fetchFixture.js');
 // const fixtureCrawl = require('./fixtureAPI.js');
 const randomUsername = require('./randomUsername.js');
 // const dtliveChat = require('./dtliveChatAPI.js');
+const fetchPositions = require('./fetchPositions.js');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios').default;
@@ -370,18 +371,13 @@ if (!fs.existsSync(matchesFolderPath)) {
     fs.mkdirSync(matchesFolderPath);
 }
 async function updatePlayerStats(trimmedLink) {
-    // async function updatePlayerStats(url) {
     try {
-        // const data = {
-        //     players: []
-        // };
-
-        // const stats = await puppeteerCrawl(url, data);
-
         console.log("Fetching stats for " + trimmedLink);
         const stats = await fetchStats(trimmedLink);
-
         console.log("Stats fetched!");
+
+        const positions = await fetchPositions();
+        console.log("Positions fetched!");
 
         if (stats.players.length === 0) {
             console.log(`No data found for trimmedLink: ${trimmedLink}`);
@@ -392,7 +388,26 @@ async function updatePlayerStats(trimmedLink) {
             }
 
             const newPlayerData = stats.players;
-            // console.log(newPlayerData);
+
+            const positionLookup = {};
+            positions.forEach(pos => {
+                const key = `${pos.name.trim().toLowerCase()}-${pos.team.trim().toLowerCase()}`;
+                positionLookup[key] = pos.position;
+            });
+
+            // Now iterate through newPlayerData and assign positions
+            newPlayerData.forEach(player => {
+                const playerName = player.name.trim().toLowerCase();
+                const formattedTeamName = player.teamName.replace(/\s+/g, '').toLowerCase();
+                const key = `${playerName}-${formattedTeamName}`;
+
+                if (positionLookup[key]) {
+                    player.position = positionLookup[key];
+                    // console.log(`Position found for ${player.name} from ${player.teamName}: ${player.position}`);
+                } else {
+                    console.log("No position found for: " + player.name + " from " + player.teamName);
+                }
+            });
 
             const newPlayerIds = newPlayerData.map(p => p.playerID);
             playerStats[link].players = playerStats[link].players.filter(p => newPlayerIds.includes(p.playerID));

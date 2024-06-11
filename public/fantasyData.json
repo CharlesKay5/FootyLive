@@ -1,0 +1,4846 @@
+{
+  "players": [
+    {
+      "name": "T.English",
+      "team": "WesternBulldogs",
+      "price": "895000",
+      "position": "RUC"
+    },
+    {
+      "name": "M.Bontempelli",
+      "team": "WesternBulldogs",
+      "price": "922000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Oliver",
+      "team": "Melbourne",
+      "price": "744000",
+      "position": "MID"
+    },
+    {
+      "name": "Z.Merrett",
+      "team": "Essendon",
+      "price": "898000",
+      "position": "MID"
+    },
+    {
+      "name": "R.Laird",
+      "team": "Adelaide",
+      "price": "823000",
+      "position": "MID"
+    },
+    {
+      "name": "R.Marshall",
+      "team": "StKilda",
+      "price": "987000",
+      "position": "RUC"
+    },
+    {
+      "name": "J.Dawson",
+      "team": "Adelaide",
+      "price": "943000",
+      "position": "MID"
+    },
+    {
+      "name": "A.Brayshaw",
+      "team": "Freemantle",
+      "price": "884000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Taranto",
+      "team": "Richmond",
+      "price": "903000",
+      "position": "MID"
+    },
+    {
+      "name": "E.Gulden",
+      "team": "SydneySwans",
+      "price": "968000",
+      "position": "MID"
+    },
+    {
+      "name": "S.Docherty",
+      "team": "Carlton",
+      "price": "903000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Green",
+      "team": "GWSGiants",
+      "price": "743000",
+      "position": "MID"
+    },
+    {
+      "name": "D.Parish",
+      "team": "Essendon",
+      "price": "845000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Dunkley",
+      "team": "Brisbane",
+      "price": "944000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Serong",
+      "team": "Freemantle",
+      "price": "952000",
+      "position": "MID"
+    },
+    {
+      "name": "N.Daicos",
+      "team": "Collingwood",
+      "price": "957000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "C.Petracca",
+      "team": "Melbourne",
+      "price": "772000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Crouch",
+      "team": "StKilda",
+      "price": "898000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Sicily",
+      "team": "Hawthorn",
+      "price": "749000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Treloar",
+      "team": "WesternBulldogs",
+      "price": "958000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Sinclair",
+      "team": "StKilda",
+      "price": "859000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "S.Coniglio",
+      "team": "GWSGiants",
+      "price": "761000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Rozee",
+      "team": "PortAdelaide",
+      "price": "771000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Liberatore",
+      "team": "WesternBulldogs",
+      "price": "818000",
+      "position": "MID"
+    },
+    {
+      "name": "N.Anderson",
+      "team": "GoldCoast",
+      "price": "878000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Viney",
+      "team": "Melbourne",
+      "price": "812000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Miller",
+      "team": "GoldCoast",
+      "price": "784000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Steele",
+      "team": "StKilda",
+      "price": "883000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Neale",
+      "team": "Brisbane",
+      "price": "868000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Nankervis",
+      "team": "Richmond",
+      "price": "857000",
+      "position": "RUC"
+    },
+    {
+      "name": "J.Kelly",
+      "team": "GWSGiants",
+      "price": "885000",
+      "position": "MID"
+    },
+    {
+      "name": "Z.Butters",
+      "team": "PortAdelaide",
+      "price": "903000",
+      "position": "MID"
+    },
+    {
+      "name": "H.Sheezel",
+      "team": "NorthMelbourne",
+      "price": "924000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Walsh",
+      "team": "Carlton",
+      "price": "931000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Kelly",
+      "team": "West Coast",
+      "price": "773000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Ryan",
+      "team": "Freemantle",
+      "price": "1022000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Stewart",
+      "team": "Geelong",
+      "price": "655000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Davies-Uniacke",
+      "team": "NorthMelbourne",
+      "price": "851000",
+      "position": "MID"
+    },
+    {
+      "name": "A.Cerra",
+      "team": "Carlton",
+      "price": "787000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Macrae",
+      "team": "WesternBulldogs",
+      "price": "679000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "M.Gawn",
+      "team": "Melbourne",
+      "price": "1038000",
+      "position": "RUC"
+    },
+    {
+      "name": "L.Duggan",
+      "team": "West Coast",
+      "price": "835000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Short",
+      "team": "Richmond",
+      "price": "634000",
+      "position": "DEF"
+    },
+    {
+      "name": "N.Newman",
+      "team": "Carlton",
+      "price": "869000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Newcombe",
+      "team": "Hawthorn",
+      "price": "754000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Whitfield",
+      "team": "GWSGiants",
+      "price": "804000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Houston",
+      "team": "PortAdelaide",
+      "price": "852000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Darcy",
+      "team": "Freemantle",
+      "price": "766000",
+      "position": "RUC"
+    },
+    {
+      "name": "C.Warner",
+      "team": "SydneySwans",
+      "price": "897000",
+      "position": "MID"
+    },
+    {
+      "name": "H.McCluggage",
+      "team": "Brisbane",
+      "price": "825000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Mitchell",
+      "team": "Collingwood",
+      "price": "749000",
+      "position": "MID"
+    },
+    {
+      "name": "P.Cripps",
+      "team": "Carlton",
+      "price": "827000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Duncan",
+      "team": "Geelong",
+      "price": "734000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Guthrie",
+      "team": "Geelong",
+      "price": "664000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Daicos",
+      "team": "Collingwood",
+      "price": "875000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Parker",
+      "team": "SydneySwans",
+      "price": "811000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Witts",
+      "team": "GoldCoast",
+      "price": "850000",
+      "position": "RUC"
+    },
+    {
+      "name": "K.Briggs",
+      "team": "GWSGiants",
+      "price": "787000",
+      "position": "RUC"
+    },
+    {
+      "name": "W.Day",
+      "team": "Hawthorn",
+      "price": "787000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Mills",
+      "team": "SydneySwans",
+      "price": "759000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Daniel",
+      "team": "WesternBulldogs",
+      "price": "473000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "D.Moore",
+      "team": "Hawthorn",
+      "price": "753000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Lloyd",
+      "team": "SydneySwans",
+      "price": "754000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "M.Rowell",
+      "team": "GoldCoast",
+      "price": "849000",
+      "position": "MID"
+    },
+    {
+      "name": "R.O'Brien",
+      "team": "Adelaide",
+      "price": "782000",
+      "position": "RUC"
+    },
+    {
+      "name": "H.Young",
+      "team": "Freemantle",
+      "price": "874000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "M.Wood",
+      "team": "StKilda",
+      "price": "759000",
+      "position": "MID"
+    },
+    {
+      "name": "D.Sheed",
+      "team": "West Coast",
+      "price": "475000",
+      "position": "MID"
+    },
+    {
+      "name": "K.Amon",
+      "team": "Hawthorn",
+      "price": "803000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "D.Martin",
+      "team": "Richmond",
+      "price": "633000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Crouch",
+      "team": "Adelaide",
+      "price": "911000",
+      "position": "MID"
+    },
+    {
+      "name": "A.Brayshaw",
+      "team": "Melbourne",
+      "price": "770000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "B.Acres",
+      "team": "Carlton",
+      "price": "812000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Smith",
+      "team": "WesternBulldogs",
+      "price": "752000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "S.Pendlebury",
+      "team": "Collingwood",
+      "price": "744000",
+      "position": "MID"
+    },
+    {
+      "name": "N.Wanganeen-Milera",
+      "team": "StKilda",
+      "price": "872000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.Setterfield",
+      "team": "Essendon",
+      "price": "858000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Dale",
+      "team": "WesternBulldogs",
+      "price": "858000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Curnow",
+      "team": "Carlton",
+      "price": "662000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Greene",
+      "team": "GWSGiants",
+      "price": "631000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.De Goey",
+      "team": "Collingwood",
+      "price": "759000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Redman",
+      "team": "Essendon",
+      "price": "730000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Crisp",
+      "team": "Collingwood",
+      "price": "873000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "S.Bolton",
+      "team": "Richmond",
+      "price": "706000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "N.Martin",
+      "team": "Essendon",
+      "price": "925000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "M.Blicavs",
+      "team": "Geelong",
+      "price": "540000",
+      "position": "MID/RUC"
+    },
+    {
+      "name": "D.Zorko",
+      "team": "Brisbane",
+      "price": "998000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "B.Scott",
+      "team": "NorthMelbourne",
+      "price": "658000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "C.Wilkie",
+      "team": "StKilda",
+      "price": "583000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Cameron",
+      "team": "Geelong",
+      "price": "697000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Cameron",
+      "team": "Collingwood",
+      "price": "820000",
+      "position": "RUC"
+    },
+    {
+      "name": "L.Jackson",
+      "team": "Freemantle",
+      "price": "712000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "W.Ashcroft",
+      "team": "Brisbane",
+      "price": "748000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Worpel",
+      "team": "Hawthorn",
+      "price": "600000",
+      "position": "MID"
+    },
+    {
+      "name": "N.Vlastuin",
+      "team": "Richmond",
+      "price": "584000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Flanders",
+      "team": "GoldCoast",
+      "price": "991000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "O.McInerney",
+      "team": "Brisbane",
+      "price": "739000",
+      "position": "RUC"
+    },
+    {
+      "name": "A.McGrath",
+      "team": "Essendon",
+      "price": "726000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.Brodie",
+      "team": "Freemantle",
+      "price": "732000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Weller",
+      "team": "GoldCoast",
+      "price": "734000",
+      "position": "DEF"
+    },
+    {
+      "name": "I.Heeney",
+      "team": "SydneySwans",
+      "price": "929000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "D.Heppell",
+      "team": "Essendon",
+      "price": "655000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Rioli",
+      "team": "Richmond",
+      "price": "692000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Smith",
+      "team": "Adelaide",
+      "price": "529000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Ash",
+      "team": "GWSGiants",
+      "price": "668000",
+      "position": "DEF"
+    },
+    {
+      "name": "O.Wines",
+      "team": "PortAdelaide",
+      "price": "799000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Simpkin",
+      "team": "NorthMelbourne",
+      "price": "580000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "A.Witherden",
+      "team": "West Coast",
+      "price": "534000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Rowbottom",
+      "team": "SydneySwans",
+      "price": "792000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Keays",
+      "team": "Adelaide",
+      "price": "624000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Atkins",
+      "team": "Geelong",
+      "price": "690000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "T.Walker",
+      "team": "Adelaide",
+      "price": "584000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Ridley",
+      "team": "Essendon",
+      "price": "807000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Nash",
+      "team": "Hawthorn",
+      "price": "633000",
+      "position": "MID"
+    },
+    {
+      "name": "E.Richards",
+      "team": "WesternBulldogs",
+      "price": "748000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "L.Hunter",
+      "team": "Melbourne",
+      "price": "658000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Clark",
+      "team": "Freemantle",
+      "price": "891000",
+      "position": "DEF"
+    },
+    {
+      "name": "P.Dangerfield",
+      "team": "Geelong",
+      "price": "752000",
+      "position": "MID"
+    },
+    {
+      "name": "W.Powell",
+      "team": "GoldCoast",
+      "price": "623000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Hopper",
+      "team": "Richmond",
+      "price": "730000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Kennedy",
+      "team": "Carlton",
+      "price": "635000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Noble",
+      "team": "Collingwood",
+      "price": "749000",
+      "position": "DEF"
+    },
+    {
+      "name": "G.Hewett",
+      "team": "Carlton",
+      "price": "640000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Ellis",
+      "team": "GoldCoast",
+      "price": "592000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Hardwick",
+      "team": "Hawthorn",
+      "price": "581000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "D.Prestia",
+      "team": "Richmond",
+      "price": "569000",
+      "position": "MID"
+    },
+    {
+      "name": "H.Morrison",
+      "team": "Hawthorn",
+      "price": "604000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Impey",
+      "team": "Hawthorn",
+      "price": "671000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Adams",
+      "team": "SydneySwans",
+      "price": "591000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "B.Grundy",
+      "team": "SydneySwans",
+      "price": "895000",
+      "position": "RUC"
+    },
+    {
+      "name": "C.Salem",
+      "team": "Melbourne",
+      "price": "706000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "L.McDonald",
+      "team": "NorthMelbourne",
+      "price": "558000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Sidebottom",
+      "team": "Collingwood",
+      "price": "589000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Schultz",
+      "team": "Collingwood",
+      "price": "582000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Gresham",
+      "team": "Essendon",
+      "price": "506000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Shiels",
+      "team": "NorthMelbourne",
+      "price": "468000",
+      "position": "MID"
+    },
+    {
+      "name": "J.O'Meara",
+      "team": "Freemantle",
+      "price": "571000",
+      "position": "MID"
+    },
+    {
+      "name": "W.Drew",
+      "team": "PortAdelaide",
+      "price": "728000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Hinge",
+      "team": "Adelaide",
+      "price": "741000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Berry",
+      "team": "Brisbane",
+      "price": "860000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Ainsworth",
+      "team": "GoldCoast",
+      "price": "571000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "J.Aish",
+      "team": "Freemantle",
+      "price": "684000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "A.Saad",
+      "team": "Carlton",
+      "price": "608000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Hill",
+      "team": "StKilda",
+      "price": "684000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "M.Holmes",
+      "team": "Geelong",
+      "price": "887000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "B.Preuss",
+      "team": "GWSGiants",
+      "price": "541000",
+      "position": "RUC"
+    },
+    {
+      "name": "B.Williams",
+      "team": "West Coast",
+      "price": "515000",
+      "position": "RUC"
+    },
+    {
+      "name": "B.Hobbs",
+      "team": "Essendon",
+      "price": "470000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "F.Callaghan",
+      "team": "GWSGiants",
+      "price": "644000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Hogan",
+      "team": "GWSGiants",
+      "price": "582000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Caldwell",
+      "team": "Essendon",
+      "price": "755000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "H.Himmelberg",
+      "team": "GWSGiants",
+      "price": "710000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Ward",
+      "team": "Hawthorn",
+      "price": "574000",
+      "position": "MID"
+    },
+    {
+      "name": "D.Swallow",
+      "team": "GoldCoast",
+      "price": "367000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "S.Ross",
+      "team": "StKilda",
+      "price": "537000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Thomas",
+      "team": "NorthMelbourne",
+      "price": "716000",
+      "position": "MID"
+    },
+    {
+      "name": "R.Sloane",
+      "team": "Adelaide",
+      "price": "672000",
+      "position": "MID"
+    },
+    {
+      "name": "D.Macpherson",
+      "team": "GoldCoast",
+      "price": "548000",
+      "position": "DEF"
+    },
+    {
+      "name": "I.Cumming",
+      "team": "GWSGiants",
+      "price": "616000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "D.Shiel",
+      "team": "Essendon",
+      "price": "580000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Daniher",
+      "team": "Brisbane",
+      "price": "747000",
+      "position": "FWD"
+    },
+    {
+      "name": "P.Ladhams",
+      "team": "SydneySwans",
+      "price": "667000",
+      "position": "RUC"
+    },
+    {
+      "name": "B.Maynard",
+      "team": "Collingwood",
+      "price": "690000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Henry",
+      "team": "StKilda",
+      "price": "524000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Ward",
+      "team": "GWSGiants",
+      "price": "605000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Finlayson",
+      "team": "PortAdelaide",
+      "price": "532000",
+      "position": "FWD"
+    },
+    {
+      "name": "P.Lipinski",
+      "team": "Collingwood",
+      "price": "652000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "H.Perryman",
+      "team": "GWSGiants",
+      "price": "680000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Owens",
+      "team": "StKilda",
+      "price": "488000",
+      "position": "FWD"
+    },
+    {
+      "name": "G.Miers",
+      "team": "Geelong",
+      "price": "707000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Goldstein",
+      "team": "Essendon",
+      "price": "556000",
+      "position": "RUC"
+    },
+    {
+      "name": "N.Blakey",
+      "team": "SydneySwans",
+      "price": "680000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Rivers",
+      "team": "Melbourne",
+      "price": "657000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Reid",
+      "team": "SydneySwans",
+      "price": "466000",
+      "position": "FWD"
+    },
+    {
+      "name": "R.Atkins",
+      "team": "GoldCoast",
+      "price": "542000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Flynn",
+      "team": "West Coast",
+      "price": "649000",
+      "position": "RUC"
+    },
+    {
+      "name": "C.Wagner",
+      "team": "Freemantle",
+      "price": "554000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Gaff",
+      "team": "West Coast",
+      "price": "548000",
+      "position": "MID"
+    },
+    {
+      "name": "Z.Bailey",
+      "team": "Brisbane",
+      "price": "658000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "I.Rankine",
+      "team": "Adelaide",
+      "price": "726000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Hunt",
+      "team": "West Coast",
+      "price": "463000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "E.Langdon",
+      "team": "Melbourne",
+      "price": "664000",
+      "position": "MID"
+    },
+    {
+      "name": "A.Neal-Bullen",
+      "team": "Melbourne",
+      "price": "703000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Hind",
+      "team": "Essendon",
+      "price": "569000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "K.Langford",
+      "team": "Essendon",
+      "price": "577000",
+      "position": "FWD"
+    },
+    {
+      "name": "K.Coleman",
+      "team": "Brisbane",
+      "price": "603000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.McInerney",
+      "team": "SydneySwans",
+      "price": "687000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "C.Dixon",
+      "team": "PortAdelaide",
+      "price": "509000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Billings",
+      "team": "Melbourne",
+      "price": "535000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "O.Florent",
+      "team": "SydneySwans",
+      "price": "707000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Lukosius",
+      "team": "GoldCoast",
+      "price": "554000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "I.Soldo",
+      "team": "PortAdelaide",
+      "price": "665000",
+      "position": "RUC"
+    },
+    {
+      "name": "M.Lewis",
+      "team": "Hawthorn",
+      "price": "557000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Kemp",
+      "team": "Carlton",
+      "price": "611000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Daniels",
+      "team": "GWSGiants",
+      "price": "656000",
+      "position": "FWD"
+    },
+    {
+      "name": "Z.Williams",
+      "team": "Carlton",
+      "price": "558000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Baker",
+      "team": "Richmond",
+      "price": "757000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "J.Cripps",
+      "team": "West Coast",
+      "price": "636000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Budarick",
+      "team": "GoldCoast",
+      "price": "516000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.Milera",
+      "team": "Adelaide",
+      "price": "615000",
+      "position": "DEF"
+    },
+    {
+      "name": "Z.Fisher",
+      "team": "NorthMelbourne",
+      "price": "807000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "J.Ross",
+      "team": "Richmond",
+      "price": "578000",
+      "position": "MID"
+    },
+    {
+      "name": "M.McGovern",
+      "team": "Carlton",
+      "price": "595000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Naismith",
+      "team": "Richmond",
+      "price": "497000",
+      "position": "RUC"
+    },
+    {
+      "name": "R.Stanley",
+      "team": "Geelong",
+      "price": "482000",
+      "position": "RUC"
+    },
+    {
+      "name": "B.Fiorini",
+      "team": "GoldCoast",
+      "price": "608000",
+      "position": "MID"
+    },
+    {
+      "name": "H.McKay",
+      "team": "Carlton",
+      "price": "710000",
+      "position": "FWD"
+    },
+    {
+      "name": "Z.Tuohy",
+      "team": "Geelong",
+      "price": "528000",
+      "position": "MID"
+    },
+    {
+      "name": "J.McGovern",
+      "team": "West Coast",
+      "price": "679000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Rachele",
+      "team": "Adelaide",
+      "price": "550000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Cox",
+      "team": "Freemantle",
+      "price": "596000",
+      "position": "DEF"
+    },
+    {
+      "name": "Z.Guthrie",
+      "team": "Geelong",
+      "price": "697000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.May",
+      "team": "Melbourne",
+      "price": "647000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Johannisen",
+      "team": "WesternBulldogs",
+      "price": "724000",
+      "position": "DEF"
+    },
+    {
+      "name": "K.Strachan",
+      "team": "Adelaide",
+      "price": "427000",
+      "position": "RUC"
+    },
+    {
+      "name": "J.Waterman",
+      "team": "West Coast",
+      "price": "764000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Boak",
+      "team": "PortAdelaide",
+      "price": "707000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Lyons",
+      "team": "Brisbane",
+      "price": "739000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Macdonald",
+      "team": "Hawthorn",
+      "price": "605000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Bruhn",
+      "team": "Geelong",
+      "price": "606000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Elliott",
+      "team": "Collingwood",
+      "price": "569000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Weitering",
+      "team": "Carlton",
+      "price": "527000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Scrimshaw",
+      "team": "Hawthorn",
+      "price": "555000",
+      "position": "DEF"
+    },
+    {
+      "name": "E.Yeo",
+      "team": "West Coast",
+      "price": "741000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "L.Stocker",
+      "team": "StKilda",
+      "price": "428000",
+      "position": "DEF"
+    },
+    {
+      "name": "R.Burton",
+      "team": "PortAdelaide",
+      "price": "555000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Naughton",
+      "team": "WesternBulldogs",
+      "price": "642000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Sholl",
+      "team": "Adelaide",
+      "price": "742000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Williams",
+      "team": "WesternBulldogs",
+      "price": "715000",
+      "position": "MID"
+    },
+    {
+      "name": "I.Quaynor",
+      "team": "Collingwood",
+      "price": "455000",
+      "position": "DEF"
+    },
+    {
+      "name": "N.Broad",
+      "team": "Richmond",
+      "price": "482000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Xerri",
+      "team": "NorthMelbourne",
+      "price": "875000",
+      "position": "RUC"
+    },
+    {
+      "name": "J.Horne-Francis",
+      "team": "PortAdelaide",
+      "price": "769000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Sparrow",
+      "team": "Melbourne",
+      "price": "594000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "W.Phillips",
+      "team": "NorthMelbourne",
+      "price": "526000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Papley",
+      "team": "SydneySwans",
+      "price": "560000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Andrews",
+      "team": "Brisbane",
+      "price": "594000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Soligo",
+      "team": "Adelaide",
+      "price": "666000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Hawkins",
+      "team": "Geelong",
+      "price": "474000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Jones",
+      "team": "West Coast",
+      "price": "499000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Perkins",
+      "team": "Essendon",
+      "price": "653000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "J.Laverde",
+      "team": "Essendon",
+      "price": "516000",
+      "position": "DEF"
+    },
+    {
+      "name": "K.Farrell",
+      "team": "PortAdelaide",
+      "price": "654000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Berry",
+      "team": "Adelaide",
+      "price": "444000",
+      "position": "MID"
+    },
+    {
+      "name": "H.Clark",
+      "team": "StKilda",
+      "price": "632000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Cole",
+      "team": "West Coast",
+      "price": "573000",
+      "position": "DEF"
+    },
+    {
+      "name": "G.Wardlaw",
+      "team": "NorthMelbourne",
+      "price": "657000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Ryan",
+      "team": "West Coast",
+      "price": "469000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Cameron",
+      "team": "Brisbane",
+      "price": "549000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Idun",
+      "team": "GWSGiants",
+      "price": "573000",
+      "position": "DEF"
+    },
+    {
+      "name": "N.Haynes",
+      "team": "GWSGiants",
+      "price": "650000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Powell-Pepper",
+      "team": "PortAdelaide",
+      "price": "530000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Silvagni",
+      "team": "Carlton",
+      "price": "572000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.De Koning",
+      "team": "Carlton",
+      "price": "713000",
+      "position": "RUC"
+    },
+    {
+      "name": "H.Chapman",
+      "team": "Freemantle",
+      "price": "561000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.McKenna",
+      "team": "Brisbane",
+      "price": "626000",
+      "position": "DEF"
+    },
+    {
+      "name": "H.McLean",
+      "team": "SydneySwans",
+      "price": "580000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "S.Draper",
+      "team": "Essendon",
+      "price": "481000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "E.Stanley",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "D.Bedendo",
+      "team": "WesternBulldogs",
+      "price": "262000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Binns",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "Z.Taylor",
+      "team": "Adelaide",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "R.Torrent",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Rayner",
+      "team": "Brisbane",
+      "price": "540000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "C.Cleary",
+      "team": "SydneySwans",
+      "price": "231000",
+      "position": "MID"
+    },
+    {
+      "name": "I.Kirk",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "X.Duursma",
+      "team": "Essendon",
+      "price": "714000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Hardie",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "R.Sanders",
+      "team": "WesternBulldogs",
+      "price": "503000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "H.DeMattia",
+      "team": "Collingwood",
+      "price": "228000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Lynch",
+      "team": "Richmond",
+      "price": "504000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.Allen",
+      "team": "West Coast",
+      "price": "559000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Willis",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Hall",
+      "team": "West Coast",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Weddle",
+      "team": "Hawthorn",
+      "price": "457000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Graham",
+      "team": "Richmond",
+      "price": "513000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Byrne-Jones",
+      "team": "PortAdelaide",
+      "price": "528000",
+      "position": "FWD"
+    },
+    {
+      "name": "E.Allan",
+      "team": "Collingwood",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "E.Tsatas",
+      "team": "Essendon",
+      "price": "357000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Battle",
+      "team": "StKilda",
+      "price": "639000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Clark",
+      "team": "Geelong",
+      "price": "371000",
+      "position": "MID"
+    },
+    {
+      "name": "H.Jackson",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Rogers",
+      "team": "GoldCoast",
+      "price": "301000",
+      "position": "MID"
+    },
+    {
+      "name": "H.Hustwaite",
+      "team": "Hawthorn",
+      "price": "310000",
+      "position": "MID"
+    },
+    {
+      "name": "K.McAuliffe",
+      "team": "Richmond",
+      "price": "350000",
+      "position": "MID"
+    },
+    {
+      "name": "G.Stevens",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "C.McKercher",
+      "team": "NorthMelbourne",
+      "price": "592000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "C.Jones",
+      "team": "Adelaide",
+      "price": "583000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "J.Howe",
+      "team": "Collingwood",
+      "price": "526000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.Hayward",
+      "team": "SydneySwans",
+      "price": "655000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Zurhaar",
+      "team": "NorthMelbourne",
+      "price": "505000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Balta",
+      "team": "Richmond",
+      "price": "584000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "S.Mitchell",
+      "team": "Hawthorn",
+      "price": "310000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Switkowski",
+      "team": "Freemantle",
+      "price": "570000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Bedford",
+      "team": "GWSGiants",
+      "price": "438000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Durham",
+      "team": "Essendon",
+      "price": "695000",
+      "position": "MID"
+    },
+    {
+      "name": "R.Lester",
+      "team": "Brisbane",
+      "price": "556000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Parfitt",
+      "team": "Geelong",
+      "price": "635000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Taylor",
+      "team": "NorthMelbourne",
+      "price": "527000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "B.Campbell",
+      "team": "SydneySwans",
+      "price": "340000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "C.Edwards",
+      "team": "Adelaide",
+      "price": "240000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "D.Williams",
+      "team": "PortAdelaide",
+      "price": "441000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Bowey",
+      "team": "Melbourne",
+      "price": "563000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Higgins",
+      "team": "StKilda",
+      "price": "554000",
+      "position": "FWD"
+    },
+    {
+      "name": "W.Graham",
+      "team": "GoldCoast",
+      "price": "485000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "L.Humphries",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "T.Campbell",
+      "team": "StKilda",
+      "price": "420000",
+      "position": "RUC"
+    },
+    {
+      "name": "T.Marshall",
+      "team": "PortAdelaide",
+      "price": "515000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Sheldrick",
+      "team": "SydneySwans",
+      "price": "513000",
+      "position": "MID"
+    },
+    {
+      "name": "D.Moore",
+      "team": "Collingwood",
+      "price": "479000",
+      "position": "DEF"
+    },
+    {
+      "name": "P.Wright",
+      "team": "Essendon",
+      "price": "623000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Wilson",
+      "team": "Carlton",
+      "price": "201000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "C.Windsor",
+      "team": "Melbourne",
+      "price": "487000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "H.Greenwood",
+      "team": "NorthMelbourne",
+      "price": "517000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Stringer",
+      "team": "Essendon",
+      "price": "538000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Mannagh",
+      "team": "Geelong",
+      "price": "217000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "C.Mitchell",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "C.Simpson",
+      "team": "Freemantle",
+      "price": "203000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "O.Faulkhead",
+      "team": "GoldCoast",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "D.Curtin",
+      "team": "Adelaide",
+      "price": "264000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "O.Hotton",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "L.Murphy",
+      "team": "Adelaide",
+      "price": "472000",
+      "position": "FWD"
+    },
+    {
+      "name": "K.Pickett",
+      "team": "Melbourne",
+      "price": "590000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Thomas",
+      "team": "GWSGiants",
+      "price": "370000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Webster",
+      "team": "StKilda",
+      "price": "509000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Membrey",
+      "team": "StKilda",
+      "price": "481000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Reville ",
+      "team": "Brisbane",
+      "price": "399000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "L.Charleson",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "W.Rowlands",
+      "team": "GoldCoast",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "O.Wiltshire",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "N.Watson",
+      "team": "Hawthorn",
+      "price": "379000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "W.Lorenz",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "K.McIntosh",
+      "team": "Richmond",
+      "price": "428000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Cottrell",
+      "team": "Carlton",
+      "price": "463000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "H.Reid",
+      "team": "West Coast",
+      "price": "559000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "Z.Duursma",
+      "team": "NorthMelbourne",
+      "price": "309000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "D.Wilson",
+      "team": "StKilda",
+      "price": "614000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "N.Coffield",
+      "team": "WesternBulldogs",
+      "price": "334000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Dowling",
+      "team": "Adelaide",
+      "price": "247000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Freijah",
+      "team": "WesternBulldogs",
+      "price": "391000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "L.Nankervis",
+      "team": "Adelaide",
+      "price": "549000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "C.Williams",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "H.Johnston",
+      "team": "West Coast",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Sweet",
+      "team": "PortAdelaide",
+      "price": "541000",
+      "position": "RUC"
+    },
+    {
+      "name": "B.Fritsch",
+      "team": "Melbourne",
+      "price": "459000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Rawlinson",
+      "team": "West Coast",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "M.Windhager",
+      "team": "StKilda",
+      "price": "667000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "K.Brown",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "H.Garcia",
+      "team": "StKilda",
+      "price": "374000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "R.Byrnes",
+      "team": "StKilda",
+      "price": "561000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Bramble",
+      "team": "WesternBulldogs",
+      "price": "511000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "M.Bergman",
+      "team": "PortAdelaide",
+      "price": "597000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "J.Worrell",
+      "team": "Adelaide",
+      "price": "613000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Breust",
+      "team": "Hawthorn",
+      "price": "300000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Wilmot",
+      "team": "Brisbane",
+      "price": "645000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.O'Connor",
+      "team": "Geelong",
+      "price": "486000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "B.Hough",
+      "team": "West Coast",
+      "price": "502000",
+      "position": "DEF"
+    },
+    {
+      "name": "R.Lobb",
+      "team": "WesternBulldogs",
+      "price": "461000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Cuningham",
+      "team": "Carlton",
+      "price": "513000",
+      "position": "FWD"
+    },
+    {
+      "name": "Z.Jones",
+      "team": "StKilda",
+      "price": "395000",
+      "position": "MID"
+    },
+    {
+      "name": "D.Fogarty",
+      "team": "Adelaide",
+      "price": "605000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.McAdam",
+      "team": "Melbourne",
+      "price": "451000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Reeves",
+      "team": "Hawthorn",
+      "price": "508000",
+      "position": "RUC"
+    },
+    {
+      "name": "M.King",
+      "team": "StKilda",
+      "price": "420000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Meek",
+      "team": "Hawthorn",
+      "price": "791000",
+      "position": "RUC"
+    },
+    {
+      "name": "J.Bowes",
+      "team": "Geelong",
+      "price": "635000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "S.Taylor",
+      "team": "GWSGiants",
+      "price": "474000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Jiath",
+      "team": "Hawthorn",
+      "price": "418000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Mihocek",
+      "team": "Collingwood",
+      "price": "560000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Cox",
+      "team": "Collingwood",
+      "price": "425000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "J.Darling",
+      "team": "West Coast",
+      "price": "505000",
+      "position": "FWD"
+    },
+    {
+      "name": "K.Chandler",
+      "team": "Melbourne",
+      "price": "538000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Ugle-Hagan",
+      "team": "WesternBulldogs",
+      "price": "488000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.Baker",
+      "team": "WesternBulldogs",
+      "price": "543000",
+      "position": "MID"
+    },
+    {
+      "name": "L.Pedlar",
+      "team": "Adelaide",
+      "price": "369000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Tucker",
+      "team": "NorthMelbourne",
+      "price": "652000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Wingard",
+      "team": "Hawthorn",
+      "price": "545000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Close",
+      "team": "Geelong",
+      "price": "488000",
+      "position": "FWD"
+    },
+    {
+      "name": "R.Fox",
+      "team": "SydneySwans",
+      "price": "428000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "J.Kelly",
+      "team": "Essendon",
+      "price": "540000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "E.Hipwood",
+      "team": "Brisbane",
+      "price": "516000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.Hollands",
+      "team": "Carlton",
+      "price": "502000",
+      "position": "MID"
+    },
+    {
+      "name": "N.Larkey",
+      "team": "NorthMelbourne",
+      "price": "505000",
+      "position": "FWD"
+    },
+    {
+      "name": "R.Ginbey",
+      "team": "West Coast",
+      "price": "574000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Frederick",
+      "team": "Freemantle",
+      "price": "429000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Fogarty",
+      "team": "Carlton",
+      "price": "499000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Pittonet",
+      "team": "Carlton",
+      "price": "587000",
+      "position": "RUC"
+    },
+    {
+      "name": "D.Stephens",
+      "team": "NorthMelbourne",
+      "price": "434000",
+      "position": "MID"
+    },
+    {
+      "name": "A.Corr",
+      "team": "NorthMelbourne",
+      "price": "462000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Barrass",
+      "team": "West Coast",
+      "price": "530000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Butler",
+      "team": "StKilda",
+      "price": "317000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Gunston",
+      "team": "Hawthorn",
+      "price": "508000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Georgiades",
+      "team": "PortAdelaide",
+      "price": "436000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Rampe",
+      "team": "SydneySwans",
+      "price": "461000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Young",
+      "team": "Carlton",
+      "price": "479000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Weightman",
+      "team": "WesternBulldogs",
+      "price": "535000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.O'Driscoll",
+      "team": "Freemantle",
+      "price": "510000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Stengle",
+      "team": "Geelong",
+      "price": "577000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Holman",
+      "team": "GoldCoast",
+      "price": "357000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Sharp",
+      "team": "Freemantle",
+      "price": "725000",
+      "position": "MID"
+    },
+    {
+      "name": "T.Doedee",
+      "team": "Brisbane",
+      "price": "501000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Buckley",
+      "team": "GWSGiants",
+      "price": "559000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Powell",
+      "team": "NorthMelbourne",
+      "price": "657000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "L.McCarthy",
+      "team": "Brisbane",
+      "price": "548000",
+      "position": "FWD"
+    },
+    {
+      "name": "P.Dow",
+      "team": "StKilda",
+      "price": "560000",
+      "position": "MID"
+    },
+    {
+      "name": "X.O'Halloran",
+      "team": "GWSGiants",
+      "price": "462000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "C.Poulter",
+      "team": "WesternBulldogs",
+      "price": "432000",
+      "position": "MID"
+    },
+    {
+      "name": "M.Johnson",
+      "team": "Freemantle",
+      "price": "582000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Stephenson",
+      "team": "NorthMelbourne",
+      "price": "471000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.McStay",
+      "team": "Collingwood",
+      "price": "486000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Ballard",
+      "team": "GoldCoast",
+      "price": "455000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Paton",
+      "team": "StKilda",
+      "price": "442000",
+      "position": "DEF"
+    },
+    {
+      "name": "R.West",
+      "team": "WesternBulldogs",
+      "price": "507000",
+      "position": "FWD"
+    },
+    {
+      "name": "R.Bonner",
+      "team": "StKilda",
+      "price": "719000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "W.Hoskin-Elliott",
+      "team": "Collingwood",
+      "price": "505000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "E.Ford",
+      "team": "NorthMelbourne",
+      "price": "383000",
+      "position": "FWD"
+    },
+    {
+      "name": "E.Hughes",
+      "team": "Freemantle",
+      "price": "465000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Riccardi",
+      "team": "GWSGiants",
+      "price": "513000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.Henry",
+      "team": "Geelong",
+      "price": "391000",
+      "position": "FWD"
+    },
+    {
+      "name": "W.Rioli",
+      "team": "PortAdelaide",
+      "price": "493000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Roberts",
+      "team": "SydneySwans",
+      "price": "503000",
+      "position": "MID/DEF"
+    },
+    {
+      "name": "J.Jordon",
+      "team": "SydneySwans",
+      "price": "575000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Harmes",
+      "team": "WesternBulldogs",
+      "price": "664000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "T.McDonald",
+      "team": "Melbourne",
+      "price": "527000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "L.McDonald",
+      "team": "SydneySwans",
+      "price": "502000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Bennetts",
+      "team": "Hawthorn",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Hunter",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.Sestan",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Davey",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Nyuon",
+      "team": "NorthMelbourne",
+      "price": "344000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Croft ",
+      "team": "WesternBulldogs",
+      "price": "258000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Brown",
+      "team": "GWSGiants",
+      "price": "377000",
+      "position": "FWD"
+    },
+    {
+      "name": "I.Keeler",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Gallagher",
+      "team": "WesternBulldogs",
+      "price": "500000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "R.Hansen Jr",
+      "team": "NorthMelbourne",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Brain",
+      "team": "Brisbane",
+      "price": "209000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Tomlinson",
+      "team": "Melbourne",
+      "price": "503000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Moir",
+      "team": "Carlton",
+      "price": "216000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Dewar",
+      "team": "West Coast",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "K.Tholstrup",
+      "team": "Melbourne",
+      "price": "263000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Caddy",
+      "team": "Essendon",
+      "price": "282000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Wardius",
+      "team": "GWSGiants",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Schoenberg",
+      "team": "Adelaide",
+      "price": "440000",
+      "position": "MID"
+    },
+    {
+      "name": "H.Lemmey",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Campbell",
+      "team": "Richmond",
+      "price": "455000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Clohesy",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Walter",
+      "team": "GoldCoast",
+      "price": "299000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Cunningham",
+      "team": "SydneySwans",
+      "price": "511000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Richards",
+      "team": "Collingwood",
+      "price": "376000",
+      "position": "FWD"
+    },
+    {
+      "name": "R.Thilthorpe",
+      "team": "Adelaide",
+      "price": "477000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Emmett",
+      "team": "Freemantle",
+      "price": "354000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Gruzewski",
+      "team": "GWSGiants",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Wicks",
+      "team": "SydneySwans",
+      "price": "392000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Delean",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Jones",
+      "team": "GWSGiants",
+      "price": "312000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Green",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.O'Driscoll",
+      "team": "WesternBulldogs",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Ramsden",
+      "team": "Hawthorn",
+      "price": "261000",
+      "position": "FWD"
+    },
+    {
+      "name": "X.Walsh",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "R.Monahan",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Goater",
+      "team": "NorthMelbourne",
+      "price": "474000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Jefferson",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Petruccelle",
+      "team": "West Coast",
+      "price": "422000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Clarke",
+      "team": "WesternBulldogs",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Morris",
+      "team": "Brisbane",
+      "price": "321000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Dear",
+      "team": "Hawthorn",
+      "price": "339000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Lever",
+      "team": "Melbourne",
+      "price": "582000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Marchbank",
+      "team": "Carlton",
+      "price": "371000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Kuek",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Fawcett",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Konstanty",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Casboult",
+      "team": "GoldCoast",
+      "price": "452000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Zerk-Thatcher",
+      "team": "PortAdelaide",
+      "price": "399000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Allison",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "W.Derksen",
+      "team": "GWSGiants",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Scully",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "P.Gothard",
+      "team": "GWSGiants",
+      "price": "267000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Moniz-Wakefield",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Collard",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "P.Foster",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Anastasopoulos",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Frampton",
+      "team": "Collingwood",
+      "price": "373000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Buller",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.O'Sullivan",
+      "team": "Hawthorn",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.George",
+      "team": "NorthMelbourne",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Lloyd",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Collins",
+      "team": "GoldCoast",
+      "price": "474000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Martin",
+      "team": "Carlton",
+      "price": "468000",
+      "position": "FWD"
+    },
+    {
+      "name": "G.Logue",
+      "team": "NorthMelbourne",
+      "price": "468000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Pickett",
+      "team": "Richmond",
+      "price": "472000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "N.Bryan",
+      "team": "Essendon",
+      "price": "480000",
+      "position": "RUC"
+    },
+    {
+      "name": "M.Michalanney",
+      "team": "Adelaide",
+      "price": "581000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Jeffrey",
+      "team": "GoldCoast",
+      "price": "525000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "M.Heath",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "M.Walters",
+      "team": "Freemantle",
+      "price": "396000",
+      "position": "FWD"
+    },
+    {
+      "name": "E.Hollands",
+      "team": "Carlton",
+      "price": "605000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "D.Howard",
+      "team": "StKilda",
+      "price": "405000",
+      "position": "DEF"
+    },
+    {
+      "name": "O.Steene",
+      "team": "Collingwood",
+      "price": "200000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "L.Vandermeer",
+      "team": "WesternBulldogs",
+      "price": "357000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "T.Dow",
+      "team": "Richmond",
+      "price": "481000",
+      "position": "MID"
+    },
+    {
+      "name": "N.Erasmus",
+      "team": "Freemantle",
+      "price": "343000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "F.Maley",
+      "team": "NorthMelbourne",
+      "price": "200000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "H.Barnett",
+      "team": "West Coast",
+      "price": "204000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "M.Guelfi",
+      "team": "Essendon",
+      "price": "526000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Starcevich",
+      "team": "Brisbane",
+      "price": "404000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Brockman",
+      "team": "West Coast",
+      "price": "373000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Smith",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "M.Phillipou",
+      "team": "StKilda",
+      "price": "382000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Colina",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "B.McCreery",
+      "team": "Collingwood",
+      "price": "477000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Stephens",
+      "team": "Hawthorn",
+      "price": "327000",
+      "position": "MID"
+    },
+    {
+      "name": "A.Reid",
+      "team": "West Coast",
+      "price": "213000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "J.Hayes",
+      "team": "StKilda",
+      "price": "425000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Livingstone",
+      "team": "West Coast",
+      "price": "200000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "J.van Rooyen",
+      "team": "Melbourne",
+      "price": "454000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.McKay",
+      "team": "Essendon",
+      "price": "420000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Humphrey",
+      "team": "GoldCoast",
+      "price": "449000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Aliir",
+      "team": "PortAdelaide",
+      "price": "481000",
+      "position": "DEF"
+    },
+    {
+      "name": "H.Sharp",
+      "team": "Brisbane",
+      "price": "461000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Treacy",
+      "team": "Freemantle",
+      "price": "618000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Banks",
+      "team": "Richmond",
+      "price": "344000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "A.Davies",
+      "team": "GoldCoast",
+      "price": "517000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "T.Duryea",
+      "team": "WesternBulldogs",
+      "price": "500000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Keath",
+      "team": "WesternBulldogs",
+      "price": "408000",
+      "position": "DEF"
+    },
+    {
+      "name": "N.Fyfe",
+      "team": "Freemantle",
+      "price": "559000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "O.Markov",
+      "team": "Collingwood",
+      "price": "370000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Owies",
+      "team": "Carlton",
+      "price": "426000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Moyle",
+      "team": "GoldCoast",
+      "price": "534000",
+      "position": "RUC"
+    },
+    {
+      "name": "K.Farris-White",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "B.Brown",
+      "team": "Melbourne",
+      "price": "337000",
+      "position": "FWD"
+    },
+    {
+      "name": "K.Lane",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "A.Mirkov",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "H.O'Keeffe",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "A.Caminiti",
+      "team": "StKilda",
+      "price": "419000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Knobel",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "L.Smith",
+      "team": "WesternBulldogs",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "M.Keane",
+      "team": "Adelaide",
+      "price": "579000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Cook",
+      "team": "Adelaide",
+      "price": "412000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "M.Knevitt",
+      "team": "Geelong",
+      "price": "397000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Fletcher",
+      "team": "Brisbane",
+      "price": "546000",
+      "position": "MID"
+    },
+    {
+      "name": "O.Jones",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "G.Rohan",
+      "team": "Geelong",
+      "price": "340000",
+      "position": "FWD"
+    },
+    {
+      "name": "E.Read ",
+      "team": "GoldCoast",
+      "price": "231000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "W.Green",
+      "team": "SydneySwans",
+      "price": "255000",
+      "position": "RUC"
+    },
+    {
+      "name": "C.Coleman-Jones",
+      "team": "NorthMelbourne",
+      "price": "380000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.McAndrew",
+      "team": "SydneySwans",
+      "price": "288000",
+      "position": "RUC"
+    },
+    {
+      "name": "H.Petty",
+      "team": "Melbourne",
+      "price": "333000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "L.Reidy",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "N.Madden",
+      "team": "GWSGiants",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "O.Hayes-Brown",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "S.Frost",
+      "team": "Hawthorn",
+      "price": "328000",
+      "position": "DEF"
+    },
+    {
+      "name": "V.Visentini",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "O.Fantasia",
+      "team": "Carlton",
+      "price": "270000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.McDonald",
+      "team": "Freemantle",
+      "price": "315000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Chol",
+      "team": "Hawthorn",
+      "price": "497000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Furphy",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "C.Ah Chee",
+      "team": "Brisbane",
+      "price": "491000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Henry",
+      "team": "Geelong",
+      "price": "392000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.Verrall",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "T.Conway",
+      "team": "Geelong",
+      "price": "535000",
+      "position": "RUC"
+    },
+    {
+      "name": "C.Tucker",
+      "team": "Hawthorn",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "T.Goad",
+      "team": "NorthMelbourne",
+      "price": "243000",
+      "position": "RUC"
+    },
+    {
+      "name": "H.Free",
+      "team": "NorthMelbourne",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "M.Edwards",
+      "team": "Geelong",
+      "price": "207000",
+      "position": "RUC"
+    },
+    {
+      "name": "S.Ryan",
+      "team": "Richmond",
+      "price": "347000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "J.Melksham",
+      "team": "Melbourne",
+      "price": "440000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Answerth",
+      "team": "Brisbane",
+      "price": "417000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "J.Kolodjashnij",
+      "team": "Geelong",
+      "price": "485000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Fort",
+      "team": "Brisbane",
+      "price": "485000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "J.Koschitzke",
+      "team": "Richmond",
+      "price": "383000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Aleer",
+      "team": "GWSGiants",
+      "price": "357000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Hill",
+      "team": "Collingwood",
+      "price": "476000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Mackenzie",
+      "team": "Hawthorn",
+      "price": "486000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "T.Jiath",
+      "team": "Collingwood",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Fonti",
+      "team": "GWSGiants",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.O'Connell",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Hore",
+      "team": "Melbourne",
+      "price": "355000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Amartey",
+      "team": "SydneySwans",
+      "price": "401000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Howes",
+      "team": "Melbourne",
+      "price": "449000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Van Es",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Johnston",
+      "team": "GoldCoast",
+      "price": "369000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Macdonald",
+      "team": "Hawthorn",
+      "price": "360000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Durdin",
+      "team": "Carlton",
+      "price": "209000",
+      "position": "DEF"
+    },
+    {
+      "name": "Q.Narkle",
+      "team": "PortAdelaide",
+      "price": "409000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Arnold",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Akuei",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "K.Smith",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Vickery",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Durdin",
+      "team": "Carlton",
+      "price": "289000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Clohesy",
+      "team": "GoldCoast",
+      "price": "564000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "M.Andrew",
+      "team": "GoldCoast",
+      "price": "601000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.McCallum",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.McCabe",
+      "team": "Hawthorn",
+      "price": "246000",
+      "position": "DEF"
+    },
+    {
+      "name": "R.Hardeman",
+      "team": "NorthMelbourne",
+      "price": "289000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.De Koning",
+      "team": "Geelong",
+      "price": "406000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Draper",
+      "team": "Freemantle",
+      "price": "274000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Schoenmaker",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "R.Maric",
+      "team": "West Coast",
+      "price": "346000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Spargo",
+      "team": "Melbourne",
+      "price": "405000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Motlop",
+      "team": "Carlton",
+      "price": "449000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Bond",
+      "team": "Adelaide",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "O.Murdoch",
+      "team": "Geelong",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.O'Sullivan",
+      "team": "Geelong",
+      "price": "276000",
+      "position": "DEF"
+    },
+    {
+      "name": "O.Ryan",
+      "team": "Adelaide",
+      "price": "222000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Pink",
+      "team": "NorthMelbourne",
+      "price": "269000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Michael",
+      "team": "Brisbane",
+      "price": "297000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Ryan",
+      "team": "Collingwood",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "H.Davies",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Hayes",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.Edwards",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "K.Marshall",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Ryan",
+      "team": "Hawthorn",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Scott",
+      "team": "WesternBulldogs",
+      "price": "399000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Boyd",
+      "team": "Carlton",
+      "price": "553000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Cincotta",
+      "team": "Carlton",
+      "price": "352000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Brown",
+      "team": "Richmond",
+      "price": "439000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Adams",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "O.Murphy",
+      "team": "Freemantle",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Trezise",
+      "team": "Richmond",
+      "price": "492000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Leake",
+      "team": "GWSGiants",
+      "price": "252000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Baker",
+      "team": "West Coast",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Dean",
+      "team": "Collingwood",
+      "price": "350000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.McLennan",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Hamilton",
+      "team": "GWSGiants",
+      "price": "417000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Busslinger",
+      "team": "WesternBulldogs",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Brock",
+      "team": "GoldCoast",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Magor",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Gollant",
+      "team": "Adelaide",
+      "price": "316000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Roberts",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Lual",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Carroll",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Burgiel",
+      "team": "West Coast",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Hastie",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Payne",
+      "team": "Brisbane",
+      "price": "526000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Amiss",
+      "team": "Freemantle",
+      "price": "383000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Taberner",
+      "team": "Freemantle",
+      "price": "378000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Weideman",
+      "team": "Essendon",
+      "price": "430000",
+      "position": "FWD"
+    },
+    {
+      "name": "P.Snell",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "E.Himmelberg",
+      "team": "Adelaide",
+      "price": "462000",
+      "position": "FWD"
+    },
+    {
+      "name": "W.Dawson",
+      "team": "NorthMelbourne",
+      "price": "237000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "J.Rotham",
+      "team": "West Coast",
+      "price": "381000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Peatling",
+      "team": "GWSGiants",
+      "price": "552000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "L.Edwards",
+      "team": "West Coast",
+      "price": "375000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "Z.Zakostelsky",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "DEF/RUC"
+    },
+    {
+      "name": "J.Prior",
+      "team": "Brisbane",
+      "price": "416000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Ginnivan",
+      "team": "Hawthorn",
+      "price": "633000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Long",
+      "team": "GoldCoast",
+      "price": "475000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Mahony",
+      "team": "GoldCoast",
+      "price": "326000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "E.Hewett",
+      "team": "West Coast",
+      "price": "418000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "F.Maginness",
+      "team": "Hawthorn",
+      "price": "473000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "B.Banfield",
+      "team": "Freemantle",
+      "price": "584000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Miller",
+      "team": "Richmond",
+      "price": "438000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "N.McHenry",
+      "team": "Adelaide",
+      "price": "361000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Long",
+      "team": "West Coast",
+      "price": "400000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Johnson",
+      "team": "Collingwood",
+      "price": "312000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Rosas",
+      "team": "GoldCoast",
+      "price": "445000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Neale",
+      "team": "Geelong",
+      "price": "440000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.McVee",
+      "team": "Melbourne",
+      "price": "483000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.King",
+      "team": "GoldCoast",
+      "price": "487000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Cox",
+      "team": "Essendon",
+      "price": "454000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "D.Gardiner",
+      "team": "Brisbane",
+      "price": "357000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "N.Cumberland",
+      "team": "Richmond",
+      "price": "409000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Pearce",
+      "team": "Freemantle",
+      "price": "454000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Serong",
+      "team": "Hawthorn",
+      "price": "313000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Lemmens",
+      "team": "GoldCoast",
+      "price": "382000",
+      "position": "DEF"
+    },
+    {
+      "name": "P.Curtis",
+      "team": "NorthMelbourne",
+      "price": "432000",
+      "position": "FWD"
+    },
+    {
+      "name": "S.Butler",
+      "team": "Hawthorn",
+      "price": "355000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Turner",
+      "team": "Melbourne",
+      "price": "337000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Tsitas",
+      "team": "GoldCoast",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Khamis",
+      "team": "WesternBulldogs",
+      "price": "391000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "M.Bergman",
+      "team": "NorthMelbourne",
+      "price": "391000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Culley",
+      "team": "West Coast",
+      "price": "509000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "C.Harvey",
+      "team": "NorthMelbourne",
+      "price": "319000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Murphy",
+      "team": "Collingwood",
+      "price": "399000",
+      "position": "DEF"
+    },
+    {
+      "name": "K.Dawson",
+      "team": "NorthMelbourne",
+      "price": "373000",
+      "position": "DEF"
+    },
+    {
+      "name": "P.Parnell",
+      "team": "Adelaide",
+      "price": "359000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.McCartin",
+      "team": "SydneySwans",
+      "price": "376000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Jones",
+      "team": "PortAdelaide",
+      "price": "428000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Sturt",
+      "team": "Freemantle",
+      "price": "370000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.McEntee",
+      "team": "PortAdelaide",
+      "price": "312000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Francis",
+      "team": "SydneySwans",
+      "price": "425000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Hamling",
+      "team": "SydneySwans",
+      "price": "324000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.D'Ambrosio",
+      "team": "Hawthorn",
+      "price": "642000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "A.Begg",
+      "team": "Collingwood",
+      "price": "276000",
+      "position": "RUC"
+    },
+    {
+      "name": "J.Menzie",
+      "team": "Essendon",
+      "price": "345000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Jones",
+      "team": "Essendon",
+      "price": "390000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Sharman",
+      "team": "StKilda",
+      "price": "310000",
+      "position": "FWD"
+    },
+    {
+      "name": "E.Jeka",
+      "team": "Geelong",
+      "price": "291000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Walker",
+      "team": "Freemantle",
+      "price": "523000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Sonsie",
+      "team": "Richmond",
+      "price": "410000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Jones",
+      "team": "WesternBulldogs",
+      "price": "497000",
+      "position": "DEF"
+    },
+    {
+      "name": "R.Gardner",
+      "team": "WesternBulldogs",
+      "price": "350000",
+      "position": "DEF"
+    },
+    {
+      "name": "H.Ralphsmith",
+      "team": "Richmond",
+      "price": "470000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "C.Chesser",
+      "team": "West Coast",
+      "price": "387000",
+      "position": "MID"
+    },
+    {
+      "name": "T.McKenzie",
+      "team": "PortAdelaide",
+      "price": "384000",
+      "position": "DEF"
+    },
+    {
+      "name": "A.Kennedy",
+      "team": "GWSGiants",
+      "price": "484000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "H.Edwards",
+      "team": "West Coast",
+      "price": "335000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Fullarton",
+      "team": "Melbourne",
+      "price": "263000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Comben",
+      "team": "NorthMelbourne",
+      "price": "511000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "L.Melican",
+      "team": "SydneySwans",
+      "price": "339000",
+      "position": "DEF"
+    },
+    {
+      "name": "R.Mansell",
+      "team": "Richmond",
+      "price": "437000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Bews",
+      "team": "Geelong",
+      "price": "362000",
+      "position": "DEF"
+    },
+    {
+      "name": "K.Baldwin",
+      "team": "Essendon",
+      "price": "311000",
+      "position": "DEF"
+    },
+    {
+      "name": "Z.Reid",
+      "team": "Essendon",
+      "price": "244000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Cowan",
+      "team": "Carlton",
+      "price": "429000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Burgoyne",
+      "team": "PortAdelaide",
+      "price": "666000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "J.Farrar",
+      "team": "GoldCoast",
+      "price": "450000",
+      "position": "DEF"
+    },
+    {
+      "name": "F.Macrae",
+      "team": "Collingwood",
+      "price": "376000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "J.Gibcus",
+      "team": "Richmond",
+      "price": "257000",
+      "position": "DEF"
+    },
+    {
+      "name": "E.Ratugolea",
+      "team": "PortAdelaide",
+      "price": "444000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Jamieson",
+      "team": "West Coast",
+      "price": "357000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "D.Robertson",
+      "team": "Brisbane",
+      "price": "322000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "J.Clarke",
+      "team": "Richmond",
+      "price": "339000",
+      "position": "FWD"
+    },
+    {
+      "name": "F.Evans",
+      "team": "PortAdelaide",
+      "price": "274000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Cleary",
+      "team": "WesternBulldogs",
+      "price": "407000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Visentini",
+      "team": "PortAdelaide",
+      "price": "348000",
+      "position": "RUC"
+    },
+    {
+      "name": "R.Garcia",
+      "team": "WesternBulldogs",
+      "price": "513000",
+      "position": "FWD"
+    },
+    {
+      "name": "Z.Trew",
+      "team": "West Coast",
+      "price": "256000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Carroll",
+      "team": "Carlton",
+      "price": "265000",
+      "position": "MID"
+    },
+    {
+      "name": "B.Ryan",
+      "team": "Brisbane",
+      "price": "265000",
+      "position": "FWD"
+    },
+    {
+      "name": "H.Harrison",
+      "team": "Collingwood",
+      "price": "348000",
+      "position": "FWD"
+    },
+    {
+      "name": "R.Angwin",
+      "team": "GWSGiants",
+      "price": "412000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Mead",
+      "team": "PortAdelaide",
+      "price": "492000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "W.Hamill",
+      "team": "Adelaide",
+      "price": "329000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Fahey",
+      "team": "GWSGiants",
+      "price": "277000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Borlase",
+      "team": "Adelaide",
+      "price": "447000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Woewodin",
+      "team": "Melbourne",
+      "price": "312000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "J.Sinn",
+      "team": "PortAdelaide",
+      "price": "295000",
+      "position": "MID"
+    },
+    {
+      "name": "C.Graham",
+      "team": "GoldCoast",
+      "price": "239000",
+      "position": "DEF"
+    },
+    {
+      "name": "N.Murray",
+      "team": "Adelaide",
+      "price": "360000",
+      "position": "DEF"
+    },
+    {
+      "name": "H.Oea",
+      "team": "GoldCoast",
+      "price": "327000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "H.Rowston",
+      "team": "GWSGiants",
+      "price": "241000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Wehr",
+      "team": "GWSGiants",
+      "price": "453000",
+      "position": "MID"
+    },
+    {
+      "name": "K.Worner",
+      "team": "Freemantle",
+      "price": "286000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Grimes",
+      "team": "Richmond",
+      "price": "283000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Clurey",
+      "team": "PortAdelaide",
+      "price": "305000",
+      "position": "DEF"
+    },
+    {
+      "name": "Z.Cordy",
+      "team": "StKilda",
+      "price": "355000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "J.Corbett",
+      "team": "Freemantle",
+      "price": "315000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Lazzaro",
+      "team": "NorthMelbourne",
+      "price": "334000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "T.Young",
+      "team": "Richmond",
+      "price": "375000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.Day",
+      "team": "GoldCoast",
+      "price": "350000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Williams",
+      "team": "West Coast",
+      "price": "397000",
+      "position": "FWD/RUC"
+    },
+    {
+      "name": "A.Davey Jnr",
+      "team": "Essendon",
+      "price": "260000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Schache",
+      "team": "Melbourne",
+      "price": "348000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Smith",
+      "team": "Melbourne",
+      "price": "314000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.Lord",
+      "team": "PortAdelaide",
+      "price": "316000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Joyce",
+      "team": "Brisbane",
+      "price": "276000",
+      "position": "DEF"
+    },
+    {
+      "name": "C.Burgess",
+      "team": "Adelaide",
+      "price": "360000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Jones",
+      "team": "WesternBulldogs",
+      "price": "304000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Butts",
+      "team": "Adelaide",
+      "price": "401000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Berry",
+      "team": "GoldCoast",
+      "price": "448000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Archer",
+      "team": "NorthMelbourne",
+      "price": "315000",
+      "position": "DEF"
+    },
+    {
+      "name": "L.Keeffe",
+      "team": "GWSGiants",
+      "price": "292000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Coulthard",
+      "team": "Richmond",
+      "price": "234000",
+      "position": "FWD"
+    },
+    {
+      "name": "M.Rioli",
+      "team": "Richmond",
+      "price": "417000",
+      "position": "FWD"
+    },
+    {
+      "name": "O.Dempsey",
+      "team": "Geelong",
+      "price": "555000",
+      "position": "FWD/MID"
+    },
+    {
+      "name": "R.McInnes",
+      "team": "Collingwood",
+      "price": "307000",
+      "position": "FWD"
+    },
+    {
+      "name": "K.Lohmann",
+      "team": "Brisbane",
+      "price": "588000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Stone",
+      "team": "GWSGiants",
+      "price": "252000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Sexton",
+      "team": "GoldCoast",
+      "price": "740000",
+      "position": "FWD/DEF"
+    },
+    {
+      "name": "S.Darcy",
+      "team": "WesternBulldogs",
+      "price": "624000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Bauer",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.O'Donnell",
+      "team": "WesternBulldogs",
+      "price": "394000",
+      "position": "DEF"
+    },
+    {
+      "name": "T.Wanganeen",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.McMullin",
+      "team": "GWSGiants",
+      "price": "290000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Carmichael",
+      "team": "Collingwood",
+      "price": "356000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Warner",
+      "team": "SydneySwans",
+      "price": "215000",
+      "position": "FWD"
+    },
+    {
+      "name": "A.Cadman",
+      "team": "GWSGiants",
+      "price": "337000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Drury",
+      "team": "NorthMelbourne",
+      "price": "367000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.McNeil",
+      "team": "WesternBulldogs",
+      "price": "300000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Tunstill",
+      "team": "Brisbane",
+      "price": "257000",
+      "position": "FWD"
+    },
+    {
+      "name": "B.Laurie",
+      "team": "Melbourne",
+      "price": "216000",
+      "position": "FWD"
+    },
+    {
+      "name": "N.Kreuger",
+      "team": "Collingwood",
+      "price": "295000",
+      "position": "RUC/FWD"
+    },
+    {
+      "name": "R.Bazzo",
+      "team": "West Coast",
+      "price": "273000",
+      "position": "DEF"
+    },
+    {
+      "name": "O.Mullin",
+      "team": "Geelong",
+      "price": "376000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Uwland",
+      "team": "GoldCoast",
+      "price": "543000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Madden",
+      "team": "Brisbane",
+      "price": "233000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Blanck",
+      "team": "Hawthorn",
+      "price": "219000",
+      "position": "DEF"
+    },
+    {
+      "name": "D.Grainger-Barras",
+      "team": "Hawthorn",
+      "price": "275000",
+      "position": "DEF/FWD"
+    },
+    {
+      "name": "L.Sullivan",
+      "team": "Collingwood",
+      "price": "407000",
+      "position": "MID"
+    },
+    {
+      "name": "J.Bytel",
+      "team": "Collingwood",
+      "price": "279000",
+      "position": "MID"
+    },
+    {
+      "name": "E.Phillips",
+      "team": "Hawthorn",
+      "price": "211000",
+      "position": "DEF"
+    },
+    {
+      "name": "B.Teakle",
+      "team": "NorthMelbourne",
+      "price": "435000",
+      "position": "RUC"
+    },
+    {
+      "name": "M.Lefau",
+      "team": "Richmond",
+      "price": "374000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Beecken",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "W.Parker",
+      "team": "Collingwood",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Blight",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Eyre",
+      "team": "Collingwood",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "S.El-Hawli",
+      "team": "Essendon",
+      "price": "200000",
+      "position": "DEF/MID"
+    },
+    {
+      "name": "N.Long",
+      "team": "Collingwood",
+      "price": "407000",
+      "position": "MID"
+    },
+    {
+      "name": "P.Voss",
+      "team": "Freemantle",
+      "price": "266000",
+      "position": "FWD"
+    },
+    {
+      "name": "J.Scaife",
+      "team": "Hawthorn",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "K.Rypstra",
+      "team": "WesternBulldogs",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Evans",
+      "team": "PortAdelaide",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "M.Hall",
+      "team": "StKilda",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "T.Murray",
+      "team": "Adelaide",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "D.Craven",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "L.Kentfield",
+      "team": "Melbourne",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Hanily",
+      "team": "SydneySwans",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "G.Payne",
+      "team": "NorthMelbourne",
+      "price": "200000",
+      "position": "MID/FWD"
+    },
+    {
+      "name": "I.Smit",
+      "team": "Collingwood",
+      "price": "200000",
+      "position": "RUC"
+    },
+    {
+      "name": "W.McLachlan",
+      "team": "Brisbane",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "T.Sellers",
+      "team": "NorthMelbourne",
+      "price": "200000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Lord",
+      "team": "Carlton",
+      "price": "200000",
+      "position": "MID"
+    },
+    {
+      "name": "K.Gallagher",
+      "team": "Adelaide",
+      "price": "200000",
+      "position": "DEF"
+    },
+    {
+      "name": "J.Hutchinson",
+      "team": "West Coast",
+      "price": "203000",
+      "position": "FWD"
+    },
+    {
+      "name": "C.Gray",
+      "team": "Richmond",
+      "price": "200000",
+      "position": "DEF/FWD"
+    }
+  ]
+}

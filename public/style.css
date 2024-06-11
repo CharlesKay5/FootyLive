@@ -476,7 +476,7 @@ p {
 #currentPeriod {
     font-size: 18px;
     padding-bottom: 5px;
-    font-weight: bold;
+    font-weight: 550;
     color: var(--text-color);
     margin-bottom: 0;
     white-space: wrap;
@@ -506,7 +506,7 @@ p {
 
 h2 {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 550;
     color: var(--text-color);
 }
 
@@ -590,11 +590,11 @@ table:not(#timelineTable) td:nth-child(2) {
 }
 
 table:not(#timelineTable) td:last-child {
-    font-weight: bold;
+    font-weight: 550;
 }
 
 .breakeven {
-    font-weight: bold;
+    font-weight: 550;
 }
 
 #timelineTable {
@@ -605,7 +605,7 @@ table:not(#timelineTable) td:last-child {
 }
 
 #timelinePlayerName {
-    font-weight: bold;
+    font-weight: 550;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -711,8 +711,11 @@ table:not(#timelineTable) td:last-child {
 }
 
 #timelineText {
+    line-height: 22px;
+    width: 125px;
     display: flex;
     flex-direction: column;
+    padding-top: 30px;
     margin-left: 10px;
     text-align: center;
 }

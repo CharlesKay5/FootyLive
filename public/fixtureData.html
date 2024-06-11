@@ -849,12 +849,11 @@
                 player.position = player.position.replace("FOR", "FWD");
             }
             const timelinePrice = timelineHolder.querySelector('#playerPrice');
-            timelinePrice.innerText = player.price;
+            timelinePrice.textContent = "$" + player.price;
             const timelinePosition = timelineHolder.querySelector('#playerPosition');
-            timelinePosition.innerText = player.position;
+            timelinePosition.textContent = player.position;
             const timelineBreakeven = timelineHolder.querySelector('#playerBreakeven');
-            timelineBreakeven.innerText = "BE: " + player.breakeven;
-
+            timelineBreakeven.textContent = "BE: " + player.breakeven;
 
             fetchScoringTimeline(playerId, player.round);
         }
