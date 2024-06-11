@@ -14,7 +14,7 @@ function fetchData(players, teamName, teamType, gameDetails, trimmedLink) {
     return Object.values(players).map(player => ({
         playerID: `${player.Name[0]}-${player.JumperNumber[0]}`,
         number: player.JumperNumber[0],
-        name: player.Name[0],
+        name: player.Name[0] === "K-Pickett" ? "K.Pickett" : player.Name[0],
         goals: player.Goal[0],
         behinds: player.Behind[0],
         kicks: player.Kick[0],
@@ -78,7 +78,7 @@ function fetchPlayerData(trimmedLink) {
             .then(async str => {
                 const sanitizeXmlString = (xmlString) => {
                     // Remove characters that are not letters, numbers, or allowed special characters
-                    return xmlString.replace(/[^\w\s\.,:<>[\]{}\/\\]/g, '');
+                    return xmlString.replace(/[^\w\s\.,:<>[\]{}\/\\-]/g, '');
                 };
 
                 parser.parseString(sanitizeXmlString(str), (err, result) => {

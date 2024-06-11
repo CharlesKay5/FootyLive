@@ -177,7 +177,7 @@ app.post('/update-chat', (req, res) => {
         chats[link].shift();
     }
     chats[link].push(filteredMessage);
-
+    broadcastMessage('chatDataChanged');
     res.json({ status: 'success' });
 });
 

@@ -112,7 +112,7 @@
             <!-- <li><i class="customIcon" id="injuredOut" style="content: url('/icons/redcross.png')"></i></li> -->
             <li><i class="customIcon" id="fire" style="content: url('/icons/fire.png')"></i></li>
             <li><i class="customIcon" id="ice" style="content: url('/icons/ice.png')"></i></li>
-            <li><i class="customIcon" id="subbedOut" style="content: url('/icons/redvest.png')"></i></li>
+            <li><i class="customIcon" id="injuredPlaying" style="content: url('/icons/bandaid.png')"></i></li>
             <li><i class="customIcon" id="tagged" style="content: url('/icons/padlock.png')"></i></li>
             <li><i class="customIcon" id="tagger" style="content: url('/icons/tag.png')"></i></li>
         </ul>
@@ -171,11 +171,10 @@
     <div id="backButton"><a href="/fixture"><i class="fa-solid fa-arrow-left-long"></i></a></div>
 
     <script>
-        // FOR PRODUCTION
-        // const socket = new WebSocket('wss://footylive.onrender.com:8080');
+        // FOR PRODUCTION:
         const socket = new WebSocket('wss://footylive.onrender.com');
-        // const socket = new WebSocket('ws://localhost:8080');
-        // const socket = new WebSocket('wss://localhost:8080');
+        // FOR LOCAL:
+        // const socket = new WebSocket('ws://localhost:5000');
 
         socket.addEventListener('open', (event) => {
             console.log('WebSocket is open now.');
@@ -323,26 +322,26 @@
                             breakeven.style.color = '#b13b3b';
                         }
 
-                        // const previousIcon = rowIcons[playerId];
-                        // if (previousIcon) {
-                        //     addIcon(row, previousIcon);
-                        // }
-
                         if (player.sub == 1) {
                             addIcon(row, '<i class="customIcon" id="subsitute" style="content: url(\'/icons/greenvest.png\')"></i>');
                         }
 
                         if (player.benched == 1) {
-                            // Add a p element to the .playerName element containing the word "BEN"
-
                             const playerName = row.querySelector('.playerName');
                             playerName.style.opacity = "20%";
-                            // const benched = document.createElement('span');
-                            // benched.textContent = "BEN";
-                            // benched.classList.add('benched');
-                            // playerName.appendChild(benched);
                         }
 
+                        if (player.tagged == 1) {
+                            addIcon(row, '<i class="customIcon" id="tagged" style="content: url(\'/icons/padlock.png\')"></i>');
+                        }
+
+                        if (player.tagger == 1) {
+                            addIcon(row, '<i class="customIcon" id="tagger" style="content: url(\'/icons/tag.png\')"></i>');
+                        }
+
+                        if (player.subbedout == 1) {
+                            addIcon(row, '<i class="customIcon" id="subbedOut" style="content: url(\'/icons/redvest.png\')"></i>');
+                        }
                         // Get the icon currently on the player
 
                         let injuredIcon = rowIcons[playerId] === '<i class="customIcon" id="injuredOut" style="content: url(\'/icons/redcross.png\')"></i>';
@@ -747,34 +746,6 @@
             closeTooltip();
         }
 
-        ////////////////////////////////////
-        // async function fetchGameStats(trimmedLink, playerName) {
-        //     try {
-        //         const response = await fetch(`/player-stats/${trimmedLink}`);
-        //         if (!response.ok) {
-        //             throw new Error(`HTTP error! status: ${response.status}`);
-        //         }
-        //         const allStats = await response.json();
-        //         const playerStats = allStats.players.find(player => player.name === playerName);
-        //         if (playerStats) {
-        //             // console.log(playerStats);
-        //             let quarterStats = playerStats[trimmedLink].q2;
-        //             console.log(quarterStats)
-        //             // Now you can use playerStats.goals, playerStats.behinds, etc.
-        //         } else {
-        //             console.log('Player not found');
-        //         }
-        //     } catch (error) {
-        //         console.log('There was a problem fetching the game stats:', error);
-        //     }
-        // }
-
-        // // Call the function with the trimmed link and player name
-        // fetchGameStats('5977', 'C.Warner');
-
-
-        //////////////////////////////////
-
         function calculateDifferences(newPlayer, oldPlayer) {
             const differences = {};
 
@@ -794,6 +765,9 @@
         }
 
         function fetchScoringTimeline(playerId, round) {
+            if (!round.includes("Round")) {
+                round = "Round " + round;
+            }
             fetch(`/scoringTimeline/${playerId}/${round}`)
                 .then(response => {
                     if (!response.ok) {
@@ -909,11 +883,6 @@
 
             return quarterSum;
         }
-
-        //formatScoringTimeline('S.Walsh-18');
-
-
-
         function hideTimeline(timelineTable) {
             timelineTable.style.display = 'none';
             for (let i = 1; i <= 4; i++) {
@@ -926,7 +895,6 @@
 
         // Function to render superscript based on difference
         function renderSuperscript(diff, time, behinds) {
-            //console.log(time);
             if (diff !== 0 && time !== 'Time') {
                 var diffInt = parseInt(diff);
                 const color = diffInt > 0 ? 'green' : 'red';
@@ -946,7 +914,6 @@
                 document.querySelectorAll('sup').forEach(sup => {
                     sup.style.visibility = 'hidden';
                 });
-                //fetchAndFormatPlayerData();
             }, 5000);
         }
 
@@ -957,7 +924,6 @@
         function fetchAndFormatPlayerData() {
             Promise.all([
                 fetch(`/player-stats/${trimmedLink}`),
-                //fetch(`/${trimmedLink}/player-stats/?team=1`)
             ])
                 .then(responses => Promise.all(responses.map(response => response.json())))
                 .then(data => {
@@ -968,16 +934,14 @@
                     team0Players.forEach(player => {
                         const playerId = `${player.name}-${player.number}`;
                         if (!previousDataTeam0[playerId]) {
-                            previousDataTeam0[playerId] = { ...player }; // Create a copy of the player data
+                            previousDataTeam0[playerId] = { ...player };
                         }
-                        //formatScoringTimeline(playerId);
                     });
                     team1Players.forEach(player => {
                         const playerId = `${player.name}-${player.number}`;
                         if (!previousDataTeam1[playerId]) {
-                            previousDataTeam1[playerId] = { ...player }; // Create a copy of the player data
+                            previousDataTeam1[playerId] = { ...player };
                         }
-                        //formatScoringTimeline(playerId);
                     });
 
                     window.playerData.team0 = team0Players;
@@ -994,17 +958,16 @@
         // Function to fetch data every 10 seconds
         socket.onmessage = function (event) {
             if (event.data === 'playerDataChanged') {
-                // console.log("UPDATING")
                 fetchAndFormatPlayerData(trimmedLink);
             }
-            else {
+            else if (event.data === 'chatDataChanged') {
+                fetchAndUpdateChat();
+            }else {
                 console.log(event.data);
             }
         };
 
-        function calculateGamePercentage(currentTime) {
-
-            // const currentTime = document.getElementById('currentTime').textContent;
+        async function calculateGamePercentage(currentTime) {
 
             const currentPeriod = document.getElementById('currentPeriod');
             currentPeriod.textContent = currentTime;
@@ -1055,7 +1018,7 @@
             }
 
             let percentage = ((parseInt(minutes) / 120) * 100) + ((parseInt(quarter) - 1) * 25);
-            //console.log(quarterFull)
+            // Some of this code is redundant now that we've switched from puppeteer to fetching the data
             switch (quarterFull) {
                 case 'Q1':
                     if (percentage >= 25) {
@@ -1101,7 +1064,8 @@
             const gamePercentage = document.getElementById('gamePercentage');
             gamePercentage.textContent = Math.ceil(percentage) + '%';
 
-
+            // Pause briefly to allow time for all player data to load before applying fireAndIce
+            await new Promise(r => setTimeout(r, 100));
             fireAndIce(percentage);
         }
 
@@ -1116,7 +1080,7 @@
                 fantasy.push(fantasyScore);
                 let hotLevel = (parseFloat(average) * (parseFloat(percentage) / 100)) * 1.2;
                 let coldLevel = ((parseFloat(average) * (parseFloat(percentage) / 100)) * 0.6);
-
+                
                 // Check if the player already has an icon
                 let existingIcon = playerNames[i].parentElement.querySelector("i");
                 if (existingIcon) {
@@ -1196,7 +1160,6 @@
                                 if (data.success) {
 
                                     let updateMessage = `${userId} has changed their username to ${newName}`;
-                                    socket.send(updateMessage);
 
                                     fetch('/update-chat', {
                                         method: 'POST',
@@ -1225,63 +1188,6 @@
                     }
                 });
         }
-
-
-
-
-        const letterSubstitutions = {
-            '3': ['e'],
-            '4': ['a'],
-            '@': ['a'],
-            '5': ['s'],
-            '1': ['l'],
-            '1': ['i'],
-            '7': ['t'],
-            '8': ['b'],
-            '9': ['g'],
-            '0': ['o'],
-            '2': ['z']
-        };
-
-
-        // function applySubstitutions(word) {
-        //     let substitutedWord = '';
-        //     for (const letter of word.toLowerCase()) {
-        //         if (letterSubstitutions.hasOwnProperty(letter)) {
-        //             const substitutions = letterSubstitutions[letter];
-        //             substitutedWord += substitutions[Math.floor(Math.random() * substitutions.length)]; // Choose a random substitution
-        //         } else {
-        //             substitutedWord += letter;
-        //         }
-        //     }
-        //     return substitutedWord;
-        // }
-
-        // function isProfanitySubstitute(word) {
-        //     const substitutedWord = applySubstitutions(word);
-        //     for (const profanity of profanityList) {
-        //         if (substitutedWord.toLowerCase().includes(profanity)) {
-        //             return true;
-        //         }
-        //     }
-        //     return false;
-        // }
-
-
-        // function filterProfanity(message) {
-        //     let words = message.split(' ');
-        //     for (let i = 0; i < words.length; i++) {
-        //         if (isProfanitySubstitute(words[i].toLowerCase())) {
-
-        //             words[i] = '*'.repeat(words[i].length); // Censor the entire word
-        //         }
-        //     }
-        //     return words.join(' ');
-        // }
-
-
-
-
 
         // Store the timestamps of the last 5 messages for each user
         const userMessageTimestamps = {};
@@ -1329,8 +1235,6 @@
                     console.error('Error:', error);
                 });
 
-            fetchAndUpdateChat();
-
             // Clear the input field after sending the message
             messageInput.value = '';
         }
@@ -1348,26 +1252,26 @@
 
 
 
-        socket.addEventListener('message', (event) => {
-            if (event.data === 'playerDataChanged') {
-                return;
-            }
-            const chatFeed = document.getElementById('chatFeed');
-            const newMessage = document.createElement('p');
-            if (event.data instanceof Blob) {
-                const reader = new FileReader();
-                reader.onload = function () {
-                    newMessage.textContent = filterProfanity(this.result);
-                    chatFeed.appendChild(newMessage);
-                    chatFeed.scrollTop = chatFeed.scrollHeight; // Scroll to bottom
-                }
-                reader.readAsText(event.data);
-            } else {
-                newMessage.textContent = filterProfanity(event.data);
-                chatFeed.appendChild(newMessage);
-                chatFeed.scrollTop = chatFeed.scrollHeight; // Scroll to bottom
-            }
-        });
+        // socket.addEventListener('message', (event) => {
+        //     if (event.data === 'playerDataChanged') {
+        //         return;
+        //     }
+        //     const chatFeed = document.getElementById('chatFeed');
+        //     const newMessage = document.createElement('p');
+        //     if (event.data instanceof Blob) {
+        //         const reader = new FileReader();
+        //         reader.onload = function () {
+        //             newMessage.textContent = filterProfanity(this.result);
+        //             chatFeed.appendChild(newMessage);
+        //             chatFeed.scrollTop = chatFeed.scrollHeight; // Scroll to bottom
+        //         }
+        //         reader.readAsText(event.data);
+        //     } else {
+        //         newMessage.textContent = filterProfanity(event.data);
+        //         chatFeed.appendChild(newMessage);
+        //         chatFeed.scrollTop = chatFeed.scrollHeight; // Scroll to bottom
+        //     }
+        // });
 
         const footyLiveBtn = document.getElementById('FootyLiveChat');
         const dtLiveBtn = document.getElementById('DTLiveChat');
