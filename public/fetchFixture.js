@@ -22,8 +22,8 @@ function fetchFixtureData() {
     
         fixtureData.games = jData.games.map(game => ({
             date: game.date,
-            team0: game.hteam.includes("Greater Western Sydney") ? "GWS Giants" : game.hteam,
-            team1: game.ateam.includes("Greater Western Sydney") ? "GWS Giants" : game.ateam,
+            team0: game.hteam.includes("Greater Western Sydney") ? "GWS GIANTS" : game.hteam,
+            team1: game.ateam.includes("Greater Western Sydney") ? "GWS GIANTS" : game.ateam,
             team0score: game.hscore,
             team1score: game.ascore,
             time: game.timestr || "",
