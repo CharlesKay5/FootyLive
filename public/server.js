@@ -69,12 +69,13 @@ wss.on('error', (error) => {
 });
 
 // Serve static files including CSS
+app.use(compression());
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '..', '/public'), {
     setHeaders: (res, path) => {
         if (path.endsWith('.css')) {
             res.setHeader('Cache-Control', 'public, no-store'); // Cache for 5 days
         } else if (path.endsWith('.jpg') || path.endsWith('.png') || path.endsWith('.gif')) {
-            // Cache images for 5 days
             res.setHeader('Cache-Control', 'public, max-age=432000');
         }
         res.setHeader('ETag', true); // Enable ETag
@@ -82,13 +83,12 @@ app.use(express.static(path.join(__dirname, '..', '/public'), {
     }
 }));
 
-app.use(compression());
-app.use(bodyParser.json());
 app.use((req, res, next) => {
     // Assign a unique identifier to each user session    
     req.userId = uuid.v4();
     next();
 });
+
 app.use((req, res, next) => {
     if (req.path.substr(-1) === '/' && req.path.length > 1) {
         const query = req.url.slice(req.path.length);
@@ -98,9 +98,10 @@ app.use((req, res, next) => {
     }
 });
 
-// app.get('/', (req, res) => {
-//     res.redirect('/fixture');
-// });
+app.get('/', (req, res) => {
+    res.redirect('/fixture');
+});
+
 
 
 const serverStartTime = Date.now();
@@ -289,16 +290,16 @@ app.get('/fixture/:link', async (req, res) => {
         }
         const playerData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-        // Read index.html file
-        const indexPath = path.join(__dirname, 'index.html');
-        let indexHtml = fs.readFileSync(indexPath, 'utf-8');
+        // Read fixtureData.html file
+        const fixtureDataPath = path.join(__dirname, 'fixtureData.html');
+        let fixtureDataHtml = fs.readFileSync(fixtureDataPath, 'utf-8');
 
-        // Replace placeholder in index.html with player data
-        indexHtml = indexHtml.replace('<!-- {{playerData}} -->', JSON.stringify(playerData));
-        indexHtml = indexHtml.replace('{{trimmedLink}}', trimmedLink);
+        // Replace placeholder in fixtureData.html with player data
+        fixtureDataHtml = fixtureDataHtml.replace('<!-- {{playerData}} -->', JSON.stringify(playerData));
+        fixtureDataHtml = fixtureDataHtml.replace('{{trimmedLink}}', trimmedLink);
 
-        // Send modified index.html with player data
-        res.send(indexHtml);
+        // Send modified fixtureData.html with player data
+        res.send(fixtureDataHtml);
     } catch (error) {
         console.error('Error fetching player data:', error);
         res.redirect(`/fixture?error=Data%20for%20this%20game%20is%20not%20yet%20available,%20please%20try%20again%20closer%20to%20first%20bounce!`);
