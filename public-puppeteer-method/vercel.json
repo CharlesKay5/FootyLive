@@ -1,0 +1,6 @@
+{
+    "routes": [
+      { "src": "/fixture", "dest": "/fixture.html" },
+      { "src": "/fixture/:link", "dest": "/index.html" }
+    ]
+  }

@@ -1,0 +1,1214 @@
+@font-face {
+    font-family: "Inter Variable";
+    src:
+        url("./font/Inter.var.woff2") format("woff2"),
+}
+
+* {
+    scrollbar-width: none;
+}
+
+:root {
+    --text-color: #2a2a2a;
+    --background-color: #f8f9fa;
+    --table-background-color: #F8F9FA;
+    --lightrow-background-color: #e9ecef;
+    --darkrow-background-color: #dee2e6;
+    --tablehead-background-color: #f2f2f2;
+    --input-background-color: #f8f9fa;
+    --fixturescoreboard-background-color: #fff;
+    --tablehover-background-color: #ced4da;
+    --chatoutline-color: #dee2e6;
+}
+
+[data-theme="dark"] {
+    --text-color: #f8f9fa;
+    --background-color: #1a1a1a;
+    --table-background-color: #202020;
+    --lightrow-background-color: #2a2a2a;
+    --darkrow-background-color: #1a1a1a;
+    --tablehead-background-color: #3b3b3b;
+    --input-background-color: #202020;
+    --fixturescoreboard-background-color: #202020;
+    --tablehover-background-color: #616161;
+    --chatoutline-color: #616161;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li,
+table,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    font-family: "Inter Variable", "Times New Roman", Times, serif;
+    white-space: nowrap;
+}
+
+sup {
+    position: absolute;
+    vertical-align: super;
+    overflow: visible;
+    font-size: 65%;
+}
+
+#backButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70%;
+    margin-bottom: 5px;
+
+}
+
+input {
+    background-color: var(--input-background-color);
+    color: var(--text-color)
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 65vh;
+}
+
+.chat-span {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+#messageInput {
+
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--chatoutline-color);
+    padding-right: 50px;
+    padding-left: 10px
+}
+
+#messageButton {
+
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid var(--chatoutline-color);
+    ;
+    background-color: #007bff;
+    color: white;
+
+}
+
+#usernameInput {
+
+    width: 20%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--chatoutline-color);
+    padding-right: 50px;
+    padding-left: 10px
+}
+
+#usernameButton {
+
+
+
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid var(--chatoutline-color);
+    ;
+    background-color: #007bff;
+    color: white;
+    margin: 0;
+
+}
+
+
+#chatFeed {
+    width: 60%;
+    height: 500px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid var(--chatoutline-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+}
+
+#chatFeed div, #chatFeed p {
+    word-wrap: break-word;
+    white-space: normal;
+    margin: 10px;
+}
+
+.chatbutton-container {
+    width: 60%;
+    margin-left: -21px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.chatbutton-container button {
+    padding: 5px 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-top: 1px solid var(--chatoutline-color);
+    border-right: 1px solid var(--chatoutline-color);
+    border-left: 1px solid var(--chatoutline-color);
+    border-bottom: none;
+    cursor: pointer;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chatbutton-container #FootyLiveChat {
+    background-color: var(--darkrow-background-color);
+}
+
+.chatbutton-container button:hover {
+    background-color: var(--tablehead-background-color);
+}
+
+.teamAndTime {
+    display: block;
+}
+
+
+#homeTeam {
+    text-align: right;
+    vertical-align: middle;
+}
+
+#currentTime {
+    float: right;
+    padding-bottom: 10px;
+}
+
+td {
+    position: relative;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.benched {
+    font-weight: bolder;
+    color: rgb(161, 161, 161);
+    margin-left: 5px;
+}
+
+.fixtureScoreboard * {
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+#fixtureHeader {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+#fixture-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#darkModeToggle {
+    z-index: 1003;
+    color: var(--text-color);
+    background-color: var(--darkrow-background-color);
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 60px;
+
+}
+
+#backToTop {
+    z-index: 999;
+    color: var(--text-color);
+    background-color: var(--darkrow-background-color);
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 60px;
+    display: none;
+}
+
+
+#round-selector {
+    position: sticky;
+    top: 0;
+    padding-top: 10px;
+    height: 50px;
+    overflow: scroll;
+    background-color: var(--tablehead-background-color);
+    z-index: 1002;
+}
+
+.dateContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: auto;
+}
+
+.date-header {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.fixtureScoreboard {
+    border-top: 8px darkblue solid;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 1100px;
+    height: 120px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--fixturescoreboard-background-color);
+}
+
+.fixtureScoreboard .homeTeamContainer {
+    justify-content: flex-end;
+    min-width: 33%;
+}
+
+.fixtureScoreboard .awayTeamContainer {
+    justify-content: flex-start;
+    min-width: 33%;
+}
+
+.fixtureScoreboard .gameInfo {
+    text-align: center;
+    min-width: 33%;
+}
+
+#gameLocation {
+    text-align: center;
+    white-space: wrap;
+}
+
+#fixtures-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.fixtureContainer a {
+    border-top: 8px #2a2a2a solid;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 70%;
+    height: 120px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--fixturescoreboard-background-color);
+}
+
+.previousFixture {
+    border-top: 8px darkblue solid;
+    display: flex;
+    flex-direction: wrap;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 500px;
+    height: 120px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--fixturescoreboard-background-color);
+}
+
+
+.previousGameInfo {
+    text-align: center;
+    min-width: 33%;
+    line-height: 1.2;
+    padding: 15px;
+
+}
+
+.previousFixture img {
+
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+
+.previousFixture ul {
+    list-style: none;
+}
+
+.hide-on-desktop {
+    display: none;
+}
+
+
+p {
+    white-space: wrap;
+}
+
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: center;
+    width: 35%;
+    margin: 0 auto 20px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 20px;
+}
+
+[data-theme="dark"] img {
+    -webkit-filter: drop-shadow(2px 0px 0 white) drop-shadow(0px 2px 0 white) drop-shadow(-2px -0px 0 white) drop-shadow(-0px -2px 0 white);
+    filter: drop-shadow(2px 0px 0 white) drop-shadow(0px 2px 0 white) drop-shadow(-2px -0px 0 white) drop-shadow(-0px -2px 0 white);
+
+}
+
+#homeTeamIcon,
+#awayTeamIcon {
+    width: 80px;
+    height: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.team {
+    display: flex;
+    align-items: center;
+}
+
+.teamInfo {
+    margin-left: 10px;
+}
+
+#homeTeamScore,
+#awayTeamScore {
+    font-size: 2em;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+#homeTeamSecondaryScore,
+#awayTeamSecondaryScore {
+    font-size: 1em;
+}
+
+#currentPeriod {
+    font-size: 18px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0;
+    white-space: wrap;
+}
+
+#gamePercentage {
+    text-align: center;
+}
+
+.container {
+    visibility: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.table-container {
+    padding: 20px;
+    background-color: var(--table-background-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    overflow-x: auto;
+    width: 80%;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+table td,
+table th {
+    border: none;
+    position: relative;
+}
+
+td {
+    position: relative;
+    cursor: pointer;
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+tr {
+    height: 38px;
+}
+
+table:not(#timelineTable) tr td:not(:nth-child(2)):not(:nth-child(3)),
+table:not(#timelineTable) th:not(:nth-child(2)):not(:nth-child(3)) {
+    padding: 8px;
+    padding-right: 0px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table:not(#timelineTable) tr td:first-child {
+    text-align: center;
+}
+
+th {
+    background-color: var(--tablehead-background-color);
+}
+
+.playerName,
+.playerNameHeader {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: var(--darkrow-background-color);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--lightrow-background-color);
+}
+
+tr:hover {
+    background-color: var(--tablehover-background-color);
+}
+
+table:not(#timelineTable) td:nth-child(2) {
+    text-align: center;
+    font-weight: bolder;
+    padding-right: 2px;
+    color: rgb(161, 161, 161);
+}
+
+table:not(#timelineTable) td:last-child {
+    font-weight: bold;
+}
+
+.breakeven {
+    font-weight: bold;
+}
+
+#timelineTable {
+    display: none;
+    margin: 15px auto;
+    width: 800px;
+    border-collapse: separate;
+}
+
+#timelinePlayerName {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#timelineTable tr td:not(:first-child) {
+    text-align: left;
+    padding: 15px;
+}
+
+#timelineTable tr td {
+    background-color: var(--table-background-color);
+}
+
+#timelineTable tr td:first-child {
+    min-width: 40px;
+    max-width: 40px;
+}
+
+#timelineTable i {
+    text-align: center;
+    display: block;
+}
+
+#timelineTable tr td:not(:first-child) {
+    min-width: 150px;
+    max-width: 170px;
+}
+
+#tooltip {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    width: 250px;
+    height: 380px;
+    background-color: var(--tablehead-background-color);
+    border-radius: 10%;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+}
+
+#tooltip #timelineBtn {
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--tablehead-background-color);
+    color: var(--text-color);
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #2a2a2a;
+}
+
+.tooltip.above::before {
+    top: auto;
+    bottom: -10px;
+    border-bottom: none;
+    border-top: 10px solid #2a2a2a;
+}
+
+#tooltip ul {
+    margin: 0px 40px 00px 40px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 10px;
+}
+
+#tooltip ul li {
+    display: inline;
+}
+
+#tooltip ul li i {
+    font-size: 20px;
+}
+
+#tooltip img {
+    width: 250px;
+    margin-bottom: 15px;
+}
+
+
+#timelineInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#timelineText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: center;
+}
+
+#timelineText p {
+    text-align: center;
+}
+
+#timelineImage {
+    order: -1;
+}
+
+#timelineHolder {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    margin: auto;
+}
+
+#timelineTable td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tooltip ul {
+    margin-top: -20px;
+}
+
+#tooltip ul:last-child {
+    margin-top: -40px;
+
+}
+
+#tooltip img {
+    width: 250px;
+
+}
+
+.playerRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+i {
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#iconHolder {
+    width: 32px;
+}
+
+.customIcon {
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.triangle {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--tablehead-background-color) transparent;
+
+}
+
+.triangle.above {
+    top: auto;
+    bottom: -15px;
+    border-color: var(--tablehead-background-color) transparent transparent transparent;
+}
+
+#close-btn {
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.circle {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+#orange {
+    background-color: rgb(247, 190, 129);
+}
+
+#blue {
+    background-color: rgb(206, 227, 246);
+}
+
+#purple {
+    background-color: rgb(227, 206, 246);
+}
+
+#default {
+    background-color: #dee2e6;
+}
+
+
+
+
+.tableFocus {
+    margin-left: 5px;
+    font-size: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+#round-list {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#round-list li {
+    text-align: center;
+    width: 20px;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    background-color: var(--tablehead-background-color);
+    border-radius: 20px;
+
+}
+
+@media only screen and (max-width: 950px) {
+
+    #round-list {
+        display: contents;
+        overflow: scroll;
+        justify-content: flex-start;
+    }
+
+    #round-list li {
+        padding: 10px;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    #backToTop {
+        display: block;
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        left: 10px;
+    }
+
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    #homeTeam {
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    #awayTeam {
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .table-container {
+        width: calc(98%);
+
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 5px;
+        margin-bottom: 0px;
+
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+
+    .customIcon:not(#tooltip .customIcon) {
+        margin-left: 0px;
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    tr:not(#timelineTable tr) {
+        height: 32px;
+    }
+
+    th:not(#timelineTable th),
+    td:not(#timelineTable td) {
+        font-size: 11px;
+    }
+
+    .table-container tr td:not(:nth-child(2)):not(:nth-child(3)),
+    .table-container th:not(:nth-child(2)):not(:nth-child(3)) {
+        padding: 0px;
+        padding-right: 0;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    :not(#timelineTable) th:nth-child(n+4):nth-child(-n+8):not(#timelineTable th),
+    :not(#timelineTable) td:nth-child(n+4):nth-child(-n+8):not(#timelineTable td) {
+        font-size: 11px;
+        text-align: center;
+        width: 20px;
+        padding: 1px;
+    }
+
+    :not(#timelineTable) th:nth-child(n+12),
+    :not(#timelineTable) td:nth-child(n+12) {
+        font-size: 12px;
+        text-align: center;
+        width: 30px;
+    }
+
+
+
+
+    .scoreboard {
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px;
+        text-align: center;
+
+        margin-top: 20px;
+
+    }
+
+
+
+    .fixtureScoreboard {
+        border-top: 8px darkblue solid;
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        width: 85vw;
+        height: 120px;
+        margin: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: var(--fixturescoreboard-background-color);
+    }
+
+    #currentPeriod {
+        font-size: 14px;
+    }
+
+    #homeTeamScore,
+    #awayTeamScore {
+        font-size: 24px;
+    }
+
+    #homeTeamIcon,
+    #awayTeamIcon {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
+
+    .fixtureScoreboard .homeTeamContainer {
+        justify-content: flex-end;
+        min-width: 33%;
+    }
+
+    .fixtureScoreboard .awayTeamContainer {
+        justify-content: flex-start;
+        min-width: 33%;
+    }
+
+    .fixtureScoreboard .gameInfo {
+        text-align: center;
+        min-width: 33%;
+        font-size: 12px;
+        padding: 15px;
+        line-height: 1;
+    }
+
+
+
+
+    .input-container {
+        position: relative;
+        width: 90%;
+    }
+
+
+    .message-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        vertical-align: top;
+        height: 75vh;
+    }
+
+    .chat-span {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        margin-bottom: 10px;
+    }
+
+    #messageInput {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        padding-right: 50px;
+    }
+
+    #messageButton {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        margin: 0;
+    }
+
+    #usernameInput {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        padding-right: 50px;
+    }
+
+    #usernameButton {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        margin: 0;
+
+    }
+
+
+
+
+    #chatFeed {
+        width: 90%;
+        height: 500px;
+
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: 1px solid var(--chatoutline-color);
+        padding: 5px;
+        margin-bottom: 10px;
+        overflow-y: scroll;
+        font-size: 14px;
+    }
+
+    .chatbutton-container {
+        width: 90%;
+        margin-left: -11px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+
+
+    #darkModeToggle {
+
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #timelineContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #timelineTable {
+        width: 95vw;
+        font-size: 11px;
+    }
+
+    #timelineTable tr td:not(:first-child) {
+        min-width: 20vw;
+        max-width: 20vw;
+    }
+
+    #timelineTable tr td:not(:first-child) {
+        text-align: left;
+        padding: 0;
+    }
+
+    #timelineTable tr td {
+        min-width: 19vw;
+        max-width: 19vw;
+    }
+
+
+    #timelineTable img {
+        width: 100%;
+        margin: auto;
+    }
+
+    sup {
+        position: absolute;
+        bottom: 20px;
+        right: 1px;
+        vertical-align: super;
+        overflow: visible;
+        font-size: 65%;
+    }
+
+    .fixtureContainer {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        margin: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0px;
+
+    }
+
+    #fixtures-list h2 {
+        margin-top: 20px;
+    }
+
+
+    .previousGameInfo {
+        padding: 0;
+    }
+
+    .fixtureContainer a {
+        width: 80%;
+    }
+
+    .fixtureContainer a .team img {
+
+        margin: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1400px) {
+    sup {
+        position: absolute;
+        bottom: 25px;
+        right: 1px;
+        vertical-align: super;
+        overflow: visible;
+        font-size: 65%;
+    }
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+}
