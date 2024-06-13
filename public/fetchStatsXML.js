@@ -27,7 +27,6 @@ function fetchData(players, teamName, teamType, gameDetails, trimmedLink) {
         fantasyAvg: player.FantasyAvg[0],
         team: teamType,
         teamName: teamName,
-        url: null,
         teamScore: `${gameDetails[`${teamType ? 'Away' : 'Home'}TeamGoal`]}.${gameDetails[`${teamType ? 'Away' : 'Home'}TeamBehind`]}`,
         teamScoreTotal: parseInt(gameDetails[`${teamType ? 'Away' : 'Home'}TeamGoal`]) * 6 + parseInt(gameDetails[`${teamType ? 'Away' : 'Home'}TeamBehind`]),
         time: "Q" + gameDetails.CurrentQuarter + " " + gameDetails.CurrentTime[0],
@@ -43,7 +42,7 @@ function fetchData(players, teamName, teamType, gameDetails, trimmedLink) {
         freesfor: player.FreeFor[0],
         freesagainst: player.FreeAgainst[0],
         round: gameDetails.Round[0],
-        date: 0, // Unsure how to find
+        date: fetchDate(trimmedLink),
         trimmedLink: trimmedLink,
     }));
 };

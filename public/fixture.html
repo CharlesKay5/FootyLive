@@ -104,9 +104,10 @@
                         // show selected round
                         listItems[i].style.backgroundColor = "blue";
                         listItems[i].style.color = "white";
-                        if (document.getElementById(`round-${round}`)) { }
-                        document.getElementById(`round-${round}`).style.display = "block";
-                        document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
+                        if (document.getElementById(`round-${round}`)) {
+                            document.getElementById(`round-${round}`).style.display = "block";
+                            document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
+                        }
 
                         visibleFixutre.style.display = "none";
                         try {
@@ -198,7 +199,6 @@
                 }
                 return acc;
             }, {});
-
             const roundNumbers = Object.keys(fixturesByRound).map(round => parseInt(round.replace('Round ', '')));
             const maxRoundNumber = Math.max(...roundNumbers);
 
@@ -211,8 +211,8 @@
                 .sort((a, b) => b.roundNum - a.roundNum); // Sort in descending order
 
             // Remove the latest round
-            sortedRounds.shift();
-
+            // sortedRounds.shift();
+            
             // Create list items for each round
             sortedRounds.forEach(({ roundStr }) => {
                 const roundHeader = document.createElement('h2');
@@ -230,19 +230,6 @@
                     const listItem = document.createElement('a');
                     listItem.href = `/fixture/${fixture.link}`;
                     listItem.classList.add("fixtureScoreboard");
-                    // listItem.innerHTML = `
-                    //     <div class="team homeTeamContainer">
-                    //         <img id="homeTeamIcon" src="/svg/${fixture.team0.replace(/\s+/g, '')}.svg" alt="Home Team Logo">
-                    //     </div>
-                    //     <div class="previousGameInfo">
-                    //         <p>${fixture.team0} vs ${fixture.team1}</p>
-                    //         <br>
-                    //         <p id="gameLocation">${fixture.date}</p>
-                    //     </div>
-                    //     <div class="team awayTeamContainer">
-                    //         <img id="awayTeamIcon" src="/svg/${fixture.team1.replace(/\s+/g, '')}.svg" alt="Away Team Logo">
-                    //     </div>
-                    // `;
                     let winning = '';
                     const highestScore = Math.max(fixture.homeScore, fixture.awayScore);
                     const lowestScore = Math.min(fixture.homeScore, fixture.awayScore);
@@ -271,7 +258,7 @@
                                 <h2 id="homeTeamScore">${fixture.homeScore}</h2>
                             </div>
                             <div class="gameInfo">
-                                <h2 id="currentPeriod">${fixture.date}</h2>
+                                <h2 id="currentPeriod">${fixture.team0} v ${fixture.team1}</h2>
                                 <p id="margin">${winning}</p>
                             </div>
                             <div class="team awayTeamContainer">
@@ -409,7 +396,7 @@
                             }
 
                             let gameTime;
-                            if (fixture.time.length  > 0) {
+                            if (fixture.time.length > 0) {
                                 gameTime = fixture.time;
                             }
                             else {
