@@ -318,7 +318,7 @@ a {
 }
 
 .fixtureScoreboard {
-    border-top: 8px darkblue solid;
+    border-top: 8px red solid;
     display: flex;
     padding: 10px;
     align-items: center;

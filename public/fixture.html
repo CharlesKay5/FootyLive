@@ -422,11 +422,13 @@
                      
                         `;
 
-                            if (fixture.time == 'Full Time') {
+                            if (fixture.live == 0 && gameTime.includes("Q4")) {
                                 fixtureElement.style.borderTop = '8px red solid';
-                            } else if (fixture.time.includes("Q")) {
+                            } else if (gameTime.includes("Q1") && gameTime.includes("00:00")) {
+                                fixtureElement.style.borderTop = '8px darkblue solid';
+                            } else if (fixture.live == 1) {
                                 fixtureElement.style.borderTop = '8px green solid';
-                            }
+                            }                            
 
                             dateContainer.appendChild(fixtureElement);
                         });
