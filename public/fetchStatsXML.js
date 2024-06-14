@@ -90,7 +90,6 @@ function fetchPlayerData(trimmedLink) {
                     const json = result;
                     const homePlayers = fetchData(json.xml.Home[0].Player, json.xml.Game[0].HomeTeam[0], 0, json.xml.Game[0], trimmedLink);
                     const awayPlayers = fetchData(json.xml.Away[0].Player, json.xml.Game[0].AwayTeam[0], 1, json.xml.Game[0], trimmedLink);
-                    console.log(homePlayers[0])
                     playerData.players = [...homePlayers, ...awayPlayers];
                     resolve(playerData);
                 });
