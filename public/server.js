@@ -525,11 +525,11 @@ async function updateScoringTimeline(newPlayer, differences) {
         }
     }
 
-    const round = newPlayer.round;
+    let round = newPlayer.round;
     if (!round.includes("Round")) {
         round = "Round " + round;
     }
-    
+
     for (const item of scoringTimeline) {
         await Round.findOneAndUpdate(
             { round },
