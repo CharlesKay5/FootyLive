@@ -2,6 +2,46 @@
   "Round 14": [
     {
       "playerId": "H.McCluggage-6",
+      "quarter": 3,
+      "time": "24:09",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.McCluggage-6",
+      "quarter": 3,
+      "time": "23:45",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.McCluggage-6",
+      "quarter": 3,
+      "time": "08:58",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.McCluggage-6",
+      "quarter": 3,
+      "time": "07:42",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "H.McCluggage-6",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.McCluggage-6",
       "quarter": 2,
       "time": "29:06",
       "stat": "k",
@@ -239,6 +279,54 @@
       "stat": "h",
       "difference": 1,
       "fantasy": 2
+    },
+    {
+      "playerId": "D.Zorko-15",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Zorko-15",
+      "quarter": 3,
+      "time": "11:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Zorko-15",
+      "quarter": 3,
+      "time": "11:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Zorko-15",
+      "quarter": 3,
+      "time": "09:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Zorko-15",
+      "quarter": 3,
+      "time": "07:42",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Zorko-15",
+      "quarter": 3,
+      "time": "07:13",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
     },
     {
       "playerId": "D.Zorko-15",
@@ -489,185 +577,81 @@
       "fantasy": 2
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "27:07",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "28:39",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "27:07",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "26:03",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "27:16",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "26:03",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "27:16",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "11:15",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "23:45",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "11:15",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "21:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "20:29",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "20:29",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "03:06",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "19:42",
       "stat": "h",
       "difference": 1,
       "fantasy": 2
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "03:06",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "02:52",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "16:40",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "R.Lester-35",
-      "quarter": 2,
-      "time": "02:52",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "29:23",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "29:23",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "25:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "25:38",
-      "stat": "ff",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "25:10",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "25:10",
-      "stat": "ff",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "15:52",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "15:24",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "10:36",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "10:36",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "01:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Lester-35",
-      "quarter": 1,
-      "time": "01:38",
+      "playerId": "D.Wilmot-44",
+      "quarter": 3,
+      "time": "16:40",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
@@ -833,6 +817,758 @@
       "fantasy": 3
     },
     {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "27:41",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "11:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "11:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "08:11",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "27:07",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "27:07",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "26:03",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "26:03",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "03:06",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "03:06",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "02:52",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 2,
+      "time": "02:52",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "29:23",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "29:23",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "25:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "25:38",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "25:10",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "25:10",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "15:52",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "15:24",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "10:36",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "10:36",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "01:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Lester-35",
+      "quarter": 1,
+      "time": "01:38",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "29:17",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "29:17",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "28:39",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "16:40",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "12:01",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "12:01",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 3,
+      "time": "08:11",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "30:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "19:09",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "19:09",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "12:07",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "08:22",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "08:22",
+      "stat": "b",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 2,
+      "time": "07:06",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 1,
+      "time": "29:53",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 1,
+      "time": "14:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 1,
+      "time": "07:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 1,
+      "time": "07:06",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Daniher-3",
+      "quarter": 1,
+      "time": "06:19",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "30:27",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "20:42",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "20:42",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "19:42",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "19:42",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "14:12",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "12:01",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "12:01",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "03:45",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 3,
+      "time": "02:15",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "25:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "24:51",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "21:07",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "20:35",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "03:06",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 2,
+      "time": "03:06",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "29:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "29:53",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "29:10",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "25:10",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "23:08",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "03:22",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "03:22",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Dunkley-5",
+      "quarter": 1,
+      "time": "00:24",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Berry-7",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Berry-7",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Berry-7",
+      "quarter": 3,
+      "time": "12:50",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Berry-7",
+      "quarter": 3,
+      "time": "12:16",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "J.Berry-7",
+      "quarter": 3,
+      "time": "06:46",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Berry-7",
+      "quarter": 3,
+      "time": "03:45",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Berry-7",
+      "quarter": 3,
+      "time": "00:10",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
       "playerId": "J.Berry-7",
       "quarter": 2,
       "time": "29:06",
@@ -985,95 +1721,175 @@
       "fantasy": 3
     },
     {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "30:53",
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "24:09",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "19:09",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "19:09",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "12:07",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "11:15",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "11:15",
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "24:09",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "11:15",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "08:22",
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "05:46",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "08:22",
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "05:46",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "04:42",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "02:45",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "02:45",
       "stat": "b",
       "difference": 1,
       "fantasy": 1
     },
     {
-      "playerId": "J.Daniher-3",
-      "quarter": 2,
-      "time": "07:06",
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "02:15",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Daniher-3",
-      "quarter": 1,
-      "time": "29:53",
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "01:10",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "00:52",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 3,
+      "time": "00:10",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 2,
+      "time": "27:36",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 2,
+      "time": "27:36",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 2,
+      "time": "05:46",
       "stat": "h",
       "difference": 1,
       "fantasy": 2
     },
     {
-      "playerId": "J.Daniher-3",
+      "playerId": "E.Hipwood-30",
+      "quarter": 1,
+      "time": "29:10",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 1,
+      "time": "29:10",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 1,
+      "time": "23:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
+      "quarter": 1,
+      "time": "23:53",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "E.Hipwood-30",
       "quarter": 1,
       "time": "14:53",
       "stat": "k",
@@ -1081,28 +1897,36 @@
       "fantasy": 3
     },
     {
-      "playerId": "J.Daniher-3",
+      "playerId": "E.Hipwood-30",
       "quarter": 1,
-      "time": "07:06",
+      "time": "14:53",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Fletcher-28",
+      "quarter": 3,
+      "time": "20:29",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Daniher-3",
-      "quarter": 1,
-      "time": "07:06",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "J.Daniher-3",
-      "quarter": 1,
-      "time": "06:19",
+      "playerId": "J.Fletcher-28",
+      "quarter": 3,
+      "time": "20:29",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
+    },
+    {
+      "playerId": "J.Fletcher-28",
+      "quarter": 3,
+      "time": "14:12",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
     },
     {
       "playerId": "J.Fletcher-28",
@@ -1266,6 +2090,38 @@
     },
     {
       "playerId": "B.Starcevich-37",
+      "quarter": 3,
+      "time": "24:09",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "B.Starcevich-37",
+      "quarter": 3,
+      "time": "24:09",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "B.Starcevich-37",
+      "quarter": 3,
+      "time": "18:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "B.Starcevich-37",
+      "quarter": 3,
+      "time": "18:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "B.Starcevich-37",
       "quarter": 2,
       "time": "26:03",
       "stat": "k",
@@ -1393,498 +2249,50 @@
       "fantasy": 2
     },
     {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "25:06",
+      "playerId": "B.Reville -38",
+      "quarter": 3,
+      "time": "12:50",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "24:51",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "21:07",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "20:35",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "03:06",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 2,
-      "time": "03:06",
-      "stat": "fa",
-      "difference": 1,
-      "fantasy": -3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "29:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "29:53",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "29:10",
-      "stat": "fa",
-      "difference": 1,
-      "fantasy": -3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "25:10",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "23:08",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "03:22",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "03:22",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Dunkley-5",
-      "quarter": 1,
-      "time": "00:24",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 2,
-      "time": "18:52",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 2,
-      "time": "08:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 2,
-      "time": "08:37",
+      "playerId": "B.Reville -38",
+      "quarter": 3,
+      "time": "12:50",
       "stat": "b",
       "difference": 1,
       "fantasy": 1
     },
     {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "25:57",
+      "playerId": "B.Reville -38",
+      "quarter": 3,
+      "time": "12:01",
       "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "25:57",
-      "stat": "g",
-      "difference": 1,
+      "difference": 2,
       "fantasy": 6
     },
     {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "25:38",
+      "playerId": "B.Reville -38",
+      "quarter": 3,
+      "time": "12:01",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "03:57",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "03:57",
-      "stat": "b",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "03:22",
+      "playerId": "B.Reville -38",
+      "quarter": 3,
+      "time": "11:16",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "00:24",
+      "playerId": "B.Reville -38",
+      "quarter": 3,
+      "time": "03:45",
       "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Rayner-16",
-      "quarter": 1,
-      "time": "00:24",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 2,
-      "time": "19:09",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 2,
-      "time": "16:19",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 2,
-      "time": "05:46",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "19:08",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "19:08",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "19:08",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "14:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "06:19",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "K.Lohmann-1",
-      "quarter": 1,
-      "time": "06:19",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 2,
-      "time": "16:19",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 2,
-      "time": "11:15",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 2,
-      "time": "11:15",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 2,
-      "time": "10:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 2,
-      "time": "10:37",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 1,
-      "time": "29:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 1,
-      "time": "27:24",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 1,
-      "time": "21:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 1,
-      "time": "14:53",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 1,
-      "time": "01:07",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "Z.Bailey-33",
-      "quarter": 1,
-      "time": "01:07",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 2,
-      "time": "27:36",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 2,
-      "time": "27:36",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 2,
-      "time": "05:46",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 1,
-      "time": "29:10",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 1,
-      "time": "29:10",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 1,
-      "time": "23:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 1,
-      "time": "23:53",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 1,
-      "time": "14:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "E.Hipwood-30",
-      "quarter": 1,
-      "time": "14:53",
-      "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
@@ -1991,6 +2399,78 @@
       "stat": "m",
       "difference": 1,
       "fantasy": 3
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "30:14",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "28:12",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "22:46",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "21:46",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "21:46",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "21:16",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "08:58",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "01:44",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "O.McInerney-46",
+      "quarter": 3,
+      "time": "01:10",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
     },
     {
       "playerId": "O.McInerney-46",
@@ -2137,68 +2617,44 @@
       "fantasy": 1
     },
     {
-      "playerId": "H.Andrews-31",
-      "quarter": 2,
-      "time": "28:37",
+      "playerId": "J.Payne-40",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "k",
+      "difference": 2,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Payne-40",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "m",
+      "difference": 2,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Payne-40",
+      "quarter": 3,
+      "time": "18:16",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "H.Andrews-31",
-      "quarter": 2,
-      "time": "11:15",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Andrews-31",
-      "quarter": 2,
-      "time": "11:15",
+      "playerId": "J.Payne-40",
+      "quarter": 3,
+      "time": "18:16",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "H.Andrews-31",
-      "quarter": 2,
-      "time": "03:06",
-      "stat": "k",
+      "playerId": "J.Payne-40",
+      "quarter": 3,
+      "time": "06:46",
+      "stat": "t",
       "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Andrews-31",
-      "quarter": 2,
-      "time": "02:52",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Andrews-31",
-      "quarter": 1,
-      "time": "21:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Andrews-31",
-      "quarter": 1,
-      "time": "01:07",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Andrews-31",
-      "quarter": 1,
-      "time": "01:07",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
+      "fantasy": 4
     },
     {
       "playerId": "J.Payne-40",
@@ -2273,6 +2729,214 @@
       "fantasy": 3
     },
     {
+      "playerId": "Z.Bailey-33",
+      "quarter": 3,
+      "time": "19:42",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 3,
+      "time": "18:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 3,
+      "time": "18:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 3,
+      "time": "12:50",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 2,
+      "time": "16:19",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 2,
+      "time": "10:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 2,
+      "time": "10:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 1,
+      "time": "29:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 1,
+      "time": "27:24",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 1,
+      "time": "21:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 1,
+      "time": "14:53",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 1,
+      "time": "01:07",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "Z.Bailey-33",
+      "quarter": 1,
+      "time": "01:07",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "28:12",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "27:41",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "24:43",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "20:42",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "20:29",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "12:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Ah Chee-4",
+      "quarter": 3,
+      "time": "12:01",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
       "playerId": "C.Ah Chee-4",
       "quarter": 2,
       "time": "29:06",
@@ -2329,103 +2993,63 @@
       "fantasy": 3
     },
     {
-      "playerId": "C.McKenna-26",
-      "quarter": 2,
-      "time": "29:06",
+      "playerId": "C.Rayner-16",
+      "quarter": 3,
+      "time": "19:16",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "C.McKenna-26",
-      "quarter": 2,
-      "time": "27:07",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.McKenna-26",
-      "quarter": 2,
-      "time": "27:07",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.McKenna-26",
-      "quarter": 2,
-      "time": "11:36",
-      "stat": "fa",
-      "difference": 1,
-      "fantasy": -3
-    },
-    {
-      "playerId": "C.McKenna-26",
-      "quarter": 2,
-      "time": "09:37",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "C.McKenna-26",
-      "quarter": 1,
-      "time": "23:24",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.McKenna-26",
-      "quarter": 1,
-      "time": "23:24",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.McKenna-26",
-      "quarter": 1,
-      "time": "23:24",
+      "playerId": "C.Rayner-16",
+      "quarter": 3,
+      "time": "19:16",
       "stat": "b",
       "difference": 1,
       "fantasy": 1
     },
     {
-      "playerId": "C.McKenna-26",
-      "quarter": 1,
-      "time": "19:08",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Cameron-23",
-      "quarter": 2,
-      "time": "29:06",
+      "playerId": "C.Rayner-16",
+      "quarter": 3,
+      "time": "08:58",
       "stat": "h",
       "difference": 1,
       "fantasy": 2
     },
     {
-      "playerId": "C.Cameron-23",
-      "quarter": 2,
-      "time": "28:06",
+      "playerId": "C.Rayner-16",
+      "quarter": 3,
+      "time": "06:46",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 3,
+      "time": "02:15",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "C.Cameron-23",
+      "playerId": "C.Rayner-16",
       "quarter": 2,
-      "time": "27:36",
-      "stat": "m",
+      "time": "18:52",
+      "stat": "h",
       "difference": 1,
-      "fantasy": 3
+      "fantasy": 2
     },
     {
-      "playerId": "C.Cameron-23",
+      "playerId": "C.Rayner-16",
       "quarter": 2,
       "time": "08:37",
       "stat": "k",
@@ -2433,7 +3057,159 @@
       "fantasy": 3
     },
     {
-      "playerId": "C.Cameron-23",
+      "playerId": "C.Rayner-16",
+      "quarter": 2,
+      "time": "08:37",
+      "stat": "b",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "25:57",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "25:57",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "25:38",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "03:57",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "03:57",
+      "stat": "b",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "03:22",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "00:24",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Rayner-16",
+      "quarter": 1,
+      "time": "00:24",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 3,
+      "time": "20:29",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 3,
+      "time": "20:29",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 2,
+      "time": "19:09",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 2,
+      "time": "16:19",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 2,
+      "time": "05:46",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 1,
+      "time": "19:08",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 1,
+      "time": "19:08",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 1,
+      "time": "19:08",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 1,
+      "time": "14:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
       "quarter": 1,
       "time": "10:54",
       "stat": "k",
@@ -2441,10 +3217,186 @@
       "fantasy": 3
     },
     {
-      "playerId": "C.Cameron-23",
+      "playerId": "K.Lohmann-1",
       "quarter": 1,
       "time": "10:54",
       "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 1,
+      "time": "06:19",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "K.Lohmann-1",
+      "quarter": 1,
+      "time": "06:19",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 3,
+      "time": "03:45",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 2,
+      "time": "28:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 2,
+      "time": "11:15",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 2,
+      "time": "03:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 2,
+      "time": "02:52",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 1,
+      "time": "21:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 1,
+      "time": "01:07",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Andrews-31",
+      "quarter": 1,
+      "time": "01:07",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Neale-9",
+      "quarter": 3,
+      "time": "27:41",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Neale-9",
+      "quarter": 3,
+      "time": "27:41",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Neale-9",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "L.Neale-9",
+      "quarter": 3,
+      "time": "21:16",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "L.Neale-9",
+      "quarter": 3,
+      "time": "20:29",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Neale-9",
+      "quarter": 3,
+      "time": "16:40",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Neale-9",
+      "quarter": 3,
+      "time": "00:10",
+      "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
@@ -2577,6 +3529,126 @@
       "fantasy": 2
     },
     {
+      "playerId": "C.Cameron-23",
+      "quarter": 3,
+      "time": "22:46",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 3,
+      "time": "07:42",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 3,
+      "time": "04:42",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 2,
+      "time": "29:06",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 2,
+      "time": "28:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 2,
+      "time": "27:36",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 2,
+      "time": "08:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Cameron-23",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Morris-13",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Morris-13",
+      "quarter": 3,
+      "time": "27:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Morris-13",
+      "quarter": 3,
+      "time": "25:11",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Morris-13",
+      "quarter": 3,
+      "time": "25:11",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "L.Morris-13",
+      "quarter": 3,
+      "time": "24:43",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
       "playerId": "L.Morris-13",
       "quarter": 1,
       "time": "14:53",
@@ -2609,268 +3681,244 @@
       "fantasy": 3
     },
     {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "26:43",
+      "playerId": "C.McKenna-26",
+      "quarter": 3,
+      "time": "21:16",
       "stat": "h",
       "difference": 1,
       "fantasy": 2
     },
     {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "25:06",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "23:51",
+      "playerId": "C.McKenna-26",
+      "quarter": 3,
+      "time": "19:16",
       "stat": "h",
       "difference": 1,
       "fantasy": 2
     },
     {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "16:19",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "09:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "09:37",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "09:37",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "08:22",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "02:03",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 2,
-      "time": "02:03",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "31:07",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "10:54",
+      "playerId": "C.McKenna-26",
+      "quarter": 3,
+      "time": "18:38",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "04:51",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "04:37",
+      "playerId": "C.McKenna-26",
+      "quarter": 2,
+      "time": "29:06",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "k",
-      "difference": 2,
-      "fantasy": 6
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "h",
-      "difference": 2,
-      "fantasy": 4
-    },
-    {
-      "playerId": "J.Sinclair-35",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "J.Higgins-1",
+      "playerId": "C.McKenna-26",
       "quarter": 2,
-      "time": "22:36",
+      "time": "27:07",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Higgins-1",
+      "playerId": "C.McKenna-26",
       "quarter": 2,
-      "time": "22:36",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "22:18",
-      "stat": "ff",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "20:35",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "18:06",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "18:06",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "17:43",
+      "time": "27:07",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Higgins-1",
+      "playerId": "C.McKenna-26",
       "quarter": 2,
-      "time": "16:37",
+      "time": "11:36",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "C.McKenna-26",
+      "quarter": 2,
+      "time": "09:37",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "C.McKenna-26",
+      "quarter": 1,
+      "time": "23:24",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "16:37",
+      "playerId": "C.McKenna-26",
+      "quarter": 1,
+      "time": "23:24",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "14:39",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "14:39",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "10:20",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "10:20",
+      "playerId": "C.McKenna-26",
+      "quarter": 1,
+      "time": "23:24",
       "stat": "b",
       "difference": 1,
       "fantasy": 1
     },
     {
-      "playerId": "J.Higgins-1",
-      "quarter": 2,
-      "time": "02:52",
+      "playerId": "C.McKenna-26",
+      "quarter": 1,
+      "time": "19:08",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "21:16",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "19:42",
       "stat": "h",
       "difference": 1,
       "fantasy": 2
     },
     {
-      "playerId": "J.Higgins-1",
-      "quarter": 1,
-      "time": "01:53",
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "18:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "18:16",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "16:40",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "16:40",
+      "stat": "t",
+      "difference": 2,
+      "fantasy": 8
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "08:58",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "08:11",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "08:11",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "08:11",
       "stat": "t",
       "difference": 1,
       "fantasy": 4
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "07:13",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "06:46",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "06:16",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "03:45",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "01:10",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "R.Marshall-19",
+      "quarter": 3,
+      "time": "00:10",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
     },
     {
       "playerId": "R.Marshall-19",
@@ -3031,6 +4079,1462 @@
       "stat": "ho",
       "difference": 1,
       "fantasy": 1
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 3,
+      "time": "29:31",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 3,
+      "time": "23:26",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 3,
+      "time": "20:29",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 3,
+      "time": "14:12",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 3,
+      "time": "12:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 3,
+      "time": "09:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 3,
+      "time": "02:45",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "26:43",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "25:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "23:51",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "16:19",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "09:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "09:37",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "09:37",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "08:22",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "02:03",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 2,
+      "time": "02:03",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "31:07",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "04:51",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "04:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "k",
+      "difference": 2,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "h",
+      "difference": 2,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Sinclair-35",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "14:12",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "11:01",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "09:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "09:15",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "08:58",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "08:58",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "06:46",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 3,
+      "time": "06:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 2,
+      "time": "28:06",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 2,
+      "time": "17:43",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 2,
+      "time": "15:06",
+      "stat": "h",
+      "difference": -1,
+      "fantasy": -2
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 2,
+      "time": "13:07",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 2,
+      "time": "09:37",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "29:10",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "29:10",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "29:10",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "27:24",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "16:50",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "14:53",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "14:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "H.Clark-11",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 3,
+      "time": "28:12",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 3,
+      "time": "09:46",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 3,
+      "time": "09:46",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 3,
+      "time": "09:15",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "22:36",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "22:36",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "22:18",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "20:35",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "18:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "18:06",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "17:43",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "16:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "16:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "14:39",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "14:39",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "10:20",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "10:20",
+      "stat": "b",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 2,
+      "time": "02:52",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Higgins-1",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "28:12",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "07:13",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "07:13",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "06:46",
+      "stat": "h",
+      "difference": 2,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "04:13",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 3,
+      "time": "00:10",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 2,
+      "time": "29:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 2,
+      "time": "29:06",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 2,
+      "time": "20:35",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 2,
+      "time": "08:22",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 2,
+      "time": "08:22",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 2,
+      "time": "05:46",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 2,
+      "time": "01:50",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 1,
+      "time": "12:52",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 1,
+      "time": "09:54",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Steele-9",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 3,
+      "time": "17:46",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 3,
+      "time": "17:11",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 3,
+      "time": "03:45",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 2,
+      "time": "29:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 2,
+      "time": "29:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 2,
+      "time": "21:07",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 2,
+      "time": "20:35",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 2,
+      "time": "16:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 2,
+      "time": "16:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 2,
+      "time": "12:35",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "21:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "20:24",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "05:51",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "04:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "04:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "01:53",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Wood-32",
+      "quarter": 1,
+      "time": "00:24",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "24:43",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "20:42",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "20:42",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "12:16",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "02:45",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 3,
+      "time": "02:45",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "25:06",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "24:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "23:51",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "16:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "16:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "14:02",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "14:02",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 2,
+      "time": "07:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 1,
+      "time": "24:24",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 1,
+      "time": "23:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 1,
+      "time": "23:53",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "C.Wilkie-44",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 3,
+      "time": "23:26",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 3,
+      "time": "13:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "30:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "30:37",
+      "stat": "b",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "29:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "29:06",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "26:43",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "12:35",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "12:35",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 2,
+      "time": "07:06",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 1,
+      "time": "23:24",
+      "stat": "k",
+      "difference": 2,
+      "fantasy": 6
+    },
+    {
+      "playerId": "R.Bonner-36",
+      "quarter": 1,
+      "time": "10:54",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 3,
+      "time": "15:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 3,
+      "time": "15:15",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 3,
+      "time": "14:46",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 3,
+      "time": "06:46",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 2,
+      "time": "17:21",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 2,
+      "time": "16:37",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 2,
+      "time": "04:09",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 2,
+      "time": "04:09",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 2,
+      "time": "03:36",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 2,
+      "time": "00:20",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 1,
+      "time": "23:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 1,
+      "time": "20:53",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.King-12",
+      "quarter": 1,
+      "time": "20:24",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 3,
+      "time": "03:15",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 3,
+      "time": "03:15",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 2,
+      "time": "29:06",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 2,
+      "time": "20:35",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 2,
+      "time": "09:37",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 2,
+      "time": "09:22",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 1,
+      "time": "15:24",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 1,
+      "time": "14:53",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 1,
+      "time": "05:51",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 1,
+      "time": "05:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 1,
+      "time": "02:22",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Schoenmaker-27",
+      "quarter": 1,
+      "time": "02:22",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
     },
     {
       "playerId": "P.Dow-15",
@@ -3177,724 +5681,36 @@
       "fantasy": 3
     },
     {
-      "playerId": "M.Wood-32",
-      "quarter": 2,
-      "time": "29:37",
+      "playerId": "S.Ross-6",
+      "quarter": 3,
+      "time": "21:16",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "M.Wood-32",
-      "quarter": 2,
-      "time": "29:37",
+      "playerId": "S.Ross-6",
+      "quarter": 3,
+      "time": "20:42",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "M.Wood-32",
-      "quarter": 2,
-      "time": "21:07",
+      "playerId": "S.Ross-6",
+      "quarter": 3,
+      "time": "20:29",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "S.Ross-6",
+      "quarter": 3,
+      "time": "19:16",
       "stat": "h",
       "difference": 1,
       "fantasy": 2
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 2,
-      "time": "20:35",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 2,
-      "time": "16:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 2,
-      "time": "16:37",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 2,
-      "time": "12:35",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "21:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "20:24",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "05:51",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "04:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "04:37",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "M.Wood-32",
-      "quarter": 1,
-      "time": "00:24",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "25:06",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "24:06",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "23:51",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "16:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "16:37",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "14:02",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "14:02",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 2,
-      "time": "07:06",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 1,
-      "time": "24:24",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 1,
-      "time": "23:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 1,
-      "time": "23:53",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "C.Wilkie-44",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 2,
-      "time": "28:06",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 2,
-      "time": "17:43",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 2,
-      "time": "15:06",
-      "stat": "h",
-      "difference": -1,
-      "fantasy": -2
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 2,
-      "time": "13:07",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 2,
-      "time": "09:37",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "29:10",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "29:10",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "29:10",
-      "stat": "ff",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "27:24",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "16:50",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "14:53",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "14:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "H.Clark-11",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "30:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "30:37",
-      "stat": "b",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "29:37",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "29:06",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "26:43",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "12:35",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "12:35",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 2,
-      "time": "07:06",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 1,
-      "time": "23:24",
-      "stat": "k",
-      "difference": 2,
-      "fantasy": 6
-    },
-    {
-      "playerId": "R.Bonner-36",
-      "quarter": 1,
-      "time": "10:54",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 2,
-      "time": "29:06",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 2,
-      "time": "29:06",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 2,
-      "time": "20:35",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 2,
-      "time": "08:22",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 2,
-      "time": "08:22",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 2,
-      "time": "05:46",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 2,
-      "time": "01:50",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 1,
-      "time": "12:52",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 1,
-      "time": "09:54",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Steele-9",
-      "quarter": 1,
-      "time": "01:53",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 2,
-      "time": "29:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 2,
-      "time": "29:37",
-      "stat": "ff",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 2,
-      "time": "29:06",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 2,
-      "time": "14:02",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 2,
-      "time": "14:02",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 1,
-      "time": "25:57",
-      "stat": "fa",
-      "difference": 1,
-      "fantasy": -3
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 1,
-      "time": "17:23",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 1,
-      "time": "17:23",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 1,
-      "time": "16:50",
-      "stat": "ff",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 1,
-      "time": "13:37",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 1,
-      "time": "13:37",
-      "stat": "g",
-      "difference": 1,
-      "fantasy": 6
-    },
-    {
-      "playerId": "M.Owens-10",
-      "quarter": 1,
-      "time": "12:52",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 2,
-      "time": "29:06",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 2,
-      "time": "20:35",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 2,
-      "time": "13:38",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 2,
-      "time": "09:37",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 2,
-      "time": "09:22",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 1,
-      "time": "15:24",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 1,
-      "time": "14:53",
-      "stat": "ff",
-      "difference": 1,
-      "fantasy": 1
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 1,
-      "time": "05:51",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 1,
-      "time": "05:38",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 1,
-      "time": "02:22",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "A.Schoenmaker-27",
-      "quarter": 1,
-      "time": "02:22",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
     },
     {
       "playerId": "S.Ross-6",
@@ -3972,6 +5788,46 @@
       "playerId": "S.Ross-6",
       "quarter": 1,
       "time": "15:24",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Wilson-22",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "D.Wilson-22",
+      "quarter": 3,
+      "time": "26:44",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "D.Wilson-22",
+      "quarter": 3,
+      "time": "22:46",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "D.Wilson-22",
+      "quarter": 3,
+      "time": "13:15",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "D.Wilson-22",
+      "quarter": 3,
+      "time": "13:15",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
@@ -4079,6 +5935,166 @@
       "stat": "fa",
       "difference": 1,
       "fantasy": -3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 3,
+      "time": "23:45",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 3,
+      "time": "23:45",
+      "stat": "b",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 3,
+      "time": "23:26",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 2,
+      "time": "29:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 2,
+      "time": "29:37",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 2,
+      "time": "29:06",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 2,
+      "time": "14:02",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 2,
+      "time": "14:02",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 1,
+      "time": "25:57",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 1,
+      "time": "17:23",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 1,
+      "time": "17:23",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 1,
+      "time": "16:50",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 1,
+      "time": "13:37",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 1,
+      "time": "13:37",
+      "stat": "g",
+      "difference": 1,
+      "fantasy": 6
+    },
+    {
+      "playerId": "M.Owens-10",
+      "quarter": 1,
+      "time": "12:52",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "T.Campbell-38",
+      "quarter": 3,
+      "time": "30:27",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "T.Campbell-38",
+      "quarter": 3,
+      "time": "28:12",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "T.Campbell-38",
+      "quarter": 3,
+      "time": "28:12",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "T.Campbell-38",
+      "quarter": 3,
+      "time": "11:01",
+      "stat": "ho",
+      "difference": 1,
+      "fantasy": 1
     },
     {
       "playerId": "T.Campbell-38",
@@ -4209,76 +6225,52 @@
       "fantasy": 1
     },
     {
-      "playerId": "M.King-12",
-      "quarter": 2,
-      "time": "17:21",
+      "playerId": "B.Hill-8",
+      "quarter": 3,
+      "time": "16:40",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "M.King-12",
-      "quarter": 2,
-      "time": "16:37",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.King-12",
-      "quarter": 2,
-      "time": "04:09",
+      "playerId": "B.Hill-8",
+      "quarter": 3,
+      "time": "13:59",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "M.King-12",
-      "quarter": 2,
-      "time": "04:09",
-      "stat": "g",
+      "playerId": "B.Hill-8",
+      "quarter": 3,
+      "time": "13:59",
+      "stat": "ff",
       "difference": 1,
-      "fantasy": 6
+      "fantasy": 1
     },
     {
-      "playerId": "M.King-12",
-      "quarter": 2,
-      "time": "03:36",
-      "stat": "m",
+      "playerId": "B.Hill-8",
+      "quarter": 3,
+      "time": "11:16",
+      "stat": "h",
       "difference": 1,
-      "fantasy": 3
+      "fantasy": 2
     },
     {
-      "playerId": "M.King-12",
-      "quarter": 2,
-      "time": "00:20",
+      "playerId": "B.Hill-8",
+      "quarter": 3,
+      "time": "09:15",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "M.King-12",
-      "quarter": 1,
-      "time": "23:53",
-      "stat": "k",
+      "playerId": "B.Hill-8",
+      "quarter": 3,
+      "time": "03:15",
+      "stat": "t",
       "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.King-12",
-      "quarter": 1,
-      "time": "20:53",
-      "stat": "k",
-      "difference": 1,
-      "fantasy": 3
-    },
-    {
-      "playerId": "M.King-12",
-      "quarter": 1,
-      "time": "20:24",
-      "stat": "m",
-      "difference": 1,
-      "fantasy": 3
+      "fantasy": 4
     },
     {
       "playerId": "B.Hill-8",
@@ -4354,6 +6346,38 @@
     },
     {
       "playerId": "L.Henry-23",
+      "quarter": 3,
+      "time": "22:46",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "L.Henry-23",
+      "quarter": 3,
+      "time": "16:40",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Henry-23",
+      "quarter": 3,
+      "time": "16:40",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "L.Henry-23",
+      "quarter": 3,
+      "time": "16:40",
+      "stat": "b",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "L.Henry-23",
       "quarter": 2,
       "time": "11:36",
       "stat": "ff",
@@ -4409,52 +6433,44 @@
       "fantasy": 2
     },
     {
-      "playerId": "J.Battle-26",
-      "quarter": 2,
-      "time": "13:38",
+      "playerId": "D.Butler-16",
+      "quarter": 3,
+      "time": "19:42",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "D.Butler-16",
+      "quarter": 3,
+      "time": "19:42",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "D.Butler-16",
+      "quarter": 3,
+      "time": "19:42",
+      "stat": "ff",
+      "difference": 1,
+      "fantasy": 1
+    },
+    {
+      "playerId": "D.Butler-16",
+      "quarter": 3,
+      "time": "11:16",
       "stat": "k",
       "difference": 1,
       "fantasy": 3
     },
     {
-      "playerId": "J.Battle-26",
-      "quarter": 1,
-      "time": "23:24",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Battle-26",
-      "quarter": 1,
-      "time": "23:24",
-      "stat": "m",
+      "playerId": "D.Butler-16",
+      "quarter": 3,
+      "time": "11:01",
+      "stat": "k",
       "difference": 1,
       "fantasy": 3
-    },
-    {
-      "playerId": "J.Battle-26",
-      "quarter": 1,
-      "time": "04:37",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Battle-26",
-      "quarter": 1,
-      "time": "01:38",
-      "stat": "h",
-      "difference": 1,
-      "fantasy": 2
-    },
-    {
-      "playerId": "J.Battle-26",
-      "quarter": 1,
-      "time": "01:38",
-      "stat": "t",
-      "difference": 1,
-      "fantasy": 4
     },
     {
       "playerId": "D.Butler-16",
@@ -4545,6 +6561,118 @@
       "fantasy": 3
     },
     {
+      "playerId": "J.Battle-26",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 3,
+      "time": "19:16",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 3,
+      "time": "08:11",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 2,
+      "time": "13:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 1,
+      "time": "23:24",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 1,
+      "time": "23:24",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 1,
+      "time": "04:37",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 1,
+      "time": "01:38",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "J.Battle-26",
+      "quarter": 1,
+      "time": "01:38",
+      "stat": "t",
+      "difference": 1,
+      "fantasy": 4
+    },
+    {
+      "playerId": "A.Caminiti-47",
+      "quarter": 3,
+      "time": "18:38",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Caminiti-47",
+      "quarter": 3,
+      "time": "18:38",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Caminiti-47",
+      "quarter": 3,
+      "time": "04:42",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
+    },
+    {
+      "playerId": "A.Caminiti-47",
+      "quarter": 3,
+      "time": "03:45",
+      "stat": "k",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "A.Caminiti-47",
+      "quarter": 3,
+      "time": "03:45",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
       "playerId": "A.Caminiti-47",
       "quarter": 2,
       "time": "29:57",
@@ -4604,6 +6732,30 @@
       "playerId": "A.Caminiti-47",
       "quarter": 1,
       "time": "04:51",
+      "stat": "m",
+      "difference": 1,
+      "fantasy": 3
+    },
+    {
+      "playerId": "M.Windhager-2",
+      "quarter": 3,
+      "time": "18:16",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Windhager-2",
+      "quarter": 3,
+      "time": "09:15",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "M.Windhager-2",
+      "quarter": 3,
+      "time": "09:15",
       "stat": "m",
       "difference": 1,
       "fantasy": 3
@@ -4711,6 +6863,30 @@
       "stat": "h",
       "difference": 1,
       "fantasy": 2
+    },
+    {
+      "playerId": "Z.Jones-3",
+      "quarter": 3,
+      "time": "30:27",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "Z.Jones-3",
+      "quarter": 3,
+      "time": "23:26",
+      "stat": "h",
+      "difference": 1,
+      "fantasy": 2
+    },
+    {
+      "playerId": "Z.Jones-3",
+      "quarter": 3,
+      "time": "14:12",
+      "stat": "fa",
+      "difference": 1,
+      "fantasy": -3
     }
   ]
 }

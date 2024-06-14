@@ -487,10 +487,7 @@ async function updateScoringTimeline(newPlayer, differences) {
             }
 
             const time = timeArray[1];
-            if (time.length !== 5) {
-                time = time + "0";
-            }
-            if (time.endsWith(":60")) {
+            if (time.endsWith(":6")) {
                 time.replace(":6", ":50");
             }
 
