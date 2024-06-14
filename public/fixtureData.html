@@ -974,11 +974,7 @@
 
             const currentPeriod = document.getElementById('currentPeriod');
 
-            
-            if (currentTime.length !== 7) {
-                currentTime = currentTime + "0";
-            }
-            if (currentTime.endsWith(":60")) {
+            if (currentTime.endsWith(":6")) {
                 currentTime.replace(":6", ":50");
             }
 
