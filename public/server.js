@@ -469,18 +469,17 @@ let existingData = {};
 const { PlayerStat, Round } = require('./models.js');
 
 async function updateScoringTimeline(newPlayer, differences) {
-    
+
     const scoringTimeline = [];
     const playerId = `${newPlayer.name}-${newPlayer.number}`;
 
     for (const [key, value] of Object.entries(differences)) {
         if (value !== 0 && key !== 'fantasy' && Number.isInteger(value)) {
-            console.log(playerId, key, value, newPlayer.time)
             let fantasy = 0;
             let keyShorthand;
             const timeArray = newPlayer.time.split(' ');
             let quarter = timeArray[0][1];
-            console.log(quarter);
+
             switch (timeArray[0]) {
                 case 'QTR': quarter = 1; break;
                 case '3QT': quarter = 3; break;
@@ -493,7 +492,7 @@ async function updateScoringTimeline(newPlayer, differences) {
             }
 
             const time = timeArray[1];
-            
+
             switch (key) {
                 case "goals": fantasy += (value * 6); keyShorthand = 'g'; break;
                 case "behinds": fantasy += (value * 1); keyShorthand = 'b'; break;
@@ -507,6 +506,12 @@ async function updateScoringTimeline(newPlayer, differences) {
                 default:
                     continue;
             }
+            console.log(playerId,
+                quarter,
+                time,
+                keyShorthand,
+                value,
+                fantasy)
 
             scoringTimeline.push({
                 playerId,
@@ -516,12 +521,15 @@ async function updateScoringTimeline(newPlayer, differences) {
                 difference: value,
                 fantasy,
             });
-            console.log(scoringTimeline)
+            // console.log(scoringTimeline)
         }
     }
 
     const round = newPlayer.round;
-
+    if (!round.includes("Round")) {
+        round = "Round " + round;
+    }
+    
     for (const item of scoringTimeline) {
         await Round.findOneAndUpdate(
             { round },

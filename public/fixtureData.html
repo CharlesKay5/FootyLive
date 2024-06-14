@@ -279,7 +279,9 @@
                     awayTeamIcon.src = `/svg/${firstPlayerTeam1.teamName.replace(/\s/g, '')}.svg`;
                 }
 
-                calculateGamePercentage(currentTime);
+                calculateGamePercentage(firstPlayerTeam0, currentTime);
+
+
 
                 // Sort the players by their fantasy score
                 const sortedPlayers = teamData.sort((a, b) => b.fantasy - a.fantasy);
@@ -390,7 +392,9 @@
 
                 if (currentTimelinePlayer) {
                     //console.log("Fetching current Player");
-                    fetchScoringTimeline(currentTimelinePlayer, firstPlayerTeam0.round);
+                    if (firstPlayerTeam0) {
+                        fetchScoringTimeline(currentTimelinePlayer, firstPlayerTeam0.round);
+                    }
                 }
             } else {
                 console.error(`Player data for Team ${team} is not available or not in the expected format.`);
@@ -961,12 +965,12 @@
             }
             else if (event.data === 'chatDataChanged') {
                 fetchAndUpdateChat();
-            }else {
+            } else {
                 console.log(event.data);
             }
         };
 
-        async function calculateGamePercentage(currentTime) {
+        async function calculateGamePercentage(firstPlayerTeam0, currentTime) {
 
             const currentPeriod = document.getElementById('currentPeriod');
             currentPeriod.textContent = currentTime;
@@ -1004,64 +1008,11 @@
                     }
                 }
             }
-
-            if (quarter == '0') {
-                const gamePercentage = document.getElementById('gamePercentage');
-                gamePercentage.textContent = '0%';
-                return;
+            const gamePercentageElement = document.getElementById('gamePercentage');
+            if (firstPlayerTeam0) {
+                gamePercentageElement.textContent = firstPlayerTeam0.gamePercentage + '%';
+                percentage = firstPlayerTeam0.gamePercentage;
             }
-            try {
-                minutes = timeArray[1].split(':')[0];
-            } catch {
-                minutes = 120;
-            }
-
-            let percentage = ((parseInt(minutes) / 120) * 100) + ((parseInt(quarter) - 1) * 25);
-            // Some of this code is redundant now that we've switched from puppeteer to fetching the data
-            switch (quarterFull) {
-                case 'Q1':
-                    if (percentage >= 25) {
-                        percentage = 24;
-                    }
-                    break;
-                case 'Q2':
-                    if (percentage >= 50) {
-                        percentage = 49;
-                    }
-                    break;
-                case "Q3":
-                    if (percentage >= 75) {
-                        percentage = 74;
-                    }
-                    break;
-                case 'Q4':
-                    if (percentage >= 100) {
-                        percentage = 99;
-                    }
-                    break;
-                case 'QTR':
-                    percentage = 25;
-                    break;
-                case 'HALF':
-                    percentage = 50;
-                    break;
-                case '3':
-                    percentage = 75;
-                    break;
-                case '4':
-                    percentage = 100;
-                    break;
-                case 'Time':
-                    percentage = 100;
-                    break;
-                default:
-                    break;
-            }
-            if (percentage > 100) {
-                percentage = 100;
-            }
-            const gamePercentage = document.getElementById('gamePercentage');
-            gamePercentage.textContent = Math.ceil(percentage) + '%';
 
             // Pause briefly to allow time for all player data to load before applying fireAndIce
             await new Promise(r => setTimeout(r, 100));
@@ -1079,7 +1030,7 @@
                 fantasy.push(fantasyScore);
                 let hotLevel = (parseFloat(average) * (parseFloat(percentage) / 100)) * 1.2;
                 let coldLevel = ((parseFloat(average) * (parseFloat(percentage) / 100)) * 0.6);
-                
+
                 // Check if the player already has an icon
                 let existingIcon = playerNames[i].parentElement.querySelector("i");
                 if (existingIcon) {
