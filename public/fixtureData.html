@@ -973,6 +973,15 @@
         async function calculateGamePercentage(firstPlayerTeam0, currentTime) {
 
             const currentPeriod = document.getElementById('currentPeriod');
+
+            
+            if (currentTime.length !== 7) {
+                currentTime = time + "0";
+            }
+            if (currentTime.length != 5 (":60")) {
+                currentTime.replace(":6", ":50");
+            }
+
             currentPeriod.textContent = currentTime;
 
             let homeTeamScore = parseInt(document.getElementById('homeTeamScore').textContent);

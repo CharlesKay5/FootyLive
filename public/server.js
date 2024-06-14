@@ -42,11 +42,6 @@ httpServer.on('upgrade', (req, socket, head) => {
     })
 })
 
-
-// app.listen(port, () => {
-//     console.log(`Server is running on ${port}`);
-// });
-
 wss.on('connection', (ws, request) => {
 
     const ip = request.socket.remoteAddress;
@@ -492,6 +487,12 @@ async function updateScoringTimeline(newPlayer, differences) {
             }
 
             const time = timeArray[1];
+            if (time.length !== 5) {
+                time = time + "0";
+            }
+            if (time.length != 5 (":60")) {
+                time.replace(":6", ":50");
+            }
 
             switch (key) {
                 case "goals": fantasy += (value * 6); keyShorthand = 'g'; break;
@@ -506,13 +507,7 @@ async function updateScoringTimeline(newPlayer, differences) {
                 default:
                     continue;
             }
-            console.log(playerId,
-                quarter,
-                time,
-                keyShorthand,
-                value,
-                fantasy)
-
+       
             scoringTimeline.push({
                 playerId,
                 quarter,
@@ -521,7 +516,6 @@ async function updateScoringTimeline(newPlayer, differences) {
                 difference: value,
                 fantasy,
             });
-            // console.log(scoringTimeline)
         }
     }
 
