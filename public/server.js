@@ -221,7 +221,7 @@ let scoringTimeline = {};
 let currentRound = 0;
 async function updateFixtureData() {
     try {
-
+        console.log("UPDATING NON-LIVE FIXTURES")
         const data = await fetchFixture();
 
         fixture = data;
