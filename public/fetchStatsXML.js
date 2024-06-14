@@ -42,7 +42,7 @@ function fetchData(players, teamName, teamType, gameDetails, trimmedLink) {
         freesfor: player.FreeFor[0],
         freesagainst: player.FreeAgainst[0],
         round: gameDetails.Round[0],
-        date: fetchDate(trimmedLink),
+        date: trimmedLink,
         trimmedLink: trimmedLink,
     }));
 };
