@@ -238,7 +238,7 @@ async function updateFixtureData() {
         console.error('Error fetching fixture data:', error);
     }
 }
-setInterval(updateFixtureData, 1200000);
+setInterval(updateFixtureData, 120000);
 
 async function updateLiveFixtureData() {
     console.log("UPDATING LIVE FIXTURES")
