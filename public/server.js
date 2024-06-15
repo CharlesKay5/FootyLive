@@ -487,8 +487,27 @@ async function updateScoringTimeline(newPlayer, differences) {
             }
 
             const time = timeArray[1];
-            if (time.endsWith(":6")) {
-                time.replace(":6", ":50");
+
+            if (time.endsWith(":9")) {
+                time = time.replace(":9", ":30");
+            } else if (time.endsWith(":8")) {
+                time = time.replace(":8", ":30");
+            } else if (time.endsWith(":7")) {
+                time = time.replace(":7", ":30");
+            } else if (time.endsWith(":6")) {
+                time = time.replace(":6", ":50");
+            } else if (time.endsWith(":5")) {
+                time = time.replace(":5", ":50");
+            } else if (time.endsWith(":4")) {
+                time = time.replace(":4", ":40");
+            } else if (time.endsWith(":3")) {
+                time = time.replace(":3", ":30");
+            } else if (time.endsWith(":2")) {
+                time = time.replace(":2", ":20");
+            } else if (time.endsWith(":1")) {
+                time = time.replace(":1", ":10");
+            } else if (time.endsWith(":0")) {
+                time = time.replace(":0", ":00");
             }
 
             switch (key) {
@@ -504,7 +523,7 @@ async function updateScoringTimeline(newPlayer, differences) {
                 default:
                     continue;
             }
-       
+
             scoringTimeline.push({
                 playerId,
                 quarter,

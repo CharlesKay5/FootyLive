@@ -974,8 +974,26 @@
 
             const currentPeriod = document.getElementById('currentPeriod');
 
-            if (currentTime.endsWith(":6")) {
-                currentTime.replace(":6", ":50");
+            if (currentTime.endsWith(":9")) {
+                currentTime = currentTime.replace(":9", ":30");
+            } else if (currentTime.endsWith(":8")) {
+                currentTime = currentTime.replace(":8", ":30");
+            } else if (currentTime.endsWith(":7")) {
+                currentTime = currentTime.replace(":7", ":30");
+            } else if (currentTime.endsWith(":6")) {
+                currentTime = currentTime.replace(":6", ":50");
+            } else if (currentTime.endsWith(":5")) {
+                currentTime = currentTime.replace(":5", ":50");
+            } else if (currentTime.endsWith(":4")) {
+                currentTime = currentTime.replace(":4", ":40");
+            } else if (currentTime.endsWith(":3")) {
+                currentTime = currentTime.replace(":3", ":30");
+            } else if (currentTime.endsWith(":2")) {
+                currentTime = currentTime.replace(":2", ":20");
+            } else if (currentTime.endsWith(":1")) {
+                currentTime = currentTime.replace(":1", ":10");
+            } else if (currentTime.endsWith(":0")) {
+                currentTime = currentTime.replace(":0", ":00");
             }
 
             currentPeriod.textContent = currentTime;
@@ -1033,7 +1051,7 @@
                 averages.push(average);
                 const fantasyScore = playerNames[i].parentElement.lastElementChild.textContent;
                 fantasy.push(fantasyScore);
-                let hotLevel = (parseFloat(average) * (parseFloat(percentage) / 100)) * 1.2;
+                let hotLevel = (parseFloat(average) * (parseFloat(percentage) / 100)) * 1.3;
                 let coldLevel = ((parseFloat(average) * (parseFloat(percentage) / 100)) * 0.6);
 
                 // Check if the player already has an icon
@@ -1043,10 +1061,10 @@
                     continue; // Skip to the next iteration
                 }
 
-                if (parseFloat(fantasyScore) >= parseFloat(hotLevel) && average !== 0 && fantasyScore !== 0 && percentage > 20) {
+                if (parseFloat(fantasyScore) >= parseFloat(hotLevel) && parseInt(average) > 50 && fantasyScore !== 0 && percentage > 30) {
                     // console.log("Adding fire to " + playerNames[i].textContent);
                     addIcon(playerNames[i].parentElement, '<i class="customIcon" id="fire" style="content: url(\'/icons/fire.png\')"></i>');
-                } else if (parseFloat(fantasyScore) <= parseFloat(coldLevel) && average !== 0 && fantasyScore !== 0 && percentage > 20 && average > 55) {
+                } else if (parseFloat(fantasyScore) <= parseFloat(coldLevel) && parseInt(average) > 50 && fantasyScore !== 0 && percentage > 30 && average > 55) {
                     // console.log((playerNames[i].parentElement.id))
                     addIcon(playerNames[i].parentElement, '<i class="customIcon" id="ice" style="content: url(\'/icons/ice.png\')"></i>');
                 }

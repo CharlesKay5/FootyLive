@@ -22,7 +22,6 @@ var profanityList = [
     "mudblood",
     "monkey",
     "chimp",
-    "ape",
     "cholo",
     "cotton picker",
     "cracker",

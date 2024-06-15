@@ -41,6 +41,7 @@ const specialNames = {
     "J.O'Donnell" : "J.ODonnell",
     "M.D'Ambrosio" : "M.DAmbrosio",
     "X.O'Halloran" : "X.OHalloran",
+    "J.O'Meara" : "J.OMeara",
   };
 
 function fetchData(player) {
