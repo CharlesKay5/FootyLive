@@ -486,7 +486,7 @@ async function updateScoringTimeline(newPlayer, differences) {
                 case 'T': quarter = 1; break;
             }
 
-            const time = timeArray[1];
+            let time = timeArray[1];
 
             if (time.endsWith(":9")) {
                 time = time.replace(":9", ":30");
