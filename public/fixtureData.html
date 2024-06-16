@@ -264,7 +264,11 @@
                     homeTeamScore.textContent = `${firstPlayerTeam0.teamScoreTotal}`;
                     homeTeamSecondaryScore.textContent = `${firstPlayerTeam0.teamScore}`;
                     // console.log(firstPlayerTeam0)
-                    homeTeamIcon.src = `/svg/${firstPlayerTeam0.teamName.replace(/\s/g, '')}.svg`;
+                    let homeTeamName = firstPlayerTeam0.teamName;
+                    if (firstPlayerTeam0.teamName.replace(/\s/g, '').includes("GWS")) {
+                        homeTeamName = "GWSGIANTS";
+                    }
+                    homeTeamIcon.src = `/svg/${homeTeamName.replace(/\s/g, '')}.svg`;
 
                     currentTime = `${firstPlayerTeam0.time}`;
 
@@ -276,7 +280,11 @@
                     awayTeamScore.textContent = `${firstPlayerTeam1.teamScoreTotal}`;
                     awayTeamSecondaryScore.textContent = `${firstPlayerTeam1.teamScore} `;
 
-                    awayTeamIcon.src = `/svg/${firstPlayerTeam1.teamName.replace(/\s/g, '')}.svg`;
+                    let awayTeamName = firstPlayerTeam1.teamName;
+                    if (firstPlayerTeam1.teamName.replace(/\s/g, '').includes("GWS")) {
+                        awayTeamName = "GWSGIANTS";
+                    }
+                    awayTeamIcon.src = `/svg/${awayTeamName.replace(/\s/g, '')}.svg`;
                 }
 
                 calculateGamePercentage(firstPlayerTeam0, currentTime);
