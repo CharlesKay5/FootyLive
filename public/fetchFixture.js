@@ -10,20 +10,22 @@ const fixtureData = {
 
 const seasonStartDate = new Date("2024-03-07");
 
-// Function to get the most recent Tuesday
+// Function to get the most recent Tuesday in UTC
 function getMostRecentTuesday(date) {
-    const dayOfWeek = date.getDay();
+    const dayOfWeek = date.getUTCDay();
     const distanceToTuesday = (dayOfWeek >= 2) ? dayOfWeek - 2 : 7 - (2 - dayOfWeek);
-    const mostRecentTuesday = new Date(date);
-    mostRecentTuesday.setDate(date.getDate() - distanceToTuesday);
+    const mostRecentTuesday = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() - distanceToTuesday));
     return mostRecentTuesday;
 }
 
-// Function to calculate the current round based on the current date
+// Function to calculate the current round based on the current date in UTC
 function getCurrentRound() {
-    const currentDate = new Date();
-    const mostRecentTuesday = getMostRecentTuesday(currentDate);
-    const timeDifference = mostRecentTuesday - seasonStartDate;
+    const currentDate = new Date(); // This still gets the local time
+    // Convert currentDate to UTC
+    const currentDateUTC = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate()));
+    const mostRecentTuesday = getMostRecentTuesday(currentDateUTC);
+    const seasonStartDateUTC = new Date(Date.UTC(seasonStartDate.getUTCFullYear(), seasonStartDate.getUTCMonth(), seasonStartDate.getUTCDate()));
+    const timeDifference = mostRecentTuesday - seasonStartDateUTC;
     const weeksDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 7));
     return weeksDifference + 1; // Add 1 because weeksDifference is 0-based
 }
