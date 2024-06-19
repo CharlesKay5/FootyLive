@@ -28,10 +28,8 @@ function getCurrentRound() {
     return weeksDifference + 1; // Add 1 because weeksDifference is 0-based
 }
 
-let round = getCurrentRound();
-
 function fetchFixtureData() {
-    return fetch(`https://api.squiggle.com.au/?q=games;round=${round};source=1;year=2024;format=json`, {
+    return fetch(`https://api.squiggle.com.au/?q=games;round=${getCurrentRound()};source=1;year=2024;format=json`, {
         headers: {
             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         },

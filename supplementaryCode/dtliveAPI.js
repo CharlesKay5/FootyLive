@@ -9,7 +9,7 @@ const data = {
 
 //Round 1 game 1: 2867
 async function crawlAllUrls() {
-    for (let i = 2977; i <= 2981; i++) {
+    for (let i = 2977; i <= 2982; i++) {
         await statsCrawl(`https://dtlive.com.au/afl/livescores.php?GameID=${i}`, data);
     }
 }
