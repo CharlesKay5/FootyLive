@@ -334,6 +334,10 @@
 
                         if (player.sub == 1) {
                             addIcon(row, '<i class="customIcon" id="subsitute" style="content: url(\'/icons/greenvest.png\')"></i>');
+                        } else {
+                            if (row.querySelector("#subsitute")) {
+                                row.querySelector("#subsitute").remove();
+                            }
                         }
 
                         if (player.benched == 1) {
@@ -656,6 +660,7 @@
                     },
                     body: JSON.stringify({
                         playerId: playerId,
+                        trimmedLink: trimmedLink,
                     }),
                 })
                     .then(response => {
@@ -679,6 +684,7 @@
                 body: JSON.stringify({
                     playerId: playerId,
                     icon: icon,
+                    trimmedLink, trimmedLink,
                 }),
             })
                 .then(response => {
@@ -930,7 +936,7 @@
 
 
         let trimmedLink = window.location.href.split('/').pop();
-
+        let previousTeamName = null;
         // Function to fetch player data and format it
         function fetchAndFormatPlayerData() {
             Promise.all([
@@ -941,6 +947,13 @@
 
                     const team0Players = data[0].players.filter(player => player.team === 0);
                     const team1Players = data[0].players.filter(player => player.team === 1);
+
+
+                    // Check if the data is returning the correct team
+                    if (previousTeamName !== null && team0Players && team0Players[0].teamName !== previousTeamName) {
+                    
+                        return;
+                    }
 
                     team0Players.forEach(player => {
                         const playerId = `${player.name}-${player.number}`;
@@ -960,9 +973,23 @@
 
                     formatPlayerData(0, previousDataTeam0);
                     formatPlayerData(1, previousDataTeam1);
+
+                    // Remove Icons when game starts to prevent carryover from previous rounds
+                    // if (previousTeamName == null) {
+                    //     removeIcons();
+                    // }
+                    previousTeamName = team0Players[0].teamName;
                 });
         }
 
+        // function removeIcons(){
+        //     const playerNames = document.getElementsByClassName("playerName");
+        //     for (let i = 0; i < playerNames.length; i++) {
+        //         if (playerNames[i].parentElement.querySelector("i")) {
+        //             playerNames[i].parentElement.querySelector("i").remove();
+        //         }
+        //     }
+        // }
 
         fetchAndFormatPlayerData(trimmedLink);
 
@@ -1041,8 +1068,15 @@
             }
             const gamePercentageElement = document.getElementById('gamePercentage');
             if (firstPlayerTeam0) {
-                gamePercentageElement.textContent = firstPlayerTeam0.gamePercentage + '%';
-                percentage = firstPlayerTeam0.gamePercentage;
+                if (firstPlayerTeam0.gamePercentage) {
+                    gamePercentageElement.textContent = firstPlayerTeam0.gamePercentage + '%';
+                    percentage = firstPlayerTeam0.gamePercentage;
+                }
+                else {
+                    gamePercentageElement.textContent = "100%"
+                    percentage = 100;
+                }
+                
             }
 
             // Pause briefly to allow time for all player data to load before applying fireAndIce

@@ -646,15 +646,17 @@ app.get('/player-image/:playerId', (req, res) => {
 let iconsState = {};
 
 app.post('/update-icon', (req, res) => {
-    const { playerId, icon } = req.body;
-    iconsState[playerId] = icon;
+    const { playerId, icon, trimmedLink } = req.body;
+    const key = `${playerId}-${trimmedLink}`;
+    iconsState[key] = icon;
 
     res.json({ status: 'success' });
 });
 
 app.post('/remove-icon', (req, res) => {
-    const playerId = req.body.playerId;
-    delete iconsState[playerId];
+    const { playerId, trimmedLink } = req.body;
+    const key = `${playerId}-${trimmedLink}`;
+    delete iconsState[key];
 
     res.sendStatus(200);
 });
