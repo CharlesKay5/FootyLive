@@ -220,6 +220,13 @@ async function updateFixtureData() {
         const data = await fetchFixture();
 
         fixture = data;
+
+
+        if (!fixture.games) {
+            console.log("No games in fixture.");
+            return;
+        }
+        
         for (const game of fixture.games) {
             currentRound = game.round;
             if (game.live === 0) {
@@ -238,6 +245,10 @@ setInterval(updateFixtureData, 120000);
 async function updateLiveFixtureData() {
     console.log("UPDATING LIVE FIXTURES")
     // Filter live games
+    if (!fixture.games) {
+        console.log("No games in fixture.");
+        return;
+    }
     const liveGames = fixture.games.filter(game => game.live == 1);
 
     // If no live games, return early
