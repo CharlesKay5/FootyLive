@@ -9,7 +9,7 @@ const data = {
 
 //Round 1 game 1: 2867
 async function crawlAllUrls() {
-    for (let i = 2977; i <= 2982; i++) {
+    for (let i = 2983; i <= 3069; i++) {
         await statsCrawl(`https://dtlive.com.au/afl/livescores.php?GameID=${i}`, data);
     }
 }
@@ -161,7 +161,7 @@ async function writeToFile(playerId) {
             });
         });
 
-        await fs.promises.appendFile('timelineData4.json', JSON.stringify(timelineData, null, 2));
+        await fs.promises.appendFile('timelineData5.json', JSON.stringify(timelineData, null, 2));
         console.log('JSON file has been saved.');
     } catch (err) {
         console.error('Error writing JSON file:', err);

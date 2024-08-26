@@ -109,7 +109,13 @@
                             document.getElementsByClassName(`round-${round}`)[0].style.display = "block";
                         }
 
-                        visibleFixutre.style.display = "none";
+                        try {
+                            visibleFixutre.style.display = "none";
+                        }
+                        catch {
+
+                        }
+                        
                         try {
                             visibleFixtureHead.style.display = "none";
                         } catch {
@@ -140,7 +146,7 @@
         document.addEventListener('DOMContentLoaded', fetchPreviousFixtures);
 
         function hidePreviousFixtures() {
-            for (let i = 0; i < 24; i++) {
+            for (let i = 0; i <= 24; i++) {
                 const roundHeader = document.getElementById(`round-${i}`);
                 if (roundHeader) { roundHeader.style.display = "none"; }
                 const roundTable = document.getElementsByClassName(`round-${i}`)[0];

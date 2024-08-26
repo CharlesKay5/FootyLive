@@ -235,6 +235,7 @@ async function updateFixtureData() {
 }
 setInterval(updateFixtureData, 120000);
 
+
 async function updateLiveFixtureData() {
     console.log("UPDATING LIVE FIXTURES")
     // Filter live games

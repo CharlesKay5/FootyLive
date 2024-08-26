@@ -27,6 +27,9 @@ function getCurrentRound() {
     const seasonStartDateUTC = new Date(Date.UTC(seasonStartDate.getUTCFullYear(), seasonStartDate.getUTCMonth(), seasonStartDate.getUTCDate()));
     const timeDifference = mostRecentTuesday - seasonStartDateUTC;
     const weeksDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 7));
+    if (weeksDifference + 1 > 24) {
+        return 24;
+    }
     return weeksDifference + 1; // Add 1 because weeksDifference is 0-based
 }
 
